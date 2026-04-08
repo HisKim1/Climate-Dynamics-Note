@@ -1,0 +1,464 @@
+
+% ==================================================================
+\section{Decomposition of the General Circulation}\label{sec:decomposition}
+% ==================================================================
+
+% ------------------------------------------------------------------
+\subsection{Time Average (Reynolds Decomposition)}
+% ------------------------------------------------------------------
+
+\begin{definition}[Time Average]
+\tight
+  For any atmospheric variable $u = u(\mathbf{x}, t)$, the \textbf{time average} over
+  a period $\tau$ is
+  \begin{equation}\label{eq:time-avg}
+    \overline{u} \;=\; \frac{1}{\tau}\int_0^{\tau} u(t)\,dt
+  \end{equation}
+  where $\tau$ can be hour, day, month, season, year, etc.
+\end{definition}
+
+\begin{definition}[Reynolds Decomposition]
+\tight
+  Any variable $u$ is decomposed into its time-mean and its deviation:
+  \begin{equation}\label{eq:reynolds}
+    u \;=\; \overline{u} \;+\; u'
+  \end{equation}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item $\overline{u}$: stationary (time-mean) component
+    \item $u'$: transient (perturbation) component
+  \end{itemize}
+  \end{multicols}
+  \hisu{정상 성분(시간 평균)과 변동 성분(편차)으로 분리}
+\end{definition}
+
+\subsubsection{Properties of the Time Average}
+
+\begin{proposition}[Properties of the time average operator]\label{prop:reynolds-props}
+\tight
+  For any variables $u, v$ and constants $a, b$:
+  \begin{enumerate}
+    \item \textgr{Linearity:} $\overline{au + bv} = a\,\overline{u} + b\,\overline{v}$
+    \item \textgr{Idempotence:} $\overline{\overline{u}} = \overline{u}$
+    \hisu{: 이미 평균을 낸 것에 다시 평균을 내도 같다}
+    \item \textgr{Mean of perturbation:}
+    \begin{equation}\label{eq:mean-pert-zero}
+      \overline{u'} = 0
+    \end{equation}
+    \hisu{평균에서의 편차를 다시 평균하면 0}
+    \item Commutes with differentiation: $\overline{\partial u / \partial x} = \partial \overline{u}/\partial x$
+  \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+  Property 3 follows directly from the decomposition:
+  \[
+    \overline{u'} = \overline{u - \overline{u}}
+    = \overline{u} - \overline{\overline{u}}
+    = \overline{u} - \overline{u} = 0. \qedhere
+  \]
+\end{proof}
+
+\subsubsection{Product Rule}
+
+\begin{proposition}[Reynolds Average of a Product]\label{prop:reynolds-product}
+\tight
+  For any variables $u$ and $v$:
+  \begin{equation}\label{eq:reynolds-product}
+    \overline{uv} \;=\; \overline{u}\,\overline{v} \;+\; \overline{u'v'}
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Substitute $u = \overline{u} + u'$ and $v = \overline{v} + v'$:
+  \begin{align*}
+    \overline{uv}
+    &= \overline{(\overline{u} + u')(\overline{v} + v')} \\
+    &= \overline{\,\overline{u}\,\overline{v}
+       + \overline{u}\,v'
+       + u'\,\overline{v}
+       + u'v'\,} \\
+    &= \overline{u}\,\overline{v}
+       + \overline{u}\,\underbrace{\overline{v'}}_{=\,0}
+       + \underbrace{\overline{u'}}_{=\,0}\,\overline{v}
+       + \overline{u'v'} \\
+    &= \overline{u}\,\overline{v} + \overline{u'v'}. \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{remark}
+\tight
+  The term $\overline{u'v'}$ is the \textbf{covariance} of $u$ and $v$.
+  \begin{hisublock}
+    공분산 = 상관 관계를 나타냄.
+    표준편차로 나누면 상관계수(correlation coefficient):
+    $r_{uv} = \overline{u'v'}/(\sigma_u \sigma_v)$
+  \end{hisublock}
+\end{remark}
+
+\newpage
+% ------------------------------------------------------------------
+\subsection{Space Average (Zonal Decomposition)}
+% ------------------------------------------------------------------
+
+\begin{definition}[Zonal Average]
+\tight
+  The \textbf{zonal average} (average along a latitude circle) is
+  \begin{equation}\label{eq:zonal-avg}
+    [u] \;=\; \frac{1}{2\pi}\int_0^{2\pi} u\,d\lambda
+  \end{equation}
+  where $\lambda$ is the longitude.
+\end{definition}
+
+\begin{definition}[Eddy (Wave) Component]
+\tight
+  The departure from the zonal mean is the \textbf{eddy} or \textbf{wave} component:
+  \begin{equation}\label{eq:eddy}
+    u^{*} \;=\; u - [u]
+  \end{equation}
+  \hisu{eddy = 동서 평균에서의 편차, 즉 파동 성분}
+\end{definition}
+
+\subsubsection{Properties of the Zonal Average}
+
+\begin{proposition}[Properties of the zonal average operator]\label{prop:zonal-props}
+\tight
+  Analogous to the time average:
+  \begin{enumerate}
+    \item $[au + bv] = a[u] + b[v]$ \hisu{: linearity}
+    \item $[[u]] = [u]$ \hisu{: idempotence}
+    \item \textgr{Eddy mean vanishes:}
+    \begin{equation}\label{eq:eddy-mean-zero}
+      [u^{*}] = 0
+    \end{equation}
+    \item Commutes with $\partial/\partial t$, $\partial/\partial \phi$, $\partial/\partial p$
+    (but not $\partial/\partial\lambda$)
+  \end{enumerate}
+\end{proposition}
+
+\begin{proposition}[Zonal Average of a Product]\label{prop:zonal-product}
+\tight
+  For any variables $u$ and $v$:
+  \begin{equation}\label{eq:zonal-product}
+    [uv] \;=\; [u]\,[v] \;+\; [u^{*}v^{*}]
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Substitute $u = [u] + u^{*}$, $v = [v] + v^{*}$:
+  \begin{align*}
+    [uv]
+    &= [([u] + u^{*})([v] + v^{*})] \\
+    &= [u]\,[v]
+       + [u]\,\underbrace{[v^{*}]}_{=\,0}
+       + \underbrace{[u^{*}]}_{=\,0}\,[v]
+       + [u^{*}v^{*}] \\
+    &= [u]\,[v] + [u^{*}v^{*}]. \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{remark}
+  \tight
+  The structure is identical to the Reynolds decomposition. The zonal mean
+  operator $[\,\cdot\,]$ satisfies the same algebraic properties as the time mean
+  $\overline{(\,\cdot\,)}$, so all product rules carry over by substitution.
+\end{remark}
+
+\newpage
+% ------------------------------------------------------------------
+\subsection{Mixed (Combined) Decomposition}
+% ------------------------------------------------------------------
+
+Applying both the time average and the zonal average yields a
+\textgr{four-component decomposition}. First apply the time average, then the
+zonal average:
+
+\begin{definition}[Four-Component Decomposition]
+\tight
+  \begin{equation}\label{eq:four-decomp}
+    \boxed{\;u \;=\;
+    \underbrace{[\overline{u}]}_{\text{(i)}}
+    \;+\; \underbrace{\overline{u}^{*}}_{\text{(ii)}}
+    \;+\; \underbrace{[u']}_{\text{(iii)}}
+    \;+\; \underbrace{u'^{*}}_{\text{(iv)}}\;}
+  \end{equation}
+\end{definition}
+
+\begin{hisublock}
+  시간 평균 $\to$ 동서 평균을 순서대로 적용해서 4개의 성분으로 분해한다.
+\end{hisublock}
+
+Each component has a distinct physical meaning:
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{c l l l}
+\hline
+\textgr{Component} & \textgr{Notation} & \textgr{Alt.\ notation} & \textgr{Physical meaning} \\
+\hline
+(i) & $[\overline{u}]$ & $\overline{u}_Z$ & Mean Meridional Circulation (MMC) \\
+(ii) & $\overline{u}^{*}$ & $\overline{u}_E$ & Stationary wave (eddy) \\
+(iii) & $[u']$ & $u'_Z$ & Transient zonally symmetric \\
+(iv) & $u'^{*}$ & $u'_E$ & Transient wave (eddy) \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{hisublock}
+  \begin{itemize}
+    \item MMC: 시간, 경도 모두에서 평균적인 흐름 (예: Hadley cell)
+    \item Stationary eddy: 시간 평균에서는 존재하지만 경도 방향으로 파동인 성분 (예: 지형파)
+    \item Transient zonally symmetric: 시간에 따라 변하지만 경도 방향으로 균일한 성분
+    \item Transient eddy: 시간에도 변하고 경도 방향으로도 파동인 성분 (예: 이동성 저기압)
+  \end{itemize}
+\end{hisublock}
+
+\begin{remark}
+\tight
+  Subscript notation is often used for compactness:
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item $(\,\cdot\,)_Z \equiv [\,\cdot\,]$: zonal-mean part
+    \item $(\,\cdot\,)_E \equiv (\,\cdot\,)^{*}$: eddy part
+  \end{itemize}
+  \end{multicols}
+  so that $u = \overline{u}_Z + \overline{u}_E + u'_Z + u'_E$.
+\end{remark}
+
+\newpage
+% ------------------------------------------------------------------
+\subsection{Flux and Transport Decomposition}
+% ------------------------------------------------------------------
+
+\subsubsection{General Flux Decomposition}
+
+Consider the meridional transport of a scalar quantity $X$ by the meridional wind
+$v$. Using the four-component decomposition, the time-and-zonal mean of the flux
+$vX$ can be written as:
+
+\begin{proposition}[Flux Decomposition]\label{prop:flux-decomp}
+\tight
+  \begin{equation}\label{eq:flux-decomp}
+    \overline{(vX)}_Z
+    \;=\; \underbrace{\overline{v}_Z\,\overline{X}_Z}_{\text{MMC}}
+    \;+\; \underbrace{\overline{v'_Z X'_Z}}_{\substack{\text{transient}\\\text{meridional}}}
+    \;+\; \underbrace{(\overline{v}_E\,\overline{X}_E)_Z}_{\substack{\text{stationary}\\\text{eddy}}}
+    \;+\; \underbrace{\overline{(v'_E X'_E)}_Z}_{\substack{\text{transient}\\\text{eddy}}}
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  Write $v = \overline{v} + v'$ and $X = \overline{X} + X'$:
+  \[
+    vX = (\overline{v} + v')(\overline{X} + X')
+    = \overline{v}\,\overline{X} + \overline{v}\,X' + v'\,\overline{X} + v'X'.
+  \]
+  Taking the time average:
+  \[
+    \overline{vX} = \overline{v}\,\overline{X} + \overline{v'X'}.
+  \]
+  Now decompose $\overline{v} = \overline{v}_Z + \overline{v}_E$ and
+  $\overline{X} = \overline{X}_Z + \overline{X}_E$, and similarly for the primed
+  quantities. Taking the zonal average of each term:
+  \begin{align*}
+    \overline{(vX)}_Z
+    = [\overline{vX}]
+    &= [\overline{v}\,\overline{X}] + [\overline{v'X'}] \\
+    &= \overline{v}_Z\,\overline{X}_Z + (\overline{v}_E\,\overline{X}_E)_Z
+       + \overline{v'_Z X'_Z} + \overline{(v'_E X'_E)}_Z. \qedhere
+  \end{align*}
+\end{proof}
+
+\begin{hisublock}
+  총 수송 = MMC에 의한 수송 + 경도 방향 transient + 정상 에디 + 이동성 에디
+\end{hisublock}
+
+% ------------------------------------------------------------------
+\subsubsection{Example 1: Angular Momentum Transport}
+% ------------------------------------------------------------------
+
+\begin{definition}[Angular Momentum per unit mass]
+\tight
+  The angular momentum per unit mass about Earth's axis is
+  \begin{equation}\label{eq:ang-mom}
+    M \;=\; (\Omega a\cos\phi + u)\,a\cos\phi
+  \end{equation}
+  \begin{multicols}{2}
+  \begin{itemize}
+    \item $\Omega$: Earth's angular velocity
+    \item $a$: Earth's radius
+    \item $\phi$: latitude
+    \item $u$: zonal wind
+  \end{itemize}
+  \end{multicols}
+  \hisu{$\Omega a\cos\phi$: 지구 자전에 의한 기여, $u$: 대기 운동에 의한 기여}
+\end{definition}
+
+The northward transport of angular momentum, integrated over all longitudes and
+through a pressure layer from $p_1$ to $p_2$, is
+
+\begin{equation}\label{eq:mom-transport}
+  M_\phi \;=\;
+  \frac{2\pi a^2\cos^2\phi}{g}
+  \int_{p_1}^{p_2}
+  \Bigl[\,\underbrace{\Omega a\cos\phi\;\overline{v}_Z}_{\text{$\Omega$-term}}
+  \;+\; \underbrace{\overline{(uv)}_Z}_{\text{eddy term}}\,\Bigr]\,dp
+\end{equation}
+
+\begin{hisublock}
+  \begin{itemize}
+    \item $\Omega$-term: 지구 자전 각운동량의 남북 수송 $\to$ $\overline{v}_Z$에 의해 결정
+    \item eddy term: 대기 운동 각운동량의 남북 수송 $\to$ $\overline{(uv)}_Z$에 의해 결정
+  \end{itemize}
+\end{hisublock}
+
+\subsubsection*{Continuity Constraint on Meridional Wind}
+
+The continuity equation in pressure coordinates, integrated zonally and over the
+full pressure depth, constrains the meridional transport.
+
+\begin{proposition}[Mass balance constraint]\label{prop:mass-balance}
+\tight
+  \begin{equation}\label{eq:vz-integral}
+    \int_0^{p_0} \overline{v}_Z\,dp \;=\; 0
+  \end{equation}
+\end{proposition}
+
+\begin{proof}
+  The continuity equation in $(y, p)$ coordinates gives
+  \[
+    \frac{\partial \overline{v}_Z}{\partial y}
+    + \frac{\partial \overline{\omega}_Z}{\partial p} = 0.
+  \]
+  Integrating over all pressure levels from $0$ to $p_0$ (surface):
+  \[
+    \frac{\partial}{\partial y}\int_0^{p_0}\overline{v}_Z\,dp
+    + \bigl[\overline{\omega}_Z\bigr]_0^{p_0} = 0.
+  \]
+  Since $\overline{\omega}_Z = 0$ at both $p = 0$ (top) and $p = p_0$ (surface),
+  the second term vanishes, hence
+  \[
+    \int_0^{p_0}\overline{v}_Z\,dp = \text{const.}
+  \]
+  Since $\overline{v}_Z \to 0$ at the poles (by symmetry), the constant must be
+  zero.
+\end{proof}
+
+\begin{hisublock}
+  공기 질량은 축적되지 않는다 --- no accumulation of mass.
+  따라서 연직 적분한 $\overline{v}_Z = 0$: 어떤 위도에서든 남쪽으로 가는
+  공기와 북쪽으로 가는 공기의 질량이 같다.
+\end{hisublock}
+
+\subsubsection*{Momentum Transport Decomposition}
+
+Applying the four-component flux decomposition to $uv$:
+
+\begin{equation}\label{eq:uv-decomp}
+  \overline{(uv)}_Z
+  \;=\; \underbrace{\overline{u}_Z\,\overline{v}_Z}_{\approx\,0}
+  \;+\; \underbrace{\overline{u'_Z v'_Z}}_{\substack{\text{transient}\\\text{meridional}}}
+  \;+\; \underbrace{(\overline{u}_E\,\overline{v}_E)_Z}_{\substack{\text{stationary}\\\text{eddy}}}
+  \;+\; \underbrace{\overline{(u'_E v'_E)}_Z}_{\substack{\text{transient}\\\text{eddy}}}
+\end{equation}
+
+\begin{remark}
+\tight
+  \textgr{Key observation:} The term
+  $\overline{u}_Z\,\overline{v}_Z \approx 0$
+  because the mass-balance constraint \eqref{eq:vz-integral} forces
+  $\overline{v}_Z$ to change sign in the vertical; the product with
+  $\overline{u}_Z$ largely cancels upon integration.
+
+  \begin{hisublock}
+    $\overline{u}_Z \overline{v}_Z$는 연직 적분하면 거의 0에 가깝다!
+  \end{hisublock}
+\end{remark}
+
+\begin{remark}
+\tight
+  The remaining terms have distinct latitudinal dominance:
+  \begin{itemize}
+    \item \textgr{Low latitudes:} The first pair
+    ($\overline{u}_Z\overline{v}_Z$ and $\overline{u'_Z v'_Z}$) dominates.
+    This is associated with the \textbf{Hadley circulation} (MMC).
+    \item \textgr{Mid--high latitudes:} The second pair
+    ($(\overline{u}_E\overline{v}_E)_Z$ and $\overline{(u'_E v'_E)}_Z$) dominates.
+    This is associated with \textbf{eddies} (baroclinic waves).
+  \end{itemize}
+  \hisu{저위도: Hadley cell이 운동량 수송 주도 / 중~고위도: 에디(파동)가 주도}
+\end{remark}
+
+% ------------------------------------------------------------------
+\subsubsection{Example 2: Heat (Enthalpy) Transport}
+% ------------------------------------------------------------------
+
+The same decomposition applies to the meridional heat transport $\overline{(vT)}_Z$:
+
+\begin{equation}\label{eq:vt-decomp}
+  \overline{(vT)}_Z
+  \;=\; \underbrace{\overline{v}_Z\,\overline{T}_Z}_{\text{MMC}}
+  \;+\; \underbrace{\overline{v'_Z T'_Z}}_{\substack{\text{transient}\\\text{meridional}}}
+  \;+\; \underbrace{(\overline{v}_E\,\overline{T}_E)_Z}_{\substack{\text{stationary}\\\text{eddy}}}
+  \;+\; \underbrace{\overline{(v'_E T'_E)}_Z}_{\substack{\text{transient}\\\text{eddy}}}
+\end{equation}
+
+\begin{remark}[Heat vs.\ Momentum Transport]
+\tight
+  There is a fundamental asymmetry between heat and momentum transport:
+  \begin{itemize}
+    \item \textgr{Heat transport} is \textbf{down-gradient}:
+    heat flows from warm (equator) to cold (poles), reducing the
+    equator-to-pole temperature gradient.
+    \item \textgr{Momentum transport} is \textbf{up-gradient}:
+    eddies transport westerly momentum \emph{toward} the jet stream
+    (mid-latitudes), intensifying the existing gradient.
+  \end{itemize}
+  \begin{hisublock}
+    열 수송은 경도(gradient)를 따라 (따뜻한 곳 $\to$ 차가운 곳),
+    운동량 수송은 경도를 거슬러 (제트 기류 쪽으로 집중)!
+    \begin{itemize}
+      \item 열: equator $\to$ pole, gradient를 약화
+      \item 운동량: mid-lat jet를 강화, gradient를 증가
+    \end{itemize}
+  \end{hisublock}
+\end{remark}
+
+% ------------------------------------------------------------------
+\subsubsection{Variance Decomposition}
+% ------------------------------------------------------------------
+
+Setting $X = v$ (i.e., examining the flux of $v$ by itself) gives the
+\textbf{variance decomposition}:
+
+\begin{proposition}[Variance Decomposition]\label{prop:var-decomp}
+\tight
+  \begin{equation}\label{eq:var-decomp}
+    \overline{(v^2)}_Z
+    \;=\; (\overline{v}_Z)^2
+    \;+\; \overline{(v'_Z)^2}
+    \;+\; (\overline{v}_E^{\,2})_Z
+    \;+\; \overline{(v'^2_E)}_Z
+  \end{equation}
+\end{proposition}
+
+\begin{hisublock}
+  분산(variance)도 같은 방식으로 분해된다.
+  각 항은 각 성분이 총 변동에 기여하는 정도를 나타낸다:
+  \begin{itemize}
+    \item $(\overline{v}_Z)^2$: MMC에 의한 분산
+    \item $\overline{(v'_Z)^2}$: 경도 방향 transient에 의한 분산
+    \item $(\overline{v}_E^{\,2})_Z$: 정상 에디에 의한 분산
+    \item $\overline{(v'^2_E)}_Z$: 이동성 에디에 의한 분산
+  \end{itemize}
+\end{hisublock}
+
+\begin{remark}
+\tight
+  Unlike the flux decomposition where cross-terms can be nonzero, the variance
+  decomposition has the clean property that each term is non-negative.
+  Therefore the total variance is an exact sum of contributions from each
+  component.
+  \hisu{분산 항은 전부 $\geq 0$이므로 각 성분의 기여를 정량적으로 비교 가능}
+\end{remark}

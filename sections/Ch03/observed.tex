@@ -1,0 +1,842 @@
+% =======================================================================================
+%  Chapter 3: Observed Atmospheric Circulation
+%  Based on Ch03 lecture notes (41 slides)
+%  Reference: Wallace, Battisti, Thompson, Hartmann,
+%    "The Atmospheric General Circulation," Cambridge University Press
+% =======================================================================================
+
+\section{Annual Mean Circulation}
+
+The observed atmospheric circulation provides the empirical foundation upon which all
+theoretical understanding of climate dynamics is built.  In this chapter we survey the
+three-dimensional structure of wind, pressure, temperature, precipitation, and SST fields
+from reanalysis data and satellite observations, emphasising both the \textgr{zonally
+symmetric} (mean) and \textgr{eddy} components.
+
+\hisu{관측 자료는 주로 ERA5/NCEP reanalysis와 위성 관측에서 가져온 것이다.}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Wind Fields}
+% ---------------------------------------------------------------------------------------
+
+\subsubsection{850\,hPa --- Lower Troposphere}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 2
+  % Description: Annual-mean 850 hPa wind vectors and isotachs.  Trade winds
+  %   (NE in NH, SE in SH) dominate the tropics; midlatitude westerlies are
+  %   prominent, especially in the SH where they are nearly zonally symmetric
+  %   (~15--21 m/s).  Weak winds mark the subtropical high belt.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p03_img01.png}
+  \caption{Annual-mean wind field at 850\,hPa (vectors and isotachs, m\,s$^{-1}$).}
+  \label{fig:ch03-wind850}
+\end{figure}
+
+\begin{remark}[Key features at 850\,hPa]\tight
+\begin{itemize}
+  \item \textgr{Trade winds}: north-easterly in the NH, south-easterly in the SH, driven
+        by the pressure gradient between subtropical highs and the equatorial trough.
+  \item \textgr{Midlatitude westerlies}: especially strong and zonally symmetric in the SH
+        ($\sim$15--21\,m\,s$^{-1}$), reflecting the absence of large continents.
+  \item \textgr{Subtropical high belt}: weak wind speeds near $30^{\circ}$\,N/S where the
+        Hadley cell descends.
+\end{itemize}
+\end{remark}
+
+\begin{hisublock}
+850\,hPa 바람장에서 가장 눈에 띄는 것은 남반구 편서풍의 동서 대칭성이다.
+대륙이 적어 지형 강제가 약하기 때문이다.
+반면 북반구는 대륙과 해양의 비대칭 때문에 파동 구조가 뚜렷하다.
+\end{hisublock}
+
+
+\subsubsection{500\,hPa --- Mid-Troposphere}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 3
+  % Description: Annual-mean 500 hPa wind field.  Flow is predominantly
+  %   westerly at all latitudes outside the deep tropics.  SH flow is nearly
+  %   zonally symmetric (20--30 m/s).  NH shows two jet maxima: one over
+  %   East Asia and one over eastern North America.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p03_img01.png}
+  \caption{Annual-mean wind field at 500\,hPa.}
+  \label{fig:ch03-wind500}
+\end{figure}
+
+\begin{remark}[Key features at 500\,hPa]\tight
+\begin{itemize}
+  \item Predominantly \textgr{westerly flow} at all latitudes poleward of $\sim$$15^{\circ}$.
+  \item SH: nearly zonally symmetric, with wind speeds of 20--30\,m\,s$^{-1}$.
+  \item NH: two distinct jet maxima ---
+        \begin{enumerate}
+          \item East Asia ($\sim$$30^{\circ}$N, 130$^{\circ}$E)
+          \item Eastern North America ($\sim$$40^{\circ}$N, 70$^{\circ}$W)
+        \end{enumerate}
+        reflecting stationary wave forcing by the Himalaya--Tibet and Rocky Mountain topography.
+\end{itemize}
+\end{remark}
+
+\hisu{500\,hPa는 대류권 중간으로, 지형에 의한 정상파(stationary wave)의 영향을 잘 보여준다.}
+
+
+\subsubsection{200\,hPa --- Upper Troposphere}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 4
+  % Description: Annual-mean 200 hPa wind field.  Subtropical jet streams are
+  %   the dominant feature: East Asian jet exceeds 40 m/s, Atlantic jet is
+  %   secondary.  SH subtropical jet is more continuous but weaker in amplitude.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p04_img01.png}
+  \caption{Annual-mean wind field at 200\,hPa, highlighting the subtropical jet streams.}
+  \label{fig:ch03-wind200}
+\end{figure}
+
+\begin{remark}[Key features at 200\,hPa]\tight
+\begin{itemize}
+  \item \textgr{Subtropical jet streams} dominate the upper troposphere near $30^{\circ}$\,N/S.
+  \item East Asian jet: strongest on Earth in the annual mean, exceeding
+        \textbf{40\,m\,s$^{-1}$}, anchored by the Tibetan Plateau.
+  \item Atlantic jet: secondary maximum over the eastern seaboard of North America.
+  \item SH: the subtropical jet is more continuous (nearly circumpolar) but the amplitude
+        of individual maxima is weaker than in the NH.
+\end{itemize}
+\end{remark}
+
+\begin{hisublock}
+200\,hPa에서의 아열대 제트는 열대와 중위도 사이의 온도 경도에 의해 thermal wind
+관계를 통해 설명된다 (Section~\ref{sec:ch03-thermal-wind}).
+동아시아 제트가 특별히 강한 이유는 티벳 고원에 의한 diabatic heating과 정상파 강제
+때문이다.
+\end{hisublock}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Sea-Level Pressure}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 5--6
+  % Description: Annual-mean sea-level pressure (SLP).  Subtropical highs
+  %   (1016--1020 hPa) over all major ocean basins at ~30 deg.  Equatorial
+  %   trough (1008--1012 hPa).  Subpolar lows: Aleutian Low, Icelandic Low
+  %   (NH); deep circumpolar trough in SH (~984--988 hPa).
+  \includegraphics[width=0.85	extwidth]{images/ch03/p05_img01.png}
+  \caption{Annual-mean sea-level pressure (hPa).  Contour interval: 4\,hPa.}
+  \label{fig:ch03-slp-ann}
+\end{figure}
+
+\begin{definition}[Major Pressure Centres]\tight
+The annual-mean SLP field is organised into a small number of recurring centres:
+\begin{multicols}{2}
+\textgr{Subtropical Highs} ($\sim$1016--1020\,hPa)\\
+Located over each ocean basin near $30^{\circ}$\,N/S:
+\begin{itemize}
+  \item North Pacific High
+  \item North Atlantic (Azores/Bermuda) High
+  \item South Pacific High
+  \item South Atlantic High
+  \item South Indian Ocean High
+\end{itemize}
+
+\columnbreak
+
+\textgr{Subpolar Lows}\\
+\begin{itemize}
+  \item Aleutian Low ($\sim$$50^{\circ}$N, 170$^{\circ}$W)
+  \item Icelandic Low ($\sim$$62^{\circ}$N, 20$^{\circ}$W)
+  \item SH circumpolar trough ($\sim$$65^{\circ}$S, $\sim$984--988\,hPa)
+\end{itemize}
+\vspace{4pt}
+\textgr{Equatorial Trough}\\
+$\sim$1008--1012\,hPa, slightly north of the equator in the annual mean.
+\end{multicols}
+\end{definition}
+
+\begin{hisublock}
+NH는 대륙--해양 대비가 크기 때문에 기압 분포가 비대칭적이다.
+SH는 대륙이 적어 기압 패턴이 거의 동서 대칭이며, 특히 $65^{\circ}$S 부근의
+순환극 저기압 골(circumpolar trough)은 매우 깊다.
+\end{hisublock}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Zonal Mean vs.\ Eddy Decomposition}
+\label{sec:ch03-eddy-decomp}
+% ---------------------------------------------------------------------------------------
+
+Any atmospheric field $A(\lambda, \phi, p, t)$ can be decomposed as
+\begin{equation}
+  A = [A] + A^{*},
+\end{equation}
+where $[A]$ is the zonal mean and $A^{*} \equiv A - [A]$ is the \textgr{eddy} (departure
+from the zonal mean).
+
+\subsubsection{Zonal-Mean Zonal Wind}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 8
+  % Description: Latitude--pressure cross-section of annual-mean zonal-mean
+  %   zonal wind [u].  Two westerly maxima at ~200 hPa near 30N and 30S
+  %   (subtropical jets, ~30 m/s).  Weak easterlies in the deep tropics
+  %   and near the surface at high latitudes.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p08_img01.jpeg}
+  \caption{Annual-mean $[\bar{u}]$ (m\,s$^{-1}$), latitude--pressure cross-section.}
+  \label{fig:ch03-zmzw}
+\end{figure}
+
+\begin{remark}[Zonal-mean zonal wind structure]\tight
+\begin{itemize}
+  \item Two \textgr{westerly jet maxima} at $\sim$200\,hPa near $30^{\circ}$N and $30^{\circ}$S,
+        with peak speeds of $\sim$30\,m\,s$^{-1}$ in the annual mean.
+  \item Weak tropical easterlies throughout the troposphere.
+  \item Surface easterlies (trades) equatorward of $\sim$$30^{\circ}$ and surface westerlies
+        poleward of $\sim$$30^{\circ}$.
+\end{itemize}
+\end{remark}
+
+
+\subsubsection{Zonal-Mean Meridional Wind}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 9
+  % Description: Latitude--pressure cross-section of [v].  Very small values
+  %   (~0.3 m/s), but a clear Hadley cell signal: poleward flow at upper
+  %   levels, equatorward flow at low levels in the tropics.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p09_img01.png}
+  \caption{Annual-mean $[\bar{v}]$ (m\,s$^{-1}$).  Note the much smaller contour interval
+           compared to $[\bar{u}]$.}
+  \label{fig:ch03-zmvw}
+\end{figure}
+
+\hisu{$[\bar{v}]$는 $[\bar{u}]$에 비해 한 자릿수 이상 작지만,
+해들리 셀을 통한 질량 수송을 반영하는 중요한 양이다.}
+
+
+\subsubsection{Geopotential Height: Full Field and Eddy Field}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, pages 10--12
+  % Description: Geopotential height maps at 200, 500, and 850 hPa --- both
+  %   full field and eddy (Z*) field.  NH eddy field shows wave-2 to wave-3
+  %   pattern (troughs over eastern North America and East Asia); SH eddy
+  %   amplitudes are much weaker.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p10_img01.png}
+  \caption{Annual-mean geopotential height at 500\,hPa: (a)~full field, (b)~eddy field $Z^{*}$.}
+  \label{fig:ch03-z500-eddy}
+\end{figure}
+
+\begin{remark}[Eddy geopotential height]\tight
+\begin{itemize}
+  \item NH: the eddy field $Z^{*}$ shows a prominent \textbf{wave-2 to wave-3 pattern} at
+        500\,hPa, with troughs over eastern North America and East Asia, and ridges over the
+        eastern ocean basins.
+  \item SH: eddy amplitudes are much weaker, consistent with the zonally symmetric nature of
+        the SH circulation and the relative absence of topographic forcing.
+  \item The eddy amplitude generally increases with height (larger at 200\,hPa than at
+        850\,hPa), consistent with the equivalent-barotropic structure of stationary Rossby
+        waves.
+\end{itemize}
+\end{remark}
+
+\begin{hisublock}
+eddy($A^{*}$)는 동서 평균에서 벗어난 파동 구조를 의미한다.
+NH에서는 대륙--해양 대비와 대규모 지형(히말라야, 로키) 때문에 eddy 진폭이 크고,
+SH에서는 작다. 이것이 NH 기후의 ``비대칭성''의 핵심이다.
+\end{hisublock}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Thermal Wind and Jet Streams}
+\label{sec:ch03-thermal-wind}
+% ---------------------------------------------------------------------------------------
+
+The vertical shear of the geostrophic wind is related to the horizontal temperature
+gradient by the \textgr{thermal wind relation}:
+\begin{equation}
+  \frac{\partial u_g}{\partial \ln p} = \frac{R}{f}\,\frac{\partial T}{\partial y},
+  \label{eq:thermal-wind}
+\end{equation}
+where $R$ is the gas constant for dry air and $f$ the Coriolis parameter.  Because the
+meridional temperature gradient $\partial T/\partial y < 0$ in the NH (temperature
+decreases poleward), the westerly wind \emph{increases with height}, producing the
+subtropical jet at $\sim$200\,hPa.
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 13
+  % Description: Side-by-side latitude--pressure cross-sections of (a) zonal-mean
+  %   temperature [T] and (b) zonal-mean zonal wind [u], illustrating the thermal
+  %   wind relationship: steepest temperature gradients correspond to strongest
+  %   vertical wind shear and jet maxima at ~200 hPa.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p13_img01.jpeg}
+  \caption{Annual-mean (a) $[\bar{T}]$ (K) and (b) $[\bar{u}]$ (m\,s$^{-1}$),
+           illustrating the thermal wind relationship.}
+  \label{fig:ch03-thermal-wind}
+\end{figure}
+
+\begin{example}[Thermal wind estimate of the subtropical jet]\tight
+Take a meridional temperature gradient $\Delta T / \Delta y \approx -15$\,K over
+$20^{\circ}$ latitude ($\sim$2200\,km) between $15^{\circ}$N and $35^{\circ}$N.  Then the
+thermal wind shear from 850\,hPa to 200\,hPa ($\Delta \ln p \approx 1.45$) gives:
+\[
+  \Delta u \approx \frac{R}{f}\,\frac{\Delta T}{\Delta y}\,\Delta \ln p
+           \approx \frac{287}{7.3\times10^{-5}}\,\frac{15}{2.2\times10^{6}}\,1.45
+           \approx 39\;\text{m\,s}^{-1}.
+\]
+This is consistent with the observed subtropical jet speed of $\sim$40\,m\,s$^{-1}$.
+\end{example}
+
+\hisu{thermal wind: 남북 온도 경도가 클수록 연직 바람 시어가 강해지고,
+상층 제트가 강해진다. 이것이 아열대 제트의 핵심 메커니즘이다.}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Meridional Overturning Circulation}
+\label{sec:ch03-hadley}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 14--15
+  % Description: (a) Zonal-mean omega (Pa/s) cross-section: negative omega
+  %   (ascent) centred on the equator, positive omega (descent) in subtropics.
+  %   (b) Zonal-mean meridional wind [v]: low-level convergence toward
+  %   equator, upper-level divergence poleward --- the Hadley cell signature.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p14_img01.jpeg}
+  \caption{Annual-mean (a) $[\bar{\omega}]$ (Pa\,s$^{-1}$) and
+           (b) $[\bar{v}]$ (m\,s$^{-1}$), showing the Hadley cell structure.}
+  \label{fig:ch03-hadley-ann}
+\end{figure}
+
+\begin{definition}[Hadley Cell --- Annual Mean]\tight
+The annual-mean Hadley cell is characterised by:
+\begin{itemize}
+  \item \textgr{Ascending motion} at the equator ($[\bar{\omega}] < 0$): deep convection in the ITCZ
+        releases latent heat and drives upward mass flux.
+  \item \textgr{Poleward flow} in the upper troposphere ($\sim$200\,hPa): $[\bar{v}] > 0$ in the NH,
+        $[\bar{v}] < 0$ in the SH.
+  \item \textgr{Descending motion} in the subtropics ($\sim$$30^{\circ}$\,N/S, $[\bar{\omega}] > 0$):
+        adiabatic warming maintains the subtropical highs and suppresses precipitation.
+  \item \textgr{Equatorward return flow} at the surface: the trade winds.
+\end{itemize}
+\end{definition}
+
+\begin{hisublock}
+적도에서 상승, 아열대에서 하강 --- 이것이 해들리 셀의 기본 구조이다.
+연평균에서는 NH 셀과 SH 셀이 거의 대칭이지만, 계절적으로는 겨울 반구 셀이
+훨씬 강해지고 적도를 넘어 확장한다 (Section~\ref{sec:ch03-seasonal}).
+\end{hisublock}
+
+
+% =======================================================================================
+\section{Seasonal Variation}
+\label{sec:ch03-seasonal}
+% =======================================================================================
+
+\subsection{Sea-Level Pressure}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 17--18
+  % Description: SLP maps for DJF and JJA.  DJF: deep Aleutian Low and Icelandic
+  %   Low, strong Siberian High (~1040 hPa).  JJA: continental thermal lows over
+  %   Asia and North America, strong oceanic subtropical highs.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p17_img01.png}
+  \caption{Sea-level pressure (hPa) for (a)~DJF and (b)~JJA.}
+  \label{fig:ch03-slp-seasonal}
+\end{figure}
+
+\begin{remark}[Seasonal SLP contrast]\tight
+\begin{multicols}{2}
+\textgr{DJF (boreal winter):}
+\begin{itemize}
+  \item Deep Aleutian Low
+  \item Deep Icelandic Low
+  \item Strong Siberian High ($\sim$1040\,hPa)
+  \item Intense pressure gradient $\Rightarrow$ strong midlatitude westerlies
+\end{itemize}
+
+\columnbreak
+
+\textgr{JJA (boreal summer):}
+\begin{itemize}
+  \item Continental thermal lows (Asian, N.\ American)
+  \item Strong oceanic subtropical highs
+  \item Weakened Aleutian/Icelandic Lows
+  \item Monsoon circulations dominate South/East Asia
+\end{itemize}
+\end{multicols}
+\end{remark}
+
+\hisu{시베리아 고기압은 DJF에만 존재하는 열적 고기압이다.
+여름에는 대륙이 가열되어 열적 저기압으로 바뀐다.}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Wind Seasonal Cycle}
+% ---------------------------------------------------------------------------------------
+
+\subsubsection{850\,hPa --- Monsoon Circulation}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 19--20
+  % Description: 850 hPa wind for DJF and JJA.  JJA shows the dramatic
+  %   South Asian monsoon: cross-equatorial Somali jet along the East African
+  %   coast, westerly inflow into the Indian subcontinent.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p19_img01.png}
+  \caption{850\,hPa wind (m\,s$^{-1}$) for (a)~DJF and (b)~JJA.  Note the Somali jet in JJA.}
+  \label{fig:ch03-wind850-seasonal}
+\end{figure}
+
+\begin{remark}[Somali Jet and monsoon onset]\tight
+In JJA, a powerful \textgr{cross-equatorial low-level jet} --- the Somali jet --- funnels
+moisture from the southern Indian Ocean into the Indian subcontinent.  This jet is among the
+strongest low-level wind features on Earth, reaching 15--20\,m\,s$^{-1}$ near the coast of
+Somalia.  It is a key element of the South Asian monsoon onset.
+\end{remark}
+
+
+\subsubsection{200\,hPa --- Subtropical Jet Intensification}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 21
+  % Description: 200 hPa wind for DJF: strongest NH subtropical jet,
+  %   >50 m/s over East Asia.  JJA: jet weakens in NH, SH jet intensifies.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p21_img01.png}
+  \caption{200\,hPa wind (m\,s$^{-1}$) for (a)~DJF and (b)~JJA.}
+  \label{fig:ch03-wind200-seasonal}
+\end{figure}
+
+\hisu{DJF 동아시아 200\,hPa 제트가 50\,m/s를 초과하는 이유:
+겨울에는 적도--극 온도 경도가 최대이고, 티벳 고원의 기계적/열적 강제가 합쳐지기 때문이다.}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Zonal-Mean Zonal Wind --- Seasonal}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 22
+  % Description: Latitude--pressure cross-sections of [u] for DJF and JJA.
+  %   DJF: NH jet dramatically intensifies to ~28 m/s, shifted equatorward.
+  %   JJA: SH jet intensifies; NH jet weakens and shifts poleward.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p22_img01.jpeg}
+  \caption{Zonal-mean zonal wind $[\bar{u}]$ (m\,s$^{-1}$) for (a)~DJF and (b)~JJA.}
+  \label{fig:ch03-zmzw-seasonal}
+\end{figure}
+
+\begin{remark}[Seasonal jet asymmetry]\tight
+In DJF the NH subtropical jet intensifies dramatically to $\sim$28\,m\,s$^{-1}$ in the
+zonal mean (and much more locally), while the SH jet weakens.  In JJA the pattern reverses.
+This is a direct consequence of the thermal wind relation~\eqref{eq:thermal-wind}: the
+\textgr{winter hemisphere} always has the steepest meridional temperature gradient and
+therefore the strongest jet.
+\end{remark}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Zonal-Mean Meridional Wind --- Seasonal}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 23
+  % Description: [v] cross-section for DJF and JJA.  Clear seasonal
+  %   migration of the cross-equatorial Hadley cell: in DJF the dominant
+  %   cell has ascent south of the equator, upper-level northward flow,
+  %   and descent near 30N.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p23_img01.png}
+  \caption{Zonal-mean meridional wind $[\bar{v}]$ (m\,s$^{-1}$) for (a)~DJF and (b)~JJA,
+           showing the cross-equatorial Hadley cell.}
+  \label{fig:ch03-zmvw-seasonal}
+\end{figure}
+
+\begin{hisublock}
+계절에 따라 해들리 셀의 상승 지역이 여름 반구 쪽으로 이동한다.
+DJF에는 SH에서 상승하고 NH에서 하강하는 ``겨울 셀''이 우세하고,
+JJA에는 반대이다.  이 비대칭이 몬순과 ITCZ의 계절 이동을 구동한다.
+\end{hisublock}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Zonal-Mean Temperature}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 24--25
+  % Description: Latitude--pressure cross-sections of [T] for DJF and JJA.
+  %   Steepest meridional temperature gradient always in the winter hemisphere.
+  %   Tropical tropopause is higher (~100 hPa) and colder (~190 K);
+  %   extratropical tropopause is lower (~300 hPa) and warmer (~220 K).
+  \includegraphics[width=0.85	extwidth]{images/ch03/p24_img01.png}
+  \caption{Zonal-mean temperature $[\bar{T}]$ (K) for (a)~DJF and (b)~JJA.}
+  \label{fig:ch03-zmt-seasonal}
+\end{figure}
+
+\begin{definition}[Tropopause structure]\tight
+The tropopause --- the boundary between the troposphere and stratosphere --- has a
+fundamentally different character in the tropics and extratropics:
+\begin{multicols}{2}
+\textgr{Tropical tropopause:}
+\begin{itemize}
+  \item Height: $\sim$100\,hPa ($\sim$16--17\,km)
+  \item Temperature: $\sim$190\,K ($-83^{\circ}$C)
+  \item Set by deep convective overshooting and radiative balance
+\end{itemize}
+
+\columnbreak
+
+\textgr{Extratropical tropopause:}
+\begin{itemize}
+  \item Height: $\sim$300\,hPa ($\sim$9--12\,km)
+  \item Temperature: $\sim$220\,K ($-53^{\circ}$C)
+  \item Set by baroclinic eddy mixing and radiative processes
+\end{itemize}
+\end{multicols}
+The global-mean tropospheric lapse rate is approximately
+$\Gamma \approx 6.5$\,K\,km$^{-1}$.
+\end{definition}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Vertical Temperature Profiles}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 26
+  % Description: Vertical profiles of temperature at representative latitudes
+  %   (equator, 45N, 75N).  Shows tropical tropopause higher and colder than
+  %   extratropical tropopause.  Lapse rate ~6.5 K/km in the troposphere.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p26_img01.jpeg}
+  \caption{Vertical temperature profiles at representative latitudes.}
+  \label{fig:ch03-temp-profiles}
+\end{figure}
+
+\hisu{열대 대류권계면이 더 높고 더 차가운 것은, 깊은 대류(deep convection)가
+공기를 높이까지 밀어올리기 때문이다.  반면 중위도 대류권계면은 경압 불안정에 의한
+에디 혼합이 결정한다.}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{Quasi-Biennial Oscillation (QBO)}
+\label{sec:ch03-qbo}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 27--28
+  % Description: Time--height diagram of equatorial stratospheric temperature
+  %   (or zonal wind) anomalies, showing the QBO.  Alternating easterly and
+  %   westerly regimes descend from ~10 hPa to ~70 hPa with a period of
+  %   ~26 months.  Amplitude ~3 K in temperature.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p27_img01.jpeg}
+  \caption{Quasi-biennial oscillation (QBO) in equatorial stratospheric temperature anomalies.}
+  \label{fig:ch03-qbo}
+\end{figure}
+
+\begin{definition}[Quasi-Biennial Oscillation (QBO)]\tight
+The QBO is a quasi-periodic oscillation of the equatorial stratospheric zonal wind between
+easterly and westerly regimes, with:
+\begin{itemize}
+  \item \textgr{Period}: $\sim$26--28 months (hence ``quasi-biennial'')
+  \item \textgr{Amplitude}: $\sim$20--30\,m\,s$^{-1}$ in zonal wind; $\sim$3\,K in temperature
+  \item \textgr{Vertical propagation}: phases descend from $\sim$10\,hPa to $\sim$70\,hPa
+  \item \textgr{Mechanism}: driven by the interaction of vertically propagating equatorial
+        waves (Kelvin and mixed Rossby--gravity waves) with the mean flow
+\end{itemize}
+\end{definition}
+
+\begin{hisublock}
+QBO = 준 2년 진동.  적도 성층권에서 동풍과 서풍이 약 2년 주기로 교대한다.
+이것은 대류권에서 발생한 적도 파동(Kelvin wave, MRG wave)이 성층권으로
+전파되어 평균류를 가속/감속시키는 wave--mean flow interaction의 결과이다.
+QBO는 몬순, 극소용돌이 등 대류권 기후에도 원격 영향을 미친다.
+\end{hisublock}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{ITCZ Seasonal Migration}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 29
+  % Description: Latitude--month cross-section of zonal-mean omega at 500 hPa,
+  %   showing the seasonal migration of the ITCZ (band of negative omega).
+  %   Ascent migrates from ~5S in DJF to ~10N in JJA over the continents.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p29_img01.jpeg}
+  \caption{Latitude--month cross-section of $[\bar{\omega}]$ at 500\,hPa, illustrating
+           the seasonal migration of the ITCZ.}
+  \label{fig:ch03-itcz-migration}
+\end{figure}
+
+\begin{remark}[ITCZ migration]\tight
+The ITCZ (Intertropical Convergence Zone) follows the seasonal cycle of maximum insolation
+with a lag of $\sim$1--2 months:
+\begin{itemize}
+  \item DJF: ITCZ near $\sim$$5^{\circ}$S (over continents) to $\sim$$5^{\circ}$N (over oceans)
+  \item JJA: ITCZ shifts to $\sim$$10^{\circ}$N over the continents (up to $25^{\circ}$N
+        over South Asia --- the monsoon)
+  \item The ITCZ migrates farther from the equator over continents than over oceans, because
+        land surfaces have lower thermal inertia.
+\end{itemize}
+\end{remark}
+
+\hisu{ITCZ의 계절 이동은 강수와 대규모 순환의 계절 변동을 이해하는 열쇠이다.
+ITCZ가 $5^{\circ}$N에서 $25^{\circ}$N까지 이동하는 것이 바로 아시아 몬순의 본질이다.}
+
+
+% =======================================================================================
+\section{Precipitation}
+\label{sec:ch03-precip}
+% =======================================================================================
+
+\subsection{Annual-Mean Precipitation}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 30--31
+  % Description: Annual-mean precipitation (mm/day) from GPCP or CMAP.
+  %   Key features: ITCZ (7--13 mm/day), warm pool / Maritime Continent
+  %   (>9 mm/day), SPCZ extending SE from warm pool, midlatitude storm
+  %   tracks (3--5 mm/day), arid subtropics.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p30_img01.jpeg}
+  \caption{Annual-mean precipitation rate (mm\,day$^{-1}$).}
+  \label{fig:ch03-precip-ann}
+\end{figure}
+
+\begin{definition}[Major Precipitation Features]\tight
+\begin{itemize}
+  \item \textgr{ITCZ} (Intertropical Convergence Zone): a narrow band near $5$--$10^{\circ}$N with
+        precipitation rates of 7--13\,mm\,day$^{-1}$, driven by low-level convergence and deep
+        convection.
+  \item \textgr{Warm pool / Maritime Continent}: the region of highest annual-mean precipitation
+        ($>$9\,mm\,day$^{-1}$), centred over the western Pacific and Indonesia.
+  \item \textgr{SPCZ} (South Pacific Convergence Zone): extends south-eastward from the warm pool
+        into the subtropical South Pacific.
+  \item \textgr{Midlatitude storm tracks}: moderate precipitation (3--5\,mm\,day$^{-1}$) associated
+        with transient baroclinic eddies, especially over the North Pacific and North Atlantic.
+  \item \textgr{Arid subtropics}: the descending branches of the Hadley cell suppress precipitation
+        in the subtropical belt ($\sim$$15$--$30^{\circ}$\,N/S).
+\end{itemize}
+\end{definition}
+
+
+\subsection{Precipitation and Vertical Motion}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 32
+  % Description: Scatter plot or co-located maps of precipitation vs. 500 hPa
+  %   omega, showing strong spatial correlation: regions of ascent (omega < 0)
+  %   are regions of high precipitation.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p32_img01.png}
+  \caption{Spatial relationship between precipitation and 500\,hPa $\omega$.}
+  \label{fig:ch03-precip-omega}
+\end{figure}
+
+\begin{remark}[Precipitation--vertical motion linkage]\tight
+There is a strong spatial correlation between annual-mean precipitation and
+mid-tropospheric ascent ($\omega_{500} < 0$).  This reflects the fundamental mechanism:
+large-scale \textgr{upward motion} produces adiabatic cooling, saturation, condensation,
+and precipitation.  Conversely, regions of large-scale descent are dry.
+\end{remark}
+
+\hisu{강수 = 상승 운동과 밀접하게 연결.  특히 ITCZ와 warm pool에서 $\omega < 0$이 강하고
+강수가 많다.  아열대 고기압 지역에서는 $\omega > 0$ (하강)이고 강수가 적다.}
+
+
+\subsection{Seasonal Precipitation}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 33--34
+  % Description: Precipitation for DJF and JJA.  JJA: ITCZ shifts far north,
+  %   intense rainfall over South/Southeast Asia, West Africa (monsoons).
+  %   DJF: ITCZ shifts south, maritime continent rainfall broadens, South
+  %   American and Australian monsoons active.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p33_img01.png}
+  \caption{Precipitation rate (mm\,day$^{-1}$) for (a)~DJF and (b)~JJA.}
+  \label{fig:ch03-precip-seasonal}
+\end{figure}
+
+\begin{remark}[Seasonal precipitation patterns]\tight
+\begin{multicols}{2}
+\textgr{JJA:}
+\begin{itemize}
+  \item ITCZ shifts far northward
+  \item Asian monsoon: intense rainfall over India, Bangladesh, Southeast Asia
+  \item West African monsoon active
+  \item NH storm tracks weaken
+\end{itemize}
+
+\columnbreak
+
+\textgr{DJF:}
+\begin{itemize}
+  \item ITCZ near or south of equator
+  \item Maritime Continent rainfall broadens
+  \item Australian and South American monsoons
+  \item NH storm tracks strengthen $\Rightarrow$ enhanced midlatitude precipitation
+\end{itemize}
+\end{multicols}
+\end{remark}
+
+
+\subsection{Diabatic Heating Rate}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 35
+  % Description: Map of column-integrated diabatic heating rate Q (850--500 hPa).
+  %   Positive values in ITCZ and warm pool (latent heat release dominates
+  %   radiative cooling); negative values in subtropics (radiative cooling
+  %   dominates).
+  \includegraphics[width=0.85	extwidth]{images/ch03/p35_img01.jpeg}
+  \caption{Diabatic heating rate $Q$ averaged over the 850--500\,hPa layer (K\,day$^{-1}$).}
+  \label{fig:ch03-diabatic}
+\end{figure}
+
+\begin{remark}[Diabatic heating: latent heat vs.\ radiative cooling]\tight
+The net diabatic heating rate in the lower-to-mid troposphere is the residual between
+\textgr{latent heat release} (positive, associated with precipitation) and
+\textgr{radiative cooling} (negative, especially longwave emission to space).
+In the ITCZ and warm pool, latent heating strongly dominates ($Q > 0$).  In the clear-sky
+subtropics, radiative cooling dominates ($Q < 0$).
+\end{remark}
+
+
+% =======================================================================================
+\section{Sea Surface Temperature (SST)}
+\label{sec:ch03-sst}
+% =======================================================================================
+
+\subsection{Annual-Mean SST Distribution}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 36--37
+  % Description: Annual-mean SST (deg C).  Warm pool in western Pacific (>28C),
+  %   cold tongue in eastern equatorial Pacific (~22--24C), western boundary
+  %   currents creating sharp SST gradients (Gulf Stream, Kuroshio), eastern
+  %   boundary upwelling zones (cold SST off California, Peru, West Africa).
+  \includegraphics[width=0.85	extwidth]{images/ch03/p36_img01.jpeg}
+  \caption{Annual-mean sea surface temperature ($^{\circ}$C).}
+  \label{fig:ch03-sst-ann}
+\end{figure}
+
+\begin{definition}[Key SST Features]\tight
+\begin{itemize}
+  \item \textgr{Warm pool} (western Pacific, $>$28$^{\circ}$C): the warmest open-ocean waters on Earth,
+        driven by the accumulation of warm water by the trade winds and weak upwelling.
+  \item \textgr{Cold tongue} (eastern equatorial Pacific, $\sim$22--24$^{\circ}$C): maintained by
+        equatorial upwelling driven by the easterly trade winds (Ekman divergence).
+  \item \textgr{Western boundary currents}: the Gulf Stream and Kuroshio create sharp SST fronts
+        ($\sim$$5$--$10^{\circ}$C across $\sim$100\,km).
+  \item \textgr{Eastern boundary upwelling}: cold SST off the coasts of California, Peru/Chile,
+        and Northwest Africa, driven by equatorward winds and offshore Ekman transport.
+\end{itemize}
+\end{definition}
+
+\hisu{SST 분포의 동서 비대칭: 서태평양 warm pool vs.\ 동태평양 cold tongue.
+이 비대칭은 무역풍(trade winds)에 의해 유지되며,
+ENSO 현상에서 이 비대칭이 약화/강화되면서 기후 변동이 발생한다.}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{SST and Precipitation}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 38--39
+  % Description: Overlay or side-by-side comparison of SST and precipitation.
+  %   Heavy rainfall over the warmest SSTs (warm pool), but also shows that
+  %   high SST alone is insufficient --- need large-scale convergence.
+  %   Eastern equatorial Pacific has warm SST but less rainfall than western
+  %   Pacific.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p38_img01.png}
+  \caption{Relationship between SST and precipitation.  Heavy rainfall occurs over the
+           warmest SSTs, but convergence is also required.}
+  \label{fig:ch03-sst-precip}
+\end{figure}
+
+\begin{remark}[SST--precipitation relationship]\tight
+While precipitation is concentrated over the warmest SSTs, \textgr{high SST alone is not
+sufficient} for heavy rainfall.  Two conditions must be met:
+\begin{enumerate}
+  \item SST must exceed a threshold of $\sim$26--27$^{\circ}$C to support deep convection.
+  \item \textgr{Large-scale low-level convergence} must be present to provide the moisture flux
+        convergence and trigger convective instability.
+\end{enumerate}
+The eastern equatorial Pacific often has SST $>$ 26$^{\circ}$C but relatively low
+precipitation because the Walker circulation drives low-level divergence there.
+\end{remark}
+
+\begin{hisublock}
+SST만 높다고 강수가 오는 건 아니다 --- 대규모 수렴도 반드시 필요하다.
+서태평양 warm pool에서는 SST가 높고 수렴도 있어서 강수가 강하지만,
+동태평양에서는 SST가 비교적 따뜻해도 하강 기류(Walker circulation의 하강 지역)
+때문에 강수가 적다.
+이것은 열대 기후를 이해하는 데 핵심적인 개념이다.
+\end{hisublock}
+
+
+% ---------------------------------------------------------------------------------------
+\subsection{SST and Surface Winds}
+% ---------------------------------------------------------------------------------------
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 40--41
+  % Description: SST overlaid with surface wind vectors, showing the trade
+  %   winds driving equatorial upwelling (cold tongue), Ekman transport, and
+  %   the relationship between wind-driven ocean circulation and SST
+  %   distribution.
+  \includegraphics[width=0.85	extwidth]{images/ch03/p40_img01.png}
+  \caption{SST ($^{\circ}$C) with surface wind vectors, illustrating the wind--SST coupling.}
+  \label{fig:ch03-sst-wind}
+\end{figure}
+
+\begin{remark}[SST--wind coupling]\tight
+The relationship between SST and surface winds is fundamentally \textgr{two-way}:
+\begin{itemize}
+  \item \textgr{Wind $\rightarrow$ SST}: trade winds drive equatorial Ekman divergence and
+        upwelling, maintaining the cold tongue.  Wind stress curl drives subtropical gyre
+        circulation and western boundary currents.
+  \item \textgr{SST $\rightarrow$ wind}: warm SSTs reduce atmospheric static stability in the
+        boundary layer, enhancing surface turbulence and mixing momentum downward from the
+        free troposphere, locally strengthening surface winds over warm SST fronts.
+\end{itemize}
+\end{remark}
+
+\begin{hisublock}
+무역풍이 적도 용승(equatorial upwelling)을 일으켜 cold tongue를 유지하고,
+cold tongue가 다시 동서 기압 경도를 강화하여 무역풍을 유지하는 양의 피드백 루프가 존재한다
+(Bjerknes feedback).  이 피드백이 약해지면 El Ni\~{n}o가 발생한다.
+\end{hisublock}
+
+\vspace{12pt}
+\begin{highlight}
+\textgr{Chapter Summary.}
+The observed atmospheric general circulation is characterised by: (1)~thermally driven
+overturning cells (Hadley, Ferrel, polar); (2)~subtropical jet streams maintained by the
+thermal wind relationship; (3)~strong land--sea contrasts that break zonal symmetry,
+especially in the NH; (4)~dramatic seasonal variations driven by the migration of the
+solar heating maximum; and (5)~tight coupling between SST, precipitation, and the
+large-scale wind field.  These observations motivate the dynamical theories developed in
+subsequent chapters.
+\end{highlight}

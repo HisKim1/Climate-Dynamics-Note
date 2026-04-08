@@ -1,0 +1,66 @@
+% =============================================================================
+%								VARIABLES
+% =============================================================================
+
+\usepackage{amsmath, amssymb, amsthm, multicol}
+\newcommand{\multicolsendspace}{-0.7\baselineskip}
+\AddToHook{env/multicols/after}{\vspace{\multicolsendspace}}
+\AddToHook{env/multicols*/after}{\vspace{\multicolsendspace}}
+
+\newcommand{\AUTHOR}{Hisu Kim}
+\newcommand{\CLIENT}{}
+\newcommand{\DATE}{2026 Spring}
+\newcommand{\VERSION}{0.0.1}
+\newcommand{\TITLE}{Climate Dynamics}
+\newcommand{\SUBTITLE}{에서 살아남기}
+\newcommand{\SUBJECT}{}
+\newcommand{\URL}{https://hiskim1.github.io}
+
+\numberwithin{equation}{section}
+\renewcommand{\thesection}{\arabic{section}}
+\hbadness=10000
+\hfuzz=40pt
+
+\newtheoremstyle{accentplain}%
+  {6pt}% Space above
+  {6pt}% Space below
+  {\normalfont}% Body font
+  {}% Indent amount
+  {\color{accent}\bfseries}% Theorem head font
+  { }% Punctuation after theorem head
+  {0.5em}% Space after theorem head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ \textcolor{accent}{| #3}}
+
+  }% Theorem head spec
+
+\theoremstyle{accentplain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{example}{Example}
+\newtheorem{question}{Question}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{condition}{Condition}
+\numberwithin{equation}{section}
+
+\renewcommand\qedsymbol{$\blacksquare$}
+\makeatletter
+\renewenvironment{proof}[1][\proofname]{%
+  \par\pushQED{\qed}%
+  \normalfont\topsep6\p@\@plus6\p@\relax
+  \edef\@proof@opt{#1}%
+  \edef\@proof@default{\proofname}%
+  \ifx\@proof@opt\@proof@default
+  \def\@proof@label{\bfseries\color{accent}\proofname\normalfont\hspace{0.5em}}%
+  \else
+  \def\@proof@label{\bfseries\color{accent}\proofname\normalfont\ [\@proof@opt]\hspace{0.5em}}%
+  \fi
+  \trivlist
+\item[\hskip\labelsep\@proof@label]\ignorespaces
+}{\popQED\endtrivlist\@endpefalse}
+\makeatother
+
+\newcommand{\tight}{\leavevmode\par\vspace{-8pt}}
+\newcommand{\textgr}[1]{{\textbf{\color{accent}#1}}}
