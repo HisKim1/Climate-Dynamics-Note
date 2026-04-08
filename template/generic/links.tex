@@ -1,0 +1,34 @@
+\usepackage[hyperindex=true,bookmarks=true,bookmarksopen=false]{hyperref}
+\usepackage{bookmark}
+\usepackage[all]{hypcap} % moves the ref jumping points to the top of images (instead of the caption)
+
+%----------------------------------------------------------------------------------------
+%   HYPERLINKS IN THE DOCUMENTS
+%----------------------------------------------------------------------------------------
+\hypersetup{
+hidelinks,
+breaklinks=true,
+urlcolor=accent,
+pdftitle={\TITLE},
+pdfauthor={\AUTHOR},
+pdfsubject={\SUBJECT}}
+
+\bookmarksetup{
+open,
+numbered,
+addtohook={%
+\ifnum\bookmarkget{level}=0 % chapter
+\bookmarksetup{bold}%
+\fi
+\ifnum\bookmarkget{level}=-1 % part
+\bookmarksetup{color=accent,bold}%
+\fi
+}
+}
+
+%----------------------------------------------------------------------------------------
+%   BOLD HREF
+%----------------------------------------------------------------------------------------
+
+\let\oldhref\href
+\renewcommand{\href}[2]{\oldhref{#1}{\headingfontfamily\textbf{#2}}}

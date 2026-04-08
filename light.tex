@@ -1,0 +1,21 @@
+% This work is licensed under the GNU aGPL v3 by apehex
+% https://github.com/apehex/
+% !TeX program = lualatex
+
+\documentclass[11pt,oneside]{book} % Default font size and centered equations
+\usepackage{kotex}
+\setmainhangulfont[
+  BoldFont={Noto Serif CJK KR},
+  ItalicFont={Noto Serif CJK KR},
+  BoldItalicFont={Noto Serif CJK KR}
+]{Noto Serif CJK KR}
+% =======================================================================================
+\input{context} % Global settings
+\input{template/book/main} % Commands and style of the template
+\microtypesetup{protrusion=false,expansion=false}
+
+% =======================================================================================
+\togglethemelight
+
+% =======================================================================================
+\input{main}
