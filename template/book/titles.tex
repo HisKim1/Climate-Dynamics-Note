@@ -28,29 +28,28 @@
     % Full-page background fill
     \fill[bg] (current page.south west) rectangle (current page.north east);
     %
-    % --- Hexagon pattern from cover, at 70% opacity ---
+    % --- Hexagon pattern from cover ---
     \begin{scope}[opacity=0.7]
-      % top left cluster
       \foreach \i in {0.5,...,20} {\drawhexagon{}{$(current page.north west)+(2.5,0)$}{\i cm}{0}{accent!60,draw};}
-      % bottom left cluster
       \foreach \i in {2.5,...,22} {\drawhexagon{}{$(current page.west)+(2.5,-5)$}{\i cm}{0}{accent!60,draw};}
-      % center right cluster
       \foreach \i in {0.5,...,22} {\drawhexagon{}{$(current page.north east)+(0,-9.5)$}{\i cm}{0}{accent!90,draw};}
-      % bottom right cluster
       \foreach \i in {21,...,2} {\drawhexagon{}{$(current page.south east)+(-0.2,-0.45)$}{\i cm}{0}{accent!85,draw};}
     \end{scope}
     %
-    % --- Dark strip behind the title for readability ---
-    \fill[bg, opacity=0.85] ($(current page.center)+(0,1.5)$) rectangle ($(current page.center)+(\paperwidth,-3)$);
-    \fill[bg, opacity=0.85] ($(current page.center)+(0,1.5)$) rectangle ($(current page.center)+(-\paperwidth,-3)$);
+    % --- Semi-transparent white overlay (30% more opaque = total ~0.6 white) ---
+    \fill[bg, opacity=0.6] (current page.south west) rectangle (current page.north east);
     %
-    % --- Part number label ---
-    \node[anchor=south west, inner sep=0pt, xshift=2cm, yshift=2cm] at (current page.center) {%
+    % --- PART N label: left-aligned, above center ---
+    \node[anchor=south west, inner sep=0pt] at ($(current page.center)+(-0.42\paperwidth, 0.8)$) {%
       \fontsize{14}{16}\selectfont\headingfontfamily\color{accent}\MakeUppercase{Part \thepart}%
     };
-  \end{tikzpicture}
-  \vspace*{8.5cm}%
-  \parbox{\textwidth}{\raggedright\fontsize{28}{34}\selectfont\headingfontfamily\color{fg}\MakeUppercase}}
+    %
+    % --- Title: centered on page ---
+    \node[anchor=center, inner sep=0pt, text width=0.84\paperwidth, align=center] at (current page.center) {%
+      \fontsize{28}{34}\selectfont\headingfontfamily\color{fg}\currentparttitle%
+    };
+  \end{tikzpicture}%
+  \phantom}
 
 \let\originalpart\part
 
