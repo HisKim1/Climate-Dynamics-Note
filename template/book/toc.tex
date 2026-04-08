@@ -2,6 +2,8 @@
 
 \makeatletter
 
+\renewcommand{\@pnumwidth}{2.5em} % Widen the page-number column (default 1.55em)
+
 %----------------------------------------------------------------------------------------
 %   PAGE LAYOUT
 %----------------------------------------------------------------------------------------
@@ -9,7 +11,7 @@
 \renewcommand{\tableofcontents}{
 \backgroundbarvisiblefalse
 \pagestyle{empty} % No headers
-\newgeometry{left=0cm} % No left margin
+\newgeometry{left=0cm,right=1cm} % No left margin, reduced right margin
 \setcounter{tocdepth}{1} % TOC depth
 
 {
@@ -47,8 +49,8 @@
   \vskip 0pt
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{bgalt}{\vtop{\hsize=\dimexpr\textwidth-4cm\relax
-      \hspace*{4cm}\strut\color{fg}\bfseries\sffamily\uppercase{#1}
+    \leavevmode\colorbox{bgalt}{\vtop{\hsize=\dimexpr\textwidth-2.5cm\relax
+      \hspace*{2.5cm}\strut\color{fg}\bfseries\sffamily\uppercase{#1}
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -61,8 +63,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{bg}{\vtop{\hsize=\dimexpr\textwidth-4cm\relax
-      \hspace*{4cm}\strut\color{fg}\sffamily#1
+    \leavevmode\colorbox{bg}{\vtop{\hsize=\dimexpr\textwidth-2.5cm\relax
+      \hspace*{2.5cm}\strut\color{fg}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup
@@ -75,8 +77,8 @@
   \vskip 0em
   \begingroup
     \parindent \z@ \rightskip \@pnumwidth
-    \leavevmode\colorbox{bg}{\vtop{\hsize=\dimexpr\textwidth-4cm\relax
-      \hspace*{4cm}\strut\color{fg}\sffamily#1
+    \leavevmode\colorbox{bg}{\vtop{\hsize=\dimexpr\textwidth-2.5cm\relax
+      \hspace*{2.5cm}\strut\color{fg}\sffamily#1
       \nobreak\hfill\nobreak\hb@xt@\@pnumwidth{\hss #2}\strut}}\par
     \penalty\@highpenalty
   \endgroup

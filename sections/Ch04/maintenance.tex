@@ -22,7 +22,7 @@ zonal mean---together with diabatic heating and surface friction.
 % ---- Notation ----
 Throughout this chapter we use the following notation conventions.
 
-\begin{definition}[Zonal-Mean and Eddy Decomposition]\tight
+\begin{definition}[Zonal-Mean and Eddy Decomposition]
 For any atmospheric variable $a(\lambda,\phi,p,t)$,
 \[
   a = a_Z + a_E,
@@ -102,7 +102,7 @@ converts the advection terms to \textgr{flux form}:
   }
 \end{equation}
 
-\begin{remark}\tight
+\begin{remark}
 The flux form is essential because zonal averaging and vertical
 integration commute cleanly with the divergence operators.
 \end{remark}
@@ -110,7 +110,7 @@ integration commute cleanly with the divergence operators.
 % --------------------------------------------------------------------------
 \subsubsection{Zonal Averaging}
 
-\begin{proposition}[Vanishing of Zonal Derivatives]\tight
+\begin{proposition}[Vanishing of Zonal Derivatives]
 For any periodic function $a(\lambda)$ with period $2\pi$,
 \begin{equation}\label{eq:zonal_deriv_vanish}
   \left(\frac{\partial a}{\partial \lambda}\right)_Z = 0.
@@ -196,7 +196,7 @@ Using $v = v_Z + v_E$ and $T = T_Z + T_E$:
   (vT)_Z = v_Z\,T_Z + (v_E\,T_E)_Z.
 \end{equation}
 
-\begin{remark}[Mean-Flow Contribution is Negligible]\tight
+\begin{remark}[Mean-Flow Contribution is Negligible]
 For quasi-geostrophic flow, the geostrophic meridional wind $v_g$ satisfies
 \[
   v_g = \frac{1}{f}\frac{1}{a}\frac{\partial\Phi}{\partial\lambda},
@@ -240,7 +240,7 @@ Taking a \textbf{time mean} of \eqref{eq:thermo_ZV} and assuming a
   }
 \end{equation}
 
-\begin{theorem}[Steady-State Heat Balance]\tight
+\begin{theorem}[Steady-State Heat Balance]
 In the time-mean, zonally and vertically averaged thermodynamic balance,
 the convergence of the meridional heat transport balances diabatic
 heating.  Since the mean-flow contribution to $\overline{(vT)}_{ZM}$ is
@@ -420,7 +420,7 @@ In a time-mean steady state ($\partial\langle u_Z\rangle/\partial t = 0$):
   }
 \end{equation}
 
-\begin{theorem}[Steady-State Momentum Balance]\tight
+\begin{theorem}[Steady-State Momentum Balance]
 The convergence of the eddy momentum flux balances surface friction.
 Where momentum flux converges (midlatitudes), westerlies are maintained;
 where it diverges (tropics and high latitudes), easterlies or weak
@@ -483,7 +483,7 @@ westerlies result.
 For the eddy fluxes to be nonzero in the zonal mean, \textit{systematic
 phase relationships} must exist between the wave perturbations.
 
-\begin{proposition}[Phase Condition for Nonzero Heat Flux]\tight
+\begin{proposition}[Phase Condition for Nonzero Heat Flux]
 Consider wave-form perturbations
 $v_E = \hat{v}\cos(k\lambda - \nu t)$ and
 $T_E = \hat{T}\cos(k\lambda - \nu t + \delta)$.
@@ -499,7 +499,7 @@ perturbation}.
 \hisu{$\delta = 0$이면 최대, $\delta = \pm\pi/2$이면 0.
 관측에서는 온도가 기압골 뒤에 위치 ($\delta > 0$) $\Rightarrow$ 북쪽으로 열 수송.}
 
-\begin{proposition}[Phase Condition for Nonzero Momentum Flux]\tight
+\begin{proposition}[Phase Condition for Nonzero Momentum Flux]
 For nonzero $(u_E\,v_E)_Z$, the trough/ridge lines of the wave must be
 \textbf{tilted} in the horizontal plane.  In the Northern Hemisphere,
 \textgr{NE--SW tilted} trough lines yield northward (poleward)
@@ -543,7 +543,7 @@ momentum fluxes simultaneously.
 % --------------------------------------------------------------------------
 \subsubsection{Quasi-Geostrophic Potential Vorticity}
 
-\begin{definition}[QG Potential Vorticity]\tight
+\begin{definition}[QG Potential Vorticity]
 The quasi-geostrophic potential vorticity is defined as
 \begin{equation}\label{eq:QGPV}
   Q = (\zeta_g + f) + \frac{\partial}{\partial p}
@@ -583,7 +583,7 @@ steady-state budget this term is negligible ($v_Z \approx 0$).
 
 \paragraph{Second term: vorticity flux $=$ convergence of momentum flux.}
 
-\begin{proposition}[Vorticity Flux Identity]\tight
+\begin{proposition}[Vorticity Flux Identity]
 \begin{equation}\label{eq:vort_flux}
   (v\zeta)_Z
   = -\frac{1}{a\cos^2\phi}\frac{\partial}{\partial\phi}
@@ -618,7 +618,7 @@ Hence, in spherical coordinates with the metric factor:
 
 \paragraph{Third term: thickness flux $=$ vertical derivative of heat flux.}
 
-\begin{proposition}[Thickness Flux Identity]\tight
+\begin{proposition}[Thickness Flux Identity]
 \begin{equation}\label{eq:thick_flux}
   \left[v\frac{\partial}{\partial p}
     \left(\frac{f^2}{\sigma}\frac{\partial\Psi}{\partial p}\right)\right]_Z
@@ -660,7 +660,7 @@ the planetary term for the eddy part):
   }
 \end{equation}
 
-\begin{remark}\tight
+\begin{remark}
 This is a key result: the eddy PV flux is \textit{entirely determined}
 by the eddy momentum flux and eddy heat flux.
 \end{remark}
@@ -675,7 +675,7 @@ Observations and theory show that \textgr{eddy PV transport is downgradient}:
   \qquad K_Q > 0.
 \end{equation}
 
-\begin{theorem}[Resolution of the Upgradient Momentum Puzzle]\tight
+\begin{theorem}[Resolution of the Upgradient Momentum Puzzle]
 The meridional gradient of mean QG PV is dominated by the planetary
 vorticity gradient $\beta = \partial f/\partial y$:
 \[
@@ -757,7 +757,7 @@ Rearranging \eqref{eq:EP_umom} more explicitly:
 % --------------------------------------------------------------------------
 \subsubsection{The Non-Acceleration Theorem}
 
-\begin{theorem}[Non-Acceleration Theorem (Charney and Drazin, 1961)]\tight
+\begin{theorem}[Non-Acceleration Theorem (Charney and Drazin, 1961)]
 Under steady, conservative (adiabatic, non-dissipative) conditions
 ($H = 0$, $F_\lambda = 0$, $\partial/\partial t = 0$):
 \begin{enumerate}
@@ -810,7 +810,7 @@ of the mean state.
 % --------------------------------------------------------------------------
 \subsubsection{Definition of the EP Flux Vector}
 
-\begin{definition}[Eliassen--Palm Flux]\tight
+\begin{definition}[Eliassen--Palm Flux]
 The \textgr{EP flux vector} $\mathbf{F}$ is defined (in the
 $\phi$--$p$ plane) as
 \begin{equation}\label{eq:EP_flux}
@@ -849,7 +849,7 @@ where
   + \frac{\partial F^{(p)}}{\partial p}.
 \end{equation}
 
-\begin{theorem}[Non-Acceleration in EP Flux Form]\tight
+\begin{theorem}[Non-Acceleration in EP Flux Form]
 The non-acceleration condition is equivalent to
 \begin{equation}\label{eq:non_accel_EP}
   \nabla\cdot\mathbf{F} = 0.
@@ -873,7 +873,7 @@ $\nabla\cdot\mathbf{F} = 0$: 비가속 조건 (보존적 파동의 전파)}
   \label{fig:ch04_ep_flux_xsec}
 \end{figure}
 
-\begin{remark}[Interpretation of EP Flux Diagrams]\tight
+\begin{remark}[Interpretation of EP Flux Diagrams]
 In EP flux cross-section diagrams:
 \begin{itemize}
   \item Arrows show the direction of wave-activity propagation.
@@ -912,7 +912,7 @@ The mean meridional circulation satisfies
   \label{eq:gen_omegamean}
 \end{align}
 
-\begin{remark}[The Ferrel Cell]\tight
+\begin{remark}[The Ferrel Cell]
 The midlatitude \textgr{Ferrel cell} is an indirect (thermally indirect)
 circulation: warm air sinks and cold air rises.  It is \textbf{not}
 driven by differential heating (like the Hadley cell) but is forced
@@ -943,7 +943,7 @@ the true eddy impact.
 % --------------------------------------------------------------------------
 \subsubsection{Residual Mean Meridional Circulation}
 
-\begin{definition}[Residual Circulation]\tight
+\begin{definition}[Residual Circulation]
 The residual meridional and vertical velocities are defined as
 \begin{align}
   v^* &\equiv v_Z - \frac{\partial}{\partial p}
@@ -972,7 +972,7 @@ The TEM momentum and thermodynamic equations become:
   \label{eq:TEM_theta}
 \end{align}
 
-\begin{remark}\tight
+\begin{remark}
 In the TEM formulation, \eqref{eq:TEM_theta} contains \textbf{no
 explicit eddy flux terms}---the eddy heat flux has been absorbed into
 the definition of $\omega^*$.  The entire eddy effect on the mean flow
@@ -1005,7 +1005,7 @@ This section provides a quantitative overview.
 % --------------------------------------------------------------------------
 \subsubsection{Top-of-Atmosphere Radiation Balance}
 
-\begin{definition}[Net Radiation at TOA]\tight
+\begin{definition}[Net Radiation at TOA]
 The net downward radiation at the top of the atmosphere is
 \begin{equation}\label{eq:R_net}
   R_{\text{net}}(\phi) = S_{\text{abs}}(\phi) - F_{\text{OLR}}(\phi),

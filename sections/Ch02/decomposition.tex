@@ -8,7 +8,7 @@
 % ------------------------------------------------------------------
 
 \begin{definition}[Time Average]
-\tight
+
   For any atmospheric variable $u = u(\mathbf{x}, t)$, the \textbf{time average} over
   a period $\tau$ is
   \begin{equation}\label{eq:time-avg}
@@ -18,7 +18,7 @@
 \end{definition}
 
 \begin{definition}[Reynolds Decomposition]
-\tight
+
   Any variable $u$ is decomposed into its time-mean and its deviation:
   \begin{equation}\label{eq:reynolds}
     u \;=\; \overline{u} \;+\; u'
@@ -35,7 +35,7 @@
 \subsubsection{Properties of the Time Average}
 
 \begin{proposition}[Properties of the time average operator]\label{prop:reynolds-props}
-\tight
+
   For any variables $u, v$ and constants $a, b$:
   \begin{enumerate}
     \item \textgr{Linearity:} $\overline{au + bv} = a\,\overline{u} + b\,\overline{v}$
@@ -62,7 +62,7 @@
 \subsubsection{Product Rule}
 
 \begin{proposition}[Reynolds Average of a Product]\label{prop:reynolds-product}
-\tight
+
   For any variables $u$ and $v$:
   \begin{equation}\label{eq:reynolds-product}
     \overline{uv} \;=\; \overline{u}\,\overline{v} \;+\; \overline{u'v'}
@@ -87,7 +87,7 @@
 \end{proof}
 
 \begin{remark}
-\tight
+
   The term $\overline{u'v'}$ is the \textbf{covariance} of $u$ and $v$.
   \begin{hisublock}
     공분산 = 상관 관계를 나타냄.
@@ -102,7 +102,7 @@
 % ------------------------------------------------------------------
 
 \begin{definition}[Zonal Average]
-\tight
+
   The \textbf{zonal average} (average along a latitude circle) is
   \begin{equation}\label{eq:zonal-avg}
     [u] \;=\; \frac{1}{2\pi}\int_0^{2\pi} u\,d\lambda
@@ -111,7 +111,7 @@
 \end{definition}
 
 \begin{definition}[Eddy (Wave) Component]
-\tight
+
   The departure from the zonal mean is the \textbf{eddy} or \textbf{wave} component:
   \begin{equation}\label{eq:eddy}
     u^{*} \;=\; u - [u]
@@ -122,7 +122,7 @@
 \subsubsection{Properties of the Zonal Average}
 
 \begin{proposition}[Properties of the zonal average operator]\label{prop:zonal-props}
-\tight
+
   Analogous to the time average:
   \begin{enumerate}
     \item $[au + bv] = a[u] + b[v]$ \hisu{: linearity}
@@ -137,7 +137,7 @@
 \end{proposition}
 
 \begin{proposition}[Zonal Average of a Product]\label{prop:zonal-product}
-\tight
+
   For any variables $u$ and $v$:
   \begin{equation}\label{eq:zonal-product}
     [uv] \;=\; [u]\,[v] \;+\; [u^{*}v^{*}]
@@ -158,7 +158,7 @@
 \end{proof}
 
 \begin{remark}
-  \tight
+
   The structure is identical to the Reynolds decomposition. The zonal mean
   operator $[\,\cdot\,]$ satisfies the same algebraic properties as the time mean
   $\overline{(\,\cdot\,)}$, so all product rules carry over by substitution.
@@ -174,7 +174,7 @@ Applying both the time average and the zonal average yields a
 zonal average:
 
 \begin{definition}[Four-Component Decomposition]
-\tight
+
   \begin{equation}\label{eq:four-decomp}
     \boxed{\;u \;=\;
     \underbrace{[\overline{u}]}_{\text{(i)}}
@@ -215,7 +215,7 @@ Each component has a distinct physical meaning:
 \end{hisublock}
 
 \begin{remark}
-\tight
+
   Subscript notation is often used for compactness:
   \begin{multicols}{2}
   \begin{itemize}
@@ -238,7 +238,7 @@ $v$. Using the four-component decomposition, the time-and-zonal mean of the flux
 $vX$ can be written as:
 
 \begin{proposition}[Flux Decomposition]\label{prop:flux-decomp}
-\tight
+
   \begin{equation}\label{eq:flux-decomp}
     \overline{(vX)}_Z
     \;=\; \underbrace{\overline{v}_Z\,\overline{X}_Z}_{\text{MMC}}
@@ -279,7 +279,7 @@ $vX$ can be written as:
 % ------------------------------------------------------------------
 
 \begin{definition}[Angular Momentum per unit mass]
-\tight
+
   The angular momentum per unit mass about Earth's axis is
   \begin{equation}\label{eq:ang-mom}
     M \;=\; (\Omega a\cos\phi + u)\,a\cos\phi
@@ -319,7 +319,7 @@ The continuity equation in pressure coordinates, integrated zonally and over the
 full pressure depth, constrains the meridional transport.
 
 \begin{proposition}[Mass balance constraint]\label{prop:mass-balance}
-\tight
+
   \begin{equation}\label{eq:vz-integral}
     \int_0^{p_0} \overline{v}_Z\,dp \;=\; 0
   \end{equation}
@@ -364,7 +364,7 @@ Applying the four-component flux decomposition to $uv$:
 \end{equation}
 
 \begin{remark}
-\tight
+
   \textgr{Key observation:} The term
   $\overline{u}_Z\,\overline{v}_Z \approx 0$
   because the mass-balance constraint \eqref{eq:vz-integral} forces
@@ -377,7 +377,7 @@ Applying the four-component flux decomposition to $uv$:
 \end{remark}
 
 \begin{remark}
-\tight
+
   The remaining terms have distinct latitudinal dominance:
   \begin{itemize}
     \item \textgr{Low latitudes:} The first pair
@@ -405,7 +405,7 @@ The same decomposition applies to the meridional heat transport $\overline{(vT)}
 \end{equation}
 
 \begin{remark}[Heat vs.\ Momentum Transport]
-\tight
+
   There is a fundamental asymmetry between heat and momentum transport:
   \begin{itemize}
     \item \textgr{Heat transport} is \textbf{down-gradient}:
@@ -433,7 +433,7 @@ Setting $X = v$ (i.e., examining the flux of $v$ by itself) gives the
 \textbf{variance decomposition}:
 
 \begin{proposition}[Variance Decomposition]\label{prop:var-decomp}
-\tight
+
   \begin{equation}\label{eq:var-decomp}
     \overline{(v^2)}_Z
     \;=\; (\overline{v}_Z)^2
@@ -455,7 +455,7 @@ Setting $X = v$ (i.e., examining the flux of $v$ by itself) gives the
 \end{hisublock}
 
 \begin{remark}
-\tight
+
   Unlike the flux decomposition where cross-terms can be nonzero, the variance
   decomposition has the clean property that each term is non-negative.
   Therefore the total variance is an exact sum of contributions from each
