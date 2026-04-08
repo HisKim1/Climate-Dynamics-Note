@@ -23,9 +23,9 @@
     % Thin accent-colored rule below header
     \renewcommand{\headrule}{{\color{accent}\hrule width\headwidth height 0.4pt \vskip-0.4pt}}
     \renewcommand{\headrulewidth}{0.4pt}
-    % Left: subsection name, Right: subsubsection name
+    % Left: subsection name, Right: subsubsection name (truncated to fit)
     \fancyhead[L]{\small\headingfontfamily\color{fgalt}\leftmark}
-    \fancyhead[R]{\small\headingfontfamily\color{fgalt}\rightmark}
+    \fancyhead[R]{\parbox[b]{0.65\textwidth}{\raggedleft\small\headingfontfamily\color{fgalt}\rightmark}}
     % Page number centered at the bottom
     \fancyfoot[C]{\small\headingfontfamily\thepage}
 }
