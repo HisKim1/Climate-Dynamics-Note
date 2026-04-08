@@ -437,6 +437,17 @@ westerlies result.
   \label{fig:ch04_surface_wind_momentum}
 \end{figure}
 
+\begin{remark}[Failure of Angular Momentum Conservation for the Subtropical Jet]
+If air in the upper branch of the Hadley cell conserved angular momentum perfectly as it moves poleward from the equator, we would predict:
+$$u(\phi) = \Omega a\left(\frac{\cos^2\phi_0}{\cos\phi} - \cos\phi\right)$$
+For $\phi_0 = 0^\circ$ (equatorial origin) and $\phi = 30^\circ$, this gives $u \approx 134$\,m\,s$^{-1}$ --- far exceeding the observed subtropical jet of $\sim$30--40\,m\,s$^{-1}$. This discrepancy demonstrates that \textgr{eddies} must be extracting angular momentum from the subtropics and depositing it in the midlatitudes, decelerating the subtropical jet.
+\end{remark}
+\begin{hisublock}
+각운동량 보존만으로는 아열대 제트를 ~134 m/s로 예측하지만, 실제는 ~30-40 m/s.
+이 차이는 에디가 아열대에서 운동량을 추출하여 중위도로 수송하기 때문이다.
+따라서 아열대 제트는 순수한 각운동량 보존 제트가 아니라, 에디에 의해 약화된 결과이다.
+\end{hisublock}
+
 % --------------------------------------------------------------------------
 \subsubsection{Heat Transport vs.\ Momentum Transport: A Fundamental Contrast}
 
@@ -526,6 +537,20 @@ momentum transport:
   \caption{Schematic of NE--SW tilted trough and ridge axes in a midlatitude Rossby wave.  Solid lines indicate troughs (low geopotential) and dashed lines indicate ridges.  The systematic tilt yields a nonzero zonal-mean eddy momentum flux $(u_Ev_E)_Z > 0$, resulting in poleward (northward in NH) momentum transport. \hisu{중위도 로스비 파의 기압골/기압능 축 기울기 모식도.  NE--SW 방향으로 기울어진 기압골 축 (실선)은 $[u_Ev_E] > 0$을 만들어 극 방향 운동량 수송을 일으킨다.}}
   \label{fig:ch04_trough_tilt}
 \end{figure}
+
+
+\begin{remark}[Hadley Circulation--Eddy Interaction Under Climate Change]
+The position and strength of the subtropical and eddy-driven jets depend on the interaction between the thermally driven Hadley cell and midlatitude eddies:
+\begin{itemize}
+\item \textgr{Tropical warming} increases the meridional temperature gradient at the poleward edge of the Hadley cell, strengthening baroclinicity and shifting the storm track poleward.
+\item The Hadley cell edge (where the thermally direct circulation transitions to eddy-driven dynamics) moves poleward under warming, taking the subtropical jet with it.
+\item This poleward shift of baroclinic activity further shifts the eddy-driven jet, amplifying the response.
+\end{itemize}
+\end{remark}
+\begin{hisublock}
+기후변화 시: 열대 온난화 → 해들리 셀 확장 → 아열대 제트 극방향 이동 → 경압 활동 극방향 이동 → 에디 구동 제트도 극방향 이동.
+이것이 관측되는 제트 극방향 이동의 메커니즘이다.
+\end{hisublock}
 
 
 % =============================================================================
@@ -989,6 +1014,30 @@ TEM의 장점:
     따라서 $\partial u_Z/\partial t = 0$.
   \item 잔차 순환은 Brewer--Dobson 순환과 밀접 (성층권에서 특히 유용).
 \end{itemize}
+\end{hisublock}
+
+
+\subsubsection{Downward Control Principle}
+
+\begin{definition}[Downward Control (Haynes and Shepherd, 1989)]
+The residual mean meridional circulation $\bar{v}^*$ at any level is determined by the EP flux divergence \emph{above} that level:
+$$\bar{v}^*(z) \propto -\frac{1}{f}\int_z^\infty \nabla\cdot\mathbf{F}\,dz'$$
+\end{definition}
+\begin{hisublock}
+하향 제어 원리: 어떤 고도의 잔류 평균 자오면 순환은 그 위에서의 EP 플럭스 발산에 의해 결정된다.
+에디가 상층에서 운동량을 수렴시키면, 그 아래에서 자오면 순환이 유도된다.
+\end{hisublock}
+
+This principle explains how \textgr{self-sustaining eddy-driven jets} work:
+\begin{enumerate}
+\item Baroclinic eddies generated in the lower troposphere propagate upward and equatorward.
+\item Their EP flux convergence in the upper troposphere drives a residual circulation via downward control.
+\item This residual circulation maintains the surface westerlies against friction, sustaining the very baroclinicity that generates the eddies --- a self-sustaining feedback loop.
+\end{enumerate}
+
+\begin{hisublock}
+에디 구동 제트의 자기 유지 메커니즘:
+경압 에디 → 상향/적도방향 전파 → 상층 EP 플럭스 수렴 → 하향 제어로 잔류 순환 유도 → 지표 편서풍 유지 → 경압성 유지 → 에디 재생성 (양의 되먹임).
 \end{hisublock}
 
 

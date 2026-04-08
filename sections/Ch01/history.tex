@@ -33,6 +33,24 @@ winds over the tropical oceans.
   왜 바람이 남북이 아닌 동서 방향을 갖는지는 설명하지 못했다 (지구 자전 효과를 고려하지 않음).
 \end{hisublock}
 
+\begin{remark}[Halley's Incomplete Explanation]
+  Halley's theory attributed the trade winds purely to \textgr{differential solar heating}:
+  the Sun heats the equatorial region more intensely than the poles, causing air to rise
+  at the equator and drawing surface air equatorward.  While this correctly identifies
+  the thermodynamic driver, his explanation suffers from several critical omissions:
+  \begin{itemize}
+    \item He failed to account for the \textgr{Earth's rotation} and the resulting
+      Coriolis force, which is responsible for deflecting the meridional flow into
+      the observed easterly direction.
+    \item His theory cannot explain the \textgr{midlatitude westerlies}: without
+      rotation, the circulation would consist of a single direct cell per hemisphere
+      with surface winds directed uniformly from pole to equator.
+    \item Without the Coriolis effect, there is no mechanism to produce the observed
+      zonal (east--west) component of the wind at any latitude.
+  \end{itemize}
+  \hisu{Halley는 지구 자전을 고려하지 않았기 때문에 중위도 편서풍을 설명할 수 없었다}
+\end{remark}
+
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.85\textwidth]{images/ch01/p03_img01.jpeg}
@@ -378,6 +396,53 @@ troposphere --- far exceeding the threshold for convective instability.
 \end{hisublock}
 
 % ------------------------------------------------------------------
+\subsection{Simple Energy Balance Models}\label{subsec:ebm}
+% ------------------------------------------------------------------
+
+\begin{definition}[No-Atmosphere Energy Balance]\label{def:no-atm-ebm}
+
+  In the absence of an atmosphere, the Earth's surface temperature is determined by
+  the balance between absorbed solar radiation and emitted terrestrial radiation:
+  \begin{equation}\label{eq:no-atm-balance}
+    \frac{S_0 (1 - \alpha_p)}{4} = \sigma T_s^4,
+  \end{equation}
+  where $S_0 = 1360$\,W\,m$^{-2}$ is the solar constant, $\alpha_p = 0.3$ is the
+  planetary albedo, and $\sigma = 5.68 \times 10^{-8}$\,W\,m$^{-2}$\,K$^{-4}$ is the
+  Stefan--Boltzmann constant.
+  \hisu{대기가 없는 경우: 흡수 태양복사 = 지표 적외선 방출로부터 지표 온도를 결정}
+\end{definition}
+
+\begin{hisublock}
+  \hisu{지구에 대기가 없다면, 지표면 온도 $T_s \approx 255$\,K (약 $-18\,^\circ$C).
+  실제보다 ${\sim}33$\,K 낮다.}
+\end{hisublock}
+
+\begin{definition}[Single-Layer Atmosphere Model]\label{def:single-layer-atm}
+
+  Consider an atmosphere that is \emph{transparent to solar radiation} but
+  \emph{opaque to terrestrial (infrared) radiation}.  The energy balances are:
+  \begin{itemize}
+    \item \textbf{TOA balance:}
+      $\displaystyle \frac{S_0(1 - \alpha_p)}{4} = \sigma T_A^4$
+    \item \textbf{Surface balance:}
+      $\displaystyle \frac{S_0(1 - \alpha_p)}{4} + \sigma T_A^4 = \sigma T_s^4$
+  \end{itemize}
+  Combining these yields the \textgr{greenhouse warming} result:
+  \begin{equation}\label{eq:greenhouse-factor}
+    T_s = 2^{1/4}\, T_E,
+  \end{equation}
+  where $T_E$ is the \textgr{emission temperature} (the effective radiating temperature
+  of the planet as seen from space).
+  \hisu{단일층 대기 모델: 태양복사에 투명, 적외선에 불투명한 대기 $\to$ 온실효과 유도}
+\end{definition}
+
+\begin{hisublock}
+  \hisu{대기가 지표 적외선을 모두 흡수하고 재방출하면, 지표 온도는 방출 온도의
+  $2^{1/4} \approx 1.19$배가 된다 (온실효과).
+  에미시비티 $\varepsilon \to 0$이면 $T_s \to T_E$, $T_A \to T_E / 2^{1/4}$.}
+\end{hisublock}
+
+% ------------------------------------------------------------------
 \subsection{The Cycling of Mechanical Energy}\label{subsec:cycling}
 % ------------------------------------------------------------------
 
@@ -532,3 +597,31 @@ The influence of rotation can be understood through a conceptual spin-up experim
   \end{enumerate}
   Ref: (Held, 2019, Ch.~6, \textit{Meteorological Monographs})
 \end{hisublock}
+
+\begin{definition}[$\beta$-effect]\label{def:beta-effect}
+
+  The variation of the Coriolis parameter with latitude is quantified by
+  \begin{equation}\label{eq:beta}
+    \beta = \frac{df}{dy} = \frac{2\Omega\cos\phi}{a},
+  \end{equation}
+  where $f = 2\Omega\sin\phi$ is the Coriolis parameter, $\Omega$ the planetary
+  rotation rate, $a$ the Earth's radius, and $\phi$ the latitude.
+  \hisu{$\beta$는 코리올리 매개변수의 남북 방향 변화율; 로스비 파 역학의 핵심}
+\end{definition}
+
+\begin{hisublock}
+  \hisu{$\beta$-효과는 로스비 파의 서진(westward propagation)을 유발하는 핵심 메커니즘이다.
+  $\beta > 0$이므로 북쪽으로 이동하는 공기는 양의 행성 소용돌이도를 얻고,
+  남쪽으로 이동하는 공기는 음의 행성 소용돌이도를 얻는다.}
+\end{hisublock}
+
+\begin{example}[Trade Winds from Differential Heating]
+  Near the equator, differential heating drives low-level poleward flow ($v > 0$ in NH).
+  The Coriolis force deflects this flow:
+  \begin{equation}\label{eq:trade-wind-coriolis}
+    \frac{du}{dt} \approx -fv.
+  \end{equation}
+  Since $f > 0$ and $v > 0$ in the NH, $du/dt < 0$, i.e., \textgr{easterly acceleration}
+  $\to$ trade winds.
+  \hisu{적도 부근에서 $f > 0$, $v > 0$ $\to$ $du/dt < 0$: 동풍 가속 $\to$ 무역풍 형성}
+\end{example}
