@@ -5,8 +5,8 @@
 %   TRACK SUBSECTION / SUBSUBSECTION NAMES FOR HEADERS
 %----------------------------------------------------------------------------------------
 
-\renewcommand{\subsectionmark}[1]{\markboth{#1}{}}
-\renewcommand{\subsubsectionmark}[1]{\markright{#1}}
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
 
 %----------------------------------------------------------------------------------------
 %   PAGE HEADERS
@@ -23,9 +23,9 @@
     % Thin accent-colored rule below header
     \renewcommand{\headrule}{{\color{accent}\hrule width\headwidth height 0.4pt \vskip-0.4pt}}
     \renewcommand{\headrulewidth}{0.4pt}
-    % Left: subsection name, Right: subsubsection name (truncated to fit)
-    \fancyhead[L]{\small\headingfontfamily\color{fgalt}\leftmark}
-    \fancyhead[R]{\parbox[b]{0.65\textwidth}{\raggedleft\small\headingfontfamily\color{fgalt}\rightmark}}
+    % Left: section (line 1) + subsection (line 2), left-aligned two lines
+    \fancyhead[L]{\parbox[b]{0.9\textwidth}{\raggedright\small\headingfontfamily\color{fgalt}\leftmark\\[-2pt]{\scriptsize\rightmark}}}
+    \fancyhead[R]{}
     % Page number centered at the bottom
     \fancyfoot[C]{\small\headingfontfamily\thepage}
 }

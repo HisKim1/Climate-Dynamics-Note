@@ -5,11 +5,10 @@
 
 \section{Maintenance of the Zonally Symmetric Circulation}
 
-This chapter addresses the central question of \textit{how} the observed
-zonally averaged distributions of temperature, wind, and potential vorticity
-are maintained against dissipative processes.  The key players are the
-\textbf{eddy fluxes}---the statistical covariances between departures from the
-zonal mean---together with diabatic heating and surface friction.
+이 장에서는 관측된 zonally averaged temperature, wind, potential vorticity 분포가
+dissipative processes에 맞서 \textit{어떻게} 유지되는지라는 핵심 질문을 다룬다.
+주요 요인은 zonal mean으로부터의 편차들 사이의 통계적 공분산인
+\textbf{eddy fluxes}이며, 여기에 diabatic heating과 surface friction이 함께 작용한다.
 
 \hisu{이 장의 핵심 질문: 관측된 동서 평균 상태는 어떻게 유지되는가?  에디 플럭스, 복사 가열, 마찰의 균형!}
 
@@ -20,7 +19,7 @@ zonal mean---together with diabatic heating and surface friction.
 \subsection{Maintenance of Zonally Averaged Temperature}
 
 % ---- Notation ----
-Throughout this chapter we use the following notation conventions.
+이 장 전체에서 다음과 같은 notation 규약을 사용한다.
 
 \begin{definition}[Zonal-Mean and Eddy Decomposition]
 For any atmospheric variable $a(\lambda,\phi,p,t)$,
@@ -48,8 +47,8 @@ we write $(\cdot)_{ZM}$.
 % --------------------------------------------------------------------------
 \subsubsection{Thermodynamic Energy Equation}
 
-The first law of thermodynamics applied to an ideal-gas atmosphere in
-pressure coordinates gives
+Ideal-gas atmosphere에 대한 열역학 제1법칙을 pressure coordinates에서 적용하면
+다음과 같다.
 
 \begin{equation}\label{eq:thermo_full}
   \frac{\partial T}{\partial t}
@@ -60,10 +59,10 @@ pressure coordinates gives
 \end{equation}
 
 \noindent
-where $\mathbf{V} = (u,v)$ is the horizontal wind, $\omega = Dp/Dt$
-is the pressure-coordinate vertical velocity, $\alpha = 1/\rho$ is the
-specific volume, and $H$ collects all diabatic heating rates
-(radiation, latent heat, sensible heat flux).
+여기서 $\mathbf{V} = (u,v)$는 horizontal wind, $\omega = Dp/Dt$는
+pressure-coordinate vertical velocity, $\alpha = 1/\rho$는
+specific volume이며, $H$는 모든 diabatic heating rate
+(radiation, latent heat, sensible heat flux)를 포함한다.
 
 \begin{hisublock}
 좌변 각 항의 의미:
@@ -76,8 +75,7 @@ specific volume, and $H$ collects all diabatic heating rates
 \end{hisublock}
 
 \noindent
-Using the equation of state $\alpha = RT/p$ we rewrite the adiabatic
-compression term:
+상태 방정식 $\alpha = RT/p$를 이용하여 adiabatic compression 항을 다시 쓰면:
 \[
   \frac{1}{c_p}\alpha\omega = \frac{R\omega T}{c_p p}.
 \]
@@ -85,12 +83,12 @@ compression term:
 % --------------------------------------------------------------------------
 \subsubsection{Flux Form of the Thermodynamic Equation}
 
-The continuity equation in pressure coordinates states
+Pressure coordinates에서의 continuity equation은 다음과 같다.
 \begin{equation}\label{eq:continuity}
   \nabla\cdot\mathbf{V} + \frac{\partial\omega}{\partial p} = 0.
 \end{equation}
-Multiplying \eqref{eq:continuity} by $T$ and adding to \eqref{eq:thermo_full}
-converts the advection terms to \textgr{flux form}:
+\eqref{eq:continuity}에 $T$를 곱하여 \eqref{eq:thermo_full}에 더하면
+advection 항이 \textgr{flux form}으로 변환된다.
 
 \begin{equation}\label{eq:thermo_flux}
   \boxed{
@@ -103,8 +101,8 @@ converts the advection terms to \textgr{flux form}:
 \end{equation}
 
 \begin{remark}
-The flux form is essential because zonal averaging and vertical
-integration commute cleanly with the divergence operators.
+Flux form은 zonal averaging과 vertical integration이
+divergence 연산자와 깔끔하게 교환되기 때문에 필수적이다.
 \end{remark}
 
 % --------------------------------------------------------------------------
@@ -128,14 +126,14 @@ For any periodic function $a(\lambda)$ with period $2\pi$,
 \end{proof}
 
 \noindent
-Expanding the horizontal divergence in spherical coordinates,
+Horizontal divergence를 spherical coordinates에서 전개하면,
 \[
   \nabla\cdot(\mathbf{V}T)
   = \frac{1}{a\cos\phi}\frac{\partial(uT)}{\partial\lambda}
     + \frac{1}{a\cos\phi}\frac{\partial}{\partial\phi}(vT\cos\phi),
 \]
-the first term vanishes upon zonal averaging by \eqref{eq:zonal_deriv_vanish}.
-Thus the \textgr{zonally averaged thermodynamic equation} is
+첫째 항은 \eqref{eq:zonal_deriv_vanish}에 의해 zonal averaging 시 사라진다.
+따라서 \textgr{zonally averaged thermodynamic equation}은 다음과 같다.
 
 \begin{equation}\label{eq:thermo_zonal}
   \frac{\partial T_Z}{\partial t}
@@ -148,12 +146,12 @@ Thus the \textgr{zonally averaged thermodynamic equation} is
 % --------------------------------------------------------------------------
 \subsubsection{Vertical Averaging and Boundary Conditions}
 
-Integrating \eqref{eq:thermo_zonal} from $p=0$ (top of atmosphere) to
-$p=p_0$ (surface) and applying the boundary conditions
+\eqref{eq:thermo_zonal}을 $p=0$ (대기 상한)에서 $p=p_0$ (지표)까지 적분하고
+경계 조건
 \begin{equation}\label{eq:omega_bc}
   \omega = 0 \quad\text{at } p=0 \quad\text{and}\quad p=p_0,
 \end{equation}
-the vertical flux divergence integrates out:
+을 적용하면, vertical flux divergence가 적분되어 사라진다.
 \[
   \int_0^{p_0}\frac{\partial}{\partial p}(\omega T)_Z\,dp
   = \bigl[(\omega T)_Z\bigr]_0^{p_0} = 0.
@@ -169,15 +167,15 @@ $\omega=0$인 경계 조건:
 \end{hisublock}
 
 \noindent
-Similarly, define the vertical mean
-$\langle\cdot\rangle \equiv \frac{1}{p_0}\int_0^{p_0}(\cdot)\,dp$.
-The adiabatic compression term integrates to
+마찬가지로, vertical mean을
+$\langle\cdot\rangle \equiv \frac{1}{p_0}\int_0^{p_0}(\cdot)\,dp$로 정의한다.
+Adiabatic compression 항을 적분하면
 \[
   \frac{R}{c_p\,p_0}\int_0^{p_0}\frac{(\omega T)_Z}{p}\,dp \approx 0,
 \]
-because the boundary conditions force $\omega T$ to vanish at both limits and
-the integrand is small in between (to leading order).  Therefore the
-\textgr{vertically and zonally averaged} thermodynamic equation becomes
+이 되는데, 이는 boundary conditions에 의해 $\omega T$가 양쪽 경계에서 사라지고
+피적분함수가 중간에서도 (leading order에서) 작기 때문이다.  따라서
+\textgr{vertically and zonally averaged} thermodynamic equation은 다음과 같다.
 
 \begin{equation}\label{eq:thermo_ZV}
   \boxed{
@@ -191,7 +189,7 @@ the integrand is small in between (to leading order).  Therefore the
 % --------------------------------------------------------------------------
 \subsubsection{Decomposition of the Meridional Heat Flux}
 
-Using $v = v_Z + v_E$ and $T = T_Z + T_E$:
+$v = v_Z + v_E$와 $T = T_Z + T_E$를 이용하면:
 \begin{equation}\label{eq:heat_flux_decomp}
   (vT)_Z = v_Z\,T_Z + (v_E\,T_E)_Z.
 \end{equation}
@@ -214,7 +212,7 @@ $v_Z\,T_Z \approx 0$.
 \hisu{지균 균형이면 $v$의 동서 평균은 거의 0.  따라서 열 수송은 거의 전부 에디에 의한 것!}
 
 \noindent
-Therefore
+따라서
 \begin{equation}\label{eq:heat_flux_eddy}
   (vT)_Z \approx (v_E\,T_E)_Z.
 \end{equation}
@@ -229,8 +227,8 @@ Therefore
 % --------------------------------------------------------------------------
 \subsubsection{Steady-State Balance}
 
-Taking a \textbf{time mean} of \eqref{eq:thermo_ZV} and assuming a
-\textgr{statistically steady state} ($\partial\langle T_Z\rangle/\partial t = 0$):
+\eqref{eq:thermo_ZV}의 \textbf{time mean}을 취하고
+\textgr{statistically steady state} ($\partial\langle T_Z\rangle/\partial t = 0$)를 가정하면:
 
 \begin{equation}\label{eq:thermo_steady}
   \boxed{
@@ -264,6 +262,15 @@ diabatic heating:
 \end{figure}
 
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5.4 (pp.385--392) -- Modified mean energy and momentum equations; zonally averaged thermodynamic equation 유도 및 eddy heat flux 분해 \hisu{본 PDF에는 목차만 수록}
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.~6.4 (book pp.150--154) -- Angular-momentum balance 맥락에서의 에너지 수송 논의 \hisu{본 PDF에는 목차만 수록}
+  \item Holton \& Hakim, Ch.~10.2 -- Zonally averaged thermodynamic equation과 eddy forcing의 역할
+\end{itemize}
+\end{hisublock}
+
 % =============================================================================
 %   SECTION 2 — Maintenance of Zonally Averaged Wind
 % =============================================================================
@@ -280,7 +287,7 @@ diabatic heating:
 % --------------------------------------------------------------------------
 \subsubsection{Zonal Momentum Equation}
 
-The zonal momentum equation in spherical pressure coordinates is
+Spherical pressure coordinates에서의 zonal momentum equation은 다음과 같다.
 
 \begin{equation}\label{eq:u_momentum}
   \frac{\partial u}{\partial t}
@@ -293,9 +300,8 @@ The zonal momentum equation in spherical pressure coordinates is
 \end{equation}
 
 \noindent
-where the $uv\tan\phi/a$ term is the metric (curvature) term arising from
-spherical geometry, and $F_\lambda$ represents frictional and other
-sub-grid-scale forces.
+여기서 $uv\tan\phi/a$ 항은 spherical geometry에서 비롯되는 metric (curvature) 항이며,
+$F_\lambda$는 frictional force와 기타 sub-grid-scale forces를 나타낸다.
 
 \begin{hisublock}
 좌변 각 항:
@@ -315,13 +321,13 @@ sub-grid-scale forces.
 % --------------------------------------------------------------------------
 \subsubsection{Flux Form}
 
-Using the continuity equation \eqref{eq:continuity} and the identity
+Continuity equation \eqref{eq:continuity}과 다음 항등식
 \[
   v\frac{\partial u}{\partial\phi} - \frac{uv\tan\phi}{a}
   = \frac{1}{a\cos^2\phi}\frac{\partial}{\partial\phi}(uv\cos^2\phi)
     - \frac{u}{a\cos\phi}\frac{\partial}{\partial\phi}(v\cos\phi),
 \]
-the momentum equation is rewritten in \textgr{flux form}:
+을 이용하면, momentum equation이 \textgr{flux form}으로 변환된다.
 
 \begin{equation}\label{eq:u_flux}
   \boxed{
@@ -336,16 +342,16 @@ the momentum equation is rewritten in \textgr{flux form}:
 % --------------------------------------------------------------------------
 \subsubsection{Zonally and Vertically Averaged Equation}
 
-Applying zonal averaging to \eqref{eq:u_flux}:
+\eqref{eq:u_flux}에 zonal averaging을 적용하면:
 \begin{itemize}
-  \item The pressure-gradient term vanishes:
+  \item Pressure-gradient 항이 사라진다:
     $\displaystyle\left(\frac{1}{a\cos\phi}\frac{\partial\Phi}{\partial\lambda}\right)_Z = 0$
-    by \eqref{eq:zonal_deriv_vanish}.
-  \item The Coriolis term: $f v_Z \approx 0$ (geostrophic balance $\Rightarrow v_Z \approx 0$).
+    (\eqref{eq:zonal_deriv_vanish}에 의해).
+  \item Coriolis 항: $f v_Z \approx 0$ (geostrophic balance $\Rightarrow v_Z \approx 0$).
 \end{itemize}
 
 \noindent
-Integrating vertically with boundary conditions \eqref{eq:omega_bc}:
+경계 조건 \eqref{eq:omega_bc}을 적용하여 연직으로 적분하면:
 
 \begin{equation}\label{eq:u_ZV}
   \boxed{
@@ -362,12 +368,12 @@ Integrating vertically with boundary conditions \eqref{eq:omega_bc}:
 % --------------------------------------------------------------------------
 \subsubsection{Decomposition of Momentum Flux}
 
-Analogously to the heat flux decomposition,
+Heat flux 분해와 마찬가지로,
 \begin{equation}\label{eq:mom_flux_decomp}
   (uv)_Z = u_Z\,v_Z + (u_E\,v_E)_Z \approx (u_E\,v_E)_Z,
 \end{equation}
-since $v_Z \approx 0$ by the geostrophic argument.  The momentum budget is
-therefore controlled by \textgr{eddy momentum fluxes}.
+이는 geostrophic argument에 의해 $v_Z \approx 0$이기 때문이다.  따라서 momentum budget은
+\textgr{eddy momentum fluxes}에 의해 지배된다.
 
 \begin{figure}[ht]
   \centering
@@ -379,24 +385,24 @@ therefore controlled by \textgr{eddy momentum fluxes}.
 % --------------------------------------------------------------------------
 \subsubsection{Parameterization of Surface Friction}
 
-Friction enters through the stress divergence:
+Friction은 stress divergence를 통해 작용한다.
 
 \begin{equation}\label{eq:friction}
   F_\lambda = g\frac{\partial\tau_\lambda}{\partial p},
 \end{equation}
 
 \noindent
-where $\tau_\lambda$ is the zonal component of the stress tensor.
-At the surface, the stress is parameterized by a \textgr{bulk aerodynamic formula}:
+여기서 $\tau_\lambda$는 stress tensor의 zonal component이다.
+지표에서 stress는 \textgr{bulk aerodynamic formula}로 parameterize된다.
 
 \begin{equation}\label{eq:surface_stress}
   \tau_{\lambda Z}(p_0) \approx -C_d\,\rho\,V_0\,u_Z(p_0),
 \end{equation}
 
 \noindent
-where $C_d$ is the drag coefficient ($\sim 10^{-3}$), and $V_0$ is the
-near-surface wind speed.  Integrating \eqref{eq:friction} vertically and
-linearizing:
+여기서 $C_d$는 drag coefficient ($\sim 10^{-3}$)이고, $V_0$는
+near-surface wind speed이다.  \eqref{eq:friction}을 연직으로 적분하고
+선형화하면:
 
 \begin{equation}\label{eq:Rayleigh}
   \langle F_{\lambda Z}\rangle \approx -\varepsilon\,u_Z(p_0),
@@ -410,7 +416,7 @@ $1/\varepsilon \approx 3.9$일, 즉 약 4일의 감쇠 시간 규모.}
 % --------------------------------------------------------------------------
 \subsubsection{Steady-State Momentum Balance}
 
-In a time-mean steady state ($\partial\langle u_Z\rangle/\partial t = 0$):
+Time-mean steady state ($\partial\langle u_Z\rangle/\partial t = 0$)에서:
 
 \begin{equation}\label{eq:u_steady}
   \boxed{
@@ -438,9 +444,9 @@ westerlies result.
 \end{figure}
 
 \begin{remark}[Failure of Angular Momentum Conservation for the Subtropical Jet]
-If air in the upper branch of the Hadley cell conserved angular momentum perfectly as it moves poleward from the equator, we would predict:
+Hadley cell 상층 가지의 공기가 적도에서 극 방향으로 이동하면서 angular momentum을 완벽히 보존한다면 다음과 같이 예측할 수 있다:
 $$u(\phi) = \Omega a\left(\frac{\cos^2\phi_0}{\cos\phi} - \cos\phi\right)$$
-For $\phi_0 = 0^\circ$ (equatorial origin) and $\phi = 30^\circ$, this gives $u \approx 134$\,m\,s$^{-1}$ --- far exceeding the observed subtropical jet of $\sim$30--40\,m\,s$^{-1}$. This discrepancy demonstrates that \textgr{eddies} must be extracting angular momentum from the subtropics and depositing it in the midlatitudes, decelerating the subtropical jet.
+$\phi_0 = 0^\circ$ (적도 출발)이고 $\phi = 30^\circ$일 때, 이 식은 $u \approx 134$\,m\,s$^{-1}$을 주며, 이는 관측된 subtropical jet의 $\sim$30--40\,m\,s$^{-1}$을 크게 초과한다.  이 불일치는 \textgr{eddies}가 아열대에서 angular momentum을 추출하여 중위도에 전달함으로써 subtropical jet를 감속시키고 있음을 보여준다.
 \end{remark}
 \begin{hisublock}
 각운동량 보존만으로는 아열대 제트를 ~134 m/s로 예측하지만, 실제는 ~30-40 m/s.
@@ -454,9 +460,9 @@ For $\phi_0 = 0^\circ$ (equatorial origin) and $\phi = 30^\circ$, this gives $u 
 \begin{multicols}{2}
 \textgr{Heat Transport}
 \begin{itemize}
-  \item \textbf{Downgradient}: warm $\to$ cold (equator $\to$ pole)
-  \item $\overline{(v_E T_E)}_{ZM} > 0$ in NH (northward)
-  \item Can be parameterized as diffusion:
+  \item \textbf{Downgradient}: warm $\to$ cold (적도 $\to$ 극)
+  \item NH에서 $\overline{(v_E T_E)}_{ZM} > 0$ (북쪽 방향)
+  \item Diffusion으로 parameterize 가능:
     $(v_E T_E)_Z \approx -K_T\,\dfrac{1}{a}\dfrac{\partial T_Z}{\partial\phi}$
 \end{itemize}
 
@@ -464,9 +470,9 @@ For $\phi_0 = 0^\circ$ (equatorial origin) and $\phi = 30^\circ$, this gives $u 
 
 \textgr{Momentum Transport}
 \begin{itemize}
-  \item \textbf{Upgradient}: low-$u$ $\to$ high-$u$ regions
-  \item From tropics \& high latitudes $\to$ midlatitudes
-  \item \textbf{Cannot} be parameterized as simple diffusion
+  \item \textbf{Upgradient}: low-$u$ $\to$ high-$u$ 영역으로
+  \item 열대 \& 고위도 $\to$ 중위도
+  \item 단순 diffusion으로 parameterize \textbf{불가}
 \end{itemize}
 \end{multicols}
 
@@ -476,14 +482,14 @@ For $\phi_0 = 0^\circ$ (equatorial origin) and $\phi = 30^\circ$, this gives $u 
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch04/p29_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch04/p29_img01.jpeg}
   \caption{Schematic comparison of the energy budget (left) and the angular momentum budget (right).  In the energy budget, there is a net radiative gain in the tropics and a net loss at the poles, requiring poleward energy transport.  In the angular momentum budget, westerly surface winds at midlatitudes lose angular momentum to friction, while tropical easterlies gain it; eddy momentum transport from the tropics to midlatitudes maintains the balance. \hisu{에너지 수지 (좌)와 각운동량 수지 (우)의 비교 모식도.  에너지는 적도에서 극으로 수송 (복사 불균형 보상), 운동량은 열대와 고위도에서 중위도로 수송 (제트 유지와 마찰 보상).}}
   \label{fig:ch04_energy_vs_momentum}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch04/p31_img01.png}
+  \includegraphics[width=0.65\textwidth]{images/ch04/p31_img01.png}
   \caption{Box-diagram schematic of heat transport (left) and momentum transport (right) in the atmosphere.  Heat is transported poleward by the Hadley circulation in the tropics and by eddies in the extratropics, balancing net radiative gain and loss.  Momentum is transported poleward by the Hadley cell and equatorward by eddies, maintaining tropical easterlies (E) and midlatitude westerlies (W) against surface friction. \hisu{열 수송 (좌)과 운동량 수송 (우)의 박스 모식도.  해들리 순환은 열대에서, 에디는 중고위도에서 열 수송을 담당.  운동량은 해들리 셀이 극 방향으로, 에디가 적도에서 중위도로 수송하여 표면 바람 분포를 유지한다.}}
   \label{fig:ch04_transport_box_schematic}
 \end{figure}
@@ -491,8 +497,8 @@ For $\phi_0 = 0^\circ$ (equatorial origin) and $\phi = 30^\circ$, this gives $u 
 % --------------------------------------------------------------------------
 \subsubsection{Phase Relationships for Nonzero Fluxes}
 
-For the eddy fluxes to be nonzero in the zonal mean, \textit{systematic
-phase relationships} must exist between the wave perturbations.
+Eddy fluxes가 zonal mean에서 0이 아니려면, wave perturbation 사이에
+\textit{체계적인 phase relationship}이 존재해야 한다.
 
 \begin{proposition}[Phase Condition for Nonzero Heat Flux]
 Consider wave-form perturbations
@@ -540,11 +546,11 @@ momentum transport:
 
 
 \begin{remark}[Hadley Circulation--Eddy Interaction Under Climate Change]
-The position and strength of the subtropical and eddy-driven jets depend on the interaction between the thermally driven Hadley cell and midlatitude eddies:
+Subtropical jet와 eddy-driven jet의 위치와 강도는 thermally driven Hadley cell과 midlatitude eddies 사이의 상호작용에 의존한다:
 \begin{itemize}
-\item \textgr{Tropical warming} increases the meridional temperature gradient at the poleward edge of the Hadley cell, strengthening baroclinicity and shifting the storm track poleward.
-\item The Hadley cell edge (where the thermally direct circulation transitions to eddy-driven dynamics) moves poleward under warming, taking the subtropical jet with it.
-\item This poleward shift of baroclinic activity further shifts the eddy-driven jet, amplifying the response.
+\item \textgr{Tropical warming}은 Hadley cell 극방향 경계에서의 meridional temperature gradient를 증가시켜 baroclinicity를 강화하고 storm track을 극 방향으로 이동시킨다.
+\item Hadley cell 경계 (thermally direct circulation이 eddy-driven dynamics로 전이되는 지점)는 온난화에 따라 극 방향으로 이동하며, subtropical jet도 함께 이동한다.
+\item 이러한 baroclinic activity의 극 방향 이동은 eddy-driven jet를 추가로 이동시켜, 응답을 증폭시킨다.
 \end{itemize}
 \end{remark}
 \begin{hisublock}
@@ -553,17 +559,26 @@ The position and strength of the subtropical and eddy-driven jets depend on the 
 \end{hisublock}
 
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.~6.4 (book pp.150--154) -- Angular-momentum balance; eddy momentum flux convergence와 Ferrel cell 유지 메커니즘 \hisu{본 PDF에는 목차만 수록}
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~11 (pp.241--269) -- Angular Momentum Cycle; balance equations (11.1, pp.241--254), observed cycle (11.2, pp.255--269), atmosphere--surface exchange \hisu{본 PDF에는 목차만 수록}
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8.4.2 (pp.156--157, PDF pp.177--178) -- Eddy momentum flux와 convergence patterns
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5.3 (pp.385--392) -- EP flux 개념 도입 및 momentum budget과의 관계 \hisu{본 PDF에는 목차만 수록}
+\end{itemize}
+\end{hisublock}
+
 % =============================================================================
 %   SECTION 3 — Potential Vorticity Transport
 % =============================================================================
 
 \subsection{Potential Vorticity Transport}
 
-The upgradient nature of momentum transport poses a major challenge for
-parameterization.  The resolution comes from considering the transport of
-\textgr{quasi-geostrophic potential vorticity (QGPV)}, which is
-\textit{downgradient}---and whose transport encapsulates both heat and
-momentum fluxes simultaneously.
+Momentum transport의 upgradient 특성은 parameterization에 큰 도전을 제기한다.
+이 문제의 해결은 \textgr{quasi-geostrophic potential vorticity (QGPV)}의 수송을
+고려하는 데에서 나온다.  QGPV 수송은 \textit{downgradient}이며,
+heat flux와 momentum flux를 동시에 포함하는 통합적 틀을 제공한다.
 
 % --------------------------------------------------------------------------
 \subsubsection{Quasi-Geostrophic Potential Vorticity}
@@ -587,8 +602,7 @@ QG PV는 Ertel PV의 선형화(quasi-geostrophic 근사)에 해당한다.}
 % --------------------------------------------------------------------------
 \subsubsection{Meridional PV Flux Decomposition}
 
-The zonally averaged meridional PV flux can be decomposed into three
-contributions:
+Zonally averaged meridional PV flux는 세 가지 기여로 분해할 수 있다:
 
 \begin{equation}\label{eq:vQ_decomp}
   (vQ)_Z = \underbrace{f\,v_Z}_{\text{planetary}}
@@ -598,15 +612,14 @@ contributions:
       \right)\right]_Z}_{\text{thickness flux}}.
 \end{equation}
 
-We now show that each dynamical term reduces to a divergence of a
-familiar flux.
+이제 각 역학적 항이 익숙한 flux의 divergence로 환원됨을 보인다.
 
-\noindent\textbf{First term: planetary vorticity.}\quad
-Since $f$ depends only on latitude, $fv_Z$ is simply the Coriolis
-acceleration of the mean meridional flow.  In the vertically averaged,
-steady-state budget this term is negligible ($v_Z \approx 0$).
+\noindent\textbf{첫째 항: planetary vorticity.}\quad
+$f$는 위도에만 의존하므로, $fv_Z$는 단순히 mean meridional flow의 Coriolis
+acceleration이다.  Vertically averaged steady-state budget에서 이 항은
+무시할 수 있다 ($v_Z \approx 0$).
 
-\noindent\textbf{Second term: vorticity flux $=$ convergence of momentum flux.}
+\noindent\textbf{둘째 항: vorticity flux $=$ momentum flux의 convergence.}
 
 \begin{proposition}[Vorticity Flux Identity]
 \begin{equation}\label{eq:vort_flux}
@@ -641,7 +654,7 @@ Hence, in spherical coordinates with the metric factor:
 \hisu{$(v\zeta)_Z$는 운동량 플럭스 $(uv)_Z$의 수렴과 같다!
 즉, 소용돌이도 수송을 알면 운동량 수송을 안다.}
 
-\noindent\textbf{Third term: thickness flux $=$ vertical derivative of heat flux.}
+\noindent\textbf{셋째 항: thickness flux $=$ heat flux의 vertical derivative.}
 
 \begin{proposition}[Thickness Flux Identity]
 \begin{equation}\label{eq:thick_flux}
@@ -672,8 +685,8 @@ PV 수송 = 운동량 플럭스 수렴 + 열 플럭스의 연직 미분.  한 �
 % --------------------------------------------------------------------------
 \subsubsection{Full PV Transport Formula}
 
-Combining \eqref{eq:vort_flux} and \eqref{eq:thick_flux} (and neglecting
-the planetary term for the eddy part):
+\eqref{eq:vort_flux}과 \eqref{eq:thick_flux}를 결합하면 (eddy 부분에 대해
+planetary 항을 무시):
 
 \begin{equation}\label{eq:vQ_full}
   \boxed{
@@ -686,14 +699,14 @@ the planetary term for the eddy part):
 \end{equation}
 
 \begin{remark}
-This is a key result: the eddy PV flux is \textit{entirely determined}
-by the eddy momentum flux and eddy heat flux.
+이것은 핵심적인 결과이다: eddy PV flux는 eddy momentum flux와
+eddy heat flux에 의해 \textit{완전히 결정}된다.
 \end{remark}
 
 % --------------------------------------------------------------------------
 \subsubsection{Downgradient PV Transport and Parameterization}
 
-Observations and theory show that \textgr{eddy PV transport is downgradient}:
+관측과 이론 모두 \textgr{eddy PV transport가 downgradient}임을 보여준다:
 
 \begin{equation}\label{eq:PV_param}
   (v_E Q_E)_Z \approx -K_Q\,\frac{1}{a}\frac{\partial Q_Z}{\partial\phi},
@@ -728,20 +741,29 @@ the PV gradient.
 \end{hisublock}
 
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5.3 (pp.385--392) -- EP flux와 PV flux의 관계; eddy PV transport의 downgradient 특성 \hisu{본 PDF에는 목차만 수록}
+  \item Vallis, Ch.~12.1--12.2 -- QG potential vorticity 정의 및 eddy PV flux 분해
+  \item Holton \& Hakim, Ch.~10.2 -- Potential vorticity transport와 upgradient momentum puzzle의 해결
+\end{itemize}
+\end{hisublock}
+
 % =============================================================================
 %   SECTION 4 — Eliassen-Palm (EP) Flux
 % =============================================================================
 
 \subsection{Eliassen--Palm (EP) Flux}
 
-The EP flux framework provides the most elegant and complete description of
-eddy--mean flow interaction in the zonally averaged circulation.
+EP flux 프레임워크는 zonally averaged circulation에서의
+eddy--mean flow interaction을 가장 우아하고 완전하게 기술한다.
 
 % --------------------------------------------------------------------------
 \subsubsection{Zonally Averaged Equation Set}
 
-The complete set of zonally averaged quasi-geostrophic equations on the
-$\beta$-plane is:
+$\beta$-plane에서의 zonally averaged quasi-geostrophic equations의
+완전한 세트는 다음과 같다:
 
 \begin{align}
   \frac{\partial u_Z}{\partial t} - fv_Z
@@ -770,7 +792,7 @@ $\beta$-plane is:
 \eqref{eq:EP_twind}: 온도풍 관계 (진단 관계식)
 }
 
-Rearranging \eqref{eq:EP_umom} more explicitly:
+\eqref{eq:EP_umom}을 보다 명시적으로 정리하면:
 \begin{equation}\label{eq:umom_explicit}
   \frac{\partial u_Z}{\partial t}
   = fv_Z
@@ -858,7 +880,7 @@ $F^{(p)}$: $(v_E\theta_E)_Z$ 에 비례 $\to$ 열 플럭스\\
 % --------------------------------------------------------------------------
 \subsubsection{EP Flux Divergence and Wave Activity}
 
-The zonally averaged zonal momentum equation can be written compactly as
+Zonally averaged zonal momentum equation은 다음과 같이 간결하게 쓸 수 있다.
 
 \begin{equation}\label{eq:EP_div_momentum}
   \frac{\partial u_Z}{\partial t} - fv_Z
@@ -866,7 +888,7 @@ The zonally averaged zonal momentum equation can be written compactly as
 \end{equation}
 
 \noindent
-where
+여기서
 \begin{equation}\label{eq:EP_divergence}
   \nabla\cdot\mathbf{F}
   \equiv \frac{1}{a\cos\phi}\frac{\partial}{\partial\phi}
@@ -899,23 +921,23 @@ $\nabla\cdot\mathbf{F} = 0$: 비가속 조건 (보존적 파동의 전파)}
 \end{figure}
 
 \begin{remark}[Interpretation of EP Flux Diagrams]
-In EP flux cross-section diagrams:
+EP flux cross-section 도표에서:
 \begin{itemize}
-  \item Arrows show the direction of wave-activity propagation.
-  \item \textgr{Upward} arrows indicate poleward heat flux
-    ($(v_E\theta_E)_Z > 0$ in NH).
-  \item \textgr{Equatorward} arrows indicate poleward momentum flux
-    ($(u_E v_E)_Z > 0$ in NH $\Rightarrow$ $F^{(\phi)} < 0$).
-  \item Divergence/convergence of arrows indicates wave sources/sinks,
-    hence acceleration/deceleration of the mean flow.
+  \item 화살표는 wave-activity propagation의 방향을 나타낸다.
+  \item \textgr{Upward} 화살표는 poleward heat flux를 나타낸다
+    (NH에서 $(v_E\theta_E)_Z > 0$).
+  \item \textgr{Equatorward} 화살표는 poleward momentum flux를 나타낸다
+    (NH에서 $(u_E v_E)_Z > 0$ $\Rightarrow$ $F^{(\phi)} < 0$).
+  \item 화살표의 divergence/convergence는 wave sources/sinks를 나타내며,
+    이에 따른 mean flow의 acceleration/deceleration을 의미한다.
 \end{itemize}
 \end{remark}
 
 % --------------------------------------------------------------------------
 \subsubsection{The General Case: Heating and Friction}
 
-In the general (non-conservative) case, the mean meridional circulation
-($v_Z$, $\omega_Z$) is forced by three agents:
+일반적인 (non-conservative) 경우, mean meridional circulation
+($v_Z$, $\omega_Z$)은 세 가지 요인에 의해 강제된다:
 
 \begin{enumerate}
   \item \textgr{Mean diabatic heating} $\overline{H}_{ZM}$
@@ -924,7 +946,7 @@ In the general (non-conservative) case, the mean meridional circulation
 \end{enumerate}
 
 \noindent
-The mean meridional circulation satisfies
+Mean meridional circulation은 다음을 만족한다.
 \begin{align}
   fv_Z &= \frac{1}{a\cos\phi}\nabla\cdot\mathbf{F}
     + F_{\lambda Z} - \frac{\partial u_Z}{\partial t},
@@ -938,14 +960,13 @@ The mean meridional circulation satisfies
 \end{align}
 
 \begin{remark}[The Ferrel Cell]
-The midlatitude \textgr{Ferrel cell} is an indirect (thermally indirect)
-circulation: warm air sinks and cold air rises.  It is \textbf{not}
-driven by differential heating (like the Hadley cell) but is forced
-primarily by the eddies through the EP flux divergence.
-The eddy momentum flux convergence drives a poleward flow aloft
-($fv_Z \approx \nabla\cdot\mathbf{F}/(a\cos\phi)$), which by
-continuity requires descent in the subtropics and ascent at high
-latitudes.
+중위도의 \textgr{Ferrel cell}은 indirect (thermally indirect) circulation으로,
+따뜻한 공기가 하강하고 차가운 공기가 상승한다.  이는 (Hadley cell처럼)
+differential heating에 의해 구동되는 것이 \textbf{아니라}, 주로 EP flux divergence를
+통한 에디에 의해 강제된다.
+Eddy momentum flux convergence가 상층에서 극 방향 흐름을 유도하며
+($fv_Z \approx \nabla\cdot\mathbf{F}/(a\cos\phi)$), 연속 방정식에 의해
+아열대에서 하강, 고위도에서 상승이 요구된다.
 \end{remark}
 
 \hisu{페렐 셀은 에디에 의해 구동되는 간접 순환!
@@ -953,17 +974,26 @@ latitudes.
 해들리 셀과 달리 직접적인 열적 구동이 아니라 에디 강제에 의한 응답이다.}
 
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5.3 (pp.385--392) -- EP flux 정의 및 wave-activity propagation; EP flux diagrams (14.5.6, pp.385--392) \hisu{본 PDF에는 목차만 수록}
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5.5 (pp.385--392) -- Forcing of the mean meridional circulation; Ferrel cell의 eddy-driven 특성 \hisu{본 PDF에는 목차만 수록}
+  \item Holton \& Hakim, Ch.~10.2--10.3 -- EP flux divergence와 non-acceleration theorem; TEM 도입의 동기
+  \item Charney \& Drazin (1961) -- Non-acceleration theorem의 원논문
+\end{itemize}
+\end{hisublock}
+
 % =============================================================================
 %   SECTION 5 — Transformed Eulerian Mean (TEM)
 % =============================================================================
 
 \subsection{Transformed Eulerian Mean (TEM) Formulation}
 
-The standard Eulerian-mean equations mask the net effect of eddies
-because the eddy-driven mean meridional circulation partially cancels
-the direct eddy forcing (non-acceleration theorem).  The \textgr{TEM
-formulation} introduces a \textbf{residual circulation} that reveals
-the true eddy impact.
+표준 Eulerian-mean equations는 eddy-driven mean meridional circulation이
+직접적인 eddy forcing을 부분적으로 상쇄하기 때문에 (non-acceleration theorem)
+에디의 순 효과를 가린다.  \textgr{TEM formulation}은
+\textbf{residual circulation}을 도입하여 에디의 실질적 영향을 드러낸다.
 
 % --------------------------------------------------------------------------
 \subsubsection{Residual Mean Meridional Circulation}
@@ -985,7 +1015,7 @@ The residual meridional and vertical velocities are defined as
 이것은 실제 물질 수송에 더 가까운 순환이다.}
 
 \noindent
-The TEM momentum and thermodynamic equations become:
+TEM momentum equation과 thermodynamic equation은 다음과 같다:
 
 \begin{align}
   \frac{\partial u_Z}{\partial t} - fv^*
@@ -998,11 +1028,10 @@ The TEM momentum and thermodynamic equations become:
 \end{align}
 
 \begin{remark}
-In the TEM formulation, \eqref{eq:TEM_theta} contains \textbf{no
-explicit eddy flux terms}---the eddy heat flux has been absorbed into
-the definition of $\omega^*$.  The entire eddy effect on the mean flow
-appears only through $\nabla\cdot\mathbf{F}$ in
-\eqref{eq:TEM_u}.
+TEM formulation에서 \eqref{eq:TEM_theta}은 \textbf{명시적인 eddy flux 항을
+포함하지 않는다}---eddy heat flux가 $\omega^*$의 정의 속에 흡수되었기 때문이다.
+Mean flow에 대한 에디의 전체 효과는 오직 \eqref{eq:TEM_u}의
+$\nabla\cdot\mathbf{F}$를 통해서만 나타난다.
 \end{remark}
 
 \begin{hisublock}
@@ -1028,11 +1057,11 @@ $$\bar{v}^*(z) \propto -\frac{1}{f}\int_z^\infty \nabla\cdot\mathbf{F}\,dz'$$
 에디가 상층에서 운동량을 수렴시키면, 그 아래에서 자오면 순환이 유도된다.
 \end{hisublock}
 
-This principle explains how \textgr{self-sustaining eddy-driven jets} work:
+이 원리는 \textgr{self-sustaining eddy-driven jets}의 작동 메커니즘을 설명한다:
 \begin{enumerate}
-\item Baroclinic eddies generated in the lower troposphere propagate upward and equatorward.
-\item Their EP flux convergence in the upper troposphere drives a residual circulation via downward control.
-\item This residual circulation maintains the surface westerlies against friction, sustaining the very baroclinicity that generates the eddies --- a self-sustaining feedback loop.
+\item 하층 대류권에서 생성된 baroclinic eddies가 상향 및 적도 방향으로 전파된다.
+\item 상층 대류권에서의 EP flux convergence가 downward control을 통해 residual circulation을 구동한다.
+\item 이 residual circulation이 마찰에 맞서 surface westerlies를 유지하며, 이것이 다시 에디를 생성하는 baroclinicity를 유지시킨다 --- 자기 유지적 되먹임 고리이다.
 \end{enumerate}
 
 \begin{hisublock}
@@ -1041,15 +1070,25 @@ This principle explains how \textgr{self-sustaining eddy-driven jets} work:
 \end{hisublock}
 
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton \& Hakim, Ch.~10.2--10.3 -- TEM formulation; residual circulation과 Brewer--Dobson circulation의 관계
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5.4 (pp.385--392) -- Modified mean momentum/energy equations; TEM 맥락에서의 에디 효과 통합 \hisu{본 PDF에는 목차만 수록}
+  \item Andrews \& McIntyre (1976) -- TEM 정식화의 원논문
+  \item Haynes \& Shepherd (1989) -- Downward control principle의 원논문
+\end{itemize}
+\end{hisublock}
+
 % =============================================================================
 %   SECTION 6 — Globally Averaged Energy Balance
 % =============================================================================
 
 \subsection{Globally Averaged Energy Balance}
 
-The maintenance of the general circulation ultimately rests on the
-\textgr{differential radiative heating} between the tropics and poles.
-This section provides a quantitative overview.
+대기 대순환의 유지는 궁극적으로 열대와 극 사이의
+\textgr{differential radiative heating}에 기반한다.
+이 절에서는 이에 대한 정량적 개관을 제시한다.
 
 % --------------------------------------------------------------------------
 \subsubsection{Top-of-Atmosphere Radiation Balance}
@@ -1063,17 +1102,15 @@ where $S_{\text{abs}}$ is the absorbed shortwave (solar) radiation and
 $F_{\text{OLR}}$ is the outgoing longwave radiation.
 \end{definition}
 
-The key observational facts:
+주요 관측 사실은 다음과 같다:
 \begin{itemize}
-  \item \textbf{Absorbed solar radiation}: ranges from $> 300\;\text{W/m}^2$
-    in the tropics to $< 100\;\text{W/m}^2$ at the poles---a factor of
-    $\sim 3$ variation.
-  \item \textbf{OLR}: much more uniform, ranging from $\sim 250\;\text{W/m}^2$
-    in the tropics to $\sim 175\;\text{W/m}^2$ at the poles---less than
-    a factor of 1.5 variation.
-  \item \textbf{Net radiation crossover}: $R_{\text{net}} = 0$ at
-    $\sim 38^\circ$ N/S latitude.  Equatorward: net surplus;
-    poleward: net deficit.
+  \item \textbf{Absorbed solar radiation}: 열대의 $> 300\;\text{W/m}^2$에서
+    극지방의 $< 100\;\text{W/m}^2$까지---약 3배의 변동.
+  \item \textbf{OLR}: 훨씬 균일하여, 열대의 $\sim 250\;\text{W/m}^2$에서
+    극지방의 $\sim 175\;\text{W/m}^2$까지---1.5배 미만의 변동.
+  \item \textbf{Net radiation crossover}: $R_{\text{net}} = 0$이
+    $\sim 38^\circ$ N/S 위도에서 발생.  적도 쪽: net surplus;
+    극 쪽: net deficit.
 \end{itemize}
 
 \hisu{태양 복사는 적도--극 사이 3배 이상 차이가 나지만, OLR은 1.5배 차이에 불과.
@@ -1081,7 +1118,7 @@ The key observational facts:
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch04/p103_img01.jpeg}
+  \includegraphics[width=0.70\textwidth]{images/ch04/p103_img01.jpeg}
   \caption{Zonally averaged TOA radiation balance as a function of latitude: absorbed solar (incoming, red), outgoing longwave radiation (blue), and net radiation (shaded).  The tropics have a net radiative surplus (red shading) and the extratropics a net deficit (blue shading), with the crossover near $\sim$38$^\circ$ latitude.  This differential heating is the fundamental driver of the general circulation. \hisu{위도별 TOA 복사 수지: 흡수 태양 복사 (적색), 사출 장파 복사 (청색), 순 복사 (음영).  열대의 복사 잉여와 고위도의 복사 적자가 $\sim$38$^\circ$에서 교차하며, 이 차등 가열이 대기 대순환의 근본 원동력이다.}}
   \label{fig:ch04_toa_radiation}
 \end{figure}
@@ -1089,8 +1126,8 @@ The key observational facts:
 % --------------------------------------------------------------------------
 \subsubsection{Poleward Energy Transport}
 
-From the requirement of global energy balance, the net poleward
-energy transport across latitude $\phi$ is
+전구 energy balance 요건으로부터, 위도 $\phi$를 가로지르는
+net poleward energy transport는 다음과 같다.
 
 \begin{equation}\label{eq:energy_transport}
   \mathcal{F}(\phi) = 2\pi a^2\int_{\phi}^{\pi/2}
@@ -1098,13 +1135,13 @@ energy transport across latitude $\phi$ is
 \end{equation}
 
 \noindent
-Observational estimates yield:
+관측 추정치에 따르면:
 \begin{itemize}
-  \item Total transport peaks at $\sim 5$--$6$ PW at $\sim 35^\circ$ latitude.
-  \item \textgr{Atmospheric transport} dominates in the
-    \textbf{extratropics} ($> 30^\circ$).
-  \item \textgr{Oceanic transport} is significant mainly in the
-    \textbf{tropics} ($< 20^\circ$), contributing $\sim 2$ PW.
+  \item 총 수송량은 $\sim 35^\circ$ 위도에서 $\sim 5$--$6$ PW로 최대이다.
+  \item \textgr{Atmospheric transport}는 \textbf{extratropics} ($> 30^\circ$)에서
+    지배적이다.
+  \item \textgr{Oceanic transport}는 주로 \textbf{tropics} ($< 20^\circ$)에서
+    중요하며, $\sim 2$ PW를 기여한다.
 \end{itemize}
 
 \begin{hisublock}
@@ -1119,14 +1156,14 @@ Observational estimates yield:
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch04/p105_img01.jpeg}
+  \includegraphics[width=0.70\textwidth]{images/ch04/p105_img01.jpeg}
   \caption{Observed northward energy transport (PW) as a function of latitude: total (dashed), atmospheric (solid black), and oceanic (grey).  The total poleward transport peaks at $\sim$5--6\,PW near 35$^\circ$ latitude; atmospheric transport dominates in the extratropics while oceanic transport contributes significantly in the tropics. \hisu{관측된 극 방향 에너지 수송 (PW): 총 수송 (점선), 대기 수송 (실선), 해양 수송 (회색).  총 수송은 $\sim$35$^\circ$에서 $\sim$5--6\,PW로 최대이며, 중위도에서는 대기, 열대에서는 해양이 지배적이다.}}
   \label{fig:ch04_energy_transport}
 \end{figure}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch04/p104_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch04/p104_img01.jpeg}
   \caption{Schematic of the partitioning of poleward energy transports between the atmosphere and ocean.  Net radiation is absorbed at the top of the atmosphere (mostly in the tropics) and radiated back to space (mostly at higher latitudes).  The atmosphere and ocean each carry a portion of the required poleward transport, exchanging energy at the ocean surface through air--sea fluxes. \hisu{대기--해양 간 극 방향 에너지 수송 분배의 모식도.  적도에서 순 복사 에너지를 받아 대기 수송과 해양 수송으로 나뉘어 극 방향으로 운반된 후, 고위도에서 우주로 방출된다.}}
   \label{fig:ch04_transport_partition}
 \end{figure}
@@ -1134,7 +1171,7 @@ Observational estimates yield:
 % --------------------------------------------------------------------------
 \subsubsection{Decomposition of Atmospheric Energy Transport}
 
-The total atmospheric energy transport can be decomposed:
+전체 atmospheric energy transport는 다음과 같이 분해된다:
 
 \begin{equation}\label{eq:atm_transport}
   \mathcal{F}_{\text{atm}} = \underbrace{\mathcal{F}_{\text{MMC}}}_{\text{mean meridional circ.}}
@@ -1145,16 +1182,16 @@ The total atmospheric energy transport can be decomposed:
 \begin{multicols}{2}
 \textgr{Tropics ($|\phi| < 30^\circ$):}
 \begin{itemize}
-  \item Hadley cell (MMC) dominates
-  \item Transports dry static energy poleward
-  \item Also large latent heat transport equatorward (lower branch)
+  \item Hadley cell (MMC)이 지배적
+  \item Dry static energy를 극 방향으로 수송
+  \item 하층 가지에서 적도 방향 latent heat 수송도 큼
 \end{itemize}
 
 \columnbreak
 
 \textgr{Extratropics ($|\phi| > 30^\circ$):}
 \begin{itemize}
-  \item Transient eddies dominate
+  \item Transient eddies가 지배적
   \item Sensible heat $c_p(v_E T_E)_Z$
   \item Latent heat $L_v(v_E q_E)_Z$
   \item Potential energy $(v_E\Phi_E)_Z$
@@ -1167,16 +1204,15 @@ The total atmospheric energy transport can be decomposed:
 \subsubsection{Summary: The General Circulation as an Energy Engine}
 
 \begin{remarkbox}
-The atmosphere acts as a heat engine that:
+대기는 다음과 같이 작동하는 heat engine이다:
 \begin{enumerate}
-  \item Absorbs energy preferentially in the tropics,
-  \item Transports it poleward via mean circulations and eddies,
-  \item Radiates it to space more uniformly across all latitudes.
+  \item 열대에서 에너지를 우선적으로 흡수하고,
+  \item Mean circulation과 eddies를 통해 극 방향으로 수송하며,
+  \item 모든 위도에서 보다 균일하게 우주로 방출한다.
 \end{enumerate}
-The eddies (baroclinic waves) are the primary agents of poleward
-transport in the extratropics, maintaining the observed temperature
-distribution against radiative forcing, and simultaneously maintaining
-the jet streams through upgradient momentum transport.
+Eddies (baroclinic waves)는 extratropics에서 poleward transport의 주요 매개체로,
+radiative forcing에 맞서 관측된 temperature 분포를 유지하는 동시에
+upgradient momentum transport를 통해 jet streams를 유지한다.
 \end{remarkbox}
 
 \begin{hisublock}
@@ -1190,6 +1226,16 @@ the jet streams through upgradient momentum transport.
   \item TEM: 잔차 순환이 실제 수송에 더 가까움.  에디 효과가 $\nabla\cdot\mathbf{F}$로 깔끔하게 표현.
   \item 에너지 균형: 적도--극 복사 불균형 $\to$ 대기/해양 수송 $\to$ 일반 순환 유지.
 \end{enumerate}
+\end{hisublock}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~4 (pp.61--69) -- Global energy balance; TOA radiation budget과 에너지 수송의 관측적 배경 \hisu{본 PDF에는 목차만 수록}
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.~6.4 (book pp.150--154) -- Poleward energy transport의 대기/해양 분담 \hisu{본 PDF에는 목차만 수록}
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8 (pp.139--162, PDF pp.160--183) -- Atmospheric energy transport decomposition; mean circulation vs.\ eddy contribution
+  \item Trenberth \& Caron (2001) -- 관측 기반 전구 에너지 수송 추정의 표준 참고 문헌
+\end{itemize}
 \end{hisublock}
 
 \vspace{6pt}

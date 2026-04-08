@@ -88,13 +88,21 @@
 
 \begin{remark}
 
-  The term $\overline{u'v'}$ is the \textbf{covariance} of $u$ and $v$.
+  $\overline{u'v'}$ 항은 $u$와 $v$의 \textbf{covariance}이다.
   \begin{hisublock}
     공분산 = 상관 관계를 나타냄.
     표준편차로 나누면 상관계수(correlation coefficient):
     $r_{uv} = \overline{u'v'}/(\sigma_u \sigma_v)$
   \end{hisublock}
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.4.1 (pp.61--64; 본 PDF에는 목차만 수록) -- Reynolds decomposition의 정의 및 성질, transient/stationary eddy의 개념 도입
+  \item Hartmann (2007), \textit{Global Physical Climatology}, Ch.6.3 (pp.138--149; 본 PDF에는 목차만 수록) -- meridional transport의 decomposition에 사용되는 Reynolds averaging
+\end{itemize}
+\end{hisublock}
 
 \newpage
 % ------------------------------------------------------------------
@@ -159,19 +167,26 @@
 
 \begin{remark}
 
-  The structure is identical to the Reynolds decomposition. The zonal mean
-  operator $[\,\cdot\,]$ satisfies the same algebraic properties as the time mean
-  $\overline{(\,\cdot\,)}$, so all product rules carry over by substitution.
+  구조는 Reynolds decomposition과 동일하다. Zonal mean
+  operator $[\,\cdot\,]$는 time mean $\overline{(\,\cdot\,)}$과 같은
+  대수적 성질을 만족하므로, 모든 product rule이 그대로 적용된다.
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.4.1 (pp.61--64; 본 PDF에는 목차만 수록) -- zonal decomposition 및 eddy/mean flow 분리
+\end{itemize}
+\end{hisublock}
 
 \newpage
 % ------------------------------------------------------------------
 \subsection{Mixed (Combined) Decomposition}
 % ------------------------------------------------------------------
 
-Applying both the time average and the zonal average yields a
-\textgr{four-component decomposition}. First apply the time average, then the
-zonal average:
+Time average와 zonal average를 모두 적용하면
+\textgr{four-component decomposition}을 얻는다. 먼저 time average를 취한 뒤
+zonal average를 적용한다:
 
 \begin{definition}[Four-Component Decomposition]
 
@@ -188,7 +203,7 @@ zonal average:
   시간 평균 $\to$ 동서 평균을 순서대로 적용해서 4개의 성분으로 분해한다.
 \end{hisublock}
 
-Each component has a distinct physical meaning:
+각 성분은 고유한 물리적 의미를 갖는다:
 
 \medskip
 \begin{center}
@@ -216,15 +231,23 @@ Each component has a distinct physical meaning:
 
 \begin{remark}
 
-  Subscript notation is often used for compactness:
+  간결한 표기를 위해 subscript notation을 사용하기도 한다:
   \begin{multicols}{2}
   \begin{itemize}
     \item $(\,\cdot\,)_Z \equiv [\,\cdot\,]$: zonal-mean part
     \item $(\,\cdot\,)_E \equiv (\,\cdot\,)^{*}$: eddy part
   \end{itemize}
   \end{multicols}
-  so that $u = \overline{u}_Z + \overline{u}_E + u'_Z + u'_E$.
+  따라서 $u = \overline{u}_Z + \overline{u}_E + u'_Z + u'_E$로 쓸 수 있다.
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.4.1 (pp.61--64; 본 PDF에는 목차만 수록) -- time/space 혼합 분해 및 four-component decomposition 유도
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.4.2 (pp.65--66; 본 PDF에는 목차만 수록) -- spectral analysis를 통한 분해의 확장
+\end{itemize}
+\end{hisublock}
 
 \newpage
 % ------------------------------------------------------------------
@@ -233,9 +256,9 @@ Each component has a distinct physical meaning:
 
 \subsubsection{General Flux Decomposition}
 
-Consider the meridional transport of a scalar quantity $X$ by the meridional wind
-$v$. Using the four-component decomposition, the time-and-zonal mean of the flux
-$vX$ can be written as:
+Meridional wind $v$에 의한 scalar quantity $X$의 meridional transport를 생각하자.
+Four-component decomposition을 적용하면, flux $vX$의 time-and-zonal mean은
+다음과 같이 쓸 수 있다:
 
 \begin{proposition}[Flux Decomposition]\label{prop:flux-decomp}
 
@@ -295,8 +318,8 @@ $vX$ can be written as:
   \hisu{$\Omega a\cos\phi$: 지구 자전에 의한 기여, $u$: 대기 운동에 의한 기여}
 \end{definition}
 
-The northward transport of angular momentum, integrated over all longitudes and
-through a pressure layer from $p_1$ to $p_2$, is
+Angular momentum의 northward transport를 모든 경도에 대해 적분하고,
+$p_1$에서 $p_2$까지의 기압층에 걸쳐 적분하면 다음과 같다:
 
 \begin{equation}\label{eq:mom-transport}
   M_\phi \;=\;
@@ -315,8 +338,8 @@ through a pressure layer from $p_1$ to $p_2$, is
 
 \subsubsection*{Continuity Constraint on Meridional Wind}
 
-The continuity equation in pressure coordinates, integrated zonally and over the
-full pressure depth, constrains the meridional transport.
+Pressure coordinates에서의 continuity equation을 zonal 방향과 전체
+기압 깊이에 대해 적분하면 meridional transport에 대한 제약 조건을 얻는다.
 
 \begin{proposition}[Mass balance constraint]\label{prop:mass-balance}
 
@@ -353,7 +376,7 @@ full pressure depth, constrains the meridional transport.
 
 \subsubsection*{Momentum Transport Decomposition}
 
-Applying the four-component flux decomposition to $uv$:
+$uv$에 four-component flux decomposition을 적용하면:
 
 \begin{equation}\label{eq:uv-decomp}
   \overline{(uv)}_Z
@@ -365,11 +388,10 @@ Applying the four-component flux decomposition to $uv$:
 
 \begin{remark}
 
-  \textgr{Key observation:} The term
-  $\overline{u}_Z\,\overline{v}_Z \approx 0$
-  because the mass-balance constraint \eqref{eq:vz-integral} forces
-  $\overline{v}_Z$ to change sign in the vertical; the product with
-  $\overline{u}_Z$ largely cancels upon integration.
+  \textgr{Key observation:} $\overline{u}_Z\,\overline{v}_Z \approx 0$인데,
+  이는 mass-balance constraint \eqref{eq:vz-integral}에 의해
+  $\overline{v}_Z$가 연직 방향에서 부호가 바뀌기 때문이다.
+  $\overline{u}_Z$와의 곱은 적분 시 대부분 상쇄된다.
 
   \begin{hisublock}
     $\overline{u}_Z \overline{v}_Z$는 연직 적분하면 거의 0에 가깝다!
@@ -378,14 +400,14 @@ Applying the four-component flux decomposition to $uv$:
 
 \begin{remark}
 
-  The remaining terms have distinct latitudinal dominance:
+  나머지 항들은 위도에 따라 지배적인 성분이 다르다:
   \begin{itemize}
-    \item \textgr{Low latitudes:} The first pair
-    ($\overline{u}_Z\overline{v}_Z$ and $\overline{u'_Z v'_Z}$) dominates.
-    This is associated with the \textbf{Hadley circulation} (MMC).
-    \item \textgr{Mid--high latitudes:} The second pair
-    ($(\overline{u}_E\overline{v}_E)_Z$ and $\overline{(u'_E v'_E)}_Z$) dominates.
-    This is associated with \textbf{eddies} (baroclinic waves).
+    \item \textgr{Low latitudes:} 첫 번째 쌍
+    ($\overline{u}_Z\overline{v}_Z$, $\overline{u'_Z v'_Z}$)이 지배적이며,
+    이는 \textbf{Hadley circulation} (MMC)과 관련된다.
+    \item \textgr{Mid--high latitudes:} 두 번째 쌍
+    ($(\overline{u}_E\overline{v}_E)_Z$, $\overline{(u'_E v'_E)}_Z$)이 지배적이며,
+    이는 \textbf{eddies} (baroclinic waves)와 관련된다.
   \end{itemize}
   \hisu{저위도: Hadley cell이 운동량 수송 주도 / 중~고위도: 에디(파동)가 주도}
 \end{remark}
@@ -394,7 +416,7 @@ Applying the four-component flux decomposition to $uv$:
 \subsubsection{Example 2: Heat (Enthalpy) Transport}
 % ------------------------------------------------------------------
 
-The same decomposition applies to the meridional heat transport $\overline{(vT)}_Z$:
+같은 decomposition을 meridional heat transport $\overline{(vT)}_Z$에도 적용할 수 있다:
 
 \begin{equation}\label{eq:vt-decomp}
   \overline{(vT)}_Z
@@ -406,14 +428,14 @@ The same decomposition applies to the meridional heat transport $\overline{(vT)}
 
 \begin{remark}[Heat vs.\ Momentum Transport]
 
-  There is a fundamental asymmetry between heat and momentum transport:
+  Heat transport와 momentum transport 사이에는 근본적인 비대칭이 존재한다:
   \begin{itemize}
-    \item \textgr{Heat transport} is \textbf{down-gradient}:
-    heat flows from warm (equator) to cold (poles), reducing the
-    equator-to-pole temperature gradient.
-    \item \textgr{Momentum transport} is \textbf{up-gradient}:
-    eddies transport westerly momentum \emph{toward} the jet stream
-    (mid-latitudes), intensifying the existing gradient.
+    \item \textgr{Heat transport}는 \textbf{down-gradient}이다:
+    열은 따뜻한 곳(equator)에서 차가운 곳(poles)으로 흐르며,
+    equator-to-pole temperature gradient를 감소시킨다.
+    \item \textgr{Momentum transport}는 \textbf{up-gradient}이다:
+    eddy는 westerly momentum을 jet stream (mid-latitudes) \emph{쪽으로}
+    수송하여 기존의 gradient를 강화시킨다.
   \end{itemize}
   \begin{hisublock}
     열 수송은 경도(gradient)를 따라 (따뜻한 곳 $\to$ 차가운 곳),
@@ -429,8 +451,7 @@ The same decomposition applies to the meridional heat transport $\overline{(vT)}
 \subsubsection{Variance Decomposition}
 % ------------------------------------------------------------------
 
-Setting $X = v$ (i.e., examining the flux of $v$ by itself) gives the
-\textbf{variance decomposition}:
+$X = v$로 설정하면 (즉, $v$ 자체의 flux를 살펴보면) \textbf{variance decomposition}을 얻는다:
 
 \begin{proposition}[Variance Decomposition]\label{prop:var-decomp}
 
@@ -456,9 +477,17 @@ Setting $X = v$ (i.e., examining the flux of $v$ by itself) gives the
 
 \begin{remark}
 
-  Unlike the flux decomposition where cross-terms can be nonzero, the variance
-  decomposition has the clean property that each term is non-negative.
-  Therefore the total variance is an exact sum of contributions from each
-  component.
+  Flux decomposition에서는 cross-term이 0이 아닐 수 있지만,
+  variance decomposition은 각 항이 non-negative라는 깔끔한 성질을 갖는다.
+  따라서 total variance는 각 성분의 기여의 정확한 합이 된다.
   \hisu{분산 항은 전부 $\geq 0$이므로 각 성분의 기여를 정량적으로 비교 가능}
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.4.1--4.2 (pp.61--66; 본 PDF에는 목차만 수록) -- flux decomposition의 일반적 유도 및 angular momentum/heat transport 분해
+  \item Hartmann (2007), \textit{Global Physical Climatology}, Ch.6.3 (pp.138--149; 본 PDF에는 목차만 수록) -- meridional energy transport의 decomposition 및 heat vs.\ momentum transport의 비대칭
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.8.4 (pp.154--157, PDF pp.175--178) -- large-scale energy 및 momentum budget에서의 transport decomposition
+\end{itemize}
+\end{hisublock}

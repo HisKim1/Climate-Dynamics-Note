@@ -9,10 +9,10 @@
 
 \hisu{무역풍의 발견과 Halley의 관측}
 
-Christopher Columbus's westward voyages (1492--) revealed a remarkably persistent
-pattern: steady easterly winds in the low latitudes that reliably carried ships from
-Europe toward the Caribbean.  These \textbf{trade winds} became the empirical foundation
-of atmospheric science, long before any dynamical theory existed.
+Christopher Columbus의 서쪽 항해(1492--)는 놀라울 정도로 지속적인 패턴을 드러냈다:
+저위도에서 유럽으로부터 카리브해 방향으로 선박을 안정적으로 운반하는 steady easterly winds가
+그것이다.  이 \textbf{trade winds}는 어떤 역학 이론이 존재하기 훨씬 전부터
+atmospheric science의 경험적 토대가 되었다.
 
 \begin{definition}[Trade Winds]
 
@@ -22,11 +22,10 @@ of atmospheric science, long before any dynamical theory existed.
   \hisu{적도 저압대 쪽으로 부는 지속적인 편동풍; 대항해시대의 핵심 동력}
 \end{definition}
 
-\textbf{Edmund Halley} (1656--1742) offered the first physical explanation.
-In his 1686 paper, Halley argued that \textgr{differential solar heating} drives the
-trade winds: intense heating near the equator causes air to rise, drawing surface air
-equatorward from both hemispheres.  He also produced the first known map of surface
-winds over the tropical oceans.
+\textbf{Edmund Halley} (1656--1742)는 최초의 물리적 설명을 제시했다.
+1686년 논문에서 Halley는 \textgr{differential solar heating}이 trade winds를 구동한다고 주장했다:
+적도 부근의 강한 가열이 공기를 상승시키고, 양 반구로부터 지표 공기를 적도 방향으로 끌어당긴다.
+또한 그는 열대 해양의 surface winds에 대한 최초의 지도를 제작했다.
 
 \begin{hisublock}
   Halley의 설명은 위도에 따른 solar heating의 차이를 동력으로 제시했다는 점에서 혁명적이었지만,
@@ -34,19 +33,17 @@ winds over the tropical oceans.
 \end{hisublock}
 
 \begin{remark}[Halley's Incomplete Explanation]
-  Halley's theory attributed the trade winds purely to \textgr{differential solar heating}:
-  the Sun heats the equatorial region more intensely than the poles, causing air to rise
-  at the equator and drawing surface air equatorward.  While this correctly identifies
-  the thermodynamic driver, his explanation suffers from several critical omissions:
+  Halley의 이론은 trade winds를 순수하게 \textgr{differential solar heating}으로만 설명했다:
+  태양이 적도 지역을 극보다 더 강하게 가열하여 적도에서 공기가 상승하고, 지표 공기가 적도 방향으로
+  끌려온다는 것이다.  이것은 thermodynamic driver를 올바르게 식별했지만,
+  그의 설명에는 몇 가지 심각한 결함이 있다:
   \begin{itemize}
-    \item He failed to account for the \textgr{Earth's rotation} and the resulting
-      Coriolis force, which is responsible for deflecting the meridional flow into
-      the observed easterly direction.
-    \item His theory cannot explain the \textgr{midlatitude westerlies}: without
-      rotation, the circulation would consist of a single direct cell per hemisphere
-      with surface winds directed uniformly from pole to equator.
-    \item Without the Coriolis effect, there is no mechanism to produce the observed
-      zonal (east--west) component of the wind at any latitude.
+    \item \textgr{Earth's rotation}과 그로 인한 Coriolis force를 고려하지 못했다.
+      Coriolis force는 meridional flow를 관측되는 easterly 방향으로 편향시키는 원인이다.
+    \item 그의 이론은 \textgr{midlatitude westerlies}를 설명할 수 없다: rotation이 없으면
+      순환은 반구당 하나의 direct cell로 구성되며, 지표풍은 극에서 적도로 균일하게 향할 것이다.
+    \item Coriolis effect가 없으면, 어느 위도에서든 관측되는 zonal (east--west) 바람 성분을
+      생성할 메커니즘이 없다.
   \end{itemize}
   \hisu{Halley는 지구 자전을 고려하지 않았기 때문에 중위도 편서풍을 설명할 수 없었다}
 \end{remark}
@@ -60,13 +57,20 @@ winds over the tropical oceans.
   \label{fig:halley-wind-map}
 \end{figure}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.1 (pp.1--7, 본 PDF에는 목차만 수록) -- general circulation 연구의 역사적 배경과 관측의 발전
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.0.1--0.2 (pp.xiii--xx, PDF pp.14--21) -- atmospheric science의 scope와 rationale
+\end{itemize}
+\end{hisublock}
+
 % ------------------------------------------------------------------
 \subsection{Hadley's Single-Cell Model}
 % ------------------------------------------------------------------
 
-\textbf{George Hadley} (1685--1768) addressed the missing piece in his 1735 paper
-``Concerning the Cause of the General Trade-Winds.''  His key insight was to incorporate
-the \emph{rotation of the Earth}.
+\textbf{George Hadley} (1685--1768)는 1735년 논문 ``Concerning the Cause of the General Trade-Winds''에서
+빠진 조각을 채웠다.  그의 핵심 통찰은 \emph{Earth's rotation}을 도입한 것이었다.
 
 \begin{definition}[Thermally Direct Cell]\label{def:thermally-direct}
 
@@ -77,26 +81,25 @@ the \emph{rotation of the Earth}.
   \hisu{열적으로 직접적인 순환: 따뜻한 곳에서 상승, 차가운 곳에서 하강}
 \end{definition}
 
-Hadley's reasoning proceeded as follows:
+Hadley의 추론은 다음과 같이 진행되었다:
 \begin{enumerate}
-  \item Strong solar heating at the equator causes air to rise.
-  \item At upper levels, this air flows poleward.
-  \item Conservation of angular momentum requires that this poleward-moving air
-    acquire a westerly (west-to-east) component, since it originated at a larger
-    distance from the rotation axis.
-  \item The return flow at the surface, moving equatorward, is deflected
-    \emph{westward}, producing the observed easterly trade winds.
+  \item 적도에서의 강한 solar heating이 공기를 상승시킨다.
+  \item 상층에서 이 공기는 극 방향(poleward)으로 흐른다.
+  \item Angular momentum 보존에 의해, 이 poleward-moving air는 westerly (west-to-east) 성분을
+    획득한다 --- 회전축으로부터 더 먼 거리에서 출발했기 때문이다.
+  \item 지표에서의 return flow는 적도 방향으로 이동하면서 \emph{westward}로 편향되어,
+    관측되는 easterly trade winds를 생성한다.
 \end{enumerate}
 
 \subsubsection{Angular Momentum Argument}
 
-The absolute angular momentum per unit mass of a parcel on a rotating sphere is
+회전하는 구(rotating sphere) 위의 공기 덩어리(parcel)가 가지는 단위 질량당 absolute angular momentum은 다음과 같다:
 \begin{equation}\label{eq:ang-mom}
   M = (u + \Omega a \cos\phi)\,a\cos\phi,
 \end{equation}
-where $u$ is the zonal wind, $\Omega$ the planetary rotation rate, $a$ the Earth's
-radius, and $\phi$ the latitude.  If a parcel at rest at the equator ($\phi = 0$,
-$u = 0$) moves to latitude $\phi$ while conserving $M$, then
+여기서 $u$는 zonal wind, $\Omega$는 planetary rotation rate, $a$는 지구 반지름,
+$\phi$는 위도이다.  적도($\phi = 0$, $u = 0$)에서 정지해 있던 parcel이
+$M$을 보존하면서 위도 $\phi$로 이동하면,
 \begin{equation}\label{eq:ang-mom-conserve}
   u(\phi) = \Omega a \frac{\sin^2\phi}{\cos\phi}.
 \end{equation}
@@ -111,26 +114,35 @@ $u = 0$) moves to latitude $\phi$ while conserving $M$, then
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p08_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch01/p08_img01.jpeg}
   \caption{Schematic of Hadley's single thermally direct cell: warm air rises at the
     equator, flows poleward aloft, sinks at the pole, and returns equatorward at the
     surface. \hisu{Hadley의 단일 직접순환 모식도: 적도 상승 $\to$ 상층 극향 $\to$ 극 하강 $\to$ 지표 적도향}.}
   \label{fig:hadley-single-cell}
 \end{figure}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Lorenz (1983), \textit{Bull.\ Amer.\ Meteor.\ Soc.} -- general circulation 이론의 역사적 발전에 대한 종합적 리뷰
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.1 (pp.1--7, 본 PDF에는 목차만 수록) -- Hadley circulation의 역사적 맥락
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.8.1 (pp.140--141, PDF pp.161--162) -- angular momentum 보존과 Hadley cell의 관계
+\end{itemize}
+\end{hisublock}
+
 % ------------------------------------------------------------------
 \subsection{Thomson and Ferrel: The Three-Cell Model}
 % ------------------------------------------------------------------
 
-The single-cell picture survived for over a century before being challenged.
+Single-cell 모델은 한 세기 이상 도전받지 않고 존속했다.
 
-\textbf{James Thomson} (1857) recognized that what we now call the \textgr{Coriolis
-force}---the apparent deflection experienced by air moving over a rotating
-Earth---would prevent a simple equator-to-pole overturning.  He proposed a
-\emph{multi-cell} structure.
+\textbf{James Thomson} (1857)은 오늘날 \textgr{Coriolis force}라 불리는
+것---회전하는 지구 위에서 움직이는 공기가 겪는 겉보기 편향---이
+단순한 equator-to-pole overturning을 불가능하게 만든다는 것을 인식했다.
+그는 \emph{multi-cell} 구조를 제안했다.
 
-\textbf{William Ferrel} (1856, 1859) independently developed a \textbf{three-cell
-model} of the meridional circulation:
+\textbf{William Ferrel} (1856, 1859)은 독립적으로 meridional circulation의
+\textbf{three-cell model}을 발전시켰다:
 
 \begin{multicols}{2}
 \begin{itemize}
@@ -164,7 +176,7 @@ model} of the meridional circulation:
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p12_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch01/p12_img01.jpeg}
   \caption{The three-cell model of the meridional circulation: Hadley cell
     (thermally direct, 0--30$^\circ$), Ferrel cell (thermally indirect, 30--60$^\circ$),
     and Polar cell (thermally direct, 60--90$^\circ$), shown on a 3-D globe view.
@@ -173,10 +185,19 @@ model} of the meridional circulation:
 \end{figure}
 
 \begin{remark}
-  The Ferrel cell is not driven by direct thermal forcing.  Rather, it is maintained
-  by the convergence of eddy momentum fluxes associated with mid-latitude baroclinic
-  waves.  In this sense, it is a fundamentally \emph{eddy-driven} circulation.
+  Ferrel cell은 direct thermal forcing에 의해 구동되지 않는다.  오히려 중위도
+  baroclinic waves와 관련된 eddy momentum flux의 수렴(convergence)에 의해 유지된다.
+  이런 의미에서 Ferrel cell은 본질적으로 \emph{eddy-driven} circulation이다.
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Lorenz (1983), \textit{Bull.\ Amer.\ Meteor.\ Soc.} -- three-cell model의 역사적 발전과 한계에 대한 리뷰
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.1 (pp.1--7, 본 PDF에는 목차만 수록) -- meridional circulation의 multi-cell 구조 소개
+  \item Holton and Hakim (2012), \textit{An Introduction to Dynamic Meteorology}, Ch.10.1 -- three-cell model과 eddy-driven Ferrel cell 설명
+\end{itemize}
+\end{hisublock}
 
 \newpage
 % ==================================================================
@@ -187,22 +208,22 @@ model} of the meridional circulation:
 \subsection{Differential Heating}\label{subsec:diff-heating}
 % ------------------------------------------------------------------
 
-The starting point of any theory of the general circulation is the observation that
-the Earth's climate system is in approximate \textbf{radiative equilibrium} at the
-top of the atmosphere (TOA):
+General circulation 이론의 출발점은 지구 climate system이
+대기 상한(top of the atmosphere, TOA)에서 근사적으로 \textbf{radiative equilibrium}
+상태에 있다는 관측 사실이다:
 \begin{equation}\label{eq:global-balance}
   \overline{Q_{\mathrm{abs}}} = \overline{F_{\mathrm{OLR}}},
 \end{equation}
-where the overbar denotes a global and annual mean.  The absorbed solar radiation
-$Q_{\mathrm{abs}}$ must, on average, equal the outgoing longwave (infrared) radiation
-$F_{\mathrm{OLR}}$.
+여기서 overbar는 전지구 연평균을 나타낸다.  흡수된 태양복사
+$Q_{\mathrm{abs}}$는 평균적으로 outgoing longwave (infrared) radiation
+$F_{\mathrm{OLR}}$과 같아야 한다.
 
 \begin{hisublock}
   전지구 평균적으로 흡수되는 태양 에너지 = 방출되는 적외선 에너지.
   하지만 \textit{위도별로} 보면 이 균형이 깨진다 --- 그것이 순환의 근본 원인.
 \end{hisublock}
 
-The crucial feature is the \textgr{latitude dependence}:
+핵심적인 특징은 \textgr{latitude dependence}이다:
 \begin{itemize}
   \item \textbf{Absorbed solar radiation} $Q_{\mathrm{abs}}(\phi)$ is \emph{strongly}
     latitude-dependent, peaking near the equator.
@@ -213,8 +234,8 @@ The crucial feature is the \textgr{latitude dependence}:
     \hisu{방출 적외선: 위도 의존성이 약함 (대기-해양 순환이 열을 수송하기 때문)}
 \end{itemize}
 
-\noindent This produces a systematic \textbf{radiation surplus} at low latitudes and a
-\textbf{radiation deficit} at high latitudes:
+\noindent 이로 인해 저위도에서는 체계적인 \textbf{radiation surplus}가,
+고위도에서는 \textbf{radiation deficit}이 발생한다:
 \begin{equation}\label{eq:net-rad}
   R_{\mathrm{net}}(\phi) = Q_{\mathrm{abs}}(\phi) - F_{\mathrm{OLR}}(\phi)
   \begin{cases}
@@ -225,17 +246,16 @@ The crucial feature is the \textgr{latitude dependence}:
 
 \subsubsection{Daily-Mean TOA Insolation}
 
-The daily-mean insolation at the top of the atmosphere depends on latitude $\phi$ and
-the solar declination angle $\delta_s$:
+대기 상한에서의 daily-mean insolation은 위도 $\phi$와 solar declination angle $\delta_s$에 의존한다:
 \begin{equation}\label{eq:insolation}
   \bar{S}(\phi) = \frac{S_0}{\pi}
   \bigl( h_0 \sin\phi\,\sin\delta_s + \cos\phi\,\cos\delta_s\,\sin h_0 \bigr),
 \end{equation}
-where $S_0$ is the solar constant and $h_0$ is the hour angle at sunset.
+여기서 $S_0$는 solar constant이고 $h_0$는 일몰 시의 hour angle이다.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p17_img01.png}
+  \includegraphics[width=0.70\textwidth]{images/ch01/p17_img01.png}
   \caption{Daily-mean top-of-atmosphere insolation as a function of latitude for June
     solstice, December solstice, and the annual mean. Note the polar maximum during
     the respective summer solstice due to 24-hour daylight.
@@ -250,12 +270,21 @@ where $S_0$ is the solar constant and $h_0$ is the hour angle at sunset.
   결론적으로 위도에 따른 net radiation의 불균형이 대기-해양 순환의 원동력.
 \end{hisublock}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.2 (pp.8--31, 본 PDF에는 목차만 수록) -- climate system의 구성 요소와 differential heating의 근본 원인
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.2 (pp.18--39, 본 PDF에는 목차만 수록) -- global energy balance, emission temperature, poleward energy flux
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.2 (pp.9--28, PDF pp.30--49) -- global energy balance와 위도별 복사 불균형
+\end{itemize}
+\end{hisublock}
+
 % ------------------------------------------------------------------
 \subsection{The Atmosphere as a Heat Engine}\label{subsec:heat-engine}
 % ------------------------------------------------------------------
 
-The general circulation can be viewed as a \textbf{thermodynamic heat engine} that
-converts thermal energy into kinetic energy.
+General circulation은 thermal energy를 kinetic energy로 전환하는
+\textbf{thermodynamic heat engine}으로 볼 수 있다.
 
 \begin{definition}[Atmospheric Heat Engine]
 
@@ -270,13 +299,13 @@ converts thermal energy into kinetic energy.
   \hisu{열대에서 열 흡수 $\to$ 중고위도에서 열 방출 $\to$ 그 차이가 역학적 일(운동에너지)로 전환}
 \end{definition}
 
-On a thermodynamic $T$--$s$ (temperature--entropy) diagram, the atmospheric cycle
-traces a clockwise loop.  The area enclosed by this loop equals the net work output
-$W$.
+Thermodynamic $T$--$s$ (temperature--entropy) diagram에서 대기 순환 사이클은
+시계 방향의 루프를 그린다.  이 루프가 둘러싸는 면적이 순 일 출력(net work output)
+$W$와 같다.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p46_img01.jpeg}
+  \includegraphics[width=0.60\textwidth]{images/ch01/p46_img01.jpeg}
   \caption{$T$--$s$ diagram of the general circulation: the clockwise loop encloses an
     area equal to the net work $W$ produced by the atmospheric heat engine, shown
     alongside the analogous laboratory experiment.
@@ -284,25 +313,33 @@ $W$.
   \label{fig:ts-diagram}
 \end{figure}
 
-The specific entropy $s$ of dry air is related to potential temperature $\theta$ by
+건조 공기(dry air)의 specific entropy $s$는 potential temperature $\theta$와 다음의 관계를 가진다:
 \begin{equation}\label{eq:entropy-theta}
   s = c_p \ln\theta + \text{const},
 \end{equation}
-where $c_p$ is the specific heat at constant pressure.
+여기서 $c_p$는 정압 비열(specific heat at constant pressure)이다.
 
 \begin{remark}
-  The efficiency of the atmospheric heat engine is far below the Carnot limit.
-  Typical estimates give an efficiency of only a few percent, reflecting the fact that
-  most of the absorbed energy is re-radiated rather than converted to kinetic energy.
+  대기 heat engine의 효율은 Carnot limit보다 훨씬 낮다.
+  일반적인 추정치에 따르면 효율은 불과 몇 퍼센트에 불과하며, 이는 흡수된 에너지의
+  대부분이 kinetic energy로 전환되지 않고 다시 복사로 방출된다는 사실을 반영한다.
   \hisu{대기의 열효율은 Carnot 효율보다 훨씬 낮다 --- 대부분의 에너지는 다시 복사로 방출됨}
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.14 (pp.365--400, 본 PDF에는 목차만 수록) -- 대기를 heat engine으로 보는 관점과 Lorenz energy cycle
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.6.1--6.2 (pp.136--138, 본 PDF에는 목차만 수록) -- energy balance와 atmospheric motions의 에너지론적 관점
+\end{itemize}
+\end{hisublock}
 
 % ------------------------------------------------------------------
 \subsection{Available Potential Energy}\label{subsec:ape}
 % ------------------------------------------------------------------
 
-Not all potential energy in the atmosphere is available for conversion to kinetic
-energy.  This motivates the concept of \textbf{available potential energy} (APE).
+대기 중의 모든 potential energy가 kinetic energy로 전환 가능한 것은 아니다.
+이 사실이 \textbf{available potential energy} (APE) 개념의 동기가 된다.
 
 \begin{definition}[Available Potential Energy (APE)]\label{def:ape}
 
@@ -317,7 +354,7 @@ energy.  This motivates the concept of \textbf{available potential energy} (APE)
   \hisu{전체 위치에너지 중 운동에너지로 전환 가능한 부분만이 APE; 실제로는 매우 작은 비율 ($\sim$0.5\%)}
 \end{definition}
 
-The energy conversion chain in the atmosphere proceeds as follows:
+대기에서의 energy conversion chain은 다음과 같이 진행된다:
 \begin{equation}\label{eq:energy-chain}
   \underbrace{\mathrm{APE}}_{\text{differential heating}}
   \;\xrightarrow{\text{baroclinic processes}}\;
@@ -334,11 +371,19 @@ The energy conversion chain in the atmosphere proceeds as follows:
 \end{hisublock}
 
 \begin{remark}
-  The atmosphere maintains a quasi-steady kinetic energy budget: the rate of
-  generation of KE from APE is balanced by the rate of frictional dissipation.
-  Observationally, virtually all KE resides in the horizontal wind on scales larger
-  than $\sim$100\,km.
+  대기는 quasi-steady kinetic energy budget을 유지한다: APE로부터 KE가 생성되는 비율이
+  frictional dissipation에 의한 KE 소멸율과 균형을 이룬다.
+  관측적으로, 사실상 모든 KE는 $\sim$100\,km보다 큰 규모의 horizontal wind에 존재한다.
 \end{remark}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.13 (pp.308--364, 본 PDF에는 목차만 수록) -- APE의 정의, Lorenz energy cycle, 대기 에너지론의 종합적 서술
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.14 (pp.365--400, 본 PDF에는 목차만 수록) -- ocean-atmosphere heat engine과 APE 전환 과정
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.8.2--8.3 (pp.141--153, PDF pp.162--174) -- APE 개념과 에너지 수송
+\end{itemize}
+\end{hisublock}
 
 \newpage
 % ==================================================================
@@ -349,8 +394,8 @@ The energy conversion chain in the atmosphere proceeds as follows:
 \subsection{Radiative--Convective Equilibrium}\label{subsec:rce}
 % ------------------------------------------------------------------
 
-Before considering the full three-dimensional circulation, it is useful to consider
-two idealised one-dimensional equilibria.
+완전한 3차원 순환을 다루기 전에, 두 가지 이상화된 1차원 평형 상태를
+고려하는 것이 유용하다.
 
 \begin{definition}[Pure Radiative Equilibrium]\label{def:rad-eq}
 
@@ -363,9 +408,9 @@ two idealised one-dimensional equilibria.
   \hisu{각 고도에서 적외선 방출 = 흡수된 태양복사. 대류 없이 복사만으로 결정되는 온도 프로파일.}
 \end{definition}
 
-The pure radiative equilibrium temperature profile yields an unrealistically high
-surface temperature ($\sim$330\,K) and an extremely steep lapse rate in the lower
-troposphere --- far exceeding the threshold for convective instability.
+순수 radiative equilibrium temperature profile은 비현실적으로 높은
+지표 온도($\sim$330\,K)와 하부 대류권에서 극히 가파른 lapse rate를 산출하며,
+이는 convective instability의 임계값을 크게 초과한다.
 
 \begin{definition}[Radiative--Convective Equilibrium (RCE)]\label{def:rce}
 
@@ -379,7 +424,7 @@ troposphere --- far exceeding the threshold for convective instability.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p27_img01.jpeg}
+  \includegraphics[width=0.55\textwidth]{images/ch01/p27_img01.jpeg}
   \caption{Vertical temperature profiles from Manabe \& Strickler (1964): pure
     radiative equilibrium (dashed) versus radiative--convective equilibrium (solid).
     The radiative-only profile produces an unrealistically steep lapse rate near the
@@ -393,6 +438,14 @@ troposphere --- far exceeding the threshold for convective instability.
   하부 대류권의 기온 감률이 대류 불안정 임계값을 크게 초과한다.
   대류 조정(convective adjustment)이 필요하며, 이것이 RCE의 핵심 아이디어이다.\\
   Ref: (Manabe and Strickler, 1964)
+\end{hisublock}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.2 (pp.18--39, 본 PDF에는 목차만 수록) -- global energy balance, emission temperature, greenhouse effect와 radiative equilibrium
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.2 (pp.9--28, PDF pp.30--49) -- radiative equilibrium과 energy balance의 기초
+\end{itemize}
 \end{hisublock}
 
 % ------------------------------------------------------------------
@@ -442,29 +495,38 @@ troposphere --- far exceeding the threshold for convective instability.
   에미시비티 $\varepsilon \to 0$이면 $T_s \to T_E$, $T_A \to T_E / 2^{1/4}$.}
 \end{hisublock}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.2 (pp.18--39, 본 PDF에는 목차만 수록) -- emission temperature, greenhouse effect, 단층/다층 대기 모델
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.2 (pp.9--28, PDF pp.30--49) -- energy balance model의 기초와 greenhouse warming
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.2 (pp.8--31, 본 PDF에는 목차만 수록) -- 기후 시스템의 열역학적 개념과 feedback 메커니즘
+\end{itemize}
+\end{hisublock}
+
 % ------------------------------------------------------------------
 \subsection{The Cycling of Mechanical Energy}\label{subsec:cycling}
 % ------------------------------------------------------------------
 
-A useful thought experiment illustrates how differential heating generates
-mechanical energy.
+유용한 thought experiment을 통해 differential heating이 어떻게
+mechanical energy를 생성하는지 살펴보자.
 
 \subsubsection{Two-Fluid Thought Experiment}
 
-Consider a container divided by a vertical partition into two halves, each filled
-with an \emph{immiscible fluid} of different density ($\rho_1 > \rho_2$).
+수직 칸막이(vertical partition)로 두 부분으로 나뉜 용기를 생각하자. 각 부분은
+서로 다른 밀도($\rho_1 > \rho_2$)의 \emph{immiscible fluid}로 채워져 있다.
 
 \begin{enumerate}
-  \item \textbf{Initial state.}  Dense fluid on the left, light fluid on the right.
-    The centre of mass is at some height $z_{\mathrm{cm}}$.
-  \item \textbf{Partition removed.}  The dense fluid slides under the light fluid.
-    An overturning circulation develops.
-  \item \textbf{Final state.}  Dense fluid on the bottom, light fluid on top.
-    The centre of mass has dropped: $\Delta z_{\mathrm{cm}} < 0$.
+  \item \textbf{초기 상태.}  왼쪽에 dense fluid, 오른쪽에 light fluid.
+    질량 중심(centre of mass)은 어떤 높이 $z_{\mathrm{cm}}$에 위치한다.
+  \item \textbf{칸막이 제거.}  Dense fluid가 light fluid 아래로 미끄러진다.
+    Overturning circulation이 발달한다.
+  \item \textbf{최종 상태.}  Dense fluid가 아래, light fluid가 위에 위치한다.
+    질량 중심이 하강한다: $\Delta z_{\mathrm{cm}} < 0$.
 \end{enumerate}
 
-The potential energy released equals the kinetic energy generated (which is then
-dissipated by friction):
+방출된 potential energy는 생성된 kinetic energy와 같다
+(이후 friction에 의해 소멸된다):
 \begin{equation}\label{eq:two-fluid}
   \Delta \mathrm{PE} = -\int \rho\, g\, \Delta z_{\mathrm{cm}} \, dV
   \;\longrightarrow\; \mathrm{KE} \;\longrightarrow\; \text{Internal Energy (friction)}.
@@ -478,7 +540,7 @@ dissipated by friction):
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p35_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch01/p35_img01.jpeg}
   \caption{Laboratory experiment: steady-state thermally driven overturning circulation
     in a non-rotating annulus heated from below on one side and cooled from above on
     the other.
@@ -488,18 +550,26 @@ dissipated by friction):
 
 \subsubsection{Maintenance Requirements}
 
-In the absence of continued forcing, the overturning would cease once the
-stratification reaches a stable equilibrium (dense below, light above).
+지속적인 forcing이 없으면, 성층(stratification)이 안정 평형(dense below, light above)에
+도달한 후 overturning은 멈출 것이다.
 \textgr{Sustained circulation requires both horizontal and vertical gradients of
 diabatic heating}:
 \begin{itemize}
-  \item \textbf{Horizontal gradient:} equator-to-pole differential heating
-    creates the meridional density (temperature) gradient.
-  \item \textbf{Vertical gradient:} heating at low levels and cooling at upper levels
-    continuously destabilises the stratification, maintaining the overturning.
+  \item \textbf{Horizontal gradient:} equator-to-pole differential heating이
+    meridional density (temperature) gradient를 생성한다.
+  \item \textbf{Vertical gradient:} 하층에서의 가열과 상층에서의 냉각이
+    성층을 지속적으로 불안정화시켜 overturning을 유지한다.
 \end{itemize}
 
 \hisu{수평 경도 $+$ 연직 경도 둘 다 있어야 순환이 유지된다. 하나만으로는 정상 상태 순환 불가능.}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.13--14 (pp.308--400, 본 PDF에는 목차만 수록) -- APE에서 KE로의 전환 메커니즘과 대기 에너지 순환
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.8.2 (pp.141--148, PDF pp.162--169) -- differential heating에 의한 mechanical energy 생성
+\end{itemize}
+\end{hisublock}
 
 % ------------------------------------------------------------------
 \subsection{The Influence of Planetary Rotation}\label{subsec:rotation}
@@ -507,13 +577,12 @@ diabatic heating}:
 
 \subsubsection{Timescales and the Dominance of Rotation}
 
-The radiative relaxation timescale of the troposphere is
+대류권의 radiative relaxation timescale은 다음과 같다:
 \begin{equation}\label{eq:tau-rad}
   \tau_{\mathrm{rad}} \sim 30 \;\text{days},
 \end{equation}
-which is much longer than the rotation period ($\sim$1 day).  This means that the
-Coriolis force has ample time to influence the developing circulation, and the
-tidal (diurnal) response is secondary.
+이는 자전 주기($\sim$1일)보다 훨씬 길다.  이것은 Coriolis force가 발달하는 순환에
+영향을 미칠 충분한 시간이 있음을 의미하며, 조석(diurnal) 반응은 부차적이다.
 
 \begin{hisublock}
   복사 이완 시간($\sim$30일) $\gg$ 자전 주기($\sim$1일)
@@ -523,44 +592,42 @@ tidal (diurnal) response is secondary.
 
 \subsubsection{Spin-Up Thought Experiment on an Aquaplanet}
 
-The influence of rotation can be understood through a conceptual spin-up experiment
+Rotation의 영향은 개념적인 spin-up experiment을 통해 이해할 수 있다
 (Held, 2019, Ch.~6, \textit{Meteorological Monographs}):
 
 \begin{enumerate}
   \item[\textbf{(a)}] \textbf{Non-rotating planet.}
-    Differential heating drives a simple, hemispheric-scale, equator-to-pole
-    thermally direct overturning (one Hadley cell per hemisphere spanning the
-    entire latitude range).
+    Differential heating이 단순하고 반구 규모의 equator-to-pole thermally direct
+    overturning을 구동한다 (반구당 하나의 Hadley cell이 전 위도 범위에 걸침).
     \hisu{자전 없음 $\to$ 단순한 적도-극 직접 순환 (Hadley의 원래 구상)}
 
   \item[\textbf{(b)}] \textbf{Introduce rotation $\to$ pressure redistribution.}
-    As flow develops, the Coriolis force deflects poleward upper-level flow to the
-    east and equatorward surface flow to the west.  Pressure gradients are
-    redistributed by the evolving wind field.
+    흐름이 발달하면서 Coriolis force가 상층의 poleward flow를 동쪽으로,
+    지표의 equatorward flow를 서쪽으로 편향시킨다.  Pressure gradient는
+    변화하는 wind field에 의해 재분배된다.
     \hisu{자전 도입 $\to$ Coriolis 편향 $\to$ 기압장 재배치}
 
   \item[\textbf{(c)}] \textbf{Geostrophic adjustment $\to$ zonal flow.}
-    The flow adjusts toward \emph{geostrophic balance}: the Coriolis force balances
-    the pressure gradient force.  The circulation becomes predominantly
-    \emph{zonal} (east--west), governed by the \textbf{thermal wind relation}:
+    흐름이 \emph{geostrophic balance}로 조정된다: Coriolis force가
+    pressure gradient force와 균형을 이룬다.  순환은 주로
+    \emph{zonal} (east--west) 방향이 되며, \textbf{thermal wind relation}에 의해 지배된다:
     \begin{equation}\label{eq:thermal-wind}
       f \frac{\partial u_g}{\partial z}
       = -\frac{g}{T_0}\frac{\partial T}{\partial y},
     \end{equation}
-    where $f = 2\Omega\sin\phi$ is the Coriolis parameter, $u_g$ the geostrophic
-    zonal wind, and $\partial T/\partial y$ the meridional temperature gradient.
+    여기서 $f = 2\Omega\sin\phi$는 Coriolis parameter, $u_g$는 geostrophic
+    zonal wind, $\partial T/\partial y$는 meridional temperature gradient이다.
     \hisu{열풍(thermal wind): 남북 온도 경도가 있으면 상층으로 갈수록 서풍 증가}
 
   \item[\textbf{(d)}] \textbf{Baroclinic instability.}
-    As the meridional temperature gradient steepens under continued differential
-    heating, the jet stream intensifies until it reaches a critical shear.
-    At that point the zonally symmetric state becomes unstable to wave-like
-    perturbations.
+    지속적인 differential heating 하에서 meridional temperature gradient가 가파라지면
+    jet stream이 강화되어 critical shear에 도달한다.
+    이 시점에서 zonally symmetric state는 wave-like perturbation에 대해 불안정해진다.
 \end{enumerate}
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch01/p51_img01.jpeg}
+  \includegraphics[width=0.55\textwidth]{images/ch01/p51_img01.jpeg}
   \caption{Four-panel spin-up experiment on an aquaplanet: (a) non-rotating thermally
     direct cell, (b) introduction of Coriolis deflection, (c) geostrophic adjustment
     producing strong zonal flow, (d) onset of baroclinic instability breaking the
@@ -625,3 +692,13 @@ The influence of rotation can be understood through a conceptual spin-up experim
   $\to$ trade winds.
   \hisu{적도 부근에서 $f > 0$, $v > 0$ $\to$ $du/dt < 0$: 동풍 가속 $\to$ 무역풍 형성}
 \end{example}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton and Hakim (2012), \textit{An Introduction to Dynamic Meteorology}, Ch.10.1 -- general circulation의 개관, Hadley cell과 baroclinic instability의 역할
+  \item Held (2019), Ch.~6, \textit{Meteorological Monographs} -- spin-up experiment과 planetary rotation이 순환 구조에 미치는 영향
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.8.1--8.4 (pp.139--157, PDF pp.160--178) -- general circulation의 관측적 특성, APE, energy/momentum transport
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.13 (pp.308--364, 본 PDF에는 목차만 수록) -- 대기 에너지론과 baroclinic instability의 에너지적 역할
+\end{itemize}
+\end{hisublock}

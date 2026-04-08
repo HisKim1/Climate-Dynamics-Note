@@ -6,12 +6,9 @@
 
 \section{Observed Structure of Extratropical Circulation}\label{sec:qg-obs}
 
-Before developing the mathematical apparatus of quasi-geostrophic (QG)
-theory, we briefly review the observational features that motivate it.
-The extratropical atmosphere is characterised by strong \textgr{asymmetries}
-in both space and time: synoptic disturbances are not uniformly distributed
-but instead are concentrated in \textbf{storm tracks} that coincide with the
-regions of strongest time-mean zonal winds.
+Quasi-geostrophic (QG) theory의 수학적 체계를 전개하기 전에, 이를 동기 부여하는 관측적 특징을 간략히 살펴본다.
+온대 대기는 시공간적으로 강한 \textgr{asymmetries}를 보인다: synoptic disturbances는 균일하게 분포하지 않고,
+시간 평균 zonal wind가 가장 강한 영역과 일치하는 \textbf{storm tracks}에 집중된다.
 
 \hisu{경압 불안정 = 중위도 종관 규모 시스템의 주요 불안정 메커니즘}
 
@@ -32,19 +29,16 @@ regions of strongest time-mean zonal winds.
 \subsection{Storm Tracks and Jet Streams}
 % --------------------------------------------------------------------------
 
-Synoptic-scale disturbances---the familiar travelling cyclones and
-anticyclones of the midlatitudes---develop preferentially in regions of
-\textgr{maximum time-mean zonal wind}: the western Pacific jet and the
-North Atlantic jet.  These regions of enhanced transient eddy activity are
-called \textbf{storm tracks}.
+Synoptic-scale disturbances---중위도의 이동성 cyclones와 anticyclones---는
+\textgr{maximum time-mean zonal wind} 영역, 즉 서태평양 제트와 북대서양 제트 부근에서
+우선적으로 발달한다.  이러한 transient eddy activity가 강화된 영역을 \textbf{storm tracks}라 한다.
 
 \begin{remark}[Properties of Storm Tracks]
 \begin{itemize}
-  \item Storm tracks lie downstream of the strongest \textgr{baroclinicity}
-        (meridional temperature gradient / vertical wind shear).
-  \item They are maintained by a combination of local baroclinic energy
-        conversion and downstream energy propagation.
-  \item Strongest in winter, when meridional temperature gradients are largest.
+  \item Storm tracks는 가장 강한 \textgr{baroclinicity}
+        (meridional temperature gradient / vertical wind shear) 하류에 위치한다.
+  \item 국지적 baroclinic energy conversion과 하류 energy propagation의 조합에 의해 유지된다.
+  \item 겨울에 meridional temperature gradients가 가장 크므로 겨울에 가장 강하다.
 \end{itemize}
 \end{remark}
 
@@ -76,14 +70,23 @@ Storm track는 시간 평균 제트 부근에서 발생한다.
   \label{fig:nh-500hpa-mean}
 \end{figure}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Blackmon (1977), Lau (1978, 1979) -- storm track의 관측적 정의 및 통계적 특성
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.~6.3 (book pp.~138--149; 본 PDF에는 목차만 수록) -- 에디에 의한 에너지의 meridional transport와 storm track 유지
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8.2.2 (pp.~145--148, PDF pp.~166--169) -- extratropical circulation과 baroclinic instability의 GFD Lab XI 실험
+\end{itemize}
+\end{hisublock}
+
 % --------------------------------------------------------------------------
 \subsection{Baroclinic Instability}
 % --------------------------------------------------------------------------
 
-The \textgr{primary instability mechanism} for synoptic-scale systems in the
-midlatitudes is \textbf{baroclinic instability}.  It extracts available
-potential energy (APE) from the mean flow and converts it into eddy kinetic
-energy.  The necessary conditions for baroclinic instability are:
+중위도 synoptic-scale systems의 \textgr{primary instability mechanism}은
+\textbf{baroclinic instability}이다.  이는 평균류로부터 available potential energy (APE)를
+추출하여 eddy kinetic energy로 변환한다.
+Baroclinic instability의 필요 조건은 다음과 같다:
 
 \begin{enumerate}
   \item A nonzero meridional temperature gradient (equivalently, vertical wind shear
@@ -104,7 +107,7 @@ Baroclinic instability가 작동하려면:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p15_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p15_img01.jpeg}
   \caption{Vertical cross-section of a developing baroclinic wave.
     Solid lines denote geopotential height contours (ridges and troughs);
     dashed lines denote isotherms.  Note the characteristic
@@ -116,11 +119,20 @@ Baroclinic instability가 작동하려면:
   \label{fig:baroclinic-westward-tilt}
 \end{figure}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8.2.2 (pp.~145--148, PDF pp.~166--169) -- baroclinic instability의 기본 메커니즘과 GFD Lab XI 실험
+  \item Marshall \& Plumb (2008), Ch.~8.3 (pp.~149--153, PDF pp.~170--174) -- thermal wind equation의 energetics와 APE 방출
+  \item Holton \& Hakim Ch.~7 -- 경압 불안정의 수학적 이론 (Eady, Charney problem)
+\end{itemize}
+\end{hisublock}
+
 % --------------------------------------------------------------------------
 \subsection{Baroclinic Wave Lifecycle}
 % --------------------------------------------------------------------------
 
-The lifecycle of a typical baroclinic wave proceeds through three stages:
+전형적인 baroclinic wave의 lifecycle은 세 단계를 거친다:
 
 \begin{enumerate}
   \item \textgr{Incipient developing stage}: A small-amplitude perturbation
@@ -138,7 +150,7 @@ The lifecycle of a typical baroclinic wave proceeds through three stages:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p17_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p17_img01.jpeg}
   \caption{Schematic of baroclinic wave lifecycle at the surface:
     (a)~incipient developing stage with small-amplitude perturbations,
     (b)~rapid development stage with amplifying warm and cold fronts, and
@@ -165,17 +177,24 @@ The lifecycle of a typical baroclinic wave proceeds through three stages:
   \label{fig:storm-track-composite}
 \end{figure}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.~6.3 (book pp.~138--149; 본 PDF에는 목차만 수록) -- 중위도 에디의 meridional energy transport와 lifecycle
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5 (book pp.~385--392; 본 PDF에는 목차만 수록) -- EP flux와 zonal-mean state의 유지
+\end{itemize}
+\end{hisublock}
+
 
 % =============================================================================
 \section{Derivation of QG Equations ($z$-coordinate)}\label{sec:qg-z}
 % =============================================================================
 
-The quasi-geostrophic (QG) equations constitute the single most important
-dynamical framework for understanding midlatitude weather systems.
-They are derived by systematically exploiting the \textgr{smallness of the
-Rossby number}, $\mathrm{Ro} = U/(fL) \sim 0.1$, to filter out
-fast-moving inertia-gravity waves while retaining the slow, balanced motions
-that dominate the extratropics.
+Quasi-geostrophic (QG) equations는 중위도 기상 시스템을 이해하기 위한
+가장 중요한 역학적 framework이다.
+이 방정식은 \textgr{Rossby number의 작음}, $\mathrm{Ro} = U/(fL) \sim 0.1$을 체계적으로 이용하여,
+빠른 inertia-gravity waves를 걸러내고 온대 대기를 지배하는 느린 balanced motions만을
+보존하도록 유도된다.
 
 \hisu{QG 방정식 = Rossby 수가 작을 때 ($\mathrm{Ro}\sim 0.1$), 느린 균형 운동만을 기술하는 근사 체계}
 
@@ -212,8 +231,8 @@ Boussinesq 근사의 핵심 아이디어:
 \end{hisublock}
 
 \noindent
-Under the Boussinesq approximation the \textgr{mass continuity equation}
-simplifies to the incompressible form:
+Boussinesq approximation 하에서 \textgr{mass continuity equation}은
+incompressible form으로 단순화된다:
 \begin{equation}\label{eq:bous-cont}
   \frac{\partial u}{\partial x}
   + \frac{\partial v}{\partial y}
@@ -224,8 +243,8 @@ simplifies to the incompressible form:
 \subsection{Geostrophic Relations}\label{subsec:geostrophic}
 % --------------------------------------------------------------------------
 
-At leading order in the Rossby number, the horizontal momentum equations
-\eqref{eq:bous-x}--\eqref{eq:bous-y} reduce to \textgr{geostrophic balance}:
+Rossby number의 leading order에서 수평 운동량 방정식
+\eqref{eq:bous-x}--\eqref{eq:bous-y}는 \textgr{geostrophic balance}로 환원된다:
 
 \begin{equation}\label{eq:geowind}
   u_g = -\frac{1}{\rho_0 f}\frac{\partial p}{\partial y},
@@ -252,8 +271,7 @@ In vector form:
 
 \subsubsection{Geostrophic Vorticity}
 
-The vertical component of the \textgr{geostrophic vorticity} is obtained from
-$\mathbf{V}_g$:
+\textgr{Geostrophic vorticity}의 연직 성분은 $\mathbf{V}_g$로부터 다음과 같이 얻어진다:
 \begin{equation}\label{eq:geovort}
   \zeta_g
   = \frac{\partial v_g}{\partial x} - \frac{\partial u_g}{\partial y}
@@ -268,8 +286,8 @@ $\mathbf{V}_g$:
 
 \subsubsection{QG Material Derivative}
 
-In the QG framework, the material derivative is evaluated using
-\emph{only the geostrophic wind} for horizontal advection:
+QG framework에서 material derivative는 수평 이류에
+\emph{geostrophic wind만}을 사용하여 평가된다:
 \begin{equation}\label{eq:qg-ddt}
   \frac{d}{dt}
   \equiv \frac{\partial}{\partial t}
@@ -291,17 +309,17 @@ QG material derivative에서 주의할 점:
 \subsection{Hydrostatic Balance and Thermal Wind}\label{subsec:thermal-wind}
 % --------------------------------------------------------------------------
 
-The vertical momentum equation \eqref{eq:bous-z}, under the hydrostatic
-and Boussinesq approximations, yields the \textgr{perturbation hydrostatic
-relation}:
+연직 운동량 방정식 \eqref{eq:bous-z}에 hydrostatic approximation과
+Boussinesq approximation을 적용하면 \textgr{perturbation hydrostatic
+relation}을 얻는다:
 \begin{equation}\label{eq:hydro-pert}
   \frac{\partial p}{\partial z} = \frac{\rho_0\,g}{\theta_0}\,\theta.
 \end{equation}
 
 \noindent
-Differentiating the geostrophic relations \eqref{eq:geowind} with respect
-to $z$ and substituting \eqref{eq:hydro-pert} gives the
-\textgr{thermal wind relation}:
+Geostrophic relations \eqref{eq:geowind}을 $z$에 대해 미분하고
+\eqref{eq:hydro-pert}를 대입하면
+\textgr{thermal wind relation}을 얻는다:
 
 \begin{equation}\label{eq:thermal-wind-ch05}
   \frac{\partial \mathbf{V}_g}{\partial z}
@@ -331,16 +349,15 @@ In component form:
 \subsection{Thermodynamic Energy Equation}\label{subsec:thermo-z}
 % --------------------------------------------------------------------------
 
-In the QG framework, the thermodynamic equation for the perturbation
-potential temperature $\theta$ reads:
+QG framework에서 perturbation potential temperature $\theta$에 대한 thermodynamic equation은
+다음과 같다:
 \begin{equation}\label{eq:thermo-qg-z}
   \frac{d\theta}{dt} = -w\,\frac{d\theta_0}{dz},
 \end{equation}
 
 \noindent
-where the left-hand side uses the QG material derivative \eqref{eq:qg-ddt}
-and the right-hand side represents adiabatic cooling/heating due to
-vertical motion in a stably stratified background.
+여기서 좌변은 QG material derivative \eqref{eq:qg-ddt}를 사용하며,
+우변은 안정 성층 배경에서 연직 운동에 의한 adiabatic cooling/heating을 나타낸다.
 
 \begin{definition}[Brunt--V\"{a}is\"{a}l\"{a} Frequency]
 The \emph{Brunt--V\"{a}is\"{a}l\"{a} frequency} $N$ measures the static stability
@@ -354,8 +371,8 @@ For a stably stratified atmosphere, $d\theta_0/dz > 0$ so $N^2 > 0$.
 \end{definition}
 
 \noindent
-Using \eqref{eq:BV-freq}, the thermodynamic equation \eqref{eq:thermo-qg-z}
-can be written as:
+\eqref{eq:BV-freq}를 이용하면 thermodynamic equation \eqref{eq:thermo-qg-z}를
+다음과 같이 쓸 수 있다:
 \begin{equation}\label{eq:thermo-qg-z-N}
   \frac{d\theta}{dt} = -\frac{\theta_0 N^2}{g}\,w.
 \end{equation}
@@ -364,14 +381,13 @@ can be written as:
 \subsection{Gradient and Laplacian --- Geometric Intuition}\label{subsec:grad-lap}
 % --------------------------------------------------------------------------
 
-Two differential operators appear repeatedly in QG theory and deserve
-careful geometric interpretation.
+QG theory에서 반복적으로 나타나는 두 미분 연산자는
+주의 깊은 기하학적 해석이 필요하다.
 
 \subsubsection{The Gradient}
 
-The gradient $\nabla\Phi$ points in the direction of \textgr{steepest ascent}
-of the scalar field $\Phi$ and has magnitude equal to the maximum rate of
-change.  Contours of $\Phi$ are perpendicular to $\nabla\Phi$.
+Gradient $\nabla\Phi$는 scalar field $\Phi$의 \textgr{steepest ascent} 방향을 가리키며,
+그 크기는 최대 변화율과 같다.  $\Phi$의 등고선은 $\nabla\Phi$에 수직이다.
 
 \begin{figure}[htbp]
   \centering
@@ -390,8 +406,8 @@ change.  Contours of $\Phi$ are perpendicular to $\nabla\Phi$.
 
 \subsubsection{The Laplacian}
 
-The Laplacian $\nabla^2\Phi$ measures how the value of $\Phi$ at a point
-deviates from its average over a small neighbourhood:
+Laplacian $\nabla^2\Phi$는 한 점에서의 $\Phi$ 값이 작은 이웃 영역의
+평균으로부터 얼마나 벗어나는지를 측정한다:
 
 \begin{remark}[Sign Convention of the Laplacian]
 \begin{itemize}
@@ -413,14 +429,23 @@ QG 이론에서의 응용:
 따라서 저기압 중심에서는 항상 양의 (저기압성) 소용돌이도를 갖는다.
 \end{hisublock}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton \& Hakim Ch.~6.2--6.3 -- QG equations의 체계적 유도 ($z$-좌표)
+  \item Vallis, \textit{Atmospheric and Oceanic Fluid Dynamics}, Ch.~5.1--5.3 -- Boussinesq QG framework
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8.2.2 (pp.~145--148, PDF pp.~166--169) -- geostrophic balance와 thermal wind의 물리적 해석
+\end{itemize}
+\end{hisublock}
+
 
 % =============================================================================
 \section{QG Potential Vorticity}\label{sec:qgpv}
 % =============================================================================
 
-The concept of \textbf{potential vorticity} (PV) is the single most powerful
-idea in geophysical fluid dynamics.  In the QG framework it takes a
-particularly elegant and useful form.
+\textbf{Potential vorticity} (PV) 개념은 geophysical fluid dynamics에서
+가장 강력한 아이디어이다.  QG framework에서 PV는
+특히 우아하고 유용한 형태를 취한다.
 
 % --------------------------------------------------------------------------
 \subsection{From Ertel PV to QG PV}\label{subsec:ertel-to-qg}
@@ -428,22 +453,22 @@ particularly elegant and useful form.
 
 \subsubsection{Ertel PV under the Boussinesq Approximation}
 
-The exact (Ertel) potential vorticity for a Boussinesq fluid is:
+Boussinesq 유체에 대한 정확한 (Ertel) potential vorticity는 다음과 같다:
 \begin{equation}\label{eq:ertel}
   \Pi = \frac{\boldsymbol{\omega}_a \cdot \nabla\theta_{\mathrm{tot}}}{\rho_0},
 \end{equation}
 where $\boldsymbol{\omega}_a = \nabla\times\mathbf{V} + f\hat{k}$ is the
-absolute vorticity vector.  For adiabatic, frictionless flow, Ertel PV is
-materially conserved:
+absolute vorticity vector이다.  Adiabatic, frictionless flow에서 Ertel PV는
+materially conserved된다:
 \begin{equation}\label{eq:ertel-conserve}
   \frac{D\Pi}{Dt} = 0.
 \end{equation}
 
 \subsubsection{QG Scaling of Ertel PV}
 
-Expanding $\theta_{\mathrm{tot}} = \theta_0(z) + \theta(x,y,z,t)$ and
-$\boldsymbol{\omega}_a = (\xi, \eta, \zeta + f)$ where $(\xi,\eta)$ are
-horizontal vorticity components:
+$\theta_{\mathrm{tot}} = \theta_0(z) + \theta(x,y,z,t)$와
+$\boldsymbol{\omega}_a = (\xi, \eta, \zeta + f)$ (여기서 $(\xi,\eta)$는
+수평 vorticity 성분)를 전개하면:
 \begin{equation}\label{eq:ertel-expand}
   \Pi = \frac{1}{\rho_0}\left[
     \xi\frac{\partial\theta}{\partial x}
@@ -453,7 +478,7 @@ horizontal vorticity components:
 \end{equation}
 
 \noindent
-Under QG scaling ($\mathrm{Ro} \ll 1$):
+QG scaling ($\mathrm{Ro} \ll 1$) 하에서:
 \begin{enumerate}
   \item The horizontal vorticity terms $\xi\,\partial\theta/\partial x$ and
         $\eta\,\partial\theta/\partial y$ are $O(\mathrm{Ro}^2)$ smaller than the
@@ -465,7 +490,7 @@ Under QG scaling ($\mathrm{Ro} \ll 1$):
 \end{enumerate}
 
 \noindent
-After careful ordering, the QG-relevant part of Ertel PV reduces to:
+주의 깊은 차수 정리 후, Ertel PV의 QG-relevant 부분은 다음으로 환원된다:
 \begin{equation}\label{eq:ertel-qg-reduce}
   \Pi \approx \frac{1}{\rho_0}\left[
     (\zeta_g + f)\frac{d\theta_0}{dz}
@@ -474,8 +499,8 @@ After careful ordering, the QG-relevant part of Ertel PV reduces to:
 \end{equation}
 
 \noindent
-Dividing by the reference stability $(1/\rho_0)\,d\theta_0/dz$ and
-rearranging, we define the \textgr{QG potential vorticity}:
+기준 안정도 $(1/\rho_0)\,d\theta_0/dz$로 나누고 정리하면,
+\textgr{QG potential vorticity}를 다음과 같이 정의한다:
 
 \begin{definition}[QG Potential Vorticity, $z$-coordinate]
 \begin{equation}\label{eq:qgpv-z}
@@ -510,8 +535,8 @@ QG PV는 \textbf{합}으로 정의됨.
 \subsection{QG PV Conservation}\label{subsec:qgpv-conserve}
 % --------------------------------------------------------------------------
 
-The fundamental result of QG theory is that $Q$ is materially conserved
-following the \emph{geostrophic flow}:
+QG theory의 가장 근본적인 결과는 $Q$가 \emph{geostrophic flow}를 따라
+materially conserved된다는 것이다:
 
 \begin{theorem}[Conservation of QG PV]
 For adiabatic, frictionless, quasi-geostrophic flow:
@@ -572,9 +597,9 @@ which is precisely $dQ/dt = 0$.
 \subsection{QG Vorticity Equation}\label{subsec:qg-vort-eq}
 % --------------------------------------------------------------------------
 
-The QG vorticity equation is obtained from the horizontal momentum equations
-by taking $\partial v_g/\partial x - \partial u_g/\partial y$ and using
-QG scaling.  The result is:
+QG vorticity equation은 수평 운동량 방정식에서
+$\partial v_g/\partial x - \partial u_g/\partial y$를 취하고 QG scaling을
+적용하여 얻는다.  그 결과는 다음과 같다:
 
 \begin{equation}\label{eq:qg-vort-z}
   \boxed{
@@ -584,14 +609,11 @@ QG scaling.  The result is:
 
 \begin{remark}[Physical Interpretation]
 \begin{itemize}
-  \item Left-hand side: rate of change of \textgr{absolute geostrophic vorticity}
-        following the geostrophic flow.
-  \item Right-hand side: vorticity production by \textgr{stretching/compression}
-        of planetary vorticity tubes.
-  \item If $\partial w/\partial z > 0$ (stretching): columns become taller and
-        thinner → spin-up (cyclonic vorticity increase).
-  \item If $\partial w/\partial z < 0$ (compression): columns become shorter and
-        wider → spin-down (anticyclonic vorticity increase).
+  \item 좌변: geostrophic flow를 따른 \textgr{absolute geostrophic vorticity}의 변화율.
+  \item 우변: planetary vorticity tubes의 \textgr{stretching/compression}에 의한
+        vorticity 생성.
+  \item $\partial w/\partial z > 0$ (stretching)이면: 기둥이 더 높고 가늘어짐 → spin-up (cyclonic vorticity 증가).
+  \item $\partial w/\partial z < 0$ (compression)이면: 기둥이 더 낮고 넓어짐 → spin-down (anticyclonic vorticity 증가).
 \end{itemize}
 \end{remark}
 
@@ -612,10 +634,10 @@ QG scaling.  The result is:
 \subsection{QG Mass Continuity}\label{subsec:qg-cont}
 % --------------------------------------------------------------------------
 
-The total horizontal wind is decomposed as
-$\mathbf{V} = \mathbf{V}_g + \mathbf{V}_a$ where $\mathbf{V}_a$ is the
-\textgr{ageostrophic wind}.  Since $\nabla\cdot\mathbf{V}_g = 0$ (on an
-$f$-plane), the Boussinesq continuity equation \eqref{eq:bous-cont} becomes:
+전체 수평 바람을
+$\mathbf{V} = \mathbf{V}_g + \mathbf{V}_a$로 분해한다. 여기서 $\mathbf{V}_a$는
+\textgr{ageostrophic wind}이다.  $f$-plane에서 $\nabla\cdot\mathbf{V}_g = 0$이므로,
+Boussinesq continuity equation \eqref{eq:bous-cont}은 다음이 된다:
 
 \begin{equation}\label{eq:qg-cont}
   \frac{\partial u_a}{\partial x}
@@ -629,11 +651,11 @@ $f$-plane), the Boussinesq continuity equation \eqref{eq:bous-cont} becomes:
 \subsection{QG PV in Terms of Pressure Alone}\label{subsec:qgpv-pressure}
 % --------------------------------------------------------------------------
 
-A remarkable feature of the QG system is that all dynamical quantities can
-be expressed in terms of a \textgr{single variable}: the pressure perturbation
-$p$.  Substituting $\zeta_g = (1/\rho_0 f)\nabla^2 p$ and
-$\theta = (\theta_0/\rho_0 g)\,\partial p/\partial z$ (from the hydrostatic
-relation \eqref{eq:hydro-pert}) into \eqref{eq:qgpv-z}:
+QG system의 놀라운 특징은 모든 역학적 물리량을
+\textgr{단일 변수}인 pressure perturbation $p$로 표현할 수 있다는 것이다.
+$\zeta_g = (1/\rho_0 f)\nabla^2 p$와
+$\theta = (\theta_0/\rho_0 g)\,\partial p/\partial z$ (hydrostatic
+relation \eqref{eq:hydro-pert}로부터)를 \eqref{eq:qgpv-z}에 대입하면:
 
 \begin{equation}\label{eq:qgpv-p-only}
   \boxed{
@@ -645,9 +667,8 @@ relation \eqref{eq:hydro-pert}) into \eqref{eq:qgpv-z}:
 \end{equation}
 
 \noindent
-The operator $L$ is a three-dimensional elliptic operator (an
-``invertibility operator'') that maps the pressure field to the PV
-distribution.
+연산자 $L$은 3차원 elliptic operator (``invertibility operator'')로서,
+pressure field를 PV distribution으로 mapping한다.
 
 \hisu{QG PV는 압력장 하나로 완전히 결정 --- 매우 강력한 결과!}
 
@@ -661,22 +682,30 @@ $L p = f(Q - f)$를 풀어서 $p$를 구하고, $p$로부터 바람, 온도, 소
 \]
 \end{hisublock}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton \& Hakim Ch.~6.3 -- QG PV의 유도와 보존 법칙
+  \item Vallis Ch.~5.3--5.4 -- Ertel PV에서 QG PV로의 체계적 유도
+  \item Hoskins, McIntyre, \& Robertson (1985) -- PV inversion의 개념과 응용
+\end{itemize}
+\end{hisublock}
+
 
 % =============================================================================
 \section{QG Height Tendency Equation}\label{sec:qg-height-tendency}
 % =============================================================================
 
-The QG height tendency equation is a \textgr{prognostic equation} that
-predicts how the pressure field evolves in time, given the current
-distribution of wind and temperature.  It is the theoretical foundation
-of synoptic weather forecasting.
+QG height tendency equation은 현재 바람과 온도의 분포가 주어졌을 때
+pressure field가 시간에 따라 어떻게 진화하는지를 예측하는 \textgr{prognostic equation}이다.
+이는 synoptic weather forecasting의 이론적 기초이다.
 
 % --------------------------------------------------------------------------
 \subsection{Derivation}\label{subsec:height-tendency-derive}
 % --------------------------------------------------------------------------
 
-We start from QG PV conservation \eqref{eq:qgpv-conserve} and the
-invertibility relation \eqref{eq:qgpv-p-only}.
+QG PV conservation \eqref{eq:qgpv-conserve}과
+invertibility relation \eqref{eq:qgpv-p-only}에서 출발한다.
 
 \textit{Step 1.}  From $dQ/dt = 0$:
 \begin{equation}\label{eq:ht-step1}
@@ -709,8 +738,8 @@ and using the identity $\mathbf{V}_g\cdot\nabla f = \beta v_g$:
 \subsection{Physical Interpretation}\label{subsec:height-tendency-phys}
 % --------------------------------------------------------------------------
 
-The two forcing terms on the right-hand side of \eqref{eq:height-tendency-z}
-have clear physical interpretations:
+\eqref{eq:height-tendency-z}의 우변에 있는 두 forcing terms은
+명확한 물리적 해석을 갖는다:
 
 \begin{remark}[Height Tendency Forcing Terms]
 \begin{enumerate}
@@ -747,22 +776,30 @@ have clear physical interpretations:
 \end{itemize}
 \end{hisublock}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton \& Hakim Ch.~6.4 -- QG height tendency equation의 유도와 일기예보 응용
+  \item Bluestein, \textit{Synoptic-Dynamic Meteorology}, Vol.~II -- vorticity advection과 thermal advection의 실제 일기도 분석
+\end{itemize}
+\end{hisublock}
+
 
 % =============================================================================
 \section{QG Vertical Motion Equation}\label{sec:qg-omega-z}
 % =============================================================================
 
-Vertical motion in the atmosphere cannot be measured directly; it must be
-\textgr{diagnosed} from other fields.  The QG omega equation provides a
-powerful tool for this purpose.
+대기의 vertical motion은 직접 측정할 수 없으며, 다른 장(field)으로부터
+\textgr{진단(diagnosed)}되어야 한다.  QG omega equation은 이를 위한
+강력한 도구를 제공한다.
 
 % --------------------------------------------------------------------------
 \subsection{Omega Equation ($z$-coordinate)}\label{subsec:omega-eq-z}
 % --------------------------------------------------------------------------
 
-The omega equation is derived by eliminating $\partial p/\partial t$ between
-the QG vorticity equation \eqref{eq:qg-vort-z} and the QG thermodynamic
-equation \eqref{eq:thermo-qg-z}.
+Omega equation은 QG vorticity equation \eqref{eq:qg-vort-z}과 QG thermodynamic
+equation \eqref{eq:thermo-qg-z} 사이에서 $\partial p/\partial t$를 소거하여
+유도된다.
 
 \textit{Step 1.}  Take $\partial/\partial z$ of the vorticity equation:
 \[
@@ -816,9 +853,8 @@ convert $\partial\zeta_g/\partial z$ terms into $\nabla\theta$ terms):
 \subsection{Application: Cyclogenesis}\label{subsec:cyclogenesis}
 % --------------------------------------------------------------------------
 
-The QG framework provides a complete picture of how midlatitude cyclones
-develop through the cooperative interaction of upper-level and surface
-disturbances.
+QG framework는 중위도 cyclones가 상층과 지표 disturbances의
+cooperative interaction을 통해 어떻게 발달하는지에 대한 완전한 그림을 제공한다.
 
 \begin{remark}[QG Mechanism of Cyclogenesis]
 \begin{enumerate}
@@ -851,7 +887,7 @@ disturbances.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p58_img01.png}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p58_img01.png}
   \caption{Schematic cross-section of midlatitude cyclogenesis showing the
     interaction between upper-level and surface disturbances.
     (a)~Vertical cross-section: an upper-level trough (with positive PV
@@ -868,7 +904,7 @@ disturbances.
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p111_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p111_img01.jpeg}
   \caption{Three-dimensional schematic of the relationship between
     upper-level and surface charts during cyclogenesis.
     Upper panel: 500\,hPa chart with trough (L) and ridge (H) axes;
@@ -882,15 +918,23 @@ disturbances.
   \label{fig:upper-surface-cyclogenesis}
 \end{figure}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton \& Hakim Ch.~6.4--6.5 -- omega equation 유도와 cyclogenesis에의 응용
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8.3 (pp.~149--153, PDF pp.~170--174) -- APE 방출과 경압 에너지 변환의 energetics
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.~6.3 (book pp.~138--149; 본 PDF에는 목차만 수록) -- 에디의 meridional energy transport 역할
+\end{itemize}
+\end{hisublock}
+
 
 % =============================================================================
 \section{QG Equations in Pressure Coordinates}\label{sec:qg-pressure}
 % =============================================================================
 
-For practical applications---especially weather forecasting and analysis of
-upper-air charts---it is convenient to formulate the QG equations in
-\textgr{pressure coordinates} $(x, y, p, t)$, where pressure replaces height
-as the vertical coordinate.
+실용적 응용---특히 일기예보와 상층 일기도 분석---을 위해
+QG equations를 \textgr{pressure coordinates} $(x, y, p, t)$로 정식화하는 것이 편리하다.
+여기서 pressure가 height를 대체하여 연직 좌표가 된다.
 
 % --------------------------------------------------------------------------
 \subsection{Beta-Plane Approximation}\label{subsec:beta-plane}
@@ -911,8 +955,8 @@ $y = a(\phi - \phi_0)$ is the northward distance from the reference latitude.
 \end{definition}
 
 \noindent
-The scale analysis confirms that the $\beta$-effect is an $O(\mathrm{Ro})$
-correction to $f_0$:
+Scale analysis에 의하면 $\beta$-effect는 $f_0$에 대한 $O(\mathrm{Ro})$
+보정임을 확인할 수 있다:
 \begin{equation}\label{eq:beta-scaling}
   \frac{\beta L}{f_0} \sim \mathrm{Ro} \sim 0.1.
 \end{equation}
@@ -923,13 +967,13 @@ correction to $f_0$:
 \subsection{QG Momentum Equation (p-coordinate)}\label{subsec:qg-mom-p}
 % --------------------------------------------------------------------------
 
-In pressure coordinates the geostrophic wind is:
+Pressure coordinates에서 geostrophic wind는 다음과 같다:
 \begin{equation}\label{eq:geowind-p}
   u_g = -\frac{1}{f_0}\frac{\partial\Phi}{\partial y},
   \qquad
   v_g = +\frac{1}{f_0}\frac{\partial\Phi}{\partial x},
 \end{equation}
-where $\Phi = gz$ is the geopotential.  The QG momentum equation is:
+여기서 $\Phi = gz$는 geopotential이다.  QG momentum equation은 다음과 같다:
 
 \begin{equation}\label{eq:qg-mom-p}
   \boxed{
@@ -940,9 +984,9 @@ where $\Phi = gz$ is the geopotential.  The QG momentum equation is:
 \end{equation}
 
 \noindent
-where the QG material derivative is
-$d/dt = \partial/\partial t + \mathbf{V}_g\cdot\nabla$ (horizontal advection
-by the geostrophic wind only).
+여기서 QG material derivative는
+$d/dt = \partial/\partial t + \mathbf{V}_g\cdot\nabla$ (geostrophic wind에 의한
+수평 이류만 포함)이다.
 
 \hisu{지균풍의 시간 변화 = 비지균풍에 의한 코리올리 힘 ($-f_0\hat{k}\times\mathbf{V}_a$) + 베타 효과 ($-\beta y\hat{k}\times\mathbf{V}_g$)}
 
@@ -961,7 +1005,7 @@ by the geostrophic wind only).
 \subsection{QG Thermodynamic Equation (p-coordinate)}\label{subsec:qg-thermo-p}
 % --------------------------------------------------------------------------
 
-The thermodynamic energy equation in pressure coordinates reads:
+Pressure coordinates에서의 thermodynamic energy equation은 다음과 같다:
 \begin{equation}\label{eq:qg-thermo-p}
   \boxed{
   \left(\frac{\partial}{\partial t}
@@ -972,12 +1016,11 @@ The thermodynamic energy equation in pressure coordinates reads:
 \end{equation}
 
 \noindent
-where $-\partial\Phi/\partial p = RT/p = \alpha$ is proportional to
-temperature (via the hydrostatic relation), $\omega = Dp/Dt$ is the
-pressure-coordinate vertical velocity,
-$\sigma(p) = -(\alpha/\theta)\,d\theta/dp > 0$ is the \textgr{static
-stability parameter}, $J$ is the diabatic heating rate, and
-$\kappa = R/c_p$.
+여기서 $-\partial\Phi/\partial p = RT/p = \alpha$는 hydrostatic relation을 통해
+온도에 비례하고, $\omega = Dp/Dt$는 pressure-coordinate vertical velocity,
+$\sigma(p) = -(\alpha/\theta)\,d\theta/dp > 0$는 \textgr{static
+stability parameter}, $J$는 diabatic heating rate, 그리고
+$\kappa = R/c_p$이다.
 
 \begin{hisublock}
 $p$-좌표에서 열역학 방정식의 각 항:
@@ -993,9 +1036,9 @@ $p$-좌표에서 열역학 방정식의 각 항:
 \subsection{QG Vorticity Equation (p-coordinate)}\label{subsec:qg-vort-p}
 % --------------------------------------------------------------------------
 
-Taking $(\partial/\partial x)$ of the $v_g$-equation minus
-$(\partial/\partial y)$ of the $u_g$-equation, and using the continuity
-equation $\nabla\cdot\mathbf{V}_a + \partial\omega/\partial p = 0$:
+$v_g$-equation에 $(\partial/\partial x)$를, $u_g$-equation에
+$(\partial/\partial y)$를 취하고 빼면, continuity equation
+$\nabla\cdot\mathbf{V}_a + \partial\omega/\partial p = 0$을 이용하여:
 
 \begin{equation}\label{eq:qg-vort-p}
   \boxed{
@@ -1032,15 +1075,14 @@ equation $\nabla\cdot\mathbf{V}_a + \partial\omega/\partial p = 0$:
 \label{subsec:short-long-waves}
 % --------------------------------------------------------------------------
 
-To understand how \textgr{relative vorticity advection} and
-\textgr{planetary vorticity advection} compete, consider a simple
-geopotential field:
+\textgr{Relative vorticity advection}과
+\textgr{planetary vorticity advection}이 어떻게 경쟁하는지 이해하기 위해,
+간단한 geopotential field를 고려하자:
 \begin{equation}\label{eq:wave-geopot}
   \Phi = \Phi_0(p) - f_0\bar{u}\,y + f_0 A\sin(kx)\cos(ly),
 \end{equation}
-where $\bar{u}$ is a constant zonal-mean zonal wind and $A$ is the wave
-amplitude.  From \eqref{eq:geowind-p}, the geostrophic wind perturbations
-are:
+여기서 $\bar{u}$는 상수인 zonal-mean zonal wind이고 $A$는 wave amplitude이다.
+\eqref{eq:geowind-p}로부터 geostrophic wind perturbations는:
 \[
   u_g' = -\frac{1}{f_0}\frac{\partial\Phi'}{\partial y}
        = Al\sin(kx)\sin(ly),
@@ -1050,7 +1092,7 @@ are:
 \]
 
 \noindent
-The geostrophic relative vorticity is:
+Geostrophic relative vorticity는:
 \[
   \zeta_g = \frac{1}{f_0}\nabla^2\Phi'
   = -\frac{(k^2 + l^2)}{f_0}\,f_0 A\sin(kx)\cos(ly)
@@ -1063,19 +1105,18 @@ The geostrophic relative vorticity is:
   -\bar{u}\frac{\partial\zeta_g}{\partial x}
   = \bar{u}(k^2+l^2)\,Ak\cos(kx)\cos(ly).
 \]
-This acts to propagate the wave \textgr{eastward} (in the direction of
-$\bar{u}$).
+이는 파동을 \textgr{eastward} ($\bar{u}$의 방향)로 전파시키는 역할을 한다.
 
 \subsubsection{Planetary Vorticity Advection}
 
 \[
   -\beta v_g = -\beta Ak\cos(kx)\cos(ly).
 \]
-This acts to propagate the wave \textgr{westward} (opposing $\bar{u}$).
+이는 파동을 \textgr{westward} ($\bar{u}$에 반대 방향)로 전파시키는 역할을 한다.
 
 \subsubsection{Ratio of the Two Effects}
 
-The ratio of planetary to relative vorticity advection is:
+Planetary vorticity advection 대 relative vorticity advection의 비는 다음과 같다:
 \begin{equation}\label{eq:wave-ratio}
   \boxed{
   \frac{\text{Planetary vorticity advection}}
@@ -1104,7 +1145,7 @@ The ratio of planetary to relative vorticity advection is:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p79_img01.png}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p79_img01.png}
   \caption{Upper-tropospheric wave pattern on a $\beta$-plane showing
     geopotential contours (thin lines) with troughs (L, cyclonic,
     $\zeta > 0$) and ridges (H, anticyclonic, $\zeta < 0$).
@@ -1118,7 +1159,7 @@ The ratio of planetary to relative vorticity advection is:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p84_img01.png}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p84_img01.png}
   \caption{Competition between relative vorticity advection (eastward
     propagation) and planetary vorticity advection (westward propagation).
     For \textgr{short waves}, relative vorticity advection dominates and the
@@ -1143,13 +1184,13 @@ $\bar{u}$가 크면 정상파의 파수가 작아져서 (파장이 길어져서)
 \label{subsec:geopot-tendency}
 % --------------------------------------------------------------------------
 
-Define the \textgr{geopotential tendency}:
+\textgr{Geopotential tendency}를 다음과 같이 정의한다:
 \begin{equation}\label{eq:chi-def}
   \chi \equiv \frac{\partial\Phi}{\partial t}.
 \end{equation}
 
 \noindent
-From QG PV conservation in pressure coordinates, one obtains:
+Pressure coordinates에서의 QG PV conservation으로부터 다음을 얻는다:
 
 \begin{equation}\label{eq:geopot-tendency}
   \boxed{
@@ -1201,7 +1242,7 @@ From QG PV conservation in pressure coordinates, one obtains:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p110_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p110_img01.jpeg}
   \caption{Relationship between the geopotential tendency equation forcing
     terms and synoptic weather patterns.  Upper panel: 500\,hPa chart
     showing vorticity advection (Term~B) downstream of the upper trough.
@@ -1219,7 +1260,7 @@ From QG PV conservation in pressure coordinates, one obtains:
 \subsection{QG PV in Pressure Coordinates}\label{subsec:qgpv-p}
 % --------------------------------------------------------------------------
 
-Collecting the vorticity and stretching contributions in pressure coordinates:
+Pressure coordinates에서의 vorticity와 stretching 기여를 모으면:
 
 \begin{definition}[QG Potential Vorticity, $p$-coordinate]
 \begin{equation}\label{eq:qgpv-p}
@@ -1244,9 +1285,9 @@ The three terms are:
 \subsection{QG Omega Equation (p-coordinate)}\label{subsec:omega-eq-p}
 % --------------------------------------------------------------------------
 
-The omega equation in pressure coordinates is obtained by eliminating the
-tendency $\chi$ between the vorticity equation \eqref{eq:qg-vort-p} and
-the thermodynamic equation \eqref{eq:qg-thermo-p}.
+Pressure coordinates에서의 omega equation은 vorticity equation \eqref{eq:qg-vort-p}과
+thermodynamic equation \eqref{eq:qg-thermo-p} 사이에서 tendency $\chi$를
+소거하여 얻는다.
 
 \textit{Step 1.}  Apply $(\partial/\partial p)(f_0^2/\sigma)\cdot(\cdot)$
 to the vorticity equation to get the stretching contribution to the tendency.
@@ -1256,7 +1297,7 @@ to the vorticity equation to get the stretching contribution to the tendency.
 \textit{Step 3.}  Subtract to eliminate $\partial\Phi/\partial t$ terms.
 
 \noindent
-The result is the \textgr{QG omega equation}:
+그 결과가 \textgr{QG omega equation}이다:
 
 \begin{equation}\label{eq:omega-p}
   \boxed{
@@ -1311,7 +1352,7 @@ The result is the \textgr{QG omega equation}:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p125_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p125_img01.jpeg}
   \caption{Schematic plan view of upper-level (solid) and lower-level
     (dashed) geopotential contours for a developing baroclinic wave.
     H marks the high (ridge) and L marks the low (trough).  Descending
@@ -1325,7 +1366,7 @@ The result is the \textgr{QG omega equation}:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p129_img01.jpeg}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p129_img01.jpeg}
   \caption{As in Fig.~\ref{fig:upper-lower-wave-vertical-motion} but with
     frontal boundaries and temperature advection indicated.  Warm advection
     ($w > 0$, ascent) occurs ahead of the surface low where the warm front
@@ -1352,8 +1393,8 @@ The result is the \textgr{QG omega equation}:
 \subsection{Barotropic vs.\ Baroclinic Atmosphere}\label{subsec:baro}
 % --------------------------------------------------------------------------
 
-The distinction between barotropic and baroclinic atmospheres is central to
-understanding QG dynamics and the nature of instabilities.
+Barotropic 대기와 baroclinic 대기의 구분은
+QG dynamics와 불안정의 본질을 이해하는 데 핵심적이다.
 
 \begin{definition}[Barotropic Atmosphere]
 A fluid is \textbf{barotropic} if density depends only on pressure:
@@ -1386,7 +1427,7 @@ Consequences:
 
 \begin{figure}[htbp]
   \centering
-  \includegraphics[width=0.85\textwidth]{images/ch05/p116_img01.png}
+  \includegraphics[width=0.65\textwidth]{images/ch05/p116_img01.png}
   \caption{Comparison of barotropic and baroclinic atmospheres.
     Top: in a \textgr{barotropic} atmosphere, isobaric surfaces (black)
     and isothermal surfaces (red) are parallel --- no horizontal
@@ -1427,13 +1468,22 @@ Consequences:
 이해하는 데 유용하다.
 \end{hisublock}
 
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton \& Hakim Ch.~6 -- $p$-좌표 QG equations 전체 체계
+  \item Marshall \& Plumb (2008), \textit{Atmosphere, Ocean, and Climate Dynamics}, Ch.~8.2.2 (pp.~145--148, PDF pp.~166--169) -- extratropical circulation의 QG 해석
+  \item Peixoto \& Oort (1992), \textit{Physics of Climate}, Ch.~14.5 (book pp.~385--392; 본 PDF에는 목차만 수록) -- EP flux와 파동-평균류 상호작용
+  \item Vallis Ch.~5.4--5.6 -- Rossby waves와 QG 파동 역학
+\end{itemize}
+\end{hisublock}
+
 
 % =============================================================================
 \section{Summary of QG Equations}\label{sec:qg-summary}
 % =============================================================================
 
-We collect the complete set of QG equations in both coordinate systems for
-easy reference.
+참고의 편의를 위해 두 좌표계에서의 QG equations 전체를 모아 정리한다.
 
 % --------------------------------------------------------------------------
 \subsection{QG System in $z$-coordinates (Boussinesq)}
