@@ -21,6 +21,9 @@
 \hbadness=10000
 \hfuzz=40pt
 
+\newif\iftheoremheadnewline
+\theoremheadnewlinefalse
+
 \newtheoremstyle{accentplain}%
   {6pt}% Space above
   {6pt}% Space below
@@ -28,10 +31,8 @@
   {}% Indent amount
   {\color{accent}\bfseries}% Theorem head font
   { }% Punctuation after theorem head
-  {0.5em}% Space after theorem head
-  {\thmname{#1}\thmnumber{ #2}\thmnote{ \textcolor{accent}{| #3}}
-
-  }% Theorem head spec
+  { }% Space after theorem head
+  {\thmname{#1}\thmnumber{ #2}\thmnote{ \textcolor{accent}{| #3}}\hspace{0pt}\\\global\theoremheadnewlinetrue}% Theorem head spec
 
 \theoremstyle{accentplain}
 \newtheorem{theorem}{Theorem}[section]
