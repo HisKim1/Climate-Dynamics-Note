@@ -17,6 +17,9 @@
 \newcommand{\URL}{https://hiskim1.github.io}
 
 \numberwithin{equation}{section}
+\makeatletter
+\@addtoreset{section}{part}
+\makeatother
 \renewcommand{\thesection}{\arabic{section}}
 \hbadness=10000
 \hfuzz=40pt
