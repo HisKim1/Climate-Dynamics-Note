@@ -59,7 +59,7 @@
   %   westerly at all latitudes outside the deep tropics.  SH flow is nearly
   %   zonally symmetric (20--30 m/s).  NH shows two jet maxima: one over
   %   East Asia and one over eastern North America.
-  \includegraphics[width=0.85\textwidth]{images/ch03/p03_img01.png}
+  \includegraphics[width=0.85\textwidth]{images/ch03/p05_img01.png}
   \caption{Annual-mean wind field at 500\,hPa (vectors and isotachs, m\,s$^{-1}$). \hisu{열대 외 모든 위도에서 편서풍 우세; SH는 거의 동서 대칭 (20--30\,m\,s$^{-1}$); NH는 동아시아와 북미 동부에 두 개의 제트 극대}}
   \label{fig:ch03-wind500}
 \end{figure}
@@ -275,6 +275,101 @@ SH에서는 작다. 이것이 NH 기후의 ``비대칭성''의 핵심이다.
 \end{hisublock}
 
 
+\subsubsection{Eddy Variance: $\overline{v_{E}^{2}}$ and $\overline{u_{E}^{2}}$}
+\label{sec:ch03-eddy-variance}
+
+Eddy component의 운동 에너지 분포를 이해하기 위해 $\overline{v_{E}^{2}}$와 $\overline{u_{E}^{2}}$의
+위도별 구조를 분석할 수 있다.  여기서 overline은 zonal average를 나타내고,
+$u_{E} = u - [u]$, $v_{E} = v - [v]$는 eddy wind component이다.
+
+\begin{definition}[Eddy Variance from an Idealized Stationary Wave]
+Equator와 Pole 사이에서 streamfunction이 다음과 같이 단일 극대의 진폭 분포를 갖는
+이상화된 정상파를 고려하자:
+\begin{equation}
+  \psi(\lambda, \phi) = A(\phi)\,\cos(k\lambda),
+  \label{eq:idealized-wave}
+\end{equation}
+여기서 $A(\phi)$는 $\phi = \phi_{B}$ (적도와 극 사이 중간 위도)에서 단일 극대를 갖고,
+$\phi = \phi_{A}$ (적도 측)과 $\phi = \phi_{C}$ (극 측)에서는 0에 가까운 bell-shaped function이다.
+\end{definition}
+
+\begin{remark}[Eddy wind component의 유도]
+Geostrophic relation에 의해 eddy wind는 streamfunction으로부터 다음과 같이 얻어진다:
+\begin{align}
+  v_{E} &\propto \frac{\partial \psi}{\partial x}
+         \propto -A(\phi)\,\sin(k\lambda),
+  \label{eq:vE-from-psi} \\
+  u_{E} &\propto -\frac{\partial \psi}{\partial y}
+         \propto -\frac{dA}{d\phi}\,\cos(k\lambda).
+  \label{eq:uE-from-psi}
+\end{align}
+\end{remark}
+
+\begin{theorem}[Zonal-Mean Eddy Variance의 위도 구조]
+\label{thm:eddy-variance}
+이상화된 정상파 \eqref{eq:idealized-wave}로부터 zonal-mean eddy variance는 다음과 같다:
+\begin{align}
+  \overline{v_{E}^{2}} &\propto A(\phi)^{2},
+  \label{eq:vE2-structure} \\
+  \overline{u_{E}^{2}} &\propto \left(\frac{dA}{d\phi}\right)^{2}.
+  \label{eq:uE2-structure}
+\end{align}
+\end{theorem}
+
+\begin{proof}
+Zonal average ($\lambda$ 방향 적분)에서
+$\overline{\sin^{2}(k\lambda)} = \overline{\cos^{2}(k\lambda)} = \frac{1}{2}$이므로,
+식~\eqref{eq:vE-from-psi}과 \eqref{eq:uE-from-psi}를 제곱하고 zonal average를 취하면:
+\[
+  \overline{v_{E}^{2}} \propto A(\phi)^{2}\,\overline{\sin^{2}(k\lambda)}
+                        = \tfrac{1}{2}\,A(\phi)^{2},
+\]
+\[
+  \overline{u_{E}^{2}} \propto \left(\frac{dA}{d\phi}\right)^{2}\,\overline{\cos^{2}(k\lambda)}
+                        = \tfrac{1}{2}\,\left(\frac{dA}{d\phi}\right)^{2}.
+\]
+$A(\phi)$가 $\phi_{B}$에서 \textbf{단일 극대}를 가지므로,
+$A(\phi)^{2}$ 역시 $\phi_{B}$에서 단일 극대를 갖는다 $\Rightarrow$ $\overline{v_{E}^{2}}$는 \textbf{단일 극대}.
+
+반면 $dA/d\phi$는 $\phi_{B}$에서 0이 되고 (극대에서 기울기 = 0),
+$\phi_{A}$ 쪽에서 양, $\phi_{C}$ 쪽에서 음이므로,
+$(dA/d\phi)^{2}$는 $\phi_{B}$ 양쪽에 \textbf{두 개의 극대}를 갖는다
+$\Rightarrow$ $\overline{u_{E}^{2}}$는 \textbf{한 쌍의 극대}.
+\end{proof}
+
+\begin{hisublock}
+물리적 해석:
+\begin{itemize}
+  \item \textbf{$\overline{v_{E}^{2}}$가 단일 극대}: 파동 진폭이 최대인 위도 $\phi_{B}$에서
+        streamline의 \textbf{남북 방향 진동}이 가장 크다.
+        이곳에서 $v_{E}$ (남북풍 섭동)가 최대이므로 $\overline{v_{E}^{2}}$도 여기서 극대.
+  \item \textbf{$\overline{u_{E}^{2}}$가 두 개의 극대}: 파동 진폭의 \textbf{위도별 기울기}가 최대인 곳
+        ($\phi_{A}$, $\phi_{C}$)에서 streamline이 동서 방향으로 가장 많이 압축/신장된다.
+        연속 방정식 $\partial u_{E}/\partial x + \partial v_{E}/\partial y = 0$에 의해,
+        남북풍 $v_{E}$의 위도 변화가 동서풍 섭동 $u_{E}$를 유발하기 때문이다.
+        파동 진폭 중심($\phi_{B}$)에서는 $dA/d\phi = 0$이므로 $u_{E} \approx 0$.
+\end{itemize}
+\end{hisublock}
+
+\begin{hisublock}
+HW 문제에서 주어진 이상화된 파동 그림의 핵심 포인트:
+\begin{itemize}
+  \item 위도 B (중간): streamline이 가장 크게 남북으로 사행 $\Rightarrow$ $v_{E}$ 최대 $\Rightarrow$ $\overline{v_{E}^{2}}$ 단일 극대
+  \item 위도 A, C (양 측면): streamline이 zonal 방향으로 모이거나 벌어짐 $\Rightarrow$ $u_{E}$ 최대 $\Rightarrow$ $\overline{u_{E}^{2}}$ 한 쌍의 극대
+  \item 수학적으로: $\overline{v_{E}^{2}} \propto A^{2}$ (단일 극대), $\overline{u_{E}^{2}} \propto (dA/d\phi)^{2}$ (쌍 극대)
+\end{itemize}
+\end{hisublock}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton (2012), \textit{An Introduction to Dynamic Meteorology}, Ch.5.7 (pp.127--140) -- plane wave kinematics와 eddy wind component의 유도
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.7.3 (pp.144--148) -- eddy kinetic energy의 관측 분포
+  \item Lorenz (1967), \textit{The Nature and Theory of the General Circulation of the Atmosphere} -- eddy energy budget의 기초 이론
+\end{itemize}
+\end{hisublock}
+
+
 % ---------------------------------------------------------------------------------------
 \subsection{Thermal Wind and Jet Streams}
 \label{sec:ch03-thermal-wind}
@@ -403,6 +498,85 @@ Ref: (Hoskins and Karoly, 1981)
   \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.6.5 (pp.155--169, 본 PDF에는 목차만 수록) -- stationary wave, monsoon, Walker circulation 등 large-scale circulation pattern
   \item Held et al.\ (2002), ``Northern winter stationary waves: Theory and modeling'' -- stationary wave의 orographic/thermal forcing 이론
   \item Hoskins and Karoly (1981), ``The steady linear response of a spherical atmosphere to thermal and orographic forcing'' -- cross-equatorial wave response의 기초 이론
+\end{itemize}
+\end{hisublock}
+
+
+\subsubsection{Seasonal Comparison of Stationary Wave Amplitude}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Extract figure from Ch03 lecture note, page 13--14
+  % Description: Z(200hPa) and u(200hPa) maps for DJF and JJA from Wallace et al.
+  %   DJF NH: very pronounced wave-2 to wave-3 pattern with deep troughs over
+  %   eastern N. America and East Asia, ridges over eastern Pacific and Atlantic.
+  %   JJA NH: stationary wave pattern much weaker, nearly zonal.
+  %   SH: weak stationary waves in both seasons.
+  \includegraphics[width=0.85\textwidth]{images/ch03/p13_img02.jpeg}
+  \caption{Climatological 200\,hPa geopotential height $\bar{Z}_{200}$ and zonal wind
+           $\bar{u}_{200}$ (m\,s$^{-1}$, shading) for DJF (top) and JJA (bottom).
+           \hisu{DJF NH: 뚜렷한 wave-2$\sim$3 패턴 (동아시아/북미 동부 기압골, 동태평양/대서양 기압능);
+                  JJA NH: 정상파 크게 약화, 거의 동서 대칭;
+                  SH: 양 계절 모두 약한 정상파}}
+  \label{fig:ch03-z200-seasonal-stationary}
+\end{figure}
+
+200\,hPa geopotential height field에서 정상파의 계절별 진폭 차이는 극적이다.
+
+\begin{definition}[Stationary Wave Amplitude --- Winter vs.\ Summer]
+\textgr{Winter hemisphere} (DJF for NH, JJA for SH)의 upper tropospheric stationary wave는
+\textgr{summer hemisphere}보다 \textbf{훨씬 큰 진폭}을 보인다.
+\begin{multicols}{2}
+\textgr{DJF (NH winter):}
+\begin{itemize}
+  \item 200\,hPa $Z^{*}$ eddy 진폭: $\sim$90--120\,m
+  \item 뚜렷한 wave-2$\sim$wave-3 pattern: eastern N.\ America와 East Asia 상공에 deep trough, eastern ocean basins 상공에 ridge
+  \item 국지 jet speed $>$50\,m\,s$^{-1}$ (East Asian jet)
+  \item 수 개의 high (H) / low (L) 중심이 명확하게 식별 가능
+\end{itemize}
+
+\columnbreak
+
+\textgr{JJA (NH summer):}
+\begin{itemize}
+  \item 200\,hPa $Z^{*}$ eddy 진폭: $\sim$30--50\,m (겨울의 $\sim$1/3)
+  \item 흐름이 거의 \textbf{zonally symmetric}하여 stationary wave 구조가 약함
+  \item Tibetan High가 유일한 뚜렷한 anticyclonic 편차
+  \item Jet speed도 크게 약화
+\end{itemize}
+\end{multicols}
+SH에서는 양 계절 모두 stationary wave 진폭이 NH 겨울의 $\sim$1/3 이하이며,
+이는 topographic forcing이 약한 것을 반영한다.
+\end{definition}
+
+\begin{remark}[Winter stationary wave가 강한 이유]
+겨울 반구에서 정상파 진폭이 강한 이유는 세 가지로 요약된다:
+\begin{enumerate}
+  \item \textgr{Stronger baroclinicity}: 겨울에 적도--극 온도 경도가 최대이므로 thermal wind에 의한
+        평균 서풍류 $\bar{u}$가 강하고, Rossby wave의 전파 조건이 유리하다.
+        정상 Rossby wave의 meridional wave number는 $l^{2} = \beta/\bar{u} - k^{2}$이므로,
+        적절한 강도의 서풍($\bar{u}$)이 정상파 전파를 허용한다.
+  \item \textgr{Stronger land--sea heating contrast}: 겨울 대륙은 급격히 냉각되어
+        thermal forcing에 의한 정상파 강제가 여름보다 크다.
+  \item \textgr{More effective waveguide}: 강한 겨울 제트 스트림은 정상 Rossby wave의
+        meridional waveguide 역할을 하여, 파동 에너지를 효과적으로 가두고 증폭시킨다.
+\end{enumerate}
+여름에는 이 세 요인이 모두 약화되어, stationary wave 진폭이 겨울의 $\sim$1/3 수준으로 감소한다.
+\end{remark}
+
+\begin{hisublock}
+겨울 반구에서 정상파가 강한 이유의 핵심: (1) 온도 경도 최대 $\rightarrow$ 서풍 최대 $\rightarrow$ 파동 전파 유리,
+(2) 대륙 냉각으로 land--sea 열적 대비 극대, (3) 강한 제트가 도파관 역할.
+HW 문제 포인트: DJF NH $Z^{*}_{200}$에서 wave-2$\sim$3이 뚜렷하지만,
+JJA NH에서는 거의 동서 대칭. SH는 항상 약함 (대륙이 적어 지형/열적 강제 모두 약함).
+\end{hisublock}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Holton (2012), \textit{An Introduction to Dynamic Meteorology}, Ch.10.5 -- stationary Rossby wave의 전파 조건과 $l^{2} = \beta/\bar{u} - k^{2}$
+  \item Held et al.\ (2002), ``Northern winter stationary waves: Theory and modeling'' -- 겨울 정상파의 orographic/thermal forcing 분석
+  \item Wallace, Battisti, Thompson, Hartmann, \textit{The Atmospheric General Circulation}, Ch.3 -- 200\,hPa $Z$ 및 $u$의 DJF/JJA 비교 그림
 \end{itemize}
 \end{hisublock}
 
@@ -985,6 +1159,114 @@ cold tongue가 다시 동서 기압 경도를 강화하여 무역풍을 유지�
   \item Bjerknes (1969), ``Atmospheric teleconnections from the equatorial Pacific'' -- SST--wind coupling과 ENSO의 고전적 논문
 \end{itemize}
 \end{hisublock}
+
+% =======================================================================================
+\section{Surface (Skin) Temperature Climatology}
+\label{sec:ch03-skin-temp}
+% =======================================================================================
+
+\textgr{Skin temperature}란 지표면 자체의 온도로, 대기 하층 기온과는 구별된다.
+위성 관측에서 직접 측정되며, 대륙 위에서는 land surface temperature (LST),
+해양 위에서는 SST에 해당한다.
+
+\subsection{DJF and JJA Skin Temperature Distribution}
+
+\begin{figure}[ht]
+  \centering
+  % TODO: Use the skin temperature figure from HW3 or extract from lecture notes
+  % Description: Global skin temperature maps for DJF and JJA.
+  %   DJF: extremely cold Siberia/Canada (-30 to -40C), warm SH continents,
+  %        tropics warm, Antarctica very cold.
+  %   JJA: Sahara/Arabian peninsula hottest (>40C), northern continents warm,
+  %        Southern Ocean cold, tropical oceans remain warm.
+  \includegraphics[width=0.85\textwidth]{images/ch03/hw3_skin_temp.png}
+  \caption{Climatological skin temperature ($^{\circ}$C) for DJF (top) and JJA (bottom).
+           \hisu{DJF: 시베리아/캐나다 $<$$-30^{\circ}$C (극한 대륙 냉각), 열대 및 SH 대륙 따뜻함;
+                  JJA: 사하라/아라비아 반도 $>$$40^{\circ}$C, 북반구 대륙 전반 고온, 남극대 극저온}}
+  \label{fig:ch03-skin-temp}
+\end{figure}
+
+\subsection{Features Explainable Without the General Circulation}
+
+지표 온도 분포의 일부 특징은 대기 대순환(general circulation)을 고려하지 않고도
+\textgr{복사 균형}과 \textgr{지표 물성 차이}만으로 설명할 수 있다.
+
+\begin{definition}[Radiative Equilibrium Surface Temperature]
+대기 순환이 전혀 없는 경우, 지표 온도는 local radiative balance에 의해 결정된다.
+입사 태양 복사 $F(\phi) = \frac{S_{0}}{\pi}\cos\phi$ (연평균, axial tilt 무시)와
+단일 슬래브 대기의 온실 효과를 고려하면:
+\begin{equation}
+  T_{s}(\phi) \propto \cos^{1/4}\phi,
+  \label{eq:rad-equil-Ts}
+\end{equation}
+이는 적도에서 극으로 갈수록 온도가 감소하는 1차 근사를 제공한다.
+\end{definition}
+
+\begin{remark}[General circulation 없이 설명 가능한 특징]
+\begin{enumerate}
+  \item \textgr{Equator-to-pole temperature gradient}: 태양 복사의 위도별 분포
+        ($\propto \cos\phi$ geometry)에 의해 저위도가 따뜻하고 고위도가 차가운 기본 구조가 설명된다.
+  \item \textgr{Seasonal cycle}: 지구 자전축의 기울기 ($23.4^{\circ}$)에 의해 여름 반구가
+        더 많은 일사를 받아 따뜻해지고, 겨울 반구가 차가워지는 패턴이 나타난다.
+  \item \textgr{Land--sea contrast (thermal inertia)}: 대륙은 열용량이 작아 계절에 대해
+        빠르게 반응하는 반면, 해양은 열용량이 커서 계절 변동이 작다.
+        \begin{itemize}
+          \item DJF에 시베리아/캐나다 내륙이 극도로 차가운 것 ($<$$-30^{\circ}$C)
+          \item JJA에 사하라/아라비아 반도가 $>$$40^{\circ}$C로 매우 뜨거운 것
+          \item 같은 위도에서 해양 표면 온도의 계절 변동이 대륙보다 작은 것
+        \end{itemize}
+  \item \textgr{High albedo at high latitudes}: 빙하/설빙 지역의 높은 알베도가 극지방의
+        추가적 냉각에 기여한다 (ice--albedo feedback).
+\end{enumerate}
+\end{remark}
+
+\begin{hisublock}
+``대순환 없이 설명 가능''이란 = 태양 복사의 위도 분포, 계절 변동, 지표 물성 차이만으로
+설명된다는 의미이다.  이 요인들은 purely local/radiative한 것들이다.
+\end{hisublock}
+
+\subsection{Features Requiring the General Circulation}
+
+\begin{remark}[General circulation이 필요한 특징]
+반면, 다음 특징들은 대기 및 해양 순환을 고려하지 않으면 설명할 수 없다:
+\begin{enumerate}
+  \item \textgr{관측된 적도--극 온도 경도가 복사 평형보다 훨씬 작다}:
+        복사 평형만으로는 적도--극 온도 차이가 $\sim$100\,K 이상이어야 하지만,
+        관측에서는 $\sim$50--60\,K 수준이다.
+        이 차이의 원인은 대기와 해양에 의한 \textgr{poleward heat transport}이다.
+  \item \textgr{서안 경계류에 의한 고위도 온난화}:
+        Gulf Stream과 Kuroshio가 저위도의 따뜻한 물을 고위도로 수송하여
+        서유럽과 동아시아 해안의 기온을 같은 위도의 대륙 내부보다 현저히 높인다.
+        예: 노르웨이 해안이 같은 위도의 시베리아보다 20--30\,K 이상 따뜻하다.
+  \item \textgr{동안 용승대 (eastern boundary upwelling)에 의한 아열대 해안 냉각}:
+        무역풍에 의한 offshore Ekman transport가 차가운 심층수의 용승을 유발하여,
+        캘리포니아/페루/서아프리카 해안의 SST (따라서 skin temperature)를
+        같은 위도의 서태평양보다 훨씬 차갑게 만든다.
+  \item \textgr{아열대 사막 분포}: Hadley cell의 하강 지역 ($\sim$$30^{\circ}$\,N/S)에서
+        맑은 하늘과 건조한 공기가 지표 가열을 극대화하여, 사하라/아라비아/호주 내륙의
+        극단적 고온을 유발한다.  이것은 단순히 위도에 의한 일사량만으로는 설명할 수 없다.
+  \item \textgr{적도 태평양의 동서 비대칭}: 적도에서도 skin temperature가 동서로 균일하지 않다.
+        서태평양 warm pool ($>$$28^{\circ}$C)과 동태평양 cold tongue ($\sim$22--24$^{\circ}$C)의 대비는
+        Walker circulation과 equatorial upwelling에 의해 유지된다.
+\end{enumerate}
+\end{remark}
+
+\begin{hisublock}
+핵심 결론: skin temperature의 \textbf{1차적 패턴} (적도--극 경도, 계절 변동, 대륙--해양 대비)은
+복사와 열용량만으로 설명 가능하지만, \textbf{세부 구조와 크기}
+(실제 적도--극 차이 축소, 서안 난류에 의한 고위도 온난화, 동안 용승에 의한 냉각,
+아열대 사막 고온, 적도 동서 비대칭)는 대기--해양 순환이 반드시 필요하다.
+\end{hisublock}
+
+\begin{hisublock}
+\textbf{참고 문헌 가이드:}
+\begin{itemize}
+  \item Marshall and Plumb (2008), \textit{Atmosphere, Ocean and Climate Dynamics}, Ch.5.1--5.3 (pp.62--73, PDF pp.83--94) -- 복사 평형 온도와 관측 온도의 비교, poleward heat transport의 필요성
+  \item Hartmann (1994), \textit{Global Physical Climatology}, Ch.1 (pp.1--20) -- 전구 평균 지표 온도 ($\sim$288\,K)와 위도별 분포 개관
+  \item Peixoto and Oort (1992), \textit{Physics of Climate}, Ch.7.2 (pp.137--143) -- 지표/대기 온도의 관측 분포
+\end{itemize}
+\end{hisublock}
+
 
 \vspace{12pt}
 \begin{highlight}

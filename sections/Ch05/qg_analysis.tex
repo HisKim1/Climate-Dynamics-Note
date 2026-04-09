@@ -718,7 +718,7 @@ $\partial Q/\partial t = (1/f)\,\partial(Lp)/\partial t$,
 and $\nabla Q$ includes $\nabla f = \beta\hat{j}$ plus eddy PV gradients.
 Combining:
 \begin{equation}\label{eq:ht-step2}
-  L\frac{\partial p}{\partial t} = -f\,\mathbf{V}_g\cdot\nabla(fQ).
+  L\frac{\partial p}{\partial t} = -f\,\mathbf{V}_g\cdot\nabla Q.
 \end{equation}
 
 \textit{Step 3.}  Expanding $fQ = f(\zeta_g + f) + f^2\,\partial_z(\theta/(d\theta_0/dz))$
@@ -1042,7 +1042,7 @@ $\nabla\cdot\mathbf{V}_a + \partial\omega/\partial p = 0$을 이용하여:
 
 \begin{equation}\label{eq:qg-vort-p}
   \boxed{
-  \frac{d\zeta_g}{dt}
+  \frac{\partial\zeta_g}{\partial t}
   = -\mathbf{V}_g\cdot\nabla(\zeta_g + f)
     + f_0\frac{\partial\omega}{\partial p}.
   }
