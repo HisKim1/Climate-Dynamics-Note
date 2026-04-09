@@ -1,27 +1,31 @@
 \usepackage{fancyhdr} % Required for header and footer configuration
 \usepackage{enumitem}
+
+%----------------------------------------------------------------------------------------
+%   TRACK SUBSECTION / SUBSUBSECTION NAMES FOR HEADERS
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\sectionmark}[1]{\markboth{#1}{}}
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
+
 %----------------------------------------------------------------------------------------
 %   PAGE HEADERS
 %----------------------------------------------------------------------------------------
 
 \fancypagestyle{plain}{%
-    % Clear all headers and footers
     \fancyhf{}
-
-    % Remove horizontal line in the header
     \renewcommand{\headrulewidth}{0pt}
-
-    % Page number centered at the bottom
     \fancyfoot[C]{\thepage}
 }
 
 \fancypagestyle{fancy}{%
-    % Clear all headers and footers
     \fancyhf{}
-
-    % Remove horizontal line in the header
-    \renewcommand{\headrulewidth}{0pt}
-
+    % Thin accent-colored rule below header
+    \renewcommand{\headrule}{{\color{accent}\hrule width\headwidth height 0.4pt \vskip-0.4pt}}
+    \renewcommand{\headrulewidth}{0.4pt}
+    % Left: section (line 1) + subsection (line 2), left-aligned two lines
+    \fancyhead[L]{\parbox[b]{0.9\textwidth}{\raggedright\small\headingfontfamily\color{fgalt}\leftmark\\[-2pt]{\scriptsize\rightmark}}}
+    \fancyhead[R]{}
     % Page number centered at the bottom
-    \fancyfoot[C]{\thepage}
+    \fancyfoot[C]{\small\headingfontfamily\thepage}
 }

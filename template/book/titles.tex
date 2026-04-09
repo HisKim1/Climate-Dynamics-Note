@@ -13,7 +13,7 @@
 %   LAYOUT
 %----------------------------------------------------------------------------------------
 
-\titlespacing*{\part}{-3cm}{9cm}{20pt}
+\titlespacing*{\part}{0pt}{0pt}{0pt}
 
 %----------------------------------------------------------------------------------------
 %   FORMAT
@@ -23,18 +23,36 @@
   {}
   {}
   {0pt}
-  {\begin{tikzpicture}[overlay]
-    % horizontal bg strip behind title
-    \node[anchor=north west, inner sep=0mm, outer sep=0pt, minimum height=48mm, minimum width=\paperwidth, xshift=0cm, yshift=2.8cm, fill=bg] {\parbox{\paperwidth}{}};
-    % introduction block below title
-    \node[anchor=north west, inner sep=0pt, outer sep=0pt, minimum height=48mm, minimum width=\paperwidth, xshift=0cm, yshift=-4cm, align=left] {\currentpartintro};
-  \end{tikzpicture}
-  \fontsize{48}{60}\headingfontfamily\color{fg}\MakeUppercase}
+  {\thispagestyle{empty}%
+  \begin{tikzpicture}[remember picture,overlay]
+    % Full-page background fill
+    \fill[bg] (current page.south west) rectangle (current page.north east);
+    %
+    % --- Hexagon pattern from cover ---
+    \begin{scope}[opacity=0.7]
+      \foreach \i in {0.5,...,20} {\drawhexagon{}{$(current page.north west)+(2.5,0)$}{\i cm}{0}{accent!60,draw};}
+      \foreach \i in {2.5,...,22} {\drawhexagon{}{$(current page.west)+(2.5,-5)$}{\i cm}{0}{accent!60,draw};}
+      \foreach \i in {0.5,...,22} {\drawhexagon{}{$(current page.north east)+(0,-9.5)$}{\i cm}{0}{accent!90,draw};}
+      \foreach \i in {21,...,2} {\drawhexagon{}{$(current page.south east)+(-0.2,-0.45)$}{\i cm}{0}{accent!85,draw};}
+    \end{scope}
+    %
+    % --- Semi-transparent white overlay (30% more opaque = total ~0.6 white) ---
+    \fill[bg, opacity=0.6] (current page.south west) rectangle (current page.north east);
+    %
+    % --- PART N label: left-aligned, above center ---
+    \node[anchor=south west, inner sep=0pt] at ($(current page.center)+(-0.42\paperwidth, 0.8)$) {%
+      \fontsize{14}{16}\selectfont\headingfontfamily\color{accent}\MakeUppercase{Part \thepart}%
+    };
+    %
+    % --- Title: centered on page ---
+    \node[anchor=center, inner sep=0pt, text width=0.92\paperwidth, align=center] at (current page.center) {%
+      \fontsize{28}{38}\selectfont\headingfontfamily\color{fg}\currentparttitle%
+    };
+  \end{tikzpicture}%
+  \phantom}
 
 \let\originalpart\part
 
-\renewcommand{\part}[1]{% to reference the title in the left bar in the margin
+\renewcommand{\part}[1]{%
 \setparttitle{\uppercase{#1}}
-\backgroundtitlevisiblefalse
-\originalpart{#1}
-\backgroundtitlevisibletrue}
+\originalpart{#1}}

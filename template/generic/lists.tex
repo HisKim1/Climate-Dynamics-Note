@@ -8,6 +8,15 @@
 \setlist[itemize]{leftmargin=4mm, topsep=0em, partopsep=0em}
 \setlist[enumerate]{leftmargin=4mm, topsep=0em, partopsep=0em}
 
+% Ensure line break before lists works correctly after theorem heads (\\)
+% If a list is the first thing after a theorem head break, remove the extra blank line.
+\AtBeginEnvironment{itemize}{%
+  \iftheoremheadnewline\leavevmode\global\theoremheadnewlinefalse\fi
+}
+\AtBeginEnvironment{enumerate}{%
+  \iftheoremheadnewline\leavevmode\global\theoremheadnewlinefalse\fi
+}
+
 %----------------------------------------------------------------------------------------
 %   DESCRIPTIONS
 %----------------------------------------------------------------------------------------

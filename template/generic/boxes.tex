@@ -62,17 +62,87 @@
 \definecolor{HisuQuestion}{HTML}{D90429}
 \providecommand{\normal}{\normalsize}
 
+\tcbset{
+  hisunote/.style={
+    enhanced,
+    breakable,
+    colback=Hisu!4!bg,
+    colframe=Hisu!60,
+    coltext=Hisu,
+    boxrule=0.6pt,
+    arc=2pt,
+    outer arc=2pt,
+    left=7pt, right=6pt,
+    top=3pt, bottom=3pt,
+    borderline west={2pt}{0pt}{Hisu},
+    before skip=4pt,
+    after skip=4pt,
+  }
+}
+
 \newenvironment{hisublock}[1][\footnotesize]{%
-  \par\begingroup\color{Hisu}#1\noindent\ignorespaces
+  \begin{tcolorbox}[hisunote]%
+  \renewcommand{\textbf}[1]{\oldtextbf{##1}}%
+  #1\ignorespaces
 }{%
-  \par\endgroup\ignorespacesafterend
+  \end{tcolorbox}%
 }
 
 \newenvironment{hisuquestion}[1][\footnotesize]{%
-  \par\begingroup\color{HisuQuestion}#1\noindent\ignorespaces
+  \par\begingroup\color{HisuQuestion}#1\noindent
+  \renewcommand{\textbf}[1]{\oldtextbf{##1}}%
+  \ignorespaces
 }{%
   \par\endgroup\ignorespacesafterend
 }
 
-\newcommand{\hisu}[1]{{\color{Hisu}#1}}
-\newcommand{\hisuq}[1]{{\color{HisuQuestion}#1}}
+\newcommand{\hisu}[1]{{\small\color{Hisu}#1}}
+\newcommand{\hisuq}[1]{{\small\color{HisuQuestion}#1}}
+
+%----------------------------------------------------------------------------------------
+%   THEOREM LEFT-RULE STYLE
+%----------------------------------------------------------------------------------------
+
+\tcbset{
+  thmbar/.style={
+    enhanced,
+    breakable,
+    colback=bg,
+    colframe=accent,
+    coltext=fg,
+    boxrule=0pt,
+    leftrule=2.5pt,
+    toprule=0.5pt,
+    bottomrule=0.5pt,
+    rightrule=0.5pt,
+    arc=0pt,
+    outer arc=0pt,
+    left=6pt,
+    right=4pt,
+    top=2pt,
+    bottom=3pt,
+    before skip=6pt,
+    after skip=6pt,
+  }
+}
+
+\tcolorboxenvironment{theorem}{thmbar}
+\tcolorboxenvironment{definition}{thmbar}
+\tcolorboxenvironment{proposition}{thmbar}
+\tcolorboxenvironment{lemma}{thmbar}
+\tcolorboxenvironment{corollary}{thmbar}
+\tcolorboxenvironment{condition}{thmbar}
+\tcolorboxenvironment{remark}{thmbar}
+\tcolorboxenvironment{example}{thmbar}
+\tcolorboxenvironment{question}{thmbar}
+
+% Reset flag at end of each theorem env (in case body had no list)
+\AtEndEnvironment{theorem}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{definition}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{proposition}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{lemma}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{corollary}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{condition}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{remark}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{example}{\global\theoremheadnewlinefalse}
+\AtEndEnvironment{question}{\global\theoremheadnewlinefalse}
