@@ -4,56 +4,135 @@
 \begin{document}
 \input{hw/title}
 
-\hwquestion[]{Read a paper by D. Hartmann (2007) and answer the following questions.}
+\begin{center}
+    \textbf{HW \#2} \\
+    Due: April 15 (Wed)
+\end{center}
 
-\begin{enumerate}
-    \item Using the zonal-mean momentum budget in the paper, explain the dynamical distinction between a subtropical jet and an eddy-driven jet.
-    \begin{enumerate}
-        \item Why does angular-momentum-conserving meridional flow produce a jet in roughly the correct subtropical latitude band but with unrealistic strength?
-        \begin{solution}
-            Meridional overturning circulation reachs radiatie equilibrium around poleward extent while  preserving angular-momentum, resulting in tropical jet. However, neglecting that large scale eddies transport surplus momentum in the upper branch of the Hadley circulation poleword and downward leads to an unrealistically strong jet, far exceeding the observed value.
-        \end{solution}
-        
-        \item Why does Hartmann conclude that the extratropical jets must be eddy-driven?
-        \begin{solution}
-            By vertically averaging the zonal mean wind for nondivergent fluid \textbf{Equation~(1)}, 
-            $$\frac{\partial \overline{u}}{\partial t} = f \overline{v} - \frac{\partial }{\partial y}\left(\overline{u'v'}\right) - \alpha \overline{u}\implies \frac{\partial \overline{u}}{\partial t} + \alpha \overline{u} = - \frac{\partial }{\partial y}\left(\underbrace{\overline{u'v'}}_\text{eddy}\right),$$
-            Then, the extratropical surface westerly wind maximum can only be sustained against drag by eddy momentum fluxes.
-        \end{solution}
-    \end{enumerate}
+\vspace{0.3cm}
+\noindent\textbf{Answer the following questions}
 
-    \newpage
-    \item Hartmann argues that eddy-driven jets may be more than a passive response to imposed diabatic temperature gradients.
-    \begin{enumerate}
-        \item Using the transformed Eulerian mean framework and the downward control idea, explain how meridional wave propagation can help make an eddy-driven jet self-sustaining.
-        \begin{solution}
-            The wave driving in the upper troposphere is spread over a wider latitude band since the transport of heat by the residual circulation is weakened near the strongest baroclinic eddy generation. While the externally applied heating gradient remains the same, an equilibrium meridional temperature gradient at the wave source location strengthens when the eddies propagate away from the jet and break. As a result, this produces more baroclinicity to generate eddies thereby the jet can be self-sustaining.
-        \end{solution}
-        \item Then explain why this framework helps interpret annular-mode-like north--south jet shifts, especially in the Southern Hemisphere.
-        \begin{solution}
-            EP flux represents the relationship between meridional wave propagation and eddy fluxes of momentum and heat. Thus EP flux can indicates the interaction between the wave propagation direction and the mean flow. 
-            The large area of the ocean and the strong meridional gradient of sea surface temperature on southern  drive a strong eddy-driven midlatitude jet. This high frequency transient baroclinic eddies feed back positively on zonal mean wind anomalies. 
-        \end{solution}
-    \end{enumerate}
+\hwquestion[]{Why is the zonally averaged cross-equatorial overturning circulation, which can be depicted by zonally averaged meridional wind, stronger in JJA than in DJF?}
+\begin{solution}
 
-    \newpage
-    \item The paper argues that tropical stationary-wave responses during solstitial seasons can be nearly symmetric across the equator, even when the thermal forcing is concentrated in the summer hemisphere.
-    \begin{enumerate}
-        \item Explain the two main mechanisms responsible for this symmetry. Your answer should use the Rossby wave source framework and discuss the role of cross-equatorial mean flow.
-        \begin{solution}
-            \begin{enumerate}
-                \item In the tropics, the divergent component of wind is relatively large and can project onto vorticity gradients and contribute the majority of Rossby wave source associated with tropical heating. The advection of vorticity by the divergent wind is larger in the winter hemisphere, where the zonal mean potential vorticity gradient is larger. 
-                \item If a mean meridional flow from the summer to the winter hemisphere exists, the stationary Rossby waves can propagate through the equatorial easterlies that would otherwise act as a barrier.
-            \end{enumerate}
-        \end{solution}
-    \end{enumerate}
+\end{solution}
 
-    \newpage
-    \item Discuss how the interaction between the Hadley circulation and extratropical eddies helps determine the large-scale zonal wind structure. Then extend the argument to climate perturbations: how might tropical warming alter subtropical/extratropical jet position or baroclinic activity according to the paper?
+\hwquestion[]{Why is it necessary to insert extra contours in the tropics as shown in the following Figure?}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/hw2_q2_u200_Z200.png}
+    \caption*{$\overline{u}_{200}$, $\overline{Z}_{200}$ for DJF and JJA.}
+\end{figure}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[]{Prove that on average over the Hadley cell, the horizontal flow is down the pressure gradient.}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{How would the overturning circulation depicted in Figure below be different in a laboratory experiment in which the heat sink is a cold top and right side boundary, rather than in the interior of the fluid?}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{hw/images/hw2_q4_lab_experiment.png}
+    \caption*{Lab experiment: heated bottom, heated side.}
+\end{figure}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\noindent\textbf{Energy Balance Model}
+
+\hwquestion[]{A planet has the energy balance model shown below. In this case, there is no atmosphere. Red indicates incoming solar energy and black outgoing terrestrial radiation.}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/hw2_q5_ebm_noatm.png}
+    \caption*{Energy balance model without atmosphere.}
+\end{figure}
+\begin{enumerate}[label=(\alph*)]
+    \item Set up the energy balance equation between incoming solar energy and outgoing radiation.
     \begin{solution}
-        Hadly circulation derived from weak temperature gradient in tropics transports surplus angular momentum poleward and downward. This is the reason the surface westeries exist on the surface of extratropics. Reversely, if waves generated at midlatitude and propagated to tropics break, high potential voriticity air injects into the tropics and alters the dynamical response to the Hadley circulation. 
 
-        Tropical warming increase temperature gradient between tropics and midlatitudes, baroclinic wave near the tropical-extratropical transition in turn. On the other hand, the strengthen of the extra tropical heating yields increase of absolute humidity, excess of latent heat, and dry static stability. These enhancement can weaken vertical motion of Hadley circulation, resulting in a shift of extratropical wave-driven jet. 
+    \end{solution}
+    \item Compute the surface temperature of this planet, $T_S$, with the Stefan--Boltzmann constant $\sigma = 5.68 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$, the planetary albedo $\alpha_p$ as $0.3$, and solar constant $S_0 = 1360\,\mathrm{W\,m^{-2}}$.
+    \begin{solution}
+
+    \end{solution}
+\end{enumerate}
+
+\newpage
+\hwquestion[]{Planet has the energy balance model shown below, which now has atmosphere, similar to the Earth.}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/hw2_q6_ebm_atm.png}
+    \caption*{Energy balance model with a single-layer atmosphere.}
+\end{figure}
+\begin{enumerate}[label=(\alph*)]
+    \item In this case, \underline{atmosphere is completely transparent to solar radiation} while \underline{completely opaque to terrestrial radiation}. Set up the energy balance equation for atmosphere and surface.
+    \begin{solution}
+
+    \end{solution}
+    \item Calculate the surface temperature ($T_S$), the atmosphere temperature ($T_A$), and the emission temperature ($T_E$).
+    \begin{solution}
+
+    \end{solution}
+    \item Discuss the similarity and difference among these temperatures.
+    \begin{solution}
+
+    \end{solution}
+    \item Now, let's introduce emissivity, $\epsilon$, which determines fraction of radiation that is emitted. The radiative flux emitted to space, $F$, through the top of the atmosphere is the sum of the radiative fluxes emitted by the top most layer $F_A$, and the transmitted radiative flux, $(1-\epsilon)F_S$, where $F_S$ is the upwelling radiative flux from the surface. Prove that in the limit as $\epsilon \to 0$, the temperature of the surface of a planet approaches the planet's equivalent blackbody temperature $T_E$ and the temperature of its atmosphere approaches $T_E / 2^{1/4}$.
+    \begin{solution}
+
+    \end{solution}
+\end{enumerate}
+
+\newpage
+\noindent\textbf{Answer the following question after you read papers by E.\,Lorenz 1983 and I.\,Held 2019 (only up to Section 2).}
+
+\hwquestion[]{What are missing and not logical in E.\,Halley's explanation on the trade wind?}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{According to G.\,Hadley (1735), he explained the trade winds in terms of the angular momentum conservation. Please summarize it using your own words in 2--3 sentences.}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{Concept of the angular momentum conservation is indeed consistent with the Coriolis force. If we average over longitude, the zonal momentum equation can be simplified in the following form:
+$$\frac{\partial u}{\partial t} \cong f v$$
+Using the idea of differential solar heating and the above equation instead of the angular momentum conservation as in 2), please write down the mechanism of the trade winds.}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{What is the $\beta$-effect?}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\noindent\textbf{Please show the following}
+
+\hwquestion[]{$v = \overline{v_Z} + \overline{v_E} + v'_Z + v'_E$ and $X = \overline{X_Z} + \overline{X_E} + X'_Z + X'_E$ as defined in the class. Show that
+$$\overline{(vX)}_Z = \overline{v_Z}\,\overline{X_Z} + \overline{v'_Z X'_Z} + \overline{(\overline{v_E} \cdot \overline{X_E})}_Z + \overline{(v'_E X'_E)}_Z.$$}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{Begin with the continuity equation in spherical and pressure coordinate
+$$\frac{1}{a\cos\varphi}\left[\frac{\partial u}{\partial \lambda} + \frac{\partial}{\partial \varphi}(v\cos\varphi)\right] + \frac{\partial \omega}{\partial p} = 0$$}
+\begin{enumerate}[label=(\alph*)]
+    \item Show that $\int_0^{p_0} v_Z\,dp = 0$.
+    \begin{solution}
+
+    \end{solution}
+    \item What is the physical meaning of this?
+    \begin{solution}
+
     \end{solution}
 \end{enumerate}
 
