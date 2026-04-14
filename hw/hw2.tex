@@ -1,0 +1,60 @@
+\documentclass[11pt,a4paper]{article}
+\input{hw/header}
+
+\begin{document}
+\input{hw/title}
+
+\hwquestion[]{Read a paper by D. Hartmann (2007) and answer the following questions.}
+
+\begin{enumerate}
+    \item Using the zonal-mean momentum budget in the paper, explain the dynamical distinction between a subtropical jet and an eddy-driven jet.
+    \begin{enumerate}
+        \item Why does angular-momentum-conserving meridional flow produce a jet in roughly the correct subtropical latitude band but with unrealistic strength?
+        \begin{solution}
+            Meridional overturning circulation reachs radiatie equilibrium around poleward extent while  preserving angular-momentum, resulting in tropical jet. However, neglecting that large scale eddies transport surplus momentum in the upper branch of the Hadley circulation poleword and downward leads to an unrealistically strong jet, far exceeding the observed value.
+        \end{solution}
+        
+        \item Why does Hartmann conclude that the extratropical jets must be eddy-driven?
+        \begin{solution}
+            By vertically averaging the zonal mean wind for nondivergent fluid \textbf{Equation~(1)}, 
+            $$\frac{\partial \overline{u}}{\partial t} = f \overline{v} - \frac{\partial }{\partial y}\left(\overline{u'v'}\right) - \alpha \overline{u}\implies \frac{\partial \overline{u}}{\partial t} + \alpha \overline{u} = - \frac{\partial }{\partial y}\left(\underbrace{\overline{u'v'}}_\text{eddy}\right),$$
+            Then, the extratropical surface westerly wind maximum can only be sustained against drag by eddy momentum fluxes.
+        \end{solution}
+    \end{enumerate}
+
+    \newpage
+    \item Hartmann argues that eddy-driven jets may be more than a passive response to imposed diabatic temperature gradients.
+    \begin{enumerate}
+        \item Using the transformed Eulerian mean framework and the downward control idea, explain how meridional wave propagation can help make an eddy-driven jet self-sustaining.
+        \begin{solution}
+            The wave driving in the upper troposphere is spread over a wider latitude band since the transport of heat by the residual circulation is weakened near the strongest baroclinic eddy generation. While the externally applied heating gradient remains the same, an equilibrium meridional temperature gradient at the wave source location strengthens when the eddies propagate away from the jet and break. As a result, this produces more baroclinicity to generate eddies thereby the jet can be self-sustaining.
+        \end{solution}
+        \item Then explain why this framework helps interpret annular-mode-like north--south jet shifts, especially in the Southern Hemisphere.
+        \begin{solution}
+            EP flux represents the relationship between meridional wave propagation and eddy fluxes of momentum and heat. Thus EP flux can indicates the interaction between the wave propagation direction and the mean flow. 
+            The large area of the ocean and the strong meridional gradient of sea surface temperature on southern  drive a strong eddy-driven midlatitude jet. This high frequency transient baroclinic eddies feed back positively on zonal mean wind anomalies. 
+        \end{solution}
+    \end{enumerate}
+
+    \newpage
+    \item The paper argues that tropical stationary-wave responses during solstitial seasons can be nearly symmetric across the equator, even when the thermal forcing is concentrated in the summer hemisphere.
+    \begin{enumerate}
+        \item Explain the two main mechanisms responsible for this symmetry. Your answer should use the Rossby wave source framework and discuss the role of cross-equatorial mean flow.
+        \begin{solution}
+            \begin{enumerate}
+                \item In the tropics, the divergent component of wind is relatively large and can project onto vorticity gradients and contribute the majority of Rossby wave source associated with tropical heating. The advection of vorticity by the divergent wind is larger in the winter hemisphere, where the zonal mean potential vorticity gradient is larger. 
+                \item If a mean meridional flow from the summer to the winter hemisphere exists, the stationary Rossby waves can propagate through the equatorial easterlies that would otherwise act as a barrier.
+            \end{enumerate}
+        \end{solution}
+    \end{enumerate}
+
+    \newpage
+    \item Discuss how the interaction between the Hadley circulation and extratropical eddies helps determine the large-scale zonal wind structure. Then extend the argument to climate perturbations: how might tropical warming alter subtropical/extratropical jet position or baroclinic activity according to the paper?
+    \begin{solution}
+        Hadly circulation derived from weak temperature gradient in tropics transports surplus angular momentum poleward and downward. This is the reason the surface westeries exist on the surface of extratropics. Reversely, if waves generated at midlatitude and propagated to tropics break, high potential voriticity air injects into the tropics and alters the dynamical response to the Hadley circulation. 
+
+        Tropical warming increase temperature gradient between tropics and midlatitudes, baroclinic wave near the tropical-extratropical transition in turn. On the other hand, the strengthen of the extra tropical heating yields increase of absolute humidity, excess of latent heat, and dry static stability. These enhancement can weaken vertical motion of Hadley circulation, resulting in a shift of extratropical wave-driven jet. 
+    \end{solution}
+\end{enumerate}
+
+\end{document}
