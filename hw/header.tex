@@ -1,0 +1,61 @@
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsfonts,amsthm,mathtools}
+\usepackage{graphicx}
+\usepackage[margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usepackage{subcaption}
+\usepackage{kotex}
+\usepackage{cancel}
+\usepackage[colorlinks=true]{hyperref}
+\usepackage{xcolor}
+\newenvironment{solution}{%
+    \par\noindent\color{blue}\textbf{Answer)}\par
+}{%
+    \par
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\lhead{\textbf{EN5232}}
+\chead{\textbf{Climate Dynamics}}
+\rhead{\textbf{2026-01}}
+
+\cfoot{-~\thepage~-}
+
+\newcounter{question}
+
+\newcommand{\hwquestion}[2][]{ 
+  \stepcounter{question} 
+  \vspace{0.6cm} 
+  \noindent 
+  \ifx\relax#1\relax
+  \else
+    {\footnotesize(#1)}\\
+  \fi
+  \noindent \textbf{Q\thequestion. }#2 
+  \vspace{0.2cm} 
+}
+
+\newtheorem{theorem}{Theorem}[section]
+
+\definecolor{neongreen}{RGB}{57,255,20}
+\definecolor{vividmagenta}{RGB}{255,0,255}
+\definecolor{brightorange}{RGB}{255,128,0}
+\definecolor{vividskublue}{RGB}{0,191,255}
+\definecolor{brightgold}{RGB}{255,215,0}
+\definecolor{brightlime}{RGB}{191,255,0}
+\definecolor{vividpurple}{RGB}{159,0,255}
+\definecolor{forestgreen}{RGB}{34,139,34}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=vividskublue,
+    citecolor=brightlime,
+}

@@ -1,0 +1,270 @@
+\documentclass[11pt,a4paper]{article}
+\input{hw/header}
+
+\title{HW \#2 풀이 가이드\\[-0.2em] \large EN5232 Climate Dynamics, Ch.1}
+\author{Hisu Kim}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\noindent 본 문서는 \texttt{hw2.tex}의 12개 문항을 풀기 위해 필요한 핵심 개념, 식, 그리고 Lorenz (1983), Held (2019), Hartmann (2007) 논문에서 찾아봐야 할 부분을 정리한 것이다.
+
+\section*{공통 참고 자료}
+\begin{itemize}
+    \item \textbf{강의노트}: \texttt{lecture note/ClimateDynamics\_2026Spring\_Ch00-Ch05\_final.pdf} -- Ch.1 전체
+    \item \textbf{Holton (2012)} 5th ed.\ -- Ch.10 (일반 순환), Ch.2 (기본 방정식), Ch.6 (준지균 이론)
+    \item \textbf{논문} (\texttt{papers/})
+    \begin{itemize}
+        \item Lorenz (1983) \textit{History of General Circulation} -- Halley $\to$ Hadley $\to$ Ferrel $\to$ Coriolis 흐름
+        \item Held (2019) \textit{100-Year Progress\ldots} -- Section 2 (Hadley cell, angular momentum)
+        \item Hartmann (2007) \textit{Atmospheric General Circulation} -- subtropical/eddy-driven jet 구분
+    \end{itemize}
+\end{itemize}
+
+\section*{Q1. JJA cross-equatorial overturning이 DJF보다 강한 이유}
+
+\textbf{핵심 개념}: 해륙 분포의 비대칭성과 여름 몬순.
+\begin{itemize}
+    \item 북반구에 대륙 면적이 훨씬 많음 $\to$ 여름(JJA)에 북반구 대륙이 강하게 가열됨
+    \item 열대 수렴대(ITCZ)가 가장 뜨거운 반구로 이동: JJA에는 북위 $\sim 10$--$20^\circ$까지, DJF에는 적도 부근
+    \item Hadley cell은 상승지(ITCZ) $\to$ 하강지(subtropics) 구조이며, \textbf{겨울 반구 셀이 우세}
+    \item JJA: ITCZ가 북반구 깊숙이 올라가 있어 \textbf{남반구 $\to$ 북반구로 교차 적도 흐름}이 필요 $\to$ 단일한 거대 Hadley cell이 형성되어 $\overline{v}$가 크다
+    \item DJF: ITCZ가 적도 부근이라 두 셀이 비교적 대칭 $\to$ 교차 적도 성분이 약함
+\end{itemize}
+
+\textbf{추가 언급}: 인도 여름 몬순, 해양-대륙 열용량 비대칭, 지표 마찰과의 관계.
+
+\section*{Q2. 열대에 추가 등치선이 필요한 이유 ($\overline{u}_{200}$, $\overline{Z}_{200}$ 그림)}
+
+\textbf{핵심 개념}: 열대 지역에서 $u$, $Z$의 값 자체가 작고 공간 변화도 작아 기본 등치선 간격으로는 구조가 드러나지 않음.
+\begin{itemize}
+    \item 중위도: 제트 stream의 $u_{200} \sim 30$--$50\,\mathrm{m/s}$, $Z$ 경도 변동 수십 m
+    \item 열대: $u_{200}$이 약한 동풍/서풍(수 m/s), $Z$ 변동도 작음
+    \item 그러나 열대 정상파(Walker 순환, monsoon high, Bolivian high 등)는 기후학적으로 매우 중요
+    \item 동일한 contour interval을 쓰면 열대 feature가 거의 안 보임 $\to$ \textbf{추가 등치선(denser interval)}로 보강해야 Walker, 대륙성 고기압, ITCZ 부근 trough가 식별됨
+\end{itemize}
+
+\textbf{결론 한 줄}: 열대는 약하지만 의미 있는 순환 구조를 가지므로 가시화를 위해 contour를 추가한다.
+
+\section*{Q3. Hadley cell에서 수평 흐름이 평균적으로 down-gradient임을 증명}
+
+\textbf{핵심 식}: 운동에너지 균형. 시간 평균 + Hadley cell 영역 평균에서
+$$\frac{D}{Dt}\left(\frac{|\mathbf{v}|^2}{2}\right) = -\mathbf{v}\cdot \nabla\Phi + \text{(viscous/diabatic)}$$
+정상상태에서 KE가 유지되려면 양(+)의 변환이 필요. 마찰이 KE를 소산시키므로
+$$\overline{-\mathbf{v}\cdot\nabla\Phi} > 0 \iff \overline{\mathbf{v}\cdot\nabla\Phi} < 0$$
+즉 \textbf{평균 흐름이 지오포텐셜(=압력) 경사의 반대 방향} = down-gradient.
+
+\begin{itemize}
+    \item Holton Ch.10.1 (Hadley cell energy cycle)
+    \item 물리적 의미: Hadley cell은 \textbf{열적 직접 순환(thermally direct)} $\to$ APE(가용 위치 에너지)를 KE로 변환하며, 이는 수평으로 고압$\to$저압 방향 흐름이라는 뜻
+\end{itemize}
+
+\textbf{Tip}: 지균 균형이 깨지는 것은 아니고, \textit{평균적으로} 약한 ageostrophic 성분이 고$\to$저 방향으로 존재한다.
+
+\section*{Q4. 실험실 실험: 열 싱크가 위/오른쪽 경계인 경우}
+
+\textbf{원래 Held--Hou 식 실험실 셋업}: 바닥 가열 + 내부 cold sink $\to$ 두 개의 대칭 셀.
+
+\textbf{변경된 셋업}: 위$\cdot$오른쪽이 차가움, 바닥이 뜨거움 $\to$ \textbf{경사형 가열 비대칭}
+\begin{itemize}
+    \item 뜨거운 바닥과 차가운 오른쪽 벽이 \textbf{수평 온도 경사}를 만듦
+    \item 내부 sink가 사라지면 internal circulation boundary가 벽으로 이동 $\to$ 단일 셀(unicellular) 순환
+    \item 상승: 뜨거운 쪽(왼쪽 바닥) / 수평 이동: 바닥$\to$오른쪽 벽 / 하강: 차가운 오른쪽 벽 / 상부 복귀
+    \item Hadley cell처럼 \textbf{열적 직접 순환}이지만, 위쪽 한계가 내부가 아니라 경계라서
+    \begin{itemize}
+        \item 순환 강도가 경계층 두께(boundary layer)에 제한됨
+        \item 더 얇고, 벽면 열경계층에 집중된 흐름
+    \end{itemize}
+\end{itemize}
+
+\textbf{Held 2019 Fig.\ 참조}: Section 2에서 Hadley cell의 boundary-forced vs.\ interior-forced 논의.
+
+\section*{Q5. EBM (대기 없음) -- 행성 표면온도}
+
+\textbf{식 유도}:
+$$\frac{S_0}{4}(1-\alpha_p) = \sigma T_S^4$$
+$\tfrac{S_0}{4}$는 구면 평균 입사 플럭스($\pi r^2$ 흡수 / $4\pi r^2$ 표면).
+
+\textbf{수치 계산} ($S_0=1360$, $\alpha_p=0.3$, $\sigma=5.68\times10^{-8}$):
+$$T_S = \left[\frac{1360\,(1-0.3)}{4\,(5.68\times 10^{-8})}\right]^{1/4} = \left[\frac{952}{2.272\times 10^{-7}}\right]^{1/4} \approx \boxed{255\,\mathrm{K}}$$
+
+$= -18\,^\circ\mathrm{C}$. 실제 지구 표면온도(288 K)보다 낮음 $\to$ \textbf{온실효과의 필요성}.
+
+\section*{Q6. EBM (1층 대기, $\epsilon=1$)}
+
+\textbf{대기}: 태양복사에 투명, 지구복사에 완전 불투명. 대기층은 위$\cdot$아래 양방향으로 $\sigma T_A^4$ 방출.
+
+\textbf{에너지 균형 방정식 (정상상태)}:
+\begin{itemize}
+    \item 대기층: 흡수 = 방출 $\to$ $\sigma T_S^4 = 2\sigma T_A^4$
+    \item 지표: $\frac{S_0}{4}(1-\alpha_p) + \sigma T_A^4 = \sigma T_S^4$
+    \item TOA: $\frac{S_0}{4}(1-\alpha_p) = \sigma T_A^4 = \sigma T_E^4$
+\end{itemize}
+
+\textbf{풀이}:
+\begin{itemize}
+    \item $T_E = 255\,\mathrm{K}$ (Q5와 동일)
+    \item $T_A = T_E = 255\,\mathrm{K}$
+    \item $T_S = 2^{1/4}\,T_E \approx 1.189 \times 255 \approx \boxed{303\,\mathrm{K}}$
+\end{itemize}
+
+\textbf{(c) 논의}:
+\begin{itemize}
+    \item $T_E$: 우주에서 본 행성의 ``복사 온도''
+    \item $T_A$: 1층 대기의 실제 온도 -- 이 모델에선 $T_E$와 같음
+    \item $T_S$: 지표 온도 -- $2^{1/4}$배 더 높음 $\to$ 온실효과의 간단한 정량화
+    \item 실제 지구: $T_S=288$ K로 303 K보다 낮음 (실제 대기는 부분적으로 투명 $= \epsilon<1$, 대류 수송 등)
+\end{itemize}
+
+\textbf{(d) $\epsilon \to 0$ 극한 증명}:
+\begin{itemize}
+    \item TOA: $F = F_A + (1-\epsilon)F_S = \tfrac{S_0}{4}(1-\alpha_p) = \sigma T_E^4$
+    \item $F_A = \epsilon \sigma T_A^4$, $F_S = \sigma T_S^4$
+    \item 대기 균형: 흡수 $= \epsilon \sigma T_S^4$, 방출 $= 2\epsilon \sigma T_A^4$ $\to$ $T_S^4 = 2 T_A^4$
+    \item TOA: $\epsilon \sigma T_A^4 + (1-\epsilon)\sigma T_S^4 = \sigma T_E^4$
+    \item $T_S^4 = 2T_A^4$ 대입: $\epsilon \sigma T_A^4 + (1-\epsilon)\cdot 2\sigma T_A^4 = \sigma T_E^4$
+    \item $\sigma T_A^4 (2-\epsilon) = \sigma T_E^4 \Rightarrow T_A^4 = \dfrac{T_E^4}{2-\epsilon}$
+    \item $T_S^4 = \dfrac{2 T_E^4}{2-\epsilon}$
+\end{itemize}
+
+\textbf{$\epsilon \to 0$ 극한}:
+\begin{itemize}
+    \item $T_S^4 \to T_E^4 \Rightarrow T_S \to T_E$ \checkmark
+    \item $T_A^4 \to T_E^4/2 \Rightarrow T_A \to T_E/2^{1/4}$ \checkmark
+\end{itemize}
+
+\section*{Q7. Halley(1686)의 무역풍 설명의 문제점}
+
+\textbf{Halley 주장}: 태양이 동에서 서로 이동하며 열대 해역을 순차적으로 가열 $\to$ 따뜻한 공기가 태양을 ``따라간다'' $\to$ 동풍.
+
+\textbf{논리적 결함}:
+\begin{enumerate}
+    \item 태양은 하루 전체로 보면 모든 경도를 동일하게 가열 $\to$ 순(net) 동쪽 추진력 없음
+    \item 공기가 태양 속도(지구 자전 속도 $\sim 463\,\mathrm{m/s}$)를 따라갈 수 없음
+    \item 적도에서 극으로 가는 \textbf{남북(meridional)} 성분을 설명 못 함
+    \item 무역풍이 왜 \textbf{지속적}이고 \textbf{정상}인지 설명 실패
+    \item 마찰/지면 상호작용 고려 없음
+\end{enumerate}
+
+\textbf{누락}: 지구 자전에 의한 편향(Coriolis) 개념, 남북 온도차에 의한 순환 동력.
+
+\section*{Q8. Hadley(1735)의 각운동량 보존 설명 (2--3문장)}
+
+적도 부근의 따뜻한 공기가 상승한 뒤 상층에서 극 방향으로 이동하며, \textbf{절대 각운동량} $M = \Omega a^2 \cos^2\phi + u\,a\cos\phi$이 보존되므로 고위도로 갈수록 $\cos\phi$가 작아져 $u$가 서풍으로 강해진다. 반대로 하층에서 적도로 돌아오는 공기는 $\cos\phi$가 커지며 지구 회전보다 느려져 \textbf{동풍}(무역풍)으로 나타난다. 즉 무역풍은 각운동량 보존과 남북 순환(Hadley cell)의 결합으로 생긴다.
+
+\section*{Q9. 미분 태양가열 + $\partial u/\partial t \cong fv$로 본 무역풍 메커니즘}
+
+\textbf{논리 흐름}:
+\begin{enumerate}
+    \item 적도는 극보다 많이 가열 $\to$ \textbf{남북 온도 경사} $\to$ 적도 상승, 극쪽 하강 (Hadley 순환)
+    \item 하층에서 \textbf{적도 쪽 $v<0$ (북반구 기준)} 흐름 발생
+    \item 북반구: $f>0$, $v<0$ $\to$ $\partial u/\partial t = fv < 0$ $\to$ \textbf{동풍 성분 강화}
+    \item 남반구: $f<0$, $v>0$ $\to$ $\partial u/\partial t = fv < 0$ $\to$ 마찬가지로 \textbf{동풍}
+    \item 정상상태에서는 마찰과 균형 $\to$ 저층 무역풍 (북동풍/남동풍)이 유지됨
+\end{enumerate}
+
+\textbf{요점}: 동일한 무역풍이 (a) 각운동량 보존 관점과 (b) 차등가열$\to$Coriolis 편향 관점 \textbf{양쪽 모두로 설명}됨. Coriolis 힘은 사실상 각운동량 보존의 회전계 표현.
+
+\section*{Q10. $\beta$-effect란?}
+
+\textbf{정의}: Coriolis 파라미터 $f=2\Omega\sin\phi$의 \textbf{위도에 따른 변화율}
+$$\beta \equiv \frac{\partial f}{\partial y} = \frac{2\Omega\cos\phi}{a}$$
+
+\textbf{중요성}:
+\begin{itemize}
+    \item 행성 Rossby wave의 복원력 -- $\beta$가 있어야 Rossby wave 전파 가능
+    \item 분산 관계: $\omega = \bar{u}k - \dfrac{\beta k}{k^2+l^2}$ (단순 경우)
+    \item \textbf{$\beta$-plane 근사}: $f \approx f_0 + \beta y$ -- 유한 영역에서 구면성을 부분적으로 보존
+    \item 서안 강화(western intensification, Stommel 1948)의 원인
+    \item 준지균 이론에서 potential vorticity의 남북 경사를 제공
+\end{itemize}
+
+\section*{Q11. Reynolds/zonal--eddy 이중 분해 증명}
+
+분해: $v = \overline{v_Z} + \overline{v_E} + v'_Z + v'_E$, $X = \overline{X_Z} + \overline{X_E} + X'_Z + X'_E$
+\begin{itemize}
+    \item $\overline{(\,)}$: 시간 평균, $(\,)'$: 시간 섭동
+    \item $(\,)_Z$: 경도 평균, $(\,)_E$: 경도 편차(stationary eddy)
+\end{itemize}
+
+\textbf{증명 스케치}:
+\begin{enumerate}
+    \item $vX$를 전개 (16개 항)
+    \item 시간평균 $\overline{(\cdot)}$: $\overline{X'} = 0$, $\overline{v'} = 0$이므로 섭동 $\times$ 평균 cross-term들은 소멸
+    \begin{itemize}
+        \item 남는 항: $\overline{v}\,\overline{X} + \overline{v'X'}$ (평균 $\times$ 평균 + 섭동공분산)
+        \item 여기서 $\overline{v} = \overline{v_Z}+\overline{v_E}$, $\overline{X}$도 동일
+    \end{itemize}
+    \item 경도평균 $(\cdot)_Z$: $(\overline{X_E})_Z = 0$이므로
+    \begin{itemize}
+        \item $(\overline{v}\,\overline{X})_Z = \overline{v_Z}\,\overline{X_Z} + (\overline{v_E}\,\overline{X_E})_Z$
+        \item $(\overline{v'X'})_Z = (\overline{v'_Z X'_Z})_Z + (\overline{v'_E X'_E})_Z$
+        \item 그리고 $v'_Z$는 경도 독립이므로 $(\overline{v'_Z X'_Z})_Z = \overline{v'_Z X'_Z}$
+    \end{itemize}
+    \item 합치면
+    $$\overline{(vX)}_Z = \overline{v_Z}\,\overline{X_Z} + \overline{v'_Z X'_Z} + (\overline{v_E}\,\overline{X_E})_Z + (\overline{v'_E X'_E})_Z$$
+\end{enumerate}
+
+\textbf{물리적 의미 (4항)}:
+\begin{enumerate}
+    \item 평균 남북 순환 수송 (MMC)
+    \item 경도평균 시간섭동에 의한 수송 (zonal-mean transients)
+    \item 정상 에디 (stationary waves)에 의한 수송
+    \item 비정상 에디 (transient eddies)에 의한 수송
+\end{enumerate}
+
+\section*{Q12. 연속방정식으로부터 $\int_0^{p_0} v_Z\,dp = 0$ 증명}
+
+\textbf{(a)} 출발:
+$$\frac{1}{a\cos\phi}\left[\frac{\partial u}{\partial \lambda} + \frac{\partial}{\partial \phi}(v\cos\phi)\right] + \frac{\partial \omega}{\partial p} = 0$$
+
+\begin{enumerate}
+    \item 경도 평균 $(\cdot)_Z$: $\partial u/\partial \lambda$ 항은 주기적 경계로 소멸
+    $$\frac{1}{a\cos\phi}\frac{\partial}{\partial \phi}(v_Z\cos\phi) + \frac{\partial \omega_Z}{\partial p} = 0$$
+    \item $p$에 대해 $0$에서 $p_0$까지 적분
+    $$\frac{1}{a\cos\phi}\frac{\partial}{\partial \phi}\left[\cos\phi\int_0^{p_0} v_Z\,dp\right] + [\omega_Z]_0^{p_0} = 0$$
+    \item 경계조건: $\omega_Z(0)=0$ (TOA), $\omega_Z(p_0)=0$ (지표에서 질량선속 없음)
+    $$\Rightarrow \frac{\partial}{\partial \phi}\left[\cos\phi\int_0^{p_0} v_Z\,dp\right] = 0$$
+    \item $\phi = \pm \pi/2$에서 $\cos\phi = 0$이므로 적분상수 $= 0$
+    $$\therefore\ \cos\phi\int_0^{p_0} v_Z\,dp = 0 \Rightarrow \int_0^{p_0} v_Z\,dp = 0 \quad \blacksquare$$
+\end{enumerate}
+
+\textbf{(b) 물리적 의미}:
+\begin{itemize}
+    \item 경도 평균한 남북 \textbf{질량 수송이 연직 적분으로 0} = 지구 대기 전체에서 남북 방향으로 순(net) 질량 이동이 없음
+    \item Hadley cell의 \textbf{상층 극향 흐름과 하층 적도향 흐름이 질량 균형}을 이룸
+    \item 이 제약이 \textbf{residual mean circulation}, \textbf{zonal-mean 운동량 균형}, \textbf{stream function} 정의의 기반
+    \item Stream function $\Psi(\phi,p) = \dfrac{2\pi a \cos\phi}{g}\int_0^p v_Z\,dp'$가 well-defined 되는 조건
+\end{itemize}
+
+\section*{풀이 순서 제안}
+\begin{enumerate}
+    \item \textbf{개념 정리형 (먼저)}: Q7, Q8, Q10, Q1 -- 글쓰기 문제
+    \item \textbf{수식 유도형}: Q11, Q12, Q3, Q9 -- 식 전개 중심
+    \item \textbf{EBM 계산}: Q5, Q6 -- 수치 확인만 필요 (가장 짧음)
+    \item \textbf{관찰/실험 해석}: Q2, Q4 -- 그림 보고 해석
+\end{enumerate}
+
+Q5, Q6을 먼저 끝내서 분량을 확보한 뒤, Q11$\cdot$Q12 유도를 완성하고, 마지막으로 서술형 문제들을 마무리하는 흐름 추천.
+
+\section*{참고: 자주 인용되는 값$\cdot$상수}
+
+\begin{center}
+\begin{tabular}{ll}
+\hline
+기호 & 값 \\
+\hline
+$S_0$ (solar constant) & $1360\,\mathrm{W/m^2}$ \\
+$\sigma$ (Stefan--Boltzmann) & $5.68\times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$ \\
+$\alpha_p$ (planetary albedo) & $0.30$ \\
+$\Omega$ (Earth rotation) & $7.292\times 10^{-5}\,\mathrm{s^{-1}}$ \\
+$a$ (Earth radius) & $6.371\times 10^{6}\,\mathrm{m}$ \\
+$g$ & $9.81\,\mathrm{m/s^2}$ \\
+$T_E$ (계산값) & $\approx 255\,\mathrm{K}$ \\
+$T_S$ (1-layer, $\epsilon=1$) & $\approx 303\,\mathrm{K}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+\end{document}

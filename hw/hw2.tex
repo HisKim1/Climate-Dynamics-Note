@@ -1,0 +1,180 @@
+\documentclass[11pt,a4paper]{article}
+\input{hw/header}
+
+\begin{document}
+\input{hw/title}
+
+
+\hwquestion[]{Why is the zonally averaged cross-equatorial overturning circulation, which can be depicted by zonally averaged meridional wind, stronger in JJA than in DJF?}
+\begin{solution}
+Land which can be heated and create temperature gradient more than ocean distributed in the Northern hemisphere than in the Southern hemisphere. Thus, ITCZ drifts to the warmer hemisphere; northward in JJA, southward in DJF. This induces the cross-equatorial overturning in order to complete the expanded single Hadley cell circulation.
+\end{solution}
+
+\hwquestion[]{Why is it necessary to insert extra contours in the tropics as shown in the following Figure?}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/hw2_q2_u200_Z200.png}
+    \caption*{$\overline{u}_{200}$, $\overline{Z}_{200}$ for DJF and JJA.}
+\end{figure}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[]{Prove that on average over the Hadley cell, the horizontal flow is down the pressure gradient.}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{How would the overturning circulation depicted in Figure below be different in a laboratory experiment in which the heat sink is a cold top and right side boundary, rather than in the interior of the fluid?}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.45\textwidth]{hw/images/hw2_q4_lab_experiment.png}
+    \caption*{Lab experiment: heated bottom, heated side.}
+\end{figure}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\noindent\textbf{Energy Balance Model}
+
+\hwquestion[]{A planet has the energy balance model shown below. In this case, there is no atmosphere. Red indicates incoming solar energy and black outgoing terrestrial radiation.}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/hw2_q5_ebm_noatm.png}
+    \caption*{Energy balance model without atmosphere.}
+\end{figure}
+\begin{enumerate}[label=(\alph*)]
+    \item Set up the energy balance equation between incoming solar energy and outgoing radiation.
+    \begin{solution}
+    Since this model does not have atmosphere, the incoming solar energy should balance the outgoing terrestrial radiation:
+    $$\frac{S_0}{4}(1-\alpha_p) = \sigma T_s^4$$
+    \end{solution}
+    \item Compute the surface temperature of this planet, $T_S$, with the Stefan--Boltzmann constant $\sigma = 5.68 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}$, the planetary albedo $\alpha_p$ as $0.3$, and solar constant $S_0 = 1360\,\mathrm{W\,m^{-2}}$.
+    \begin{solution}
+        From the energy balance equation above,
+        \begin{align*}
+            \sigma T_s^4 &= \frac{S_0}{4}(1-\alpha_p) \\
+            T_s &= \left( \frac{S_0}{4\sigma}(1-\alpha_p)\right)^\frac{1}{4}\\
+            &= \left( \frac{1360\,\mathrm{W\,m^{-2}}}{4\times 5.68 \times 10^{-8}\,\mathrm{W\,m^{-2}\,K^{-4}}}(1-0.3)\right)^\frac{1}{4}\\
+            &= 254.42\, \mathrm{K}
+        \end{align*}
+    \end{solution}
+\end{enumerate}
+
+\newpage
+\hwquestion[]{Planet has the energy balance model shown below, which now has atmosphere, similar to the Earth.}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/hw2_q6_ebm_atm.png}
+    \caption*{Energy balance model with a single-layer atmosphere.}
+\end{figure}
+\begin{enumerate}[label=(\alph*)]
+    \item In this case, atmosphere is completely transparent to solar radiation while completely opaque to terrestrial radiation. Set up the energy balance equation for atmosphere and surface.
+    \begin{solution}
+        There are two object that can absorb and emit the radiation energy: surface and atmosphere. 
+        \begin{enumerate}
+            \item Surface
+                $$\frac{S_0}{4}(1-\alpha_p) + \sigma T_A^4 = \sigma T_s^4 $$
+            \item Atmosphere 
+                $$\sigma T_s^4 = 2\sigma T_A^4$$
+        \end{enumerate}
+    \end{solution}
+    \item Calculate the surface temperature ($T_S$), the atmosphere temperature ($T_A$), and the emission temperature ($T_E$).
+    \begin{solution}
+        First, note that $T_A = T_E$ so we only need to compute $T_s$ and $T_A$.
+        \begin{align*}
+             \sigma T_A^4 &= \sigma T_s^4 - \frac{S_0}{4}(1-\alpha_p) \\
+             &=  2\sigma T_A^4 - \frac{S_0}{4}(1-\alpha_p) \\
+             \Rightarrow T_A &= \left(\frac{S_0}{4\sigma}(1-\alpha_p)\right)^\frac{1}{4}\\
+             &= 254.42\, \mathrm{K},\\
+             T_s &= 2^\frac{1}{4}T_A\\
+             &= 302.5\,\mathrm{K}
+        \end{align*}
+    \end{solution}
+    \item Discuss the similarity and difference among these temperatures.
+    \begin{solution}
+        $T_E$ is the same whether the planet has atmosphere or not. This implies that the planet must be at energy equilibrium state regardless as a whole system. However, the surface temperature $T_s$ with atmosphere is $2^\frac{1}{4}$ times higher than one without atmosphere. As the atmosphere contributes to green house effect, the multiple represents the effectiveness of the green house effect of the atmosphere.
+    \end{solution}
+    \item Now, let's introduce emissivity, $\epsilon$, which determines fraction of radiation that is emitted. The radiative flux emitted to space, $F$, through the top of the atmosphere is the sum of the radiative fluxes emitted by the top most layer $F_A$, and the transmitted radiative flux, $(1-\epsilon)F_S$, where $F_S$ is the upwelling radiative flux from the surface. Prove that in the limit as $\epsilon \to 0$, the temperature of the surface of a planet approaches the planet's equivalent blackbody temperature $T_E$ and the temperature of its atmosphere approaches $T_E / 2^{1/4}$.
+    \begin{solution}
+        Rewrite the given condition  $F = F_A + (1-\varepsilon)F_S$ using pre-defined symbols:
+        \begin{enumerate}
+            \item $F = \sigma T_A^4$
+            \item $F_A = \varepsilon \sigma T_A^4$
+            \item $F_S = \sigma T_s^4$
+        \end{enumerate}
+        WTS: $\displaystyle \lim_{\varepsilon \to 0 }T_S = T_E$ and $ \displaystyle \lim_{\varepsilon \to 0 }T_A = 2^{-\frac{1}{4}}T_E$
+        \begin{align*}
+            \varepsilon\sigma T_A^4 + (1-\varepsilon) \sigma T_s^4 &= \sigma T_E^4\\
+            \varepsilon\sigma T_A^4 + (1-\varepsilon) 2\sigma T_A^4 &= \sigma T_E^4\\
+            \Rightarrow\lim_{\varepsilon \to 0 }T_S = \lim_{\varepsilon \to 0 } T_E = T_E,\quad  &\lim_{\varepsilon \to 0 }T_A=\lim_{\varepsilon \to 0 }\left(\frac{T_E^4}{2-\varepsilon}\right)^\frac{1}{4}=2^{-\frac{1}{4}}T_E
+        \end{align*}
+    \end{solution}
+\end{enumerate}
+
+\newpage
+\noindent\textbf{Answer the following question after you read papers by E.\,Lorenz 1983 and I.\,Held 2019 (only up to Section 2).}
+
+\hwquestion[]{What are missing and not logical in E.\,Halley's explanation on the trade wind?}
+\begin{solution}
+    Halley claimed that the Sun heats tropics from East to West sequentially so taht heated warm air follows the sun which results in easterlies. However, the Sun equally lights all longitudes during a day. If the heated air can generates esterlies, the speed of a such wind cannot be similar to the speed that the Sun moves. In addition, Halley's theory could not explain the meridional component of wind and steady state of the trade wind. 
+\end{solution}
+
+\hwquestion[]{According to G.\,Hadley (1735), he explained the trade winds in terms of the angular momentum conservation. Please summarize it using your own words in 2--3 sentences.}
+\begin{solution}
+First, the air near the equator heated by the sun radiation rises to the upper level and move polarward. In order to preserve the angular momentum, zonal component of wind increases as the latitdue decreases. Reversely, $\cos \phi$ increases when the air moves from the pole to the equator, resulting in easterlies. 
+\end{solution}
+
+\hwquestion[]{Concept of the angular momentum conservation is indeed consistent with the Coriolis force. If we average over longitude, the zonal momentum equation can be simplified in the following form:
+$$\frac{\partial u}{\partial t} \cong f v$$
+Using the idea of differential solar heating and the above equation instead of the angular momentum conservation as in 2), please write down the mechanism of the trade winds.}
+\begin{solution}
+
+\end{solution}
+
+\hwquestion[]{What is the $\beta$-effect?}
+\begin{solution}
+$$\beta := \frac{\partial f}{\partial y}= \frac{2\Omega \cos \phi}{a}$$
+This $\beta$-effect tunes the Coriolis parameter when the air parcel flucuates in meridional-direction. 
+\end{solution}
+
+\newpage
+\noindent\textbf{Please show the following}
+
+\hwquestion[]{$v = \overline{v_Z} + \overline{v_E} + v'_Z + v'_E$ and $X = \overline{X_Z} + \overline{X_E} + X'_Z + X'_E$ as defined in the class. Show that
+$$\overline{(vX)}_Z = \overline{v_Z}\,\overline{X_Z} + \overline{v'_Z X'_Z} + \overline{(\overline{v_E} \cdot \overline{X_E})}_Z + \overline{(v'_E X'_E)}_Z.$$}
+\begin{solution}
+\begin{align*}
+    v X &=
+    (\overline{v_Z} + \overline{v_E} + v'_Z + v'_E)(\overline{X_Z} + \overline{X_E} + X'_Z + X'_E)\\
+    &=\overline{v_Z}\overline{X_Z} + \overline{v_E}\overline{X_Z} + v'_Z\overline{X_Z} + v'_E\overline{X_Z}
+    + \overline{v_Z}\overline{X_E} + \overline{v_E}\overline{X_E} + v'_Z\overline{X_E} + v'_E\overline{X_E}    \\
+    &\quad +\overline{v_Z}X'_Z + \overline{v_E}X'_Z + v'_ZX'_Z + v'_EX'_Z
+    +\overline{v_Z}X'_E + \overline{v_E}X'_E + v'_ZX'_E + v'_EX'_E\\
+    \Rightarrow \overline{vX}
+    &=\overline{\overline{v_Z}\overline{X_Z} + \overline{v_E}\overline{X_Z} + v'_Z\overline{X_Z} + v'_E\overline{X_Z}
+    + \overline{v_Z}\overline{X_E} + \overline{v_E}\overline{X_E} + v'_Z\overline{X_E} + v'_E\overline{X_E}}    \\
+    &\quad \overline{+\overline{v_Z}X'_Z + \overline{v_E}X'_Z + v'_ZX'_Z + v'_EX'_Z
+    +\overline{v_Z}X'_E + \overline{v_E}X'_E + v'_ZX'_E + v'_EX'_E}\\
+    &=\overline{\overline{v_Z}\overline{X_Z} + \overline{v_E}\overline{X_Z}
+    + \overline{v_Z}\overline{X_E} +\overline{v_E}\overline{X_E} }\\
+    &= ? 
+\end{align*}
+\end{solution}
+
+\hwquestion[]{Begin with the continuity equation in spherical and pressure coordinate
+$$\frac{1}{a\cos\varphi}\left[\frac{\partial u}{\partial \lambda} + \frac{\partial}{\partial \varphi}(v\cos\varphi)\right] + \frac{\partial \omega}{\partial p} = 0$$}
+\begin{enumerate}[label=(\alph*)]
+    \item Show that $\int_0^{p_0} v_Z\,dp = 0$.
+    \begin{solution}
+
+    \end{solution}
+    \item What is the physical meaning of this?
+    \begin{solution}
+
+    \end{solution}
+\end{enumerate}
+
+\end{document}
