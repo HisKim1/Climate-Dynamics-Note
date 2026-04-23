@@ -17,13 +17,16 @@ Land which can be heated and create temperature gradient more than ocean distrib
     \caption*{$\overline{u}_{200}$, $\overline{Z}_{200}$ for DJF and JJA.}
 \end{figure}
 \begin{solution}
-
+Due to the relatively weak gradient in tropics compared to midlatitude, stationary structure of tropics does not appears if we adjust contours in global scale. Further, in tropics it changes slightly with respect to time, we have to add extra contours to see the hidden structure.
 \end{solution}
 
 \newpage
 \hwquestion[]{Prove that on average over the Hadley cell, the horizontal flow is down the pressure gradient.}
 \begin{solution}
-
+In steady state, 
+    $$\overline{\frac{D}{Dt}\frac{\mathbf{v}^2}{2}} = 0\implies -\overline{\mathbf{v}\cdot \nabla \Phi} + \overline{\mathbf{v}\cdot \mathbf{F}} = 0 $$
+    Since the friction always dissipates kinetic energy, the first term should compensate it:
+    $$-\overline{\mathbf{v}\cdot \nabla \Phi} > 0 \implies\overline{\mathbf{v}\cdot \nabla \Phi} < 0$$
 \end{solution}
 
 \hwquestion[]{How would the overturning circulation depicted in Figure below be different in a laboratory experiment in which the heat sink is a cold top and right side boundary, rather than in the interior of the fluid?}
@@ -33,7 +36,7 @@ Land which can be heated and create temperature gradient more than ocean distrib
     \caption*{Lab experiment: heated bottom, heated side.}
 \end{figure}
 \begin{solution}
-
+If the fluid conserve its heat energy in the interior, it has to reach the upper and right boundary to cool down sink and complete the cycle, meanwhile the center of the tank would be void. The circulation occurs near the boundary layer, not the whole tank.
 \end{solution}
 
 \newpage
@@ -131,7 +134,7 @@ First, the air near the equator heated by the sun radiation rises to the upper l
 $$\frac{\partial u}{\partial t} \cong f v$$
 Using the idea of differential solar heating and the above equation instead of the angular momentum conservation as in 2), please write down the mechanism of the trade winds.}
 \begin{solution}
-
+Since the solar energy induces meridional temperature gradient, resulting in upward motion near the equator and downward flow at poles, equator-ward wind blows at the lower level. At the northern hemisphere, $v<0 \& f>0 \implies \dfrac{\partial u}{\partial t}<0$. Similarly at the southern hemisphere, $v>0 \& f<0 \implies \dfrac{\partial u}{\partial t}<0$. As a result, esterlies strengthen.
 \end{solution}
 
 \hwquestion[]{What is the $\beta$-effect?}
@@ -152,16 +155,45 @@ $$\overline{(vX)}_Z = \overline{v_Z}\,\overline{X_Z} + \overline{v'_Z X'_Z} + \o
     &=\overline{v_Z}\overline{X_Z} + \overline{v_E}\overline{X_Z} + v'_Z\overline{X_Z} + v'_E\overline{X_Z}
     + \overline{v_Z}\overline{X_E} + \overline{v_E}\overline{X_E} + v'_Z\overline{X_E} + v'_E\overline{X_E}    \\
     &\quad +\overline{v_Z}X'_Z + \overline{v_E}X'_Z + v'_ZX'_Z + v'_EX'_Z
-    +\overline{v_Z}X'_E + \overline{v_E}X'_E + v'_ZX'_E + v'_EX'_E\\
-    \Rightarrow \overline{vX}
-    &=\overline{\overline{v_Z}\overline{X_Z} + \overline{v_E}\overline{X_Z} + v'_Z\overline{X_Z} + v'_E\overline{X_Z}
-    + \overline{v_Z}\overline{X_E} + \overline{v_E}\overline{X_E} + v'_Z\overline{X_E} + v'_E\overline{X_E}}    \\
-    &\quad \overline{+\overline{v_Z}X'_Z + \overline{v_E}X'_Z + v'_ZX'_Z + v'_EX'_Z
-    +\overline{v_Z}X'_E + \overline{v_E}X'_E + v'_ZX'_E + v'_EX'_E}\\
-    &=\overline{\overline{v_Z}\overline{X_Z} + \overline{v_E}\overline{X_Z}
-    + \overline{v_Z}\overline{X_E} +\overline{v_E}\overline{X_E} }\\
-    &= ? 
+    +\overline{v_Z}X'_E + \overline{v_E}X'_E + v'_ZX'_E + v'_EX'_E
 \end{align*}
+
+Now take the time mean.
+%
+\begin{align*}
+    \overline{vX}
+    &= \overline{v_Z}\,\overline{X_Z}
+     + \overline{v_E}\,\overline{X_Z}
+     + \overline{v_Z}\,\overline{X_E}
+     + \overline{v_E}\,\overline{X_E}
+     + \overline{v'_Z X'_Z}
+     + \overline{v'_E X'_Z}
+     + \overline{v'_Z X'_E}
+     + \overline{v'_E X'_E}
+\end{align*}
+
+Next take the zonal mean $(\cdot)_Z$.  Since $(\overline{v_E})_Z = 0$, $(\overline{X_E})_Z = 0$, $(v'_E)_Z = 0$, $(X'_E)_Z = 0$:
+%
+\begin{align*}
+    (\overline{v_E}\,\overline{X_Z})_Z
+        &= \overline{X_Z}\,(\overline{v_E})_Z = 0, \\
+    (\overline{v_Z}\,\overline{X_E})_Z
+        &= \overline{v_Z}\,(\overline{X_E})_Z = 0, \\
+    (\overline{v'_E X'_Z})_Z
+        &= \overline{X'_Z\,(v'_E)_Z} = 0, \\
+    (\overline{v'_Z X'_E})_Z
+        &= \overline{v'_Z\,(X'_E)_Z} = 0.
+\end{align*}
+
+Therefore the remaining terms are:
+%
+\begin{equation*}
+    \overline{(vX)}_Z
+    = \overline{v_Z}\,\overline{X_Z}
+    + \overline{v'_Z X'_Z}
+    + \overline{(\overline{v_E}\,\overline{X_E})}_Z
+    + \overline{(v'_E X'_E)}_Z.
+\end{equation*}
 \end{solution}
 
 \hwquestion[]{Begin with the continuity equation in spherical and pressure coordinate
@@ -169,12 +201,23 @@ $$\frac{1}{a\cos\varphi}\left[\frac{\partial u}{\partial \lambda} + \frac{\parti
 \begin{enumerate}[label=(\alph*)]
     \item Show that $\int_0^{p_0} v_Z\,dp = 0$.
     \begin{solution}
-
+    Zonal-average on the continuity equation above. Then we have 
+    $$\frac{1}{a\cos\varphi}+\frac{\partial}{\partial \varphi}(v_Z\cos\varphi) + \frac{\partial \omega_Z}{\partial p} = 0$$
+    Next, integrate from 0 to $p_0$,
+    \begin{align*}
+        0&= \int_0^{p_0}\left(\frac{1}{a\cos\varphi}\frac{\partial}{\partial \varphi}(v_Z\cos\varphi) + \frac{\partial \omega_Z}{\partial p} \right)\, dp\\
+        &=\int_0^{p_0}\left(\frac{1}{a\cos\varphi}\frac{\partial}{\partial \varphi}(v_Z\cos\varphi)\right)\, dp + \int_0^{p_0}\left(\frac{\partial \omega_Z}{\partial p} \right)\, dp\\
+        &= \frac{1}{a\cos\varphi}\frac{\partial}{\partial \varphi}\left[\cos \varphi\int_0^{p_0}v_Z\, dp\right] + \omega_Z \mid_0^{p_0}\\
+        &= \frac{\partial}{\partial \varphi}\left[\cos \varphi\int_0^{p_0}v_Z\, dp\right]\\
+        &= \cos \varphi\int_0^{p_0}v_Z\, dp\\
+        &= \int_0^{p_0}v_Z\, dp
+    \end{align*}
     \end{solution}
     \item What is the physical meaning of this?
     \begin{solution}
-
+        $$\int_0^{p_0}v_Z\, dp = 0$$
+        Primitively, zonal-averaged v component of wind is zero when we integrate the whole vertical level. In details, there is no zonal air transport, \textit{i.e.}, if the wind blows southward near the surface, then the wind at the upper level should transport the air to the other side. 
     \end{solution}
-\end{enumerate}
 
+\end{enumerate}
 \end{document}
