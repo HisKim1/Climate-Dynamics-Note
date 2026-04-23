@@ -1,0 +1,155 @@
+\documentclass[11pt,a4paper]{article}
+\input{hw/header}
+
+\begin{document}
+
+\begin{center}
+    \Large~\textbf{Mid-term Exam (Climate Dynamics, 2026 Spring)}
+\end{center}
+
+\vspace{0.4cm}
+
+\noindent
+\begin{minipage}[t]{0.5\textwidth}
+Take-home due: 6PM, April 24 (Fri)\\
+Total: 200 pts
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+    \begin{flushright}
+    Student ID: 20251214\\
+    Name: 김희수
+    \end{flushright}
+\end{minipage}
+
+\vspace{0.4cm}
+\noindent\rule{\textwidth}{0.4pt}
+
+\hwquestion[20 pt]{How did Hadley's theory of the circulation satisfy
+\begin{enumerate}[label=(\alph*)]
+    \item Mass balance
+    \item Momentum balance
+    \item In Hadley's theory, are terms such as $(u_E v_E)_Z$ necessary? Why?
+\end{enumerate}}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[20 pt]{Thermodynamic energy equation can be modified in the following steps
+\[
+    c_p\,\frac{d\ln\theta}{dt} = \frac{ds}{dt}
+\]
+where $\dfrac{d}{dt} = \dfrac{\partial}{\partial t} + \vec{V}\cdot\nabla$ with $\vec{V}$ is the 3-dimensional wind. The term $\dfrac{ds}{dt}$ is the time rate of change of entropy and is related to the rate of diabatic heating per unit mass $J$ by
+\[
+    J = T\!\left(\frac{ds}{dt}\right).
+\]
+\begin{enumerate}[label=(\alph*)]
+    \item Starting from the above form and $T = \theta\!\left(\dfrac{p}{p_0}\right)^{R/c_p}$, show that
+    \[
+        \left(\frac{\partial}{\partial t} + u\frac{\partial}{\partial x} + v\frac{\partial}{\partial y}\right)T + T\omega\,\frac{\partial\ln\theta}{\partial p} = \frac{T}{c_p}\,\frac{ds}{dt}.
+    \]
+    \item Using the result in (a), $\Psi = \dfrac{\Phi}{f_0}$ and $\dfrac{\partial\Phi}{\partial p} = -\dfrac{RT}{p}$, show that
+    \[
+        \left(\frac{\partial}{\partial t} + u\frac{\partial}{\partial x} + v\frac{\partial}{\partial y}\right)\!\left(\frac{\partial\Psi}{\partial p}\right) - \frac{RT}{f_0 p}\,\frac{\partial\ln\theta}{\partial p}\,\omega = -\,\frac{RT}{f_0\, p\, c_p}\,\frac{ds}{dt}.
+    \]
+    \item Using $\alpha = \dfrac{1}{\rho} = \dfrac{RT}{p}$, $\sigma = \alpha\,\dfrac{\partial\ln\theta}{\partial p}$, and $\vec{V} = \hat{k}\times\nabla\Psi$, derive the following equation from the result in (b):
+    \[
+        \frac{\partial}{\partial t}\!\left(\frac{\partial\Psi}{\partial p}\right) = -\,\vec{V_R}\cdot\nabla\!\left(\frac{\partial\Psi}{\partial p}\right) + \frac{\sigma}{f_0}\,\omega - \frac{\alpha}{f_0\, c_p}\,\frac{ds}{dt}.
+    \]
+    \item For a state with no motion, what is the effect of increasing entropy ($\dfrac{ds}{dt} > 0$) on $T$ and $\dfrac{\partial\Psi}{\partial p}$?
+\end{enumerate}}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[20 pt]{Suppose the effect of the midlatitude eddies is to weaken rather than strengthen the extratropical zonal jet. More specifically, suppose that
+\[
+    (u_E v_E)_Z = A_0\!\left(\frac{\delta}{90^\circ}\right)\exp\!\left\{-\left(\frac{p - 200\,\mathrm{hPa}}{50\,\mathrm{hPa}}\right)^{\!2}\right\}
+\]
+in midlatitudes, where $A_0$ is a positive constant, $\delta$ is in degrees, and $p$ is in $\mathrm{hPa}$.
+\begin{enumerate}[label=(\alph*)]
+    \item Show that $(u_E v_E)_Z$ as given above does indeed weaken the extratropical jet. You may find it useful to focus simply on the flux at $200\,\mathrm{hPa}$.
+    \item What type of mean meridional circulation would this flux drive in midlatitudes? Direct or indirect? Why?
+\end{enumerate}}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[45 pt]{Assume constant $f$ and $\dfrac{d\theta_0}{dz}$, and the geostrophic flow is two-dimensional ($y$--$z$), specifically $u_g = u_g(z,t)$ and $v_g = v_g(z,t)$.
+\begin{enumerate}[label=(\alph*)]
+    \item Starting with geostrophic and hydrostatic balance
+    \[
+        \vec{V_g} = \frac{1}{\rho_0 f}\,\hat{k}\times\nabla p,\qquad \frac{\partial p}{\partial z} = \frac{\rho_0 g}{\theta_0}\,\theta,
+    \]
+    show that the maintenance of thermal wind relationship requires
+    \[
+        \frac{d}{dt}\!\left(\frac{\partial u_g}{\partial z}\right) = -\,\frac{g}{\theta_0 f}\,\frac{d}{dt}\!\left(\frac{\partial\theta}{\partial y}\right).
+    \]
+    \item Determine the left side of the result in (a) from the momentum equation
+    \[
+        \frac{du_g}{dt} = f v_a.
+    \]
+    \item Interpret the result physically.
+    \item Determine the right side of the result in (a) from the thermodynamic energy equation. Interpret the result physically.
+    \item Now use your results from (b) and (c) in (a), using a streamfunction for the ageostrophic wind: $v_a = \dfrac{\partial\Psi}{\partial z}$ and $w = -\,\dfrac{\partial\Psi}{\partial y}$. Express your result with all streamfunction terms on the left side of the equation.
+    \item Assume that the right side of your result in (e) reaches a local minimum in the midtroposphere. Sketch the ageostrophic circulation streamlines in a $y$--$z$ cross-section along with arrows showing $v_a$ and $w$.
+\end{enumerate}}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[25 pt]{Given the following expression for the geopotential field
+\[
+    \Phi = \Phi_0(p) + c f_0\!\left\{-\,y\!\left[\cos\!\left(\frac{\pi p}{p_0}\right) + 1\right] + \frac{1}{k}\sin k(x - ct)\right\}
+\]
+where $\Phi_0$ is a function of $p$ alone, $c$ is a constant wind speed, $k$ a zonal wave number, $p_0 = 1000\,\mathrm{hPa}$.
+\begin{enumerate}[label=(\alph*)]
+    \item Use the quasi-geostrophic vorticity equation to obtain the horizontal divergence field consistent with this geopotential field (assume $\dfrac{df}{dy} = 0$).
+    \item Assuming that $\omega(p_0) = 0$, obtain an expression for $\omega(x,y,p,t)$ by integrating the continuity equation with respect to pressure.
+    \item Sketch the geopotential field at $750\,\mathrm{hPa}$ and $250\,\mathrm{hPa}$. Indicate regions of maximum divergence and convergence, along with positive and negative vorticity advection.
+\end{enumerate}}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[30 pt]{Consider the tropical Hadley circulation in northern winter, as shown in the figure below. The circulation rises at $10^\circ\mathrm{S}$, moves northward across the equator in the upper troposphere, and sinks at $20^\circ\mathrm{N}$. Assuming that the circulation outside the near-surface boundary layer is zonally symmetric (independent of $x$) and inviscid (and thus conserves absolute angular momentum about the Earth's rotation axis), and that it leaves the boundary layer at $10^\circ\mathrm{S}$ with zonal velocity $u = 0$, calculate the zonal wind in the upper troposphere at the following three locations:
+\begin{enumerate}[label=(\alph*)]
+    \item The equator
+    \item $10^\circ\mathrm{N}$
+    \item $20^\circ\mathrm{N}$
+\end{enumerate}}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.55\textwidth]{hw/images/midterm_q6_hadley.png}
+    \caption*{Tropical Hadley circulation in northern winter: rises at $10^\circ\mathrm{S}$, sinks at $20^\circ\mathrm{N}$.}
+\end{figure}
+\begin{solution}
+
+\end{solution}
+
+\newpage
+\hwquestion[40 pt]{The geopotential field is expressed in the following way
+\[
+    \Phi = \Phi_0(p) + f_0\!\left\{-\,U y + \frac{V}{k}\cos\!\left(\frac{\pi p}{p_0}\right)\sin k(x - ct)\right\}
+\]
+where $U$, $V$, and $c$ are constant speeds.
+\begin{enumerate}[label=(\alph*)]
+    \item Use the quasi-geostrophic vorticity equation in the pressure coordinate to obtain an estimate of $\omega$. Assume that $\dfrac{df}{dy} = \beta$ is a constant (not zero) and that $\omega$ vanishes for $p = p_0$.
+    \item Under the same condition, use the adiabatic thermodynamic energy equation to obtain an alternative estimate for $\omega$. Determine the value of $c$ for which this estimate of $\omega$ agrees with (a).
+    \item Under the same condition, use the omega equation in the pressure coordinate to obtain an expression for $\omega$. Verify that this result agrees with the results in (a) and (b). Sketch the phase relationship between $\Phi$ and $\omega$ at $250\,\mathrm{hPa}$ and $750\,\mathrm{hPa}$. What is the amplitude of $\omega$ if
+    \[
+        \beta = 2\times 10^{-11}\,\mathrm{m^{-1}s^{-1}},\ U = 25\,\mathrm{m/s},\ V = 8\,\mathrm{m/s},
+    \]
+    \[
+        k = \frac{2\pi}{10^4\,\mathrm{km}},\ f_0 = 10^{-4}\,\mathrm{s^{-1}},\ \sigma = 2\times 10^{-6}\,\mathrm{Pa^{-2}\,m^{2}\,s^{-2}},\ p_0 = 1000\,\mathrm{hPa}?
+    \]
+\end{enumerate}}
+\begin{solution}
+
+\end{solution}
+
+\end{document}
