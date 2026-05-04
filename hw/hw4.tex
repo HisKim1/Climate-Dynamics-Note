@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper]{article}
+\input{hw/header}
+
+
+\begin{document}
+\input{hw/title}
+
+\noindent\textbf{Spherical Coordinate System}
+
+\hwquestion[]{Answer the following questions using the spherical coordinate definitions
+\[
+    x = r\cos\phi\cos\lambda,\qquad
+    y = r\cos\phi\sin\lambda,\qquad
+    z = r\sin\phi.
+\]}
+\begin{enumerate}[label=(\arabic*)]
+    \item How are $dx$, $dy$, and $dz$ written using $\lambda$, $\phi$, and $r$?
+    \begin{solution}
+
+    \end{solution}
+
+    \item Convert the following Cartesian equation into spherical coordinates:
+    \[
+        x^2 + y^2 = 4x + z - 2.
+    \]
+    \begin{solution}
+
+    \end{solution}
+
+    \item What is the area element $dA$? In the Cartesian coordinate system, $dA = dx \times dy$.
+    \begin{solution}
+
+    \end{solution}
+
+    \item For any scalar function $A$, what are $\nabla A$ and the Laplacian $\nabla^2 A$?
+    \begin{solution}
+
+    \end{solution}
+
+    \item For any vector function $\vec{A}$, what are the divergence and the curl, $\nabla\cdot\vec{A}$ and $\nabla\times\vec{A}$?
+    \begin{solution}
+
+    \end{solution}
+\end{enumerate}
+
+\newpage
+\noindent\textbf{Zonal Mean Temperature Equation}
+
+\hwquestion[]{Consider the first law of thermodynamics written as
+\[
+    C_p\frac{dT}{dt} - \alpha\omega = H.
+\]}
+\begin{enumerate}[label=(\arabic*)]
+    \item Show that the above equation can be expanded into the following form in pressure coordinates:
+    \[
+        \frac{\partial T}{\partial t} + \vec{V}_H\cdot\nabla T + \omega\frac{\partial T}{\partial p} - \frac{R}{C_p}\alpha\omega = \frac{1}{C_p}H.
+    \]
+    \begin{solution}
+
+    \end{solution}
+
+    \item The continuity equation in pressure coordinates is
+    \[
+        \nabla\cdot\vec{V}_H + \frac{\partial \omega}{\partial p} = 0.
+    \]
+    Convert the thermodynamic equation into flux form by combining it with the continuity equation.
+    \begin{solution}
+
+    \end{solution}
+
+    \item The zonal mean operator is defined as
+    \[
+        (\square)_Z \equiv \frac{1}{2\pi}\int_0^{2\pi} (\square)\,d\lambda.
+    \]
+    Show that the zonal mean of the zonal derivative of any scalar $a$, namely $\left(\dfrac{\partial a}{\partial \lambda}\right)_Z$, is zero.
+    \begin{solution}
+
+    \end{solution}
+
+    \item Perform the zonal mean on the equation from part (2) and rewrite it into the following form:
+    \[
+        \frac{\partial T_Z}{\partial t}
+        +
+        \frac{1}{a\cos\phi}\frac{\partial}{\partial\phi}\bigl((vT)_Z\cos\phi\bigr)
+        +
+        \frac{\partial}{\partial p}(\omega T)_Z
+        -
+        \frac{R}{C_p}\frac{1}{p}(\omega T)_Z
+        =
+        \frac{1}{C_p}H_Z.
+    \]
+    \begin{solution}
+
+    \end{solution}
+
+    \item The vertical mean operator is defined as
+    \[
+        (\square)_V \equiv \frac{1}{p_0}\int_0^{p_0} (\square)\,dp.
+    \]
+    Perform the vertical mean on the equation from part (4) and rewrite it into the following form:
+    \[
+        \frac{\partial (T_Z)_V}{\partial t}
+        +
+        \frac{1}{a\cos\phi}\frac{\partial}{\partial\phi}\bigl(((vT)_Z)_V\cos\phi\bigr)
+        -
+        \frac{1}{C_p}(\alpha\omega)_Z{}_V
+        =
+        \frac{1}{C_p}(H_Z)_V.
+    \]
+    \begin{solution}
+
+    \end{solution}
+
+    \item It can be assumed that $(\alpha\omega)_Z{}_V$ is quite small. What are your reasonings?
+    \begin{solution}
+
+    \end{solution}
+\end{enumerate}
+
+\end{document}
