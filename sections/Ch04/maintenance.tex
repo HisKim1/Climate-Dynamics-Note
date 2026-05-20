@@ -339,6 +339,51 @@ Continuity equation \eqref{eq:continuity}과 다음 항등식
   }
 \end{equation}
 
+\begin{example}[운동량 방정식 flux form의 단계적 유도]\label{ex:ch04_hw5_flux_form}
+\eqref{eq:u_momentum}의 advection + metric 부분에 continuity
+$\nabla\cdot\mathbf{V} + \partial\omega/\partial p = 0$을 $u$ 배 하여
+더하는 표준 trick을 적용해 본다.
+
+\smallskip
+\textbf{Step 1.}\quad $u\,(\nabla\cdot\mathbf{V} + \partial\omega/\partial p) = 0$이므로
+원래 방정식 좌변에 이를 더해도 동치이다.  이류 항과 합치면
+\[
+  \frac{Du}{Dt} = \frac{\partial u}{\partial t}
+    + \nabla\cdot(u\mathbf{V})
+    + \frac{\partial(u\omega)}{\partial p}
+    - \frac{uv\tan\phi}{a}.
+\]
+
+\smallskip
+\textbf{Step 2.}\quad spherical horizontal divergence:
+\[
+  \nabla\cdot(u\mathbf{V})
+  = \frac{1}{a\cos\phi}\frac{\partial(u^2)}{\partial\lambda}
+   + \frac{1}{a\cos\phi}\frac{\partial}{\partial\phi}(uv\cos\phi).
+\]
+
+\smallskip
+\textbf{Step 3.}\quad 위도 미분 항에서 metric 항을 흡수한다.  항등식
+\[
+  \frac{1}{\cos\phi}\frac{\partial}{\partial\phi}(uv\cos\phi)
+    - uv\tan\phi
+  = \frac{1}{\cos^2\phi}\frac{\partial}{\partial\phi}(uv\cos^2\phi)
+    - u\,\frac{1}{\cos\phi}\frac{\partial}{\partial\phi}(v\cos\phi),
+\]
+가운데 마지막 항은 continuity의 위도 부분으로 다시 $u$ 배 되어 상쇄된다.
+
+\smallskip
+\textbf{Step 4.}\quad 결국 \eqref{eq:u_flux}이 얻어진다.  핵심 trick:
+"non-flux 형식의 metric 항"이 "flux 형식 안의 $\cos^2\phi$ weight"로 흡수되었다.
+\end{example}
+
+\begin{hisublock}
+Flux form이 zonal averaging에 유리한 이유: $\partial(\,\cdot\,)/\partial\lambda$는
+zonal averaging 시 사라지고, $\partial(\,\cdot\,)\cos^2\phi/\partial\phi$는 그대로
+보존된다.  따라서 $\langle u_Z\rangle$ 방정식이 깔끔하게 \eqref{eq:u_ZV}처럼
+나온다.  Peixoto \& Oort (1992) Ch.~11.1 Eq.~(11.4)는 본 식의 시간평균 버전이다.
+\end{hisublock}
+
 % --------------------------------------------------------------------------
 \subsubsection{Zonally and Vertically Averaged Equation}
 
@@ -435,6 +480,67 @@ westerlies result.
 
 \hisu{운동량 플럭스의 수렴 $\approx$ 소산 (마찰에 의한 소멸).
 에디가 운동량을 중위도로 모아서 제트를 유지하고, 마찰이 이를 소산시킨다.}
+
+\begin{example}[자오면 순환 진단: $u_Z(p_0) = -U_0\cos(4\phi)$ Case]\label{ex:ch04_hw5_meridional}
+다음과 같이 zonal-mean 지표 동서풍 분포가 주어졌다고 하자:
+\[
+  u_Z(p_0,\phi) = -U_0\cos(4\phi), \qquad U_0 > 0.
+\]
+이 식이 가지는 함의를 단계적으로 진단해보자.
+
+\smallskip
+\textbf{(a) 위도 분포 해석.}\quad
+$\cos(4\phi)$의 영점은 $4\phi = \pm\pi/2, \pm 3\pi/2, \ldots$, 즉
+$\phi = \pm 22.5^\circ, \pm 67.5^\circ$에서 발생한다.  극값은
+$\phi = 0^\circ, \pm 45^\circ, \pm 90^\circ$에서 나타나, $-U_0$과
+$+U_0$이 번갈아 등장하는 4-peak 구조이다.  적도와 양극에서는 동풍
+($-U_0\cos 0 = -U_0$, 동풍), $\pm 45^\circ$에서는 서풍 ($+U_0$).
+
+\smallskip
+\textbf{(b) 운동량 방정식 적분.}\quad
+정상 상태 \eqref{eq:u_steady}에서 $\varepsilon u_Z(p_0)$를
+$\phi$에서 $\pi/2$까지 적분하면 (경계 조건: 극에서 plux $=0$):
+\[
+  \int_{\phi}^{\pi/2}\frac{1}{a\cos^2\phi'}\frac{\partial}{\partial\phi'}
+    \bigl(\langle(uv)_Z\rangle\cos^2\phi'\bigr)\,a\cos\phi'\,d\phi'
+  = \int_{\phi}^{\pi/2}\varepsilon\,u_Z(p_0)\,a\cos\phi'\,d\phi'.
+\]
+좌변은 $-\langle(uv)_Z\rangle(\phi)\cos^2\phi$가 되고, 우변을 계산하면
+\[
+  \langle(uv)_Z\rangle(\phi)\cos^2\phi
+  = -\varepsilon\,a\,U_0\int_{\phi}^{\pi/2}\cos(4\phi')\cos\phi'\,d\phi'.
+\]
+
+\smallskip
+\textbf{(c) 부호 변화점.}\quad
+적분 결과를 곱-합 공식 $2\cos A\cos B = \cos(A-B)+\cos(A+B)$로 정리하면
+$\langle(uv)_Z\rangle\cos^2\phi$는 $\cos(3\phi)$와 $\cos(5\phi)$의 합으로
+표현되며, 4번 부호가 뒤집힌다.  중위도의 $\pm 45^\circ$ 부근에서는
+$\langle(uv)_Z\rangle > 0$ (NH 극방향 운동량 수송), 즉 에디가
+운동량을 중위도로 모아 그곳에 서풍을 유지하는 역할이 드러난다.
+
+\smallskip
+\textbf{(d) 자오면 순환의 의미.}\quad
+운동량 수렴이 양인 ($\sim 45^\circ$) 영역은 \textgr{eddy-driven Ferrel cell}의
+상층 극방향 가지에 대응하고, 발산이 일어나는 ($\sim 22.5^\circ$, $\sim 67.5^\circ$)
+영역은 적도 쪽 흐름이 보상하는 indirect circulation을 시사한다.
+이는 Hadley cell(직접 순환)과 달리, 에디 강제가 만들어 내는
+간접 순환의 정량적 모델이다.
+\end{example}
+
+\begin{hisublock}
+실제 관측 $\bar{u}(p_0)$ 구조와의 비교:
+\begin{itemize}
+  \item 실제 지표풍은 단순 $-U_0\cos(4\phi)$가 아니라 두 반구에 비대칭이 있고
+        $\sim 45^\circ$ 부근의 서풍 극대가 더 좁고 뚜렷하다 (Figure~\ref{fig:ch04_surface_wind_momentum}).
+  \item 그럼에도 본 case는 $\pm 22.5^\circ$의 동풍--서풍 경계, $\pm 45^\circ$의
+        서풍 극대, $\pm 67.5^\circ$의 동풍 복귀라는 운동학적 골격을 정성적으로
+        재현한다.
+  \item Marshall \& Plumb (2008) Ch.~8.4.2 Fig.~8.13과 비교하면, 본 case (b)--(c)의
+        $\langle(uv)_Z\rangle$ 부호 분포가 실제 관측 momentum flux의 위도
+        분포와 일치한다.
+\end{itemize}
+\end{hisublock}
 
 \begin{figure}[ht]
   \centering
@@ -599,6 +705,144 @@ stability parameter.
 Ertel PV는 \textbf{곱}으로 정의되는 것과 대조적: $P_E = -g\eta_a\cdot\nabla\theta$.
 QG PV는 Ertel PV의 선형화(quasi-geostrophic 근사)에 해당한다.}
 
+\begin{theorem}[Equivalence of QG PV in $z$- and $p$-Coordinates]\label{thm:ch04_hw6_qgpv_equiv}
+QG PV는 사용 좌표계에 따라 다른 형태로 나타나지만, 두 표현은 수학적으로 등가이다.
+
+\smallskip
+\textbf{$z$-coordinate form:}
+\begin{equation}\label{eq:Q_zcoord}
+  Q_z = (\zeta_g + f) + f_0\,\frac{\partial}{\partial z}
+    \left(\frac{1}{N^2}\,b\right),
+\end{equation}
+여기서 $b = g\theta'/\theta_0$는 buoyancy perturbation, $N^2 = g\,d\ln\theta_0/dz$는
+Brunt--V\"ais\"al\"a 진동수의 제곱이다.
+
+\smallskip
+\textbf{$p$-coordinate form:}
+\begin{equation}\label{eq:Q_pcoord}
+  Q_p = (\zeta_g + f) + \frac{\partial}{\partial p}
+    \left(\frac{f_0^2}{\sigma}\,\frac{\partial\Phi/f_0}{\partial p}\right),
+  \quad
+  \sigma = -\frac{RT_0}{p}\frac{d\ln\theta_0}{dp}.
+\end{equation}
+\end{theorem}
+
+\begin{proof}
+$z$-좌표와 $p$-좌표 사이의 정수압 변환 $dp = -\rho_0 g\,dz$를 이용하여
+\eqref{eq:Q_zcoord}의 stratification 항을 변환한다.
+$b = -g\theta'/\theta_0$의 정의와 hypsometric 관계
+$\partial\Phi/\partial p = -\alpha = -RT/p$로부터, geostrophic streamfunction
+$\Psi = \Phi/f_0$에 대해
+\[
+  \frac{\partial\Psi}{\partial p}
+  = \frac{1}{f_0}\frac{\partial\Phi}{\partial p}
+  = -\frac{RT}{f_0 p}
+  \quad\Longrightarrow\quad
+  T' \;\propto\; -\frac{f_0 p}{R}\frac{\partial\Psi}{\partial p}.
+\]
+$z$-좌표에서의 $b/N^2$ 항을 chain rule로 $p$로 옮기면
+\[
+  \frac{\partial}{\partial z}\!\left(\frac{b}{N^2}\right)
+  = -\rho_0 g\,\frac{\partial}{\partial p}\!
+    \left(\frac{b}{N^2}\right)
+  = \frac{\partial}{\partial p}\!
+    \left(\frac{f_0}{\sigma}\frac{\partial\Psi}{\partial p}\right),
+\]
+이며, $\sigma$의 정의로부터 $\rho_0 g\,b/N^2 = -(f_0/\sigma)\,\partial\Psi/\partial p$이다.
+양변에 $f_0$를 곱하면 \eqref{eq:Q_pcoord}의 stratification 항이 얻어진다.
+$\zeta_g + f$ 항은 좌표계에 의존하지 않으므로 그대로이며, 결국 $Q_z = Q_p$.
+\end{proof}
+
+\begin{hisublock}
+이 정리의 실질적 의미:
+\begin{itemize}
+  \item 성층권/중층 대기 연구에서는 $z$-좌표가 직관적 ($N^2$이 명시적).
+  \item 대류권/종관 분석에서는 $p$-좌표가 편리 ($\sigma$로 흡수).
+  \item 둘 사이 변환의 핵심: $\partial/\partial z \leftrightarrow -\rho_0 g\,\partial/\partial p$.
+  \item Holton \& Hakim Ch.~6.3 Eq.~(6.24)의 $z$-form과 본문 \eqref{eq:QGPV}의 $p$-form은
+        동일한 보존량을 다른 표현으로 쓴 것에 불과하다.
+\end{itemize}
+\end{hisublock}
+
+\begin{remark}[Hydrostatic Perturbation and Brunt--V\"ais\"al\"a Frequency]\label{rem:ch04_hw7_hydrostat}
+HW7 P.1과 연결: 기본 상태가 정수압 균형
+$dp_0/dz = -g\rho_0$를 만족할 때, 작은 섭동
+$p = p_0(z) + p'$, $\rho = \rho_0(z) + \rho'$에 대해 \emph{섭동된 정수압 관계}는
+$\partial p'/\partial z = -g\rho'$이다.  $N^2 = g\,d\ln\theta_0/dz$가
+\eqref{eq:Q_zcoord}의 stratification 항에 자연스럽게 등장하는 것은
+이 섭동 정수압 관계가 buoyancy를 매개로 PV에 들어가기 때문이다.
+\end{remark}
+
+\begin{example}[부력 진동과 Brunt--V\"ais\"al\"a 진동수]\label{ex:ch04_hw7_bv}
+정수압 평형을 만족하는 환경에서 한 공기 덩이를 단열적으로 연직 변위
+$\delta z$만큼 움직였을 때의 운동을 분석한다.
+
+\smallskip
+\textbf{(a) 수직 운동방정식.}\quad 마찰을 무시한 비정수압 연직 방정식은
+\[
+  \frac{dw}{dt} = -\frac{1}{\rho}\frac{\partial p}{\partial z} - g
+  \approx g\,\frac{\rho_0 - \rho}{\rho}
+  = g\!\left(\frac{\theta_0}{\theta} - 1\right) \approx g\frac{\theta_0}{\theta} - g,
+\]
+여기서 마지막 등식은 단열 변위에서 압력이 환경과 즉시 평형
+($p \approx p_0$)이라는 가정과 이상기체 $\rho \propto p/\theta$ 관계를
+이용한 것이다.
+
+\smallskip
+\textbf{(b) Taylor 전개.}\quad 작은 변위 $\delta z$에서
+$\theta_0(z+\delta z) \approx \theta_0(z) + (d\theta_0/dz)\delta z$이고
+단열이면 덩이 $\theta$는 보존된다 ($\theta = \theta_0(z)$).  따라서
+\[
+  \frac{\theta_0(z+\delta z)}{\theta(z+\delta z)} - 1
+  \approx \frac{1}{\theta_0}\frac{d\theta_0}{dz}\delta z,
+\]
+이를 (a)에 대입하면
+\[
+  \frac{d^2(\delta z)}{dt^2}
+  = -g\,\frac{1}{\theta_0}\frac{d\theta_0}{dz}\,\delta z
+  = -N^2\,\delta z.
+\]
+
+\smallskip
+\textbf{(c) Brunt--V\"ais\"al\"a 진동수 정의.}
+\begin{equation}\label{eq:ch04_BV_def}
+  \boxed{\,N^2 \equiv g\,\frac{d\ln\theta_0}{dz}.\,}
+\end{equation}
+
+\smallskip
+\textbf{(d) 진동 주기.}\quad $N^2 > 0$이면 단순 조화 진동
+$\delta z(t) = A\cos(Nt) + B\sin(Nt)$, 주기 $T = 2\pi/N$.
+대기 대류권 대표값 $N \sim 10^{-2}\;\text{s}^{-1}$은 $T \sim 10$분.
+성층권에서는 $N \sim 2\times 10^{-2}\;\text{s}^{-1}$로 주기가 더 짧다.
+
+\smallskip
+\textbf{(e) 안정성 분류.}\quad
+\begin{itemize}
+  \item $N^2 > 0$ ($d\theta_0/dz > 0$): \textbf{stable stratification}---공기 덩이가
+        원위치로 진동하여 복귀.  대기의 대부분의 상태.
+  \item $N^2 < 0$ ($d\theta_0/dz < 0$): \textbf{unstable}---변위가
+        지수적으로 증가, 대류 발생.
+  \item $N^2 = 0$ ($d\theta_0/dz = 0$): \textbf{neutral}---공기 덩이가
+        새 위치에 머무름 (중립 부력).
+\end{itemize}
+\end{example}
+
+\begin{hisublock}
+$N$의 대기적 의미:
+\begin{itemize}
+  \item 대류권 대표값 $N \sim 10^{-2}\;\text{s}^{-1}$, 주기 $\sim 10$분.
+        이는 산악파, 내부 중력파, K--H 불안정의 시간 척도를 정한다.
+  \item 성층권 $N \sim 2\times 10^{-2}\;\text{s}^{-1}$이 두 배가량 커서 더 강한
+        성층 (planetary wave의 vertical trapping에 결정적).
+  \item Rossby 변형 반경 $L_R = NH/f$의 정의에 직접 들어가 baroclinic
+        instability의 가장 빠르게 자라는 모드 파장을 정한다 ($\sim 1000$ km).
+  \item 본문 \eqref{eq:Q_zcoord}, \eqref{eq:Q_pcoord}에서 stratification 항이
+        $1/N^2$ 또는 $1/\sigma$를 통해 등장하는 이유: 안정 성층이 강할수록
+        연직 운동에 더 강한 복원력 → PV 보존에서 stretching 항의 효과가
+        약해진다.
+\end{itemize}
+\end{hisublock}
+
 % --------------------------------------------------------------------------
 \subsubsection{Meridional PV Flux Decomposition}
 
@@ -653,6 +897,65 @@ Hence, in spherical coordinates with the metric factor:
 
 \hisu{$(v\zeta)_Z$는 운동량 플럭스 $(uv)_Z$의 수렴과 같다!
 즉, 소용돌이도 수송을 알면 운동량 수송을 안다.}
+
+\begin{example}[Vorticity Dynamics: Stretching, Tilting, Vertical Motion]\label{ex:ch04_hw7_vorticity}
+3차원 vorticity equation에서 절대 와도 $\bm{\omega}_a = \nabla\times\mathbf{u} + 2\bm{\Omega}$의
+시간 변화율은 세 가지 동역학 메커니즘으로 분해된다.
+
+\smallskip
+\textbf{(a) Vertical stretching.}\quad 비압축 흐름에서 수직 vortex tube가
+연직 방향으로 늘어나면 ($\partial w/\partial z > 0$), 단면적이 감소하여
+연직 vorticity $\omega_z$가 증가한다 (\emph{각운동량 보존}).
+정량적으로
+\[
+  \frac{D\omega_z}{Dt}\bigg|_{\text{stretching}}
+  = (\zeta + f)\,\frac{\partial w}{\partial z}.
+\]
+종관 규모에서 중간 대류권 상승 ($\partial w/\partial z < 0$ 상층 수렴, 하층 발산)이
+지표 cyclone의 spinup을 가속하는 핵심 메커니즘이다.
+
+\smallskip
+\textbf{(b) Tilting (twisting).}\quad 수평 와도 $\omega_h$를 가진
+흐름에 수평 wind shear가 있을 때, shear가 수평 vortex tube를
+연직 방향으로 기울여 연직 vorticity로 변환한다.
+\[
+  \frac{D\omega_z}{Dt}\bigg|_{\text{tilting}}
+  = \omega_x\frac{\partial w}{\partial x} + \omega_y\frac{\partial w}{\partial y}.
+\]
+이는 mesoscale convective system이나 supercell에서 mesocyclone을
+생성하는 잘 알려진 메커니즘이다.
+
+\smallskip
+\textbf{(c) Mid-tropospheric 상승/하강 효과.}\quad 중간 대류권의
+상승 운동 ($\omega < 0$ in pressure coordinates)은
+지표에서의 수렴을 동반하므로 (b)의 stretching을 통해 지표 vorticity의
+증가를 유도한다.  Sutcliffe development theorem과 quasi-geostrophic
+omega equation은 이 연결을 정량화한다: PV anomaly의 vertical
+superposition이 만들어내는 differential vorticity advection이
+중층 상승을 강제하고, 이것이 다시 지표 cyclone을 강화한다.
+
+\smallskip
+\textbf{종관 규모 cyclogenesis와의 연결.}\quad 위 세 메커니즘은
+midlatitude baroclinic instability의 \textgr{Type-B (Petterssen-Smebye)}
+및 \textgr{Type-A} cyclogenesis 분류를 이해하는 데 필수적이다.
+Type-A는 (a) stretching이 주도, Type-B는 상층 PV anomaly의
+하강 + (c) 중층 상승 효과가 주도한다.
+\end{example}
+
+\begin{hisublock}
+Vorticity 동역학과 본문의 연결:
+\begin{itemize}
+  \item \eqref{eq:vort_flux}의 vorticity flux identity는 eddy $\zeta$ 수송이
+        eddy momentum flux convergence와 같음을 보여준다.  본 예의
+        (a)--(c)는 \emph{개별 공기 덩이의 vorticity 변화}, \eqref{eq:vort_flux}는
+        그것을 zonal mean으로 통계 평균한 결과이다.
+  \item Hartmann (1994) Ch.~6 또는 Holton \& Hakim Ch.~4.5는 위 세 메커니즘을
+        omega equation 형태로 한꺼번에 다룬다.
+  \item PV 보존에서 stretching은 $f/\sigma\,\partial\Psi/\partial p$ 항의 수직
+        변화를 통해 자동으로 들어가며, tilting은 QG 근사에서 부분적으로 누락된다
+        (mesoscale에서 다시 살려야 함).
+\end{itemize}
+\end{hisublock}
 
 \noindent\textbf{셋째 항: thickness flux $=$ heat flux의 vertical derivative.}
 
@@ -712,6 +1015,65 @@ eddy heat flux에 의해 \textit{완전히 결정}된다.
   (v_E Q_E)_Z \approx -K_Q\,\frac{1}{a}\frac{\partial Q_Z}{\partial\phi},
   \qquad K_Q > 0.
 \end{equation}
+
+\begin{example}[Eddy PV Diffusion Parameterization]\label{ex:ch04_hw6_PVdiff}
+\eqref{eq:PV_param}은 GFD에서 가장 영향력 있는 closure 가설 중 하나이다.
+그 의미와 한계를 정량적으로 살펴본다.
+
+\smallskip
+\textbf{(a) 의미.}\quad eddy의 평균적 효과를 "PV에 대한 Fickian
+diffusion"으로 단순화한 것이다.  $K_Q > 0$ ($\sim 10^6\;\text{m}^2/\text{s}$)을
+\textgr{eddy PV diffusivity}라 부른다.  이 한 줄의 식이
+\eqref{eq:vQ_full}에서 본 \emph{eddy momentum flux convergence + 열 플럭스 연직 미분}
+이라는 두 별개의 다중 변수 통계량을 평균 상태의 단일 gradient
+$\partial Q_Z/\partial\phi$로 압축한다.
+
+\smallskip
+\textbf{(b) 왜 PV인가?}\quad 운동량은 upgradient라 단순 확산 closure 불가능,
+열은 downgradient이지만 운동량을 설명 못함.  PV는 두 효과를
+하나로 묶고 downgradient 성질을 (관측 + 이론적으로) 보이는
+\textit{유일한 합리적 후보}이다.
+
+\smallskip
+\textbf{(c) $K_Q$의 한계.}\quad
+\begin{enumerate}
+  \item $K_Q$는 \textit{상수가 아니다}---위도, 고도, 계절에 강하게 의존
+        ($K_Q$는 storm track에서 극대).
+  \item $K_Q$는 \textit{국지적이지 않다}---eddy의 propagation으로
+        nonlocal 효과 (Stone, 1972; Held \& Larichev, 1996).
+  \item Quasi-linear PV staircase 한계: 강한 mixing은 $\partial Q_Z/\partial\phi \to 0$을
+        만들어 PV 평탄화 ("homogenization") 영역과 강한 jet 사이의
+        피드백을 일으킨다.
+  \item $K_Q$를 진정으로 닫는 것은 baroclinic instability 이론
+        (e.g., Green, 1970; Stone, 1972; Held, 1978)과 wave-mean flow
+        interaction에서 와야 한다.
+\end{enumerate}
+
+\smallskip
+\textbf{(d) Closure의 철학.}\quad 이 parameterization은 두 가지 의미에서
+\emph{phenomenological}이다: (i) downgradient 가정 자체가 strict한 첫 원리에서
+유도되지 않음 (그러나 wave activity 보존과 PV 보존에서 부분적으로
+정당화됨), (ii) $K_Q$의 형태는 사실상 자유 매개변수.  그럼에도 이 closure는
+ocean과 대기 모형에서 sub-grid eddy 효과를 표현하는 가장 널리 쓰이는
+출발점이다.
+\end{example}
+
+\begin{hisublock}
+GFD에서의 parameterization 철학 (Marshall \& Plumb 2008 Ch.~10.3; Holton \& Hakim Ch.~10.2):
+\begin{itemize}
+  \item Reynolds-averaged 방정식의 closure 문제 → "어떤 양이 downgradient인가"가
+        모든 closure의 출발점.
+  \item PV diffusion이 작동하는 이유는 eddy가 wave activity를 "흘리면서"
+        PV를 mixing하기 때문 (Charney--Drazin, Eliassen--Palm theorem).
+  \item 그러나 $K_Q$는 평균류와 함께 self-consistent하게 결정되어야 함
+        (\textgr{eddy memory} 문제).  단순 closure의 한계.
+  \item TEM (\eqref{eq:TEM_u})은 이 closure를 EP flux divergence 형태로 다시 쓰며,
+        $\nabla\cdot\mathbf{F} = -a\cos\phi\,(v_E Q_E)_Z$이므로 \eqref{eq:PV_param}이
+        $\nabla\cdot\mathbf{F} \approx K_Q\,a\cos\phi\,\partial Q_Z/(a\partial\phi)$와 동치.
+  \item Held (2019, \emph{100 Years of Progress})는 이 closure의 발전사를
+        대순환 모형 발전과 함께 정리.
+\end{itemize}
+\end{hisublock}
 
 \begin{theorem}[Resolution of the Upgradient Momentum Puzzle]
 The meridional gradient of mean QG PV is dominated by the planetary
