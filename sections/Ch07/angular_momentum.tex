@@ -394,9 +394,10 @@ $d\overline{M}_{\text{total}}/dt = 0$을 \emph{국지적} 부분미분방정식 
 \[
   M = \Omega R^2\cos^2\phi + u R\cos\phi
   \;=\; M_\Omega + M_r,
-  \qquad R \equiv a\cos\phi,
+  \qquad R \simeq a,
 \]
-와 그 두 성분의 물리적 의미를 정리했다.  이 절에서는 \emph{개별 공기 덩어리}의
+와 그 두 성분의 물리적 의미를 정리했다 ($R$은 지구 반지름;
+회전축까지의 수직 거리는 $r_\perp = R\cos\phi$).  이 절에서는 \emph{개별 공기 덩어리}의
 $M$이 어떻게 변하는지부터 출발해, 결국 \textgr{flux form}의 보존 방정식을
 $\sigma$ 좌표계에서 유도하고, 이를 동서평균(zonal average) $\&$ 연직적분
 (vertical integration)하여 한 위도 띠(zonal ring)에 대한
@@ -432,8 +433,9 @@ $\sigma$ 좌표계에서 유도하고, 이를 동서평균(zonal average) $\&$ �
 
 
 \noindent\textbf{$M_\Omega$ 항의 시간 변화.}
-$M_\Omega = \Omega R^2\cos^2\phi = \Omega (a\cos\phi)^2\cos^2\phi$로 정의되어 있는데,
-실제로는 회전축까지의 거리 $r_\perp = R\cos\phi = a\cos^2\phi$가 위도와 함께
+$M_\Omega = \Omega R^2\cos^2\phi$ (여기서 $R \simeq a$는 지구 반지름,
+$r_\perp = R\cos\phi$는 회전축까지의 수직 거리)로 정의되어 있는데,
+실제로는 $r_\perp = R\cos\phi$가 위도와 함께
 변할 뿐 아니라, 공기 덩어리가 수직으로 움직이면 $R$ 자체가 $a+z$로 바뀐다.
 편의상 $R^2$의 변동만 추적하면 ($\cos\phi$는 위도 미분 시 별도로 등장)
 \begin{equation}\label{eq:ch07_cons_dMOmega}
@@ -690,7 +692,7 @@ $\sigma$-좌표에서 단위 수평 면적당 절대 각운동량 $p_s M$의 보
         \;+\;
         RT\,\frac{\partial p_s}{\partial x}
         \;+\;
-        g\,a\cos\phi\,\frac{\partial \tau_E^x}{\partial \sigma}
+        g\,\frac{\partial \tau_E^x}{\partial \sigma}
       \,\right].
   \end{aligned}
   \;}
@@ -707,7 +709,7 @@ $\sigma$-좌표에서 단위 수평 면적당 절대 각운동량 $p_s M$의 보
   \item $-a\cos\phi\, RT\,\partial_x p_s$: $\sigma$-좌표로 옮길 때 생긴
         \emph{표면 기압 경도} 보정 항.  이 두 항이 \S2.4 step~2 \& 3에서
         결국 산악 토크로 \emph{합쳐진다}.
-  \item $-g a^2\cos^2\phi\,\partial_\sigma \tau_E^x$: 연직 eddy stress
+  \item $-g\,a\cos\phi\,\partial_\sigma \tau_E^x$: 연직 eddy stress
         divergence.  지표 BC와 만나 \emph{frictional torque}가 된다.
 \end{itemize}
 \end{hisublock}
@@ -767,30 +769,19 @@ $p_s\,\partial_x\Phi + RT\,\partial_x p_s$를 정리하자.  Product rule에 의
   p_s\frac{\partial \Phi}{\partial x}
   + RT\,\frac{\partial p_s}{\partial x}
   &\;=\;
-  \frac{\partial}{\partial x}\!\bigl(p_s\Phi\bigr)
-  - \Phi\,\frac{\partial p_s}{\partial x}
-  + RT\,\frac{\partial p_s}{\partial x}
-  \nonumber\\
-  &\;=\;
-  \frac{\partial}{\partial x}\!\bigl(p_s\Phi\bigr)
-  - (\Phi - RT)\,\frac{\partial p_s}{\partial x}
-  \nonumber\\
-  &\;=\;
   p_s\,\frac{\partial(\Phi - RT)}{\partial x}
-  + (\Phi - RT)\,\frac{\partial p_s}{\partial x}
-  - (\Phi - RT)\,\frac{\partial p_s}{\partial x}
-  + \frac{\partial}{\partial x}\!\bigl(p_s RT\bigr) \;-\; p_s\,\frac{\partial(RT)}{\partial x}
+  + p_s\,\frac{\partial(RT)}{\partial x}
+  + RT\,\frac{\partial p_s}{\partial x}
   \nonumber\\
   &\;=\;
   p_s\,\frac{\partial(\Phi - RT)}{\partial x}
   \;+\;
-  \frac{\partial}{\partial x}\!\bigl(p_s RT\bigr)
-  \;-\; p_s\,\frac{\partial(RT)}{\partial x}.
+  \frac{\partial}{\partial x}\!\bigl(p_s RT\bigr).
   \label{eq:ch07_cons_step2_raw}
 \end{align}
-복잡해 보이지만, 결국 우리가 원하는 형태는 \emph{$\partial/\partial x$가 바깥에
-있는 항}들과 \emph{$\sigma$ 미분만 남는 항}들로 갈라놓는 것이다.  핵심은
-다음 step 3의 항등식이다.
+즉 두 항이 깔끔히 \emph{$p_s\,\partial_x(\Phi - RT)$} (이후 step 3에서
+$\sigma$-연직 미분 형태로 변환)와 \emph{$\partial_x(p_s RT)$} (zonal 평균
+시 주기성으로 0)로 갈라진다.  핵심은 다음 step 3의 항등식이다.
 
 \medskip
 
@@ -821,17 +812,21 @@ $p_s\,\partial_x\Phi + RT\,\partial_x p_s$를 정리하자.  Product rule에 의
 
 
 \noindent\textbf{Step 4 -- 주기성으로 $\partial/\partial\lambda$ 항 제거.}
-\eqref{eq:ch07_cons_step2_raw}에서 $\partial/\partial x$가 바깥에 있는 항
-$\partial_x(p_s\Phi)$, $\partial_x(p_s RT)$, 그리고 $p_s\,\partial_x(RT)$ 등은
-모두 zonal mean을 취하면 (proposition~\ref{prop:ch07_cons_zonal_vanish}에 의해)
-사라진다. 정확히는 $\partial_x = (a\cos\phi)^{-1}\partial_\lambda$이므로 주기
-적분 시 0이다.  남는 것은
+\eqref{eq:ch07_cons_step2_raw}에서 \emph{$\partial/\partial x$가 바깥에 있는
+total derivative} 항 $\partial_x(p_s RT)$는 $\partial_x =
+(a\cos\phi)^{-1}\partial_\lambda$이므로
+proposition~\ref{prop:ch07_cons_zonal_vanish}에 의해 zonal mean을 취하면
+$\bigl(\partial_x(p_s RT)\bigr)_Z = 0$이다.  주의: 일반적으로
+$(p_s\,\partial_x RT)_Z \neq 0$이고 $(RT\,\partial_x p_s)_Z \neq 0$이지만
+($p_s$와 $RT$가 곱해진 형태라 그 product가 \emph{total} zonal derivative일
+때만 0), 두 항의 \emph{합}인 $\partial_x(p_s RT)$만이 total derivative이므로
+주기성에 의해 0이 된다.  따라서 남는 것은
 \begin{equation}\label{eq:ch07_cons_step4_pgrad}
   \left(\,p_s\,\frac{\partial\Phi}{\partial x}
   + RT\,\frac{\partial p_s}{\partial x}\right)_{\!Z}
   \;=\;
   \left(p_s\,\frac{\partial}{\partial x}(\Phi-RT)\right)_{\!Z}
-  + \underbrace{\left(\frac{\partial(p_s RT)}{\partial x} - p_s\frac{\partial(RT)}{\partial x}\right)_{\!Z}}_{=0 \text{ in periodic average}},
+  + \underbrace{\left(\frac{\partial(p_s RT)}{\partial x}\right)_{\!Z}}_{=0 \text{ (periodic)}},
 \end{equation}
 즉 두 압력 경도 항이 합쳐져 \emph{$(p_s\partial_x(\Phi-RT))_Z$} 하나로 정리된다.
 \eqref{eq:ch07_cons_step3_identity}을 대입하면 이는 곧
@@ -884,11 +879,19 @@ $\partial_x(p_s\Phi)$, $\partial_x(p_s RT)$, 그리고 $p_s\,\partial_x(RT)$ 등
 적분한다.  적분 단위 변환은 다음 관계로 통일된다.
 
 \begin{definition}[Mass Element in $\sigma$-coordinates]\label{def:ch07_cons_mass}
-정역학 평형하에서 단위 수평면적당 질량 요소는
+정역학 평형 $dp = -\rho g\,dz$ (상향 $z$) 하에서, 단위 수평면적당
+질량 요소는
 \begin{equation}\label{eq:ch07_cons_mass}
-  \rho\,dz \;=\; \frac{1}{g}\,p_s\,d\sigma,
+  \rho\,dz \;=\; -\,\frac{1}{g}\,dp \;=\; -\,\frac{p_s}{g}\,d\sigma
+  \qquad\bigl(z\uparrow,\;\sigma:0\to 1\text{ 하향}\bigr),
 \end{equation}
-이고, 따라서 단위 수평면적 위 전체 대기 기둥의 질량은 $p_s/g$이다.
+이고, 부호 반전이 적분 방향($\sigma: 0\to 1$이 $z$ 감소 방향)에서 흡수되어
+column mass element는
+\[
+  \frac{dm}{A} \;=\; \frac{p_s}{g}\,d\sigma,
+\]
+로 쓰며, 단위 수평면적 위 전체 대기 기둥의 질량은 $\int_0^1 (p_s/g)\,d\sigma
+= p_s/g$이다.
 \end{definition}
 
 \hisu{$\sigma$ 좌표에서 \emph{한 컬럼의 질량} = 표면 기압 / 중력.  단순하면서 강력한 관계.}
@@ -947,19 +950,22 @@ $(p_s M\dot\sigma)_Z\big|_{\sigma=1} = 0$.  $\sigma=0$에서도 마찬가지.
 
 \begin{theorem}[Three-Term Zonal-Ring AM Budget]\label{thm:ch07_cons_threeterm}
 $\sigma$-좌표에서 zonal mean과 vertical integration ($0 \le \sigma \le 1$)을
-취한 절대 각운동량 수지는 정확히 세 항으로 닫힌다.
+취한 \emph{mass-integrated} 절대 각운동량 수지 (단위 위도 길이당, 단위
+kg\,m$^2$\,s$^{-2}$ = N\,m)는 정확히 세 항으로 닫힌다.
 \begin{equation}\label{eq:ch07_cons_threeterm}
   \boxed{\;
-  \frac{\partial}{\partial t}\!\!\int_0^1\!\!(p_s M)_Z\,d\sigma
+  \frac{\partial}{\partial t}\!\!\int_0^1\!\!\frac{(p_s M)_Z}{g}\,d\sigma
   \;=\;
   \underbrace{-\,\frac{1}{\cos\phi}\frac{\partial}{\partial y}\!\!\int_0^1\!
-              (p_s M v)_Z\cos\phi\,d\sigma}_{\text{(I) Meridional flux convergence}}
-  \;\underbrace{-\,a\cos\phi\,g\,(\tau_E^x)_Z\big|_{\sigma=1}}_{\text{(II) Friction torque}}
-  \;\underbrace{-\,a\cos\phi\,g\,\bigl(p_s\,\partial_x h\bigr)_Z}_{\text{(III) Mountain torque}}.
+              \frac{(p_s M v)_Z}{g}\cos\phi\,d\sigma}_{\text{(I) Meridional flux convergence}}
+  \;\underbrace{-\,a\cos\phi\,(\tau_E^x)_Z\big|_{\sigma=1}}_{\text{(II) Friction torque}}
+  \;\underbrace{-\,a\cos\phi\,\bigl(p_s\,\partial_x h\bigr)_Z}_{\text{(III) Mountain torque}}.
   \;}
 \end{equation}
-($g$ 계수는 단위와 부호 규약에 따라 흡수될 수 있으며, 이후 \S3에서는
-$g$를 흡수한 정의를 쓴다.)
+($1/g$ 인자는 column mass element $dm/A = p_s d\sigma/g$ 정의에서
+자연스럽게 따라 나온다; 이 정의로 LHS와 flux는 \emph{mass-integrated} AM
+[kg\,m$^2$\,s$^{-1}$], 우변 torque 항들은 [N\,m\,m$^{-1}$]로 일관된 단위를
+갖는다.)
 \end{theorem}
 
 \hisu{Ch.~7 §2의 \emph{결론}: 한 위도 띠의 AAM 변화는 오직 세 가지가 결정한다 -- (I) 자오 수송, (II) 마찰, (III) 산악.}
@@ -974,9 +980,13 @@ $g$를 흡수한 정의를 쓴다.)
         (적도 0--30$^\circ$)에서는 동풍이라 마찰이 \emph{대기에 서풍 운동량
         공급}, 즉 양(+)의 toque.  중위도 서풍대에서는 반대 부호.
   \item \textbf{(III) Mountain torque} -- 산악 동·서면 기압차에 의한 토크.
-        $-(p_s\,\partial_x h)_Z$가 양수이면 산이 대기에서 AM을 \emph{빼앗는다}
-        (산 서쪽 high, 동쪽 low 패턴).  현실 NH 중위도 평균에서 대기→지구 AM
-        교환의 \emph{약 50\%}를 이 항이 담당한다.
+        부호 분석: 서쪽 high, 동쪽 low 패턴이면 $(p_s\,\partial_x h)_Z > 0$
+        (지표압이 큰 곳에서 $h$가 증가, 즉 서쪽 산비탈이 풍상측),
+        따라서 $T_M = -a\cos\phi(p_s\,\partial_x h)_Z < 0$ → 대기가 지표(고체
+        지구)에 westerly AM을 \emph{넘긴다} (= 대기는 AM을 \emph{잃는다}).
+        반대로 $-(p_s\,\partial_x h)_Z > 0$이면 대기가 지표에서 westerly AM을
+        \emph{받는다}.  현실 NH 중위도 평균에서 대기→지구 AM 교환의
+        \emph{약 50\%}를 이 항이 담당한다.
 \end{enumerate}
 \smallskip
 이 세 항이 \S3 (surface torques 자세히), \S4 (poleward transport, 즉 (I) 항의
@@ -1453,7 +1463,7 @@ zonal-mean 취하면 (cross 항 $(X_Z\cdot Y_E)_Z = 0$이므로 사라짐):
 \begin{equation}\label{eq:ch07_trans_three_flux}
   (p_s M v)_Z
   \;=\;
-  \underbrace{\Omega a\cos\phi\,(p_s v)_Z}_{\text{solid-rotation flux}}
+  \underbrace{\Omega a^2\cos^2\phi\,(p_s v)_Z}_{\text{solid-rotation flux}}
   \;+\;
   \underbrace{a\cos\phi\,u_Z\,(p_s v)_Z}_{\text{mean (drift) flux}}
   \;+\;
@@ -1463,7 +1473,7 @@ zonal-mean 취하면 (cross 항 $(X_Z\cdot Y_E)_Z = 0$이므로 사라짐):
 \begin{remark}[Physical Meaning of Each Term]\label{rem:ch07_trans_three_meaning}
 세 항은 각각 \textbf{독립적인 물리적 process}를 표현한다:
 \begin{enumerate}
-  \item \textbf{Solid-rotation flux} $\Omega a\cos\phi\,(p_s v)_Z$:
+  \item \textbf{Solid-rotation flux} $\Omega a^2\cos^2\phi\,(p_s v)_Z$:
     회전하는 지구와 같이 움직이는 ``rigid body'' 부분의 AM 수송.
     Net 질량 수송이 latitude circle을 가로지르지 않는 조건
     (\eqref{eq:ch07_trans_continuity} 다음 항목)에서 이 항은
@@ -1510,9 +1520,9 @@ boundary에서 0이므로 마지막 항이 사라지고):
 시간평균 조건 하에서 \eqref{eq:ch07_trans_three_flux}의 solid-rotation flux는
 수직 적분 시 정확히 0이다:
 \begin{equation}\label{eq:ch07_trans_solid_zero}
-  \int_0^1 \Omega a\cos\phi\,(p_s v)_Z\,d\sigma
+  \int_0^1 \Omega a^2\cos^2\phi\,(p_s v)_Z\,d\sigma
   \;=\;
-  \Omega a\cos\phi \int_0^1 (p_s v)_Z\,d\sigma
+  \Omega a^2\cos^2\phi \int_0^1 (p_s v)_Z\,d\sigma
   \;\stackrel{\eqref{eq:ch07_trans_mass_conservation}}{=}\; 0.
 \end{equation}
 \end{theorem}
@@ -1524,7 +1534,7 @@ boundary에서 0이므로 마지막 항이 사라지고):
 \begin{hisublock}
 이 결과는 직관적이다.  지구 자체와 함께 도는 ``rigid body'' AM은 mass를
 싣고 다니지 않는 한 latitude를 가로지를 수 없다.  시간평균 mass 보존이
-그 수송 channel을 막아버리므로, $\Omega a\cos\phi$ 항은 자동적으로 사라진다.
+그 수송 channel을 막아버리므로, $\Omega a^2\cos^2\phi$ 항은 자동적으로 사라진다.
 남는 것은 (i) zonal-mean wind의 deviation부분 $u_Z$를 실어나르는 drift
 (Hadley cell upper branch)와 (ii) eddy flux 두 가지 — 이 두 항을 다음
 세부 절에서 검토한다.
@@ -1538,10 +1548,15 @@ boundary에서 0이므로 마지막 항이 사라지고):
 \begin{equation}\label{eq:ch07_trans_eddy_approx}
   \int_0^1 (p_s M v)_Z\,\cos\phi\,d\sigma
   \;\approx\;
-  \int_0^1 a\cos\phi\,p_{s,Z}\,(u_E v_E)_Z\,d\sigma.
+  \int_0^1 a\,p_{s,Z}\,(u_E v_E)_Z\,\cos^2\phi\,d\sigma.
 \end{equation}
-여기서 우리는 $p_s$의 변동률이 $v_E$의 변동률보다 훨씬 작다는 ($\delta p_s/p_s
-\ll \delta v_E / v_E$) 근사를 사용했다.
+여기서 우리는 (i) solid-rotation 항이 mass 보존으로 사라지고
+(\eqref{eq:ch07_trans_solid_zero}), (ii) mid/high-latitudes에서는 drift 항
+($a\cos\phi\,u_Z(p_s v)_Z$)이 eddy 항에 비해 작으며 (Ferrel cell의 $(p_s v)_Z$
+약함), (iii) $p_s$의 변동률이 $v_E$의 변동률보다 훨씬 작다는 ($\delta p_s/p_s
+\ll \delta v_E / v_E$) 근사를 사용했다.  RHS의 $\cos^2\phi$ 인자는 eddy
+flux의 $a\cos\phi$ geometry와 LHS의 추가 $\cos\phi$ (자오 line element)에서
+유래한다.
 
 \begin{figure}[ht]
   \centering
@@ -2107,22 +2122,24 @@ torques, temporal variability)를 \textbf{하나의 그림}으로 종합하면, 
 \noindent\textbf{Point A --- Equatorial surface (trade winds).}
 적도 부근 지표에서는 평균적으로 \textgr{easterly trade wind} ($u_Z < 0$)가
 관측된다.  이 평형은 다음과 같이 유지된다.  Hadley cell의 하층 가지가
-적도 방향 ($v_Z < 0$ in NH lower branch)으로 흐르므로, Coriolis 가속도
+적도 방향 ($v_Z < 0$ in NH lower branch)으로 흐르므로, zonal 운동방정식에서
+Coriolis 가속도는 (부호 규약: $\partial_t u = +fv + \cdots$)
 
 \begin{equation}\label{eq:ch07_temp_pointA}
   \left.\frac{\partial u_Z}{\partial t}\right|_{\text{Cor}}
-    = -f v_Z > 0 \qquad (\text{at A, NH lower Hadley})
+    = +f\,v_Z < 0 \qquad (\text{at A, NH lower Hadley})
 \end{equation}
 
 \noindent
-는 \emph{westerly} 방향이다.  그러나 trade wind는 시간에 따라 거의 변하지
-않으므로 ($\partial u_Z/\partial t \approx 0$), 이 westerly acceleration은
-무언가에 의해 정확히 상쇄되어야 한다.  그 무언가가 바로
-\textgr{surface friction}이다.
+즉 \emph{easterly (westward)} 방향이다.  그러나 trade wind는 시간에 따라 거의
+변하지 않으므로 ($\partial u_Z/\partial t \approx 0$), 이 easterly tendency를
+상쇄하기 위해 무언가가 \emph{westerly}를 공급해야 한다.  그 무언가가 바로
+\textgr{surface friction}이다 (지표 동풍에 작용하는 drag는 음의 $u$를
+0으로 끌어올리는 방향, 즉 westerly tendency로 작용).
 
 \begin{equation}\label{eq:ch07_temp_pointA_bal}
   \boxed{
-    -f v_Z = -\frac{1}{\rho}\frac{\partial \tau^x}{\partial z}
+    +f\,v_Z - \frac{1}{\rho}\frac{\partial \tau^x}{\partial z} = 0
     \quad\Leftrightarrow\quad
     \mathcal{T}_{\text{Cor}} = -\mathcal{T}_{\text{fric}}
     \quad(\text{at A}).
@@ -2130,9 +2147,10 @@ torques, temporal variability)를 \textbf{하나의 그림}으로 종합하면, 
 \end{equation}
 
 \hisu{Easterly trade wind는 \emph{friction이 Coriolis를 정확히 상쇄}하기 때문에
-유지된다.  적도 지표에서는 위로부터 westerly momentum이 내려오지만, 지표
-마찰이 그것을 같은 양만큼 earth로 돌려보낸다.  이 과정에서 atmosphere는 earth로부터
-westerly AM을 \emph{얻고}, 같은 양을 mid-latitude로 흘려보내는 데 사용한다.}
+유지된다.  적도 지표에서 Coriolis $+fv_Z < 0$ (Hadley 하층 $v_Z<0$이라
+westward)이고, friction이 같은 크기의 westerly로 받쳐준다.  이 과정에서
+atmosphere는 earth로부터 westerly AM을 \emph{얻고}, 같은 양을 mid-latitude로
+흘려보내는 데 사용한다.}
 
 
 \medskip
@@ -2146,22 +2164,20 @@ westerly AM을 \emph{얻고}, 같은 양을 mid-latitude로 흘려보내는 데 
 
 \begin{equation}\label{eq:ch07_temp_pointD}
   \left.\frac{\partial u_Z}{\partial t}\right|_{\text{Cor}}
-    = -f v_Z < 0 \qquad (\text{at D, NH lower Ferrel})
+    = +f\,v_Z > 0 \qquad (\text{at D, NH lower Ferrel})
 \end{equation}
 
 \noindent
-즉 \emph{easterly} 방향으로 가속하려 한다.  그러나 westerly를 약화시키지
-않으려면 무언가가 westerly를 \textbf{공급}해야 한다.  여기서 friction은
-westerly에 대해 brake이지만, Ferrel cell 자체의 Coriolis 가속 (easterly
-방향)과 friction (easterly 방향) 둘 다 westerly를 깎으려 한다.
-
-따라서 D점의 균형식은 \textbf{단순한 friction-Coriolis 균형이 아니라},
-\textgr{eddy momentum flux convergence}에 의한 westerly 공급이 들어가야
-완성된다.
+즉 \emph{westerly} (eastward) 방향으로 가속하려 한다.  지표 westerly에 대해
+friction은 brake이므로 (서풍을 동풍 방향으로 깎음), Ferrel cell Coriolis
+공급과 friction loss가 직접 균형을 이룬다고 생각할 수도 있다.  그러나
+정량적으로 살펴보면 Ferrel cell의 $|v_Z|$가 작아서 Coriolis 공급만으로는
+충분치 않다.  실제 균형은 \textgr{eddy momentum flux convergence}가
+주요 westerly source로 들어와야 완성된다.
 
 \begin{equation}\label{eq:ch07_temp_pointD_bal}
   \boxed{
-    -f v_Z - \frac{1}{\rho}\frac{\partial \tau^x}{\partial z}
+    +f\,v_Z - \frac{1}{\rho}\frac{\partial \tau^x}{\partial z}
     - \frac{1}{\cos^2\phi}\frac{\partial}{\partial y}
       \left[\cos^2\phi\,(u_E v_E)_Z\right] = 0
     \quad(\text{at D, full balance}).
@@ -2191,32 +2207,30 @@ Hadley cell 상층 가지가 극 방향 ($v_Z > 0$)으로 흐르므로 Coriolis�
 
 \begin{equation}\label{eq:ch07_temp_pointB}
   \left.\frac{\partial u_Z}{\partial t}\right|_{\text{Cor}}
-    = -f v_Z < 0 \qquad (\text{at B, NH upper Hadley}).
+    = +f\,v_Z > 0 \qquad (\text{at B, NH upper Hadley}).
 \end{equation}
 
-잠깐, 부호가 이상하다.  Hadley cell 상층은 극 방향이고 $f > 0$이니 Coriolis는
-\emph{easterly}로 가속한다.  그런데 jet은 westerly다.  이는 모순처럼 보인다.
+\noindent
+즉 Coriolis는 \emph{westerly} (eastward)로 가속한다.  이것이 Hadley cell
+상층이 subtropical jet에 westerly AM을 공급하는 \emph{Coriolis 측면의 메커니즘}이다.
+AAM 보존 관점에서 동일한 사실을 다시 표현하면: 적도에서 출발한 공기는 큰
+$M_\Omega$를 가지고 있고, 그것을 ($u, \phi$가 변하면서) $M = M_\Omega + M_r$로
+보존한다.  $\phi$가 증가하면 $\cos\phi$가 감소하고, $M_\Omega = \Omega
+R^2\cos^2\phi$가 줄어든다.  보존되려면 $M_r = u R\cos\phi$가 그만큼 늘어야
+하므로 $u$가 증가한다.  바로 이것이 \emph{Hadley cell 상층 가지가 westerly를
+가져다 주는} 이유다.
 
-해소: AAM 보존에서 출발하자.  적도에서 출발한 공기는 큰 $M_\Omega$를 가지고
-있고, 그것을 ($u, \phi$가 변하면서) $M = M_\Omega + M_r$로 보존한다.
-$\phi$가 증가하면 $\cos\phi$가 감소하고, $M_\Omega = \Omega R^2\cos^2\phi$가
-줄어든다.  보존되려면 $M_r = u R\cos\phi$가 그만큼 늘어야 하므로 $u$가
-증가한다.  바로 이것이 \emph{Hadley cell 상층 가지가 westerly를 가져다 주는}
-이유다.
-
-다시 균형식으로 돌아오면, Hadley cell 자체는 (Coriolis 관점에서) easterly로
-밀지만, AAM 보존 입장에서는 동시에 (advection으로) westerly를 가져다 준다.
-\emph{고립된 (eddy-free)} Hadley cell 모형에서는 두 효과가 정확히 상쇄되어
-상층은 angular-momentum conserving wind가 된다 (Held \& Hou, 1980).
-
-그러나 실제 대기에서는 상층 westerly가 angular-momentum conserving 값보다
-훨씬 \emph{작다}.  그 이유는 \textbf{eddy momentum flux divergence}가
-westerly를 가져가버리기 때문이다.
+\emph{고립된 (eddy-free)} Hadley cell 모형에서는 이 Coriolis-driven westerly
+공급이 advection과 함께 angular-momentum conserving wind를 만든다 (Held \&
+Hou, 1980).  그러나 실제 대기에서는 상층 westerly가 angular-momentum
+conserving 값보다 훨씬 \emph{작다}.  그 이유는 \textbf{eddy momentum flux
+divergence}가 westerly를 가져가버리기 때문이다.  따라서 B점의 정상 상태
+균형은 Hadley cell의 westerly 공급(Coriolis $+fv > 0$)과 eddy divergence의
+westerly 손실이 같아질 때 이루어진다.
 
 \begin{equation}\label{eq:ch07_temp_pointB_bal}
   \boxed{
-    \underbrace{-f v_Z}_{\text{Coriolis (east)}}
-    + \underbrace{\text{advective westerly supply}}_{\text{from AM conservation}}
+    \underbrace{+f\,v_Z}_{\text{Coriolis (west)}}
     + \underbrace{\frac{-1}{\cos^2\phi}\frac{\partial}{\partial y}
       [\cos^2\phi(u_E v_E)_Z]}_{\text{eddy divergence (east)}}
     = 0 \quad (\text{at B}).
@@ -2245,11 +2259,12 @@ B에서 eddy가 westerly를 \emph{divergent}하게 가져갔다면, C (mid-latit
 \noindent
 이 \emph{westerly 공급}이 무한정 jet을 가속시키지 않으려면, 정확히 같은 크기의
 \emph{westerly 제거} 메커니즘이 있어야 한다.  그 메커니즘이 Ferrel cell
-상층의 적도 방향 가지 ($v_Z < 0$ at high lat upper)에 의한 Coriolis 가속이다.
+상층의 적도 방향 가지 ($v_Z < 0$ at high lat upper)에 의한 Coriolis 가속이다
+($+fv_Z < 0$, 즉 easterly tendency).
 
 \begin{equation}\label{eq:ch07_temp_pointC_bal}
   \boxed{
-    -f v_Z + \frac{-1}{\cos^2\phi}\frac{\partial}{\partial y}
+    +f\,v_Z + \frac{-1}{\cos^2\phi}\frac{\partial}{\partial y}
       [\cos^2\phi(u_E v_E)_Z] = 0
     \quad\Leftrightarrow\quad
     \text{Coriolis (east)} = \text{eddy convergence (west)}
@@ -2266,12 +2281,25 @@ B에서 eddy가 westerly를 \emph{divergent}하게 가져갔다면, C (mid-latit
 
 \begin{remark}[The Hadley/Ferrel boundary at $\sim 30^\circ$]
 지표에서 trade wind (easterly)와 mid-latitude westerly의 경계는 정확히 30$^\circ$
-부근이다.  이는 \emph{우연이 아니다}.  Hadley cell이 angular-momentum
-conserving streamline을 따라 상층으로 westerly를 운반할 수 있는 가장 먼 지점
-($u\to\infty$가 되기 직전)이 이 위도이며, 동시에 baroclinic instability가
-강하게 일어나는 위도이다 (Held \& Hou, 1980; Lindzen \& Hou, 1988).  그
-지점에서 eddy가 takeover하여 westerly를 더 극쪽으로 운반한다.  지표
-trade-wind belt와 mid-latitude westerly belt의 경계가 동일한 위도에 있는
+부근이다.  이는 \emph{우연이 아니다}.  단순 AM 보존 ($u(\phi) = \Omega R
+\sin^2\phi/\cos\phi$)만 보면 $u$가 발산하는 지점은 \emph{극} ($\cos\phi \to 0$)
+이지 30$^\circ$가 아니다.  Hadley cell 끝이 약 30$^\circ$에 위치하는
+까닭은 단일 효과가 아니라 \emph{여러 제약의 조합}이다:
+\begin{itemize}
+  \item \textbf{AM 보존} (Held \& Hou, 1980): 적도 부근 가열에 의한 상층
+    공기 이동이 AM 보존 풍속을 발생시키지만, 30$^\circ$ 근방에서 $u$가 너무
+    커져 thermal wind balance 및 정역학과 양립 가능한 단열 평형해를 더는
+    유지할 수 없다.
+  \item \textbf{Thermal wind / energy 제약}: Held--Hou 이론은
+    \emph{moist static energy의 수평 균등화 + thermal wind balance + AM
+    conservation}을 동시에 만족하는 닫힌 axisymmetric 해를 풀어 cell width
+    $\phi_H \sim (gH\Delta_h/\Omega^2 a^2)^{1/2}$를 얻는다.  지구 매개변수에
+    대입하면 $\phi_H \approx 25$--$30^\circ$.
+  \item \textbf{Baroclinic instability}: 같은 위도에서 baroclinic eddy가
+    강하게 일어나 eddy가 잔여 westerly를 더 극쪽으로 운반한다 (Lindzen \&
+    Hou, 1988).
+\end{itemize}
+지표 trade-wind belt와 mid-latitude westerly belt의 경계가 동일한 위도에 있는
 까닭은 두 belt가 모두 같은 jet의 \emph{양옆}이기 때문이다.
 \end{remark}
 
@@ -2340,9 +2368,10 @@ hemisphere asymmetry를 포함한다는 차이가 있다.
   \item \textbf{AM의 분해}: $M = \Omega R^2\cos^2\phi + uR\cos\phi
     = M_\Omega + M_r$.  Solid-earth rotation 성분과 relative wind 성분으로
     분리되며, 단위질량당 비율은 위도에 따라 0--46, 전체질량 기준으로 $\sim 10^6$.
-  \item \textbf{Conservation-only argument의 비현실성}: 적도 공기를 60$^\circ$로
-    이동시키면 $u\approx 134$ m/s ($\Omega R\sin^2\phi/\cos\phi$)라는 비현실적
-    값이 나온다.  \emph{Eddy transport}가 반드시 필요하다.
+  \item \textbf{Conservation-only argument의 비현실성}: 적도 공기를 30$^\circ$로
+    이동시키면 $u\approx 134$ m/s, 60$^\circ$로 이동시키면 $u \approx 696$ m/s
+    ($u(\phi) = \Omega R\sin^2\phi/\cos\phi$)라는 비현실적 값이 나온다.
+    \emph{Eddy transport}가 반드시 필요하다.
   \item \textbf{Sigma 좌표 flux form derivation}: $\sigma = p/p_s$로 산악
     boundary 문제를 우회하고, zonal mean + vertical integration 후 3-term
     zonal AAM budget이 도출된다:
@@ -2449,10 +2478,12 @@ Hartmann (2023, \textit{The Atmospheric General Circulation}, Cambridge UP)는
     (5th ed.), Ch.~10.3 --- mean meridional circulation과 EP flux를 통한 AM
     budget의 통합 기술. 본 책 Ch.~4 TEM 결과를 Ch.~7 budget에 직접 적용하는
     bridge.
-  \item Rosen \& Salstein (1983, \textit{J.\ Geophys.\ Res.}, 88, 5451--5470);
-    Rosen et al. (1990, ibid.\ 95, 265--275) --- LOD-AAM correspondence의
-    원논문.  본 책 Fig.~\ref{fig:ch07_temp_monthly_lod_aam}의 monthly time
-    series 분석 방법론을 정립.
+  \item Rosen \& Salstein (1983, \textit{J.\ Geophys.\ Res.}, 88, 5451--5470)
+    --- LOD-AAM correspondence의 원논문, monthly time series 분석 방법론
+    정립.  Rosen, Salstein \& Wood (1990, \textit{J.\ Geophys.\ Res.}, 95,
+    265--279, ``Discrepancies in the Earth--atmosphere angular momentum
+    budget'') --- 본 책 Fig.~\ref{fig:ch07_temp_monthly_lod_aam} 관련 AAM
+    budget closure를 정량적으로 검증한 후속 논문.
   \item Egger \& Hoinka (1999, \textit{J.\ Atmos.\ Sci.}, 56, 1305--1313)
     --- daily torque-tendency balance의 reanalysis 검증 ($r\approx 0.86$).
     본 책 Fig.~\ref{fig:ch07_temp_daily}의 분석 방법론.
@@ -2460,8 +2491,8 @@ Hartmann (2023, \textit{The Atmospheric General Circulation}, Cambridge UP)는
     --- nearly-inviscid Hadley cell의 angular-momentum conserving 해.
     A--B 단계의 정량 모형.
   \item Wallace, Battisti, Thompson, Hartmann (2023), \textit{The Atmospheric
-    General Circulation}, Cambridge UP, Ch.~4 (AM Budget) --- 본 책 Ch.~7의
-    구조가 가장 가까운 modern reference.
+    General Circulation}, Cambridge UP, Ch.~3 (Angular Momentum Balance) ---
+    본 책 Ch.~7의 구조가 가장 가까운 modern reference.
   \item Lorenz (1967, WMO No.218) --- \textit{The Nature and Theory of the
     General Circulation of the Atmosphere}, classic monograph로 본 4-point
     closure의 origin.
@@ -2473,7 +2504,7 @@ Hartmann (2023, \textit{The Atmospheric General Circulation}, Cambridge UP)는
 \noindent\textit{References:
 Peixoto \& Oort, \textit{Physics of Climate}, Ch.~11;
 Wallace, Battisti, Thompson, and Hartmann, \textit{The Atmospheric General
-Circulation}, Cambridge University Press, Ch.~4;
+Circulation}, Cambridge University Press, Ch.~3;
 Holton and Hakim, \textit{An Introduction to Dynamic Meteorology},
 Ch.~10.3;
 Rosen \& Salstein (1983); Egger \& Hoinka (1999); Held \& Hou (1980).}
