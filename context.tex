@@ -2,7 +2,7 @@
 %								VARIABLES
 % =============================================================================
 
-\usepackage{amsmath, amssymb, amsthm, multicol}
+\usepackage{amsmath, amssymb, amsthm, multicol, bm}
 \newcommand{\multicolsendspace}{-0.7\baselineskip}
 \AddToHook{env/multicols/after}{\vspace{\multicolsendspace}}
 \AddToHook{env/multicols*/after}{\vspace{\multicolsendspace}}
@@ -72,3 +72,10 @@
 
 \newcommand{\tight}{\leavevmode\par\vspace{-8pt}}
 \newcommand{\textgr}[1]{{\textbf{\color{accent}#1}}}
+
+% Partial derivative shortcuts (used in Ch06/Ch07)
+\newcommand{\pdt}[1]{\frac{\partial #1}{\partial t}}
+\newcommand{\pdx}[1]{\frac{\partial #1}{\partial x}}
+\newcommand{\pdy}[1]{\frac{\partial #1}{\partial y}}
+\newcommand{\pdz}[1]{\frac{\partial #1}{\partial z}}
+\newcommand{\pdp}[1]{\frac{\partial #1}{\partial p}}

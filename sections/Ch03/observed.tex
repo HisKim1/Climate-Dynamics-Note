@@ -185,11 +185,81 @@ SH는 대륙이 적어 기압 패턴이 거의 동서 대칭이며, 특히 $65^{
 \label{sec:ch03-eddy-decomp}
 % ---------------------------------------------------------------------------------------
 
+대기 변수를 위도 $\phi$, 경도 $\lambda$, 연직좌표 $p$로 기술하기 전에,
+구면좌표 자체의 미분연산자 형태를 한 번 정리해 두면 zonal mean 방정식 유도가 훨씬 깔끔해진다.
+
+\begin{example}[구면좌표에서의 $\nabla f$와 $\nabla^{2}f$]
+\label{ex:ch03_hw4_spherical}
+구면좌표 $(r, \phi, \lambda)$ ($\phi$: 위도, $\lambda$: 경도) 위의 임의 스칼라 $f(r,\phi,\lambda)$를 생각하자.
+$x = r\cos\phi\cos\lambda$, $y = r\cos\phi\sin\lambda$, $z = r\sin\phi$로부터
+직교좌표 단위벡터를 구면좌표 단위벡터 $(\hat e_{r},\hat e_{\phi},\hat e_{\lambda})$로 표현하고
+연쇄법칙을 적용하면, 한 단계 유도로
+\begin{equation}
+  \nabla f \;=\; \hat e_{r}\,\frac{\partial f}{\partial r}
+            \;+\; \hat e_{\phi}\,\frac{1}{r}\,\frac{\partial f}{\partial \phi}
+            \;+\; \hat e_{\lambda}\,\frac{1}{r\cos\phi}\,\frac{\partial f}{\partial \lambda},
+  \label{eq:ch03_hw4_gradf}
+\end{equation}
+가 얻어진다.  여기서 $\lambda$ 방향 미분에 등장하는 $1/(r\cos\phi)$ 인자는
+``경도선이 극으로 갈수록 좁아진다''는 측도 보정이다.  이어서
+$\nabla^{2}f = \nabla\cdot(\nabla f)$를 같은 단위벡터로 풀어쓰면
+\begin{equation}
+  \nabla^{2} f \;=\; \frac{1}{r^{2}}\frac{\partial}{\partial r}\!\left(r^{2}\frac{\partial f}{\partial r}\right)
+                 + \frac{1}{r^{2}\cos\phi}\frac{\partial}{\partial \phi}\!\left(\cos\phi\,\frac{\partial f}{\partial \phi}\right)
+                 + \frac{1}{r^{2}\cos^{2}\phi}\,\frac{\partial^{2} f}{\partial \lambda^{2}}.
+  \label{eq:ch03_hw4_lapf}
+\end{equation}
+대기과학에서는 $r \approx a$ (지구 반지름) 근사로 $\nabla \to \nabla_{H}$ (수평) 부분만 사용하는 일이 많으며,
+이때 발산 연산자는
+\begin{equation}
+  \nabla_{H}\!\cdot\vec A \;=\; \frac{1}{a\cos\phi}\,\frac{\partial}{\partial\phi}\!\bigl(A_{\phi}\cos\phi\bigr)
+                              + \frac{1}{a\cos\phi}\,\frac{\partial A_{\lambda}}{\partial\lambda}
+  \label{eq:ch03_hw4_divH}
+\end{equation}
+이다.
+\end{example}
+
+\begin{hisublock}
+이 결과 \eqref{eq:ch03_hw4_gradf}--\eqref{eq:ch03_hw4_divH}는 본 \S\ref{sec:ch03-eddy-decomp} 이하의
+zonal-mean 식 유도(특히 \eqref{eq:ch03_hw4_zvT_main}의 $\partial_{\phi}(\langle vT\rangle_{Z}\cos\phi)$ 항)와
+\S\ref{sec:ch03-thermal-wind}의 thermal wind 유도에서 그대로 사용된다.
+$\cos\phi$ 가중치가 도처에 나타나는 것은 ``meridional flux는 면적요소 $a\cos\phi\,d\phi$ 위에서 정의된다''는
+구면좌표의 본질을 반영한다.
+\end{hisublock}
+
 임의의 atmospheric field $A(\lambda, \phi, p, t)$는 다음과 같이 분해할 수 있다:
 \begin{equation}
   A = [A] + A^{*},
 \end{equation}
 여기서 $[A]$는 zonal mean이고 $A^{*} \equiv A - [A]$는 \textgr{eddy} (zonal mean으로부터의 편차)이다.
+
+\begin{proposition}[Zonal-mean operator의 핵심 성질]
+\label{prop:ch03_hw4_zonalvanish}
+경도 $\lambda$에 대해 $2\pi$-주기적인 임의의 스무드 장 $a(\lambda,\phi,p,t)$에 대해
+$\langle a\rangle_{Z} \equiv \frac{1}{2\pi}\int_{0}^{2\pi} a\,d\lambda$로 zonal mean을 정의하면
+\begin{equation}
+  \bigl\langle \partial_{\lambda} a \bigr\rangle_{Z} \;=\; 0.
+  \label{eq:ch03_hw4_zonalvanish}
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+정의에 따라
+$\bigl\langle \partial_{\lambda} a\bigr\rangle_{Z}
+= \frac{1}{2\pi}\int_{0}^{2\pi}\frac{\partial a}{\partial \lambda}\,d\lambda
+= \frac{1}{2\pi}\bigl[a(\lambda,\phi,p,t)\bigr]_{0}^{2\pi}$.
+$a$가 $\lambda$에 대해 $2\pi$-주기이므로 $a(2\pi,\cdot) = a(0,\cdot)$이고, 따라서 우변은 $0$이다.
+\end{proof}
+
+\begin{hisublock}
+이 단순한 성질이 zonal-mean 운동량/열역학 방정식에서 \emph{longitudinal divergence 항이 사라지는 이유}이다.
+예컨대 \eqref{eq:ch03_hw4_divH}의 $\partial_{\lambda} A_{\lambda}$ 항은 zonal mean을 취하는 순간
+\eqref{eq:ch03_hw4_zonalvanish}에 의해 정확히 $0$이 되어, zonal-mean 식에는 오직
+$\partial_{\phi}(\cdot\cos\phi)$ 형태의 meridional flux divergence와 연직 항만 남는다.
+이는 본 챕터 \S\ref{sec:ch03-eddy-decomp} 이후의 모든 zonal-mean diagnostics ---
+\eqref{eq:vE2-structure}의 $\overline{v_{E}^{2}}$ 구조에서부터
+\S4의 zonal-mean precipitation budget까지 --- 의 토대가 된다.
+\end{hisublock}
 
 \subsubsection{Zonal-Mean Zonal Wind}
 
@@ -777,6 +847,91 @@ fundamentally different character in the tropics and extratropics:
 The global-mean tropospheric lapse rate is approximately
 $\Gamma \approx 6.5$\,K\,km$^{-1}$.
 \end{definition}
+
+이 zonal-mean 온도장이 시간에 따라 어떻게 진화하는지를 진단하려면, 압력좌표 위에서
+열역학 제1법칙을 \emph{flux form}으로 다시 쓰는 작업이 필요하다.
+다음 두 example은 그 과정을 단계별로 시연한다.
+
+\begin{example}[열역학 방정식의 flux form 변환]
+\label{ex:ch03_hw4_fluxform}
+압력좌표 위의 열역학 제1법칙
+\begin{equation}
+  c_{p}\,\frac{dT}{dt} \;-\; \alpha\,\omega \;=\; H,
+  \label{eq:ch03_hw4_thermo1}
+\end{equation}
+에서 출발하자 ($\alpha = RT/p$는 specific volume, $H$는 단위질량당 가열률, $\omega = dp/dt$).
+$dT/dt = \partial_{t}T + \vec v\cdot\nabla T + \omega\,\partial_{p}T$ 전개와 이상기체 상태방정식을 대입하면
+\begin{equation}
+  \frac{\partial T}{\partial t} \;+\; \vec v\cdot\nabla T \;+\; \omega\,\frac{\partial T}{\partial p}
+       \;-\; \frac{R}{c_{p}\,p}\,\omega\,T \;=\; \frac{1}{c_{p}}\,H.
+  \label{eq:ch03_hw4_thermo2}
+\end{equation}
+\textgr{Flux form}을 얻기 위해 압력좌표 연속방정식
+\begin{equation}
+  \nabla\!\cdot\vec v \;+\; \frac{\partial \omega}{\partial p} \;=\; 0
+  \label{eq:ch03_hw4_cont}
+\end{equation}
+의 양변에 $T$를 곱한 식 $T(\nabla\!\cdot\vec v) + T\,\partial_{p}\omega = 0$을
+\eqref{eq:ch03_hw4_thermo2}에 더한다.  이때
+$T\,\nabla\!\cdot\vec v + \vec v\cdot\nabla T = \nabla\!\cdot(\vec v T)$,
+$T\,\partial_{p}\omega + \omega\,\partial_{p}T = \partial_{p}(\omega T)$로 결합되므로
+\begin{equation}
+\boxed{\;
+  \frac{\partial T}{\partial t}
+     \;+\; \nabla\!\cdot\!\bigl(\vec v\,T\bigr)
+     \;+\; \frac{\partial}{\partial p}\bigl(\omega\,T\bigr)
+     \;-\; \frac{R}{c_{p}\,p}\,\omega\,T
+     \;=\; \frac{1}{c_{p}}\,H.
+\;}
+  \label{eq:ch03_hw4_fluxform}
+\end{equation}
+각 단계의 물리적 정당화: (i) 연속방정식 곱셈은 $T$의 추가 source/sink를 만들지 않고
+``질량보존을 만족하는 흐름에서는 advective와 flux 형태가 서로 변환 가능''함을 이용한 것이다.
+(ii) 좌변 둘째--셋째 항은 \emph{온도(=enthalpy/$c_{p}$)의 3차원 flux divergence}로 묶인다.
+(iii) $-(R/c_{p}p)\omega T$ 항은 단열 압축/팽창에 의한 온도 변화 ($\omega > 0$에서 압축 가열)를 담당한다.
+\end{example}
+
+\begin{example}[Zonal-mean 및 vertical-mean 온도 방정식]
+\label{ex:ch03_hw4_zvT}
+\eqref{eq:ch03_hw4_fluxform}에 zonal mean $\langle\cdot\rangle_{Z} = \frac{1}{2\pi}\!\int_{0}^{2\pi}\!d\lambda$를 적용한다.
+\eqref{eq:ch03_hw4_divH}로 $\nabla\!\cdot(\vec v T)$를 풀어쓰면 longitudinal 항은
+proposition~\ref{prop:ch03_hw4_zonalvanish}에 의해 사라지고, 남는 meridional 항은
+$\frac{1}{a\cos\phi}\partial_{\phi}(\langle vT\rangle_{Z}\cos\phi)$ 형태가 된다.  따라서
+\begin{equation}
+  \frac{\partial T_{Z}}{\partial t}
+     \;+\; \frac{1}{a\cos\phi}\,\frac{\partial}{\partial\phi}\!\bigl(\langle vT\rangle_{Z}\cos\phi\bigr)
+     \;+\; \frac{\partial}{\partial p}\,\langle\omega T\rangle_{Z}
+     \;-\; \frac{R}{c_{p}\,p}\,\langle\omega T\rangle_{Z}
+     \;=\; \frac{1}{c_{p}}\,\langle H\rangle_{Z},
+  \label{eq:ch03_hw4_zvT_main}
+\end{equation}
+여기서 $T_{Z} \equiv \langle T\rangle_{Z}$.  이어서 연직 평균
+$\langle\cdot\rangle_{M} \equiv \frac{1}{p_{0}}\!\int_{0}^{p_{0}}\!\cdot\;dp$를 취하면,
+flux divergence 항 $\int_{0}^{p_{0}}\partial_{p}(\langle\omega T\rangle_{Z})\,dp
+= \langle\omega T\rangle_{Z}\!\bigl|_{p_{0}} - \langle\omega T\rangle_{Z}\!\bigl|_{0}$가
+경계조건 $\omega(p=0) = \omega(p=p_{0}) = 0$에 의해 정확히 \emph{0}이 된다.  결과적으로
+\begin{equation}
+  \frac{\partial\,\langle T\rangle_{ZM}}{\partial t}
+     \;+\; \frac{1}{a\cos\phi}\,\frac{\partial}{\partial\phi}\!\Bigl(\langle vT\rangle_{ZM}\cos\phi\Bigr)
+     \;-\; \biggl\langle\frac{R}{c_{p}p}\,\omega T\biggr\rangle_{\!ZM}
+     \;=\; \frac{1}{c_{p}}\,\langle H\rangle_{ZM},
+  \label{eq:ch03_hw4_zvT_final}
+\end{equation}
+이 되어, 자오면 수송 $\langle vT\rangle_{ZM}$과 잔여 단열 항만이 평균 가열 $\langle H\rangle_{ZM}$과 균형을 이룬다.
+\end{example}
+
+\begin{hisublock}
+\textbf{$\langle\omega T\rangle_{ZM}$이 작은 이유.}
+\eqref{eq:ch03_hw4_zvT_final}의 단열 항 $-\langle R\omega T/(c_{p}p)\rangle_{ZM}$이 실제 관측에서 작은 잔차로
+나오는 것은 두 가지 이유에 기인한다.  (i) $\omega$ 자체가 zonal mean에서 한 자릿수 작다 ---
+Fig.~\ref{fig:ch03-zmvw}에서 본 $[\bar v]$가 $\sim$0.3\,m\,s$^{-1}$로 매우 작은 것과 같은 맥락이며,
+\textbf{자오 순환(Hadley/Ferrel cell)의 vertical heat flux가 약하다}는 사실의 정량적 표현이다.
+(ii) $T$는 연직으로 단조 감소하므로 $\langle T\rangle_{ZM}$ 부근에서 $\omega'T'$ 상관이 거의 상쇄된다.
+결국 \eqref{eq:ch03_hw4_zvT_final}에서 \emph{지배항은 첫째 항(meridional eddy heat flux divergence)과
+우변(다이아베틱 가열)} 두 개뿐이며, 이것이 \S\ref{sec:ch03-eddy-decomp}의
+$\overline{v_{E}^{2}}$ 구조 \eqref{eq:vE2-structure}가 climate diagnostics에서 중요한 이유이다 ---
+$\overline{v_{E}^{2}}$가 큰 위도가 곧 $\langle vT\rangle_{ZM}$이 클 가능성이 높은 위도이다.
+\end{hisublock}
 
 
 % ---------------------------------------------------------------------------------------
