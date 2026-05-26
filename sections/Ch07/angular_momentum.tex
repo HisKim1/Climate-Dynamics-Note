@@ -150,8 +150,8 @@ $M_r$을 \textgr{relative angular momentum}이라 부른다.
         $u\sim 30$ m/s, $R\cos 45^\circ \approx 4.5\times 10^6$ m이므로 $M_r
         \approx 1.35\times 10^8$ m$^2$/s.  이는 같은 위도의 $M_\Omega \approx 1.48\times
         10^9$ m$^2$/s에 비해 약 10\%에 불과하다.
-  \item 따라서 단위 질량으로 보면 $M_\Omega \gg M_r$이며, 후술하듯 전체 질량을
-        고려하면 그 차이는 $\sim 10^6$배까지 벌어진다.
+  \item 따라서 단위 질량으로 보면 $M_\Omega \gg M_r$이며, 후술하듯 전체 질량(대기 + 고체 지구)을
+        고려하면 그 차이는 $\sim 100$배까지 벌어진다.
 \end{itemize}
 \end{hisublock}
 
@@ -1170,7 +1170,7 @@ hemispheric residual은 거의 0.  이것이 LOD-AAM의 장기적 안정성의 �
 
 \begin{remark}[Why Friction Dominates in the SH and Tropics]
 SH는 해양이 우세하고 큰 산맥이 적기 때문에 mountain torque가 작다.
-따라서 SH에서는 거의 \textit{전적으로 marichal torque}만이 대기-지구 AM
+따라서 SH에서는 거의 \textit{전적으로 frictional torque}만이 대기-지구 AM
 교환을 매개한다.  열대는 산이 거의 없고 surface easterly가 매우 강하므로
 역시 마찰 torque가 지배적이다.  Mountain torque의 영향력은 NH midlatitude에
 거의 국한된다.
@@ -1450,10 +1450,13 @@ multi-year mean)에서는 mountain torque가 다른 두 항보다 \textbf{작은
 \subsubsection{Decomposition into Solid-Rotation, Drift, and Eddy Fluxes}
 
 이제 meridional AAM flux $\int_0^1 (p_s M v)_Z\,d\sigma$의 \textit{구조}를
-파헤친다.  먼저 zonal-mean / eddy 분해를 변수별로 정의한다:
+파헤친다.  AM 자체의 정의 $M = \Omega a^2\cos^2\phi + u\,a\cos\phi
+= M_\Omega + M_r$에서, 상대운동 성분 $u$를 zonal-mean / eddy로 더 분해한다
+($u = u_Z + u_E$, 단 $(u_E)_Z = 0$).  Solid-rotation 성분 $\Omega a^2\cos^2\phi$는
+경도에 의존하지 않으므로 이미 $u_Z$와 같은 zonal-mean side에 속한다.  결국
 \begin{align}
-  M &= M_Z + M_E
-     = \bigl(\Omega a\cos\phi + u_Z + u_E\bigr) a\cos\phi,
+  M &= \underbrace{\Omega a^2\cos^2\phi + u_Z\,a\cos\phi}_{M_Z}
+       + \underbrace{u_E\,a\cos\phi}_{M_E},
      \label{eq:ch07_trans_decomp_M} \\
   p_s v &= (p_s v)_Z + (p_s v)_E.
      \label{eq:ch07_trans_decomp_psv}
@@ -1713,18 +1716,20 @@ Figure~\ref{fig:ch07_trans_annual_torque}와 같다:
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.65\textwidth,height=0.5\textheight,keepaspectratio]{images/ch07/p49_img01.png}
-  \caption{Four-panel decomposition of the vertically integrated meridional
-  angular momentum flux across each latitude, separated into DJF, JJA, and
-  annual (YEAR) means.  Panel (a) shows $[\bar v\bar v]$ (zonal mean
-  meridional advection of zonal-mean momentum), (b) $(\overline{u'v'})_Z$
-  (transient eddy flux), (c) $[\bar u^*\bar v^*]$ (stationary eddy flux),
-  and (d) $[\bar v]_{10}[\bar u]$ (combined mean meridional + zonal-mean
-  zonal wind product).  Outside $\pm 10^\circ$ of the equator, the
-  transient eddy flux (b) dominates all other contributions.
-  \hisu{4-panel 분해: (a) 평균 $\bar v\bar v$, (b) transient eddy
-  $\overline{u'v'}$, (c) stationary eddy $\bar u^*\bar v^*$, (d) drift.
-  적도 $\pm 10^\circ$ 밖에서는 거의 모든 flux가 transient eddy (b)에서
-  나옴.}}
+  \caption{Four-panel decomposition of the vertically integrated zonal-mean
+  meridional angular momentum flux $[\overline{v\,M}]$ across latitude, shown
+  for DJF, JJA, and annual (YEAR) means.  Panel \textbf{(a)} mean meridional
+  advection of zonal-mean AAM $[\bar v\,\bar M]$ (Hadley/Ferrel cell branch);
+  \textbf{(b)} transient eddy flux $\overline{v'M'}$;
+  \textbf{(c)} stationary eddy flux $[\bar v^{*}\bar M^{*}]$ (zonal departure);
+  \textbf{(d)} total $[\overline{v\,M}]$ — the sum of (a)+(b)+(c).
+  Outside $\pm 10^\circ$ of the equator, (b) the transient eddy term
+  dominates; only in the deep tropics does (a) the mean meridional
+  circulation contribute comparably.
+  \hisu{자오 AAM flux의 4-panel 분해.  (a) 평균 자오순환 $[\bar v\bar M]$,
+  (b) transient eddy $\overline{v'M'}$, (c) stationary eddy
+  $[\bar v^{*}\bar M^{*}]$, (d) 총합.  적도 $\pm 10^\circ$ 밖에서는 (b)
+  transient eddy가 거의 모든 flux를 담당.}}
   \label{fig:ch07_trans_four_panel}
 \end{figure}
 
@@ -2355,7 +2360,8 @@ hemisphere asymmetry를 포함한다는 차이가 있다.
 \begin{enumerate}
   \item \textbf{AM의 분해}: $M = \Omega R^2\cos^2\phi + uR\cos\phi
     = M_\Omega + M_r$.  Solid-earth rotation 성분과 relative wind 성분으로
-    분리되며, 단위질량당 비율은 위도에 따라 0--46, 전체질량 기준으로 $\sim 10^6$.
+    분리되며, 단위질량당 비율 $M_\Omega/M_r$은 위도에 따라 0--46.  대기 전체
+    질량 적분 기준으로는 $M_\Omega/M_r \sim 100$ 정도이다.
   \item \textbf{Conservation-only argument의 비현실성}: 적도 공기를 30$^\circ$로
     이동시키면 $u\approx 134$ m/s, 60$^\circ$로 이동시키면 $u \approx 696$ m/s
     ($u(\phi) = \Omega R\sin^2\phi/\cos\phi$)라는 비현실적 값이 나온다.

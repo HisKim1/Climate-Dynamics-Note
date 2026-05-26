@@ -370,22 +370,10 @@ PGF 방향으로 (북반구에서는 일반적으로 \textit{북쪽}으로) 미�
 ageostrophic 성분 $v_a > 0$을 갖는다.  Exit에서는 반대로 입자가 속도를 잃기
 전에 CoF가 여전히 크므로 PGF $<$ CoF, 따라서 $v_a < 0$ (남쪽).
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.65\textwidth,height=0.5\textheight,keepaspectratio]{images/ch06/p12_img01.png}
-  \caption{Force balance in jet entrance versus jet exit regions.
-  \textbf{Entrance:} PGF (poleward) $>$ CoF (equatorward), so the net force
-  is poleward, producing $v_a > 0$ and parcel acceleration along the jet.
-  \textbf{Exit:} PGF $<$ CoF, net force is equatorward, producing $v_a < 0$
-  and parcel deceleration.  The associated ageostrophic divergence/convergence
-  pattern drives vertical motion: ascent at the entrance equatorward side
-  and exit poleward side, descent at the entrance poleward side and exit
-  equatorward side. \hisu{Entrance에서 PGF $>$ CoF (북향 net force), exit에서
-  PGF $<$ CoF (남향 net force).  이 두 ageostrophic 영역이 jet streak 주변
-  대각선 4-cell rising/sinking 패턴을 만들고, 이것이 storm track 강화에 기여
-  한다.}}
-  \label{fig:ch06_nh_jet_force}
-\end{figure}
+% [Jet entrance/exit force-balance diagram: lecture slide had only a
+%  simplified L/H hand sketch.  The 4-cell rising/sinking interpretation is
+%  fully developed in the prose above and in Fig.~\ref{fig:ch06_nh_ageo_schem}'s
+%  cross-section, so no separate diagram is needed here.]
 
 \begin{hisublock}
 이 그림의 4-cell 패턴은 단순한 도식이 아니다.  Entrance equatorward와 exit
@@ -643,9 +631,9 @@ easily diagnosed from radiosonde divergence.
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.65\textwidth,height=0.5\textheight,keepaspectratio]{images/ch06/p19_img01.png}
-  \caption{Vertical cross-section (longitude--pressure) of a developing
-  baroclinic disturbance (panel \textbf{a}, top of figure).  Solid lines:
+  \includegraphics[width=0.75\textwidth,height=0.4\textheight,keepaspectratio]{images/ch06/p19a_img01.png}
+  \caption{Vertical cross-section (longitude--pressure) of a \emph{developing}
+  baroclinic disturbance.  Solid lines:
   geopotential height anomalies (trough/ridge); dashed lines: temperature
   anomalies (WARM, COLD); arrows:
   $\omega$ vector.  The upper-level trough is located \textbf{west of} the
@@ -692,9 +680,8 @@ edge wave가 $-\pi/2 < \theta < 0$ 범위의 phase shift를 가질 때 성장한
 
 \begin{figure}[ht]
   \centering
-  \includegraphics[width=0.65\textwidth,height=0.5\textheight,keepaspectratio]{images/ch06/p19_img01.png}
-  \caption{Same figure as Fig.~\ref{fig:ch06_te_developing_xsec},
-  panel \textbf{b} (bottom of figure): vertical structure of the
+  \includegraphics[width=0.75\textwidth,height=0.4\textheight,keepaspectratio]{images/ch06/p19b_img01.png}
+  \caption{Same series as Fig.~\ref{fig:ch06_te_developing_xsec} but for the
   \emph{decaying} (occluded) stage.  The vertical tilt has largely
   disappeared: upper and surface troughs are nearly co-located, warm and
   cold anomalies have wrapped around the surface low, and the $\omega$
@@ -752,6 +739,7 @@ $K_T$는 시간 평균 흐름으로부터 편차의 분산 (즉 transient eddy�
 다음과 같다.  자세한 유도는 Holton \& Hakim (2012) Ch.~10 또는
 Peixoto \& Oort (1992) Ch.~13을 참조하라.
 
+\needspace{8\baselineskip}
 \begin{theorem}[Mean and Transient KE Equations]\label{thm:ch06_te_KE_budget}
 Lorenz (1955) energy-cycle 표준 표기에 따라
 \begin{align}
@@ -882,33 +870,39 @@ $C > 0$ (eddy 성장), exit 영역에서 $\nabla\cdot H_3$ 발산 (eddy KE
 
 \subsubsection{Energy Cycle Diagram}
 
-위의 KE budget을 도식적으로 정리하면 Lorenz (1955)의 고전적
-\textgr{atmospheric energy cycle} 그림이 얻어진다.
+위의 KE budget을 \textgr{Lorenz (1955)의 고전적 atmospheric energy cycle}
+도식으로 정리하면 다음과 같다.  네 개의 \emph{reservoir}와 그 사이의
+주요 흐름을 화살표로 표시한다:
+\[
+\begin{array}{ccccc}
+  \overline{P_M} & \xrightarrow{C(\overline{P_M},P_T)} & P_T & & \\
+  {\scriptstyle G_M\uparrow} & & {\scriptstyle\downarrow C(P_T,K_T)} & & \\
+  & & K_T & \xrightarrow{C(\overline{K_M},K_T)} & \overline{K_M} \\
+  & & {\scriptstyle\downarrow D_T} & & {\scriptstyle\downarrow D_M}
+\end{array}
+\]
+즉 네 reservoir는
+\textbf{mean APE} $\overline{P_M}$,
+\textbf{transient APE} $P_T$,
+\textbf{transient KE} $K_T$,
+\textbf{mean KE} $\overline{K_M}$이며,
+화살표의 양의 방향이 baroclinic instability에 의한 ``정상'' eddy 성장
+($\overline{v'T'}>0$, $-\overline{\omega'\alpha'}>0$)을 나타낸다.
+$\overline{K_M}\to K_T$ 방향의 conversion이 음이면 (즉 $K_T\to\overline{K_M}$)
+이는 ``barotropic decay'' 분기에 해당한다.
 
-\begin{figure}[ht]
-  \centering
-  \includegraphics[width=0.65\textwidth,height=0.5\textheight,keepaspectratio]{images/ch06/p22_img01.png}
-  \caption{Schematic atmospheric energy cycle following Lorenz (1955),
-  adapted for the mean--transient partition discussed in
-  Theorem~\ref{thm:ch06_te_KE_budget}.  The four reservoirs are mean
-  available potential energy ($\overline{P_M}$), transient available
-  potential energy ($P_T$), mean kinetic energy ($\overline{K_M}$), and
-  transient kinetic energy ($K_T$).  Arrows show the dominant pathways:
-  diabatic generation $G_M$ creates $\overline{P_M}$;
-  baroclinic conversion $C(\overline{P_M},P_T)$ via $\overline{v'T'}>0$
-  transfers it to $P_T$;
-  adiabatic conversion $C(P_T,K_T)$ via
-  $-\overline{\omega'\alpha'}>0$
-  (equivalently $-(R/p)\overline{\omega'T'}>0$, i.e.\ warm air rising in
-  pressure coordinates) feeds storm KE;
-  barotropic conversion $C(\overline{K_M},K_T)$ in
-  \eqref{eq:ch06_te_KM_eq}--\eqref{eq:ch06_te_KT_eq} closes the loop;
-  frictional dissipations $D_M$ and $D_T$ ultimately remove KE.
-  \hisu{대기 에너지의 4-box cycle. 화살표의 방향이 양수이면
-  baroclinic instability에 의한 ``정상'' eddy 성장이고,
-  반대 방향은 ``barotropic decay''에 해당한다.}}
-  \label{fig:ch06_te_lorenz_cycle}
-\end{figure}
+\medskip
+
+\begin{remarkbox}
+\textbf{Lorenz cycle의 핵심 발견:}
+\begin{enumerate}
+  \item Diabatic forcing $G_M$이 적도-극 온도 경사 형태의 $\overline{P_M}$을 생성.
+  \item Baroclinic instability $C(\overline{P_M}, P_T)$가 $\overline{v'T'}>0$를 통해 $\overline{P_M}\to P_T$ 전달.
+  \item Adiabatic conversion $C(P_T, K_T)$가 $-\overline{\omega'\alpha'}>0$를 통해 transient eddy KE를 공급.
+  \item Barotropic conversion $C(\overline{K_M}, K_T)$가 mean KE와 eddy KE 사이의 \emph{보통 음수} 흐름 (즉 eddy → mean) — Reynolds stress의 \textit{upgradient} 성격.
+  \item Frictional dissipation $D_M, D_T$가 최종적으로 KE를 제거하여 cycle을 닫는다.
+\end{enumerate}
+\end{remarkbox}
 
 \begin{hisublock}
 이 cycle을 본문 \eqref{eq:ch06_te_KM_eq}--\eqref{eq:ch06_te_KT_eq}와
@@ -1026,8 +1020,8 @@ flux convergence가 forcing 역할을 한다 (\S3.27의 vorticity budget,
         (Theorem~\ref{thm:ch06_te_KE_budget}).
         $C > 0$이면 mean $\to$ eddy 에너지 흐름 = baroclinic
         instability.
-  \item \textbf{에너지 cycle}: Lorenz 4-box diagram이 전체 cycle을
-        통합 (Fig.~\ref{fig:ch06_te_lorenz_cycle}).
+  \item \textbf{에너지 cycle}: Lorenz 4-box reservoir 모형으로 전체 cycle을
+        통합한다 (§2.4의 도식과 \textit{Lorenz cycle의 핵심 발견} remarkbox 참조).
         $G \to \overline{P_M} \to P_T \to K_T \to \overline{K_M} \to D$.
 \end{enumerate}
 
