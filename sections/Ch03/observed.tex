@@ -88,7 +88,7 @@
   % Description: Annual-mean 200 hPa wind field.  Subtropical jet streams are
   %   the dominant feature: East Asian jet exceeds 40 m/s, Atlantic jet is
   %   secondary.  SH subtropical jet is more continuous but weaker in amplitude.
-  \includegraphics[width=0.7\textwidth]{images/ch03/p04_img01.png}
+  \includegraphics[width=0.7\textwidth]{images/ch03/p06_img01.jpeg}
   \caption{Annual-mean wind field at 200\,hPa, highlighting the subtropical jet streams. \hisu{동아시아 제트가 최강 ($>$40\,m\,s$^{-1}$, 티벳 고원에 의해 고정), 대서양 제트는 이차 극대; SH 아열대 제트는 더 연속적이나 진폭은 약함}}
   \label{fig:ch03-wind200}
 \end{figure}
@@ -132,7 +132,7 @@
   %   (1016--1020 hPa) over all major ocean basins at ~30 deg.  Equatorial
   %   trough (1008--1012 hPa).  Subpolar lows: Aleutian Low, Icelandic Low
   %   (NH); deep circumpolar trough in SH (~984--988 hPa).
-  \includegraphics[width=0.7\textwidth]{images/ch03/p05_img01.png}
+  \includegraphics[width=0.7\textwidth]{images/ch03/p04_img01.png}
   \caption{Annual-mean sea-level pressure (hPa).  Contour interval: 4\,hPa. \hisu{아열대 고기압 ($\sim$1016--1020\,hPa, $\sim$$30^{\circ}$\,N/S 해양), 적도 기압골 ($\sim$1008--1012\,hPa), 아극 저기압 (Aleutian, Icelandic Low; SH 순환극 골 $\sim$984--988\,hPa)}}
   \label{fig:ch03-slp-ann}
 \end{figure}
@@ -294,8 +294,8 @@ $\partial_{\phi}(\cdot\cos\phi)$ 형태의 meridional flux divergence와 연직 
   % Description: Latitude--pressure cross-section of [v].  Very small values
   %   (~0.3 m/s), but a clear Hadley cell signal: poleward flow at upper
   %   levels, equatorward flow at low levels in the tropics.
-  \includegraphics[width=0.7\textwidth]{images/ch03/p09_img01.png}
-  \caption{Annual-mean $[\bar{v}]$ (m\,s$^{-1}$).  Note the much smaller contour interval
+  \includegraphics[width=0.4\textwidth]{images/ch03/p09_img04.png}
+  \caption{Annual-mean $[\bar{v}]$ (m\,s$^{-1}$), latitude--pressure cross-section.  Note the much smaller contour interval
            compared to $[\bar{u}]$. \hisu{값이 매우 작지만 ($\sim$0.3\,m\,s$^{-1}$) 해들리 셀 신호가 명확: 상층 극방향 흐름, 하층 적도방향 흐름}}
   \label{fig:ch03-zmvw}
 \end{figure}
@@ -313,9 +313,10 @@ $\partial_{\phi}(\cdot\cos\phi)$ 형태의 meridional flux divergence와 연직 
   %   full field and eddy (Z*) field.  NH eddy field shows wave-2 to wave-3
   %   pattern (troughs over eastern North America and East Asia); SH eddy
   %   amplitudes are much weaker.
-  \includegraphics[width=0.5\textwidth]{images/ch03/p10_img01.png}
-  \caption{Annual-mean geopotential height at 500\,hPa: (a)~full field, (b)~eddy field $Z^{*}$. \hisu{NH $Z^{*}$: wave-2$\sim$3 패턴 (북미 동부, 동아시아 상공 기압골); SH: eddy 진폭이 훨씬 약함 --- 지형 강제 부재 반영}}
-  \label{fig:ch03-z500-eddy}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p10_img01.png}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p10_img02.png}
+  \caption{Annual-mean geopotential height at 200\,hPa: (left)~full field $\bar{Z}$, (right)~eddy field $Z^{*}$. \hisu{NH $Z^{*}$: wave-2$\sim$3 패턴 (북미 동부, 동아시아 상공 기압골); SH: eddy 진폭이 훨씬 약함 --- 지형 강제 부재 반영}}
+  \label{fig:ch03-z200-eddy}
 \end{figure}
 
 \begin{remark}[Eddy geopotential height]
@@ -447,12 +448,14 @@ HW 문제에서 주어진 이상화된 파동 그림의 핵심 포인트:
 
 Geostrophic wind의 vertical shear는 horizontal temperature gradient와 \textgr{thermal wind relation}을 통해 연결된다:
 \begin{equation}
-  \frac{\partial u_g}{\partial \ln p} = \frac{R}{f}\,\frac{\partial T}{\partial y},
+  \frac{\partial u_g}{\partial \ln p} = -\frac{R}{f}\,\frac{\partial T}{\partial y},
   \label{eq:thermal-wind-ch03}
 \end{equation}
-여기서 $R$은 dry air의 gas constant이고 $f$는 Coriolis parameter이다.
-NH에서 meridional temperature gradient $\partial T/\partial y < 0$ (온도가 극 방향으로 감소)이므로,
-westerly wind는 고도에 따라 \emph{증가}하여 $\sim$200\,hPa에서 subtropical jet을 형성한다.
+여기서 $R$은 dry air의 gas constant이고 $f$는 Coriolis parameter이다 (Holton 12판 식 (3.30)).
+NH에서 meridional temperature gradient $\partial T/\partial y < 0$ (온도가 극 방향으로 감소)이므로
+우변이 음의 값을 가지며, $\partial \ln p$ 또한 고도 증가 시 음이므로
+$\partial u_g/\partial z > 0$, 즉 westerly wind는 고도에 따라 \emph{증가}하여
+$\sim$200\,hPa에서 subtropical jet을 형성한다.
 
 \begin{figure}[ht]
   \centering
@@ -461,8 +464,9 @@ westerly wind는 고도에 따라 \emph{증가}하여 $\sim$200\,hPa에서 subtr
   %   temperature [T] and (b) zonal-mean zonal wind [u], illustrating the thermal
   %   wind relationship: steepest temperature gradients correspond to strongest
   %   vertical wind shear and jet maxima at ~200 hPa.
-  \includegraphics[width=0.5\textwidth]{images/ch03/p13_img01.jpeg}
-  \caption{Annual-mean (a) $[\bar{T}]$ (K) and (b) $[\bar{u}]$ (m\,s$^{-1}$),
+  \includegraphics[width=0.4\textwidth]{images/ch03/p17_img02.png}\hfill
+  \includegraphics[width=0.4\textwidth]{images/ch03/p17_img01.png}
+  \caption{Annual zonal-mean (left) $[\bar{T}]$ (K) and (right) $[\bar{u}]$ (m\,s$^{-1}$),
            illustrating the thermal wind relationship. \hisu{가장 급한 남북 $T$ 경도가 가장 강한 연직 바람 시어 및 $\sim$200\,hPa 제트 극대에 대응}}
   \label{fig:ch03-thermal-wind}
 \end{figure}
@@ -472,10 +476,12 @@ Take a meridional temperature gradient $\Delta T / \Delta y \approx -15$\,K over
 $20^{\circ}$ latitude ($\sim$2200\,km) between $15^{\circ}$N and $35^{\circ}$N.  Then the
 thermal wind shear from 850\,hPa to 200\,hPa ($\Delta \ln p \approx 1.45$) gives:
 \[
-  \Delta u \approx \frac{R}{f}\,\frac{\Delta T}{\Delta y}\,\Delta \ln p
-           \approx \frac{287}{7.3\times10^{-5}}\,\frac{15}{2.2\times10^{6}}\,1.45
+  \Delta u \approx -\frac{R}{f}\,\frac{\Delta T}{\Delta y}\,\Delta \ln p
+           \approx -\frac{287}{7.3\times10^{-5}}\,\frac{-15}{2.2\times10^{6}}\,(-1.45)
            \approx 39\;\text{m\,s}^{-1}.
 \]
+($\Delta T = -15$\,K (poleward 감소), $\Delta \ln p = \ln(200/850) \approx -1.45$로
+부호를 모두 대입하면 $\Delta u$가 양수가 되어 상층 서풍 강화로 귀결된다.)
 This is consistent with the observed subtropical jet speed of $\sim$40\,m\,s$^{-1}$.
 \end{example}
 
@@ -504,9 +510,10 @@ This is consistent with the observed subtropical jet speed of $\sim$40\,m\,s$^{-
   %   (ascent) centred on the equator, positive omega (descent) in subtropics.
   %   (b) Zonal-mean meridional wind [v]: low-level convergence toward
   %   equator, upper-level divergence poleward --- the Hadley cell signature.
-  \includegraphics[width=0.7\textwidth]{images/ch03/p14_img01.jpeg}
-  \caption{Annual-mean (a) $[\bar{\omega}]$ (Pa\,s$^{-1}$) and
-           (b) $[\bar{v}]$ (m\,s$^{-1}$), showing the Hadley cell structure. \hisu{$\omega<0$ (상승)은 적도 중심, $\omega>0$ (하강)은 아열대; $[\bar{v}]$: 하층 적도 수렴, 상층 극방향 발산}}
+  \includegraphics[width=0.4\textwidth]{images/ch03/p16_img01.png}\hfill
+  \includegraphics[width=0.4\textwidth]{images/ch03/p16_img02.png}
+  \caption{Annual zonal-mean (left) $[\bar{\omega}]$ (Pa\,s$^{-1}$) and
+           (right) $[\bar{v}]$ (m\,s$^{-1}$), showing the Hadley cell structure. \hisu{$\omega<0$ (상승)은 적도 중심, $\omega>0$ (하강)은 아열대; $[\bar{v}]$: 하층 적도 수렴, 상층 극방향 발산}}
   \label{fig:ch03-hadley-ann}
 \end{figure}
 
@@ -577,7 +584,7 @@ Solstitial season에 한쪽 반구에 국한된 비대칭 thermal forcing에도 
   %   eastern N. America and East Asia, ridges over eastern Pacific and Atlantic.
   %   JJA NH: stationary wave pattern much weaker, nearly zonal.
   %   SH: weak stationary waves in both seasons.
-  \includegraphics[width=0.7\textwidth]{images/ch03/p13_img02.jpeg}
+  \includegraphics[width=0.55\textwidth]{images/ch03/p14_img01.jpeg}
   \caption{Climatological 200\,hPa geopotential height $\bar{Z}_{200}$ and zonal wind
            $\bar{u}_{200}$ (m\,s$^{-1}$, shading) for DJF (top) and JJA (bottom).
            \hisu{DJF NH: 뚜렷한 wave-2$\sim$3 패턴 (동아시아/북미 동부 기압골, 동태평양/대서양 기압능);
@@ -652,8 +659,9 @@ SH에서는 양 계절 모두 stationary wave 진폭이 NH 겨울의 $\sim$1/3 �
   % Description: SLP maps for DJF and JJA.  DJF: deep Aleutian Low and Icelandic
   %   Low, strong Siberian High (~1040 hPa).  JJA: continental thermal lows over
   %   Asia and North America, strong oceanic subtropical highs.
-  \includegraphics[width=0.5\textwidth]{images/ch03/p17_img01.png}
-  \caption{Sea-level pressure (hPa) for (a)~DJF and (b)~JJA. \hisu{DJF: 깊은 Aleutian/Icelandic Low, 강한 시베리아 고기압 ($\sim$1040\,hPa); JJA: 대륙 열적 저기압 (아시아, 북미), 강한 해양 아열대 고기압}}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p19_img01.png}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p19_img02.png}
+  \caption{Sea-level pressure (hPa) for (left)~DJF and (right)~JJA. \hisu{DJF: 깊은 Aleutian/Icelandic Low, 강한 시베리아 고기압 ($\sim$1040\,hPa); JJA: 대륙 열적 저기압 (아시아, 북미), 강한 해양 아열대 고기압}}
   \label{fig:ch03-slp-seasonal}
 \end{figure}
 
@@ -703,8 +711,9 @@ SH에서는 양 계절 모두 stationary wave 진폭이 NH 겨울의 $\sim$1/3 �
   % Description: 850 hPa wind for DJF and JJA.  JJA shows the dramatic
   %   South Asian monsoon: cross-equatorial Somali jet along the East African
   %   coast, westerly inflow into the Indian subcontinent.
-  \includegraphics[width=0.6\textwidth]{images/ch03/p19_img01.png}
-  \caption{850\,hPa wind (m\,s$^{-1}$) for (a)~DJF and (b)~JJA. \hisu{JJA: 남아시아 몬순의 핵심 --- 적도 횡단 소말리 제트가 동아프리카 해안을 따라 인도 아대륙으로 수분 유입}}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p21_img01.png}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p21_img04.png}
+  \caption{850\,hPa wind (m\,s$^{-1}$) for (left)~DJF and (right)~JJA. \hisu{JJA: 남아시아 몬순의 핵심 --- 적도 횡단 소말리 제트가 동아프리카 해안을 따라 인도 아대륙으로 수분 유입}}
   \label{fig:ch03-wind850-seasonal}
 \end{figure}
 
@@ -724,8 +733,9 @@ South Asian monsoon onset의 핵심 요소이다.
   % TODO: Extract figure from Ch03 lecture note, page 21
   % Description: 200 hPa wind for DJF: strongest NH subtropical jet,
   %   >50 m/s over East Asia.  JJA: jet weakens in NH, SH jet intensifies.
-  \includegraphics[width=0.6\textwidth]{images/ch03/p21_img01.png}
-  \caption{200\,hPa wind (m\,s$^{-1}$) for (a)~DJF and (b)~JJA. \hisu{DJF: NH 아열대 제트 최강, 동아시아 상공 $>$50\,m\,s$^{-1}$; JJA: NH 제트 약화, SH 제트 강화}}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p22_img02.jpeg}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p22_img01.jpeg}
+  \caption{200\,hPa wind (m\,s$^{-1}$) for (left)~DJF and (right)~JJA. \hisu{DJF: NH 아열대 제트 최강, 동아시아 상공 $>$50\,m\,s$^{-1}$; JJA: NH 제트 약화, SH 제트 강화}}
   \label{fig:ch03-wind200-seasonal}
 \end{figure}
 
@@ -752,8 +762,9 @@ South Asian monsoon onset의 핵심 요소이다.
   % Description: Latitude--pressure cross-sections of [u] for DJF and JJA.
   %   DJF: NH jet dramatically intensifies to ~28 m/s, shifted equatorward.
   %   JJA: SH jet intensifies; NH jet weakens and shifts poleward.
-  \includegraphics[width=0.6\textwidth]{images/ch03/p22_img01.jpeg}
-  \caption{Zonal-mean zonal wind $[\bar{u}]$ (m\,s$^{-1}$) for (a)~DJF and (b)~JJA. \hisu{DJF: NH 제트 강화 ($\sim$28\,m\,s$^{-1}$, 적도 쪽 이동); JJA: SH 제트 강화, NH 제트 약화 및 극 쪽 이동 --- 겨울 반구 온도 경도가 최대}}
+  \includegraphics[width=0.4\textwidth]{images/ch03/p23_img01.png}\hfill
+  \includegraphics[width=0.4\textwidth]{images/ch03/p23_img02.png}
+  \caption{Zonal-mean zonal wind $[\bar{u}]$ (m\,s$^{-1}$) for (left)~DJF and (right)~JJA. \hisu{DJF: NH 제트 강화 ($\sim$28\,m\,s$^{-1}$, 적도 쪽 이동); JJA: SH 제트 강화, NH 제트 약화 및 극 쪽 이동 --- 겨울 반구 온도 경도가 최대}}
   \label{fig:ch03-zmzw-seasonal}
 \end{figure}
 
@@ -777,8 +788,9 @@ DJF에 NH subtropical jet은 zonal mean에서 $\sim$28\,m\,s$^{-1}$까지 (국�
   %   migration of the cross-equatorial Hadley cell: in DJF the dominant
   %   cell has ascent south of the equator, upper-level northward flow,
   %   and descent near 30N.
-  \includegraphics[width=0.6\textwidth]{images/ch03/p23_img01.png}
-  \caption{Zonal-mean meridional wind $[\bar{v}]$ (m\,s$^{-1}$) for (a)~DJF and (b)~JJA,
+  \includegraphics[width=0.4\textwidth]{images/ch03/p24_img01.png}\hfill
+  \includegraphics[width=0.4\textwidth]{images/ch03/p24_img04.png}
+  \caption{Zonal-mean meridional wind $[\bar{v}]$ (m\,s$^{-1}$) for (left)~DJF and (right)~JJA,
            showing the cross-equatorial Hadley cell. \hisu{해들리 셀의 계절 이동: DJF에는 적도 남쪽 상승, 상층 북향 흐름, $\sim$$30^{\circ}$N 하강; JJA에는 반대}}
   \label{fig:ch03-zmvw-seasonal}
 \end{figure}
@@ -819,8 +831,9 @@ Cross-equatorial Hadley overturning이 JJA에 DJF보다 강한 이유는 다음�
   %   Steepest meridional temperature gradient always in the winter hemisphere.
   %   Tropical tropopause is higher (~100 hPa) and colder (~190 K);
   %   extratropical tropopause is lower (~300 hPa) and warmer (~220 K).
-  \includegraphics[width=0.6\textwidth]{images/ch03/p24_img01.png}
-  \caption{Zonal-mean temperature $[\bar{T}]$ (K) for (a)~DJF and (b)~JJA. \hisu{가장 급한 남북 $T$ 경도는 항상 겨울 반구; 열대 대류권계면: $\sim$100\,hPa, $\sim$190\,K (높고 차가움); 중위도 대류권계면: $\sim$300\,hPa, $\sim$220\,K (낮고 따뜻함)}}
+  \includegraphics[width=0.4\textwidth]{images/ch03/p25_img01.png}\hfill
+  \includegraphics[width=0.4\textwidth]{images/ch03/p25_img04.png}
+  \caption{Zonal-mean temperature $[\bar{T}]$ (K) for (left)~DJF and (right)~JJA. \hisu{가장 급한 남북 $T$ 경도는 항상 겨울 반구; 열대 대류권계면: $\sim$100\,hPa, $\sim$190\,K (높고 차가움); 중위도 대류권계면: $\sim$300\,hPa, $\sim$220\,K (낮고 따뜻함)}}
   \label{fig:ch03-zmt-seasonal}
 \end{figure}
 
@@ -921,16 +934,16 @@ flux divergence 항 $\int_{0}^{p_{0}}\partial_{p}(\langle\omega T\rangle_{Z})\,d
 \end{example}
 
 \begin{hisublock}
-\textbf{$\langle\omega T\rangle_{ZM}$이 작은 이유.}
-\eqref{eq:ch03_hw4_zvT_final}의 단열 항 $-\langle R\omega T/(c_{p}p)\rangle_{ZM}$이 실제 관측에서 작은 잔차로
-나오는 것은 두 가지 이유에 기인한다.  (i) $\omega$ 자체가 zonal mean에서 한 자릿수 작다 ---
-Fig.~\ref{fig:ch03-zmvw}에서 본 $[\bar v]$가 $\sim$0.3\,m\,s$^{-1}$로 매우 작은 것과 같은 맥락이며,
-\textbf{자오 순환(Hadley/Ferrel cell)의 vertical heat flux가 약하다}는 사실의 정량적 표현이다.
-(ii) $T$는 연직으로 단조 감소하므로 $\langle T\rangle_{ZM}$ 부근에서 $\omega'T'$ 상관이 거의 상쇄된다.
-결국 \eqref{eq:ch03_hw4_zvT_final}에서 \emph{지배항은 첫째 항(meridional eddy heat flux divergence)과
-우변(다이아베틱 가열)} 두 개뿐이며, 이것이 \S\ref{sec:ch03-eddy-decomp}의
-$\overline{v_{E}^{2}}$ 구조 \eqref{eq:vE2-structure}가 climate diagnostics에서 중요한 이유이다 ---
-$\overline{v_{E}^{2}}$가 큰 위도가 곧 $\langle vT\rangle_{ZM}$이 클 가능성이 높은 위도이다.
+\textbf{$\langle\omega T\rangle_{ZM}$의 구조.}
+\eqref{eq:ch03_hw4_zvT_final}의 단열 항 $-\langle R\omega T/(c_{p}p)\rangle_{ZM}$은 지역적으로는
+\emph{작지 않다}.  글로벌 평균에서 $\langle\omega\rangle = 0$이므로 $\langle\omega\bar T\rangle = 0$이지만,
+$\omega T = \bar\omega\,\bar T + \omega' T'$로 분해하면 \emph{eddy 부분} $\langle\omega' T'\rangle$가
+열대 (Hadley cell upper branch)에서 매우 크다 --- 따뜻한 공기 상승 $\Rightarrow \omega' T' > 0$,
+즉 baroclinic conversion (APE $\to$ KE)의 주요 항.  중위도 자유대기에서는 이 항이 작은 반면,
+글로벌·연평균에서는 ITCZ의 강한 $\omega'T' > 0$와 아열대 강하의 $\omega'T' < 0$이 부분적으로
+상쇄된다.  Hadley/Ferrel cell의 평균 자오 순환은 $\bar v \sim 0.3$\,m\,s$^{-1}$로 약하지만,
+\emph{eddy 단열 항} $\omega' T'$는 자오 eddy heat flux $\langle vT\rangle_{ZM}$와 함께
+열대 가열 균형의 핵심이다 (Ch.~4 \S2 참조).
 \end{hisublock}
 
 
@@ -976,7 +989,7 @@ $\overline{v_{E}^{2}}$가 큰 위도가 곧 $\langle vT\rangle_{ZM}$이 클 가�
   %   westerly regimes descend from ~10 hPa to ~70 hPa with a period of
   %   ~26 months.  Amplitude ~3 K in temperature.
   \includegraphics[width=0.7\textwidth]{images/ch03/p27_img01.jpeg}
-  \caption{Quasi-biennial oscillation (QBO) in equatorial stratospheric temperature anomalies (시간--고도 다이어그램). \hisu{동풍/서풍 레짐이 $\sim$10\,hPa에서 $\sim$70\,hPa로 하강, 주기 $\sim$26개월, 진폭 $\sim$3\,K}}
+  \caption{Quasi-biennial oscillation (QBO) in equatorial ($10^{\circ}$S--$10^{\circ}$N) stratospheric temperature anomalies $[T]$, 2002--2014. Each trace shows the time series at a fixed altitude (12--24\,km, offset vertically); the 3\,K reference bar at left sets the amplitude scale. \hisu{$\sim$16--24\,km 사이에서 동풍/서풍 레짐에 대응하는 온도 진동이 뚜렷; 주기 $\sim$26개월, 진폭 $\sim$3\,K; 14\,km 이하에서는 신호 약함}}
   \label{fig:ch03-qbo}
 \end{figure}
 
@@ -1094,8 +1107,9 @@ ITCZ가 $5^{\circ}$N에서 $25^{\circ}$N까지 이동하는 것이 바로 아시
   % Description: Scatter plot or co-located maps of precipitation vs. 500 hPa
   %   omega, showing strong spatial correlation: regions of ascent (omega < 0)
   %   are regions of high precipitation.
-  \includegraphics[width=0.7\textwidth]{images/ch03/p32_img01.png}
-  \caption{Spatial relationship between precipitation and 500\,hPa $\omega$. \hisu{상승 운동($\omega<0$) 지역 = 다우 지역; 강한 공간 상관 --- 대규모 상승이 단열 냉각, 포화, 응결, 강수를 유발}}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p32_img01.png}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p32_img02.png}
+  \caption{Annual-mean (left) precipitation (mm\,day$^{-1}$) and (right) 500\,hPa vertical velocity $\bar{\omega}$ (Pa\,s$^{-1}$), showing the spatial co-location of ascent ($\omega<0$) and heavy rainfall. \hisu{상승 운동($\omega<0$) 지역 = 다우 지역; 강한 공간 상관 --- 대규모 상승이 단열 냉각, 포화, 응결, 강수를 유발}}
   \label{fig:ch03-precip-omega}
 \end{figure}
 
@@ -1228,9 +1242,10 @@ ENSO 현상에서 이 비대칭이 약화/강화되면서 기후 변동이 발�
   %   high SST alone is insufficient --- need large-scale convergence.
   %   Eastern equatorial Pacific has warm SST but less rainfall than western
   %   Pacific.
-  \includegraphics[width=0.6\textwidth]{images/ch03/p38_img01.png}
-  \caption{Relationship between SST and precipitation.  Heavy rainfall occurs over the
-           warmest SSTs, but convergence is also required. \hisu{고SST만으로는 불충분 --- 대규모 하층 수렴이 필요; 동적도태평양: SST $>$$26^{\circ}$C이지만 Walker 순환 하강으로 강수 적음}}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p36_img01.jpeg}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p38_img01.png}
+  \caption{Annual-mean (left) SST ($^{\circ}$C) and (right) precipitation (mm\,day$^{-1}$).
+           Heavy rainfall occurs over the warmest SSTs, but convergence is also required. \hisu{고SST만으로는 불충분 --- 대규모 하층 수렴이 필요; 동적도태평양: SST $>$$26^{\circ}$C이지만 Walker 순환 하강으로 강수 적음}}
   \label{fig:ch03-sst-precip}
 \end{figure}
 
@@ -1258,8 +1273,9 @@ low-level divergence를 구동하기 때문에 precipitation은 상대적으로 
   %   winds driving equatorial upwelling (cold tongue), Ekman transport, and
   %   the relationship between wind-driven ocean circulation and SST
   %   distribution.
-  \includegraphics[width=0.6\textwidth]{images/ch03/p40_img01.png}
-  \caption{SST ($^{\circ}$C) with surface wind vectors, illustrating the wind--SST coupling. \hisu{무역풍 $\rightarrow$ 적도 Ekman 발산/용승 $\rightarrow$ cold tongue 유지; 따뜻한 SST $\rightarrow$ 경계층 안정도 감소 $\rightarrow$ 지표 바람 강화 (양방향 결합)}}
+  \includegraphics[width=0.45\textwidth]{images/ch03/p36_img01.jpeg}\hfill
+  \includegraphics[width=0.45\textwidth]{images/ch03/p39_img02.png}
+  \caption{Annual-mean (left) SST ($^{\circ}$C) and (right) 850\,hPa wind (m\,s$^{-1}$), illustrating the wind--SST coupling. \hisu{무역풍 $\rightarrow$ 적도 Ekman 발산/용승 $\rightarrow$ cold tongue 유지; 따뜻한 SST $\rightarrow$ 경계층 안정도 감소 $\rightarrow$ 지표 바람 강화 (양방향 결합)}}
   \label{fig:ch03-sst-wind}
 \end{figure}
 

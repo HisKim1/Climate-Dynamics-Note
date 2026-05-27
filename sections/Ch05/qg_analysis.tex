@@ -145,14 +145,16 @@ Baroclinic instability가 작동하려면:
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.7\textwidth]{images/ch05/p17_img01.jpeg}
-  \caption{Schematic of baroclinic wave lifecycle at the surface:
-    (a)~incipient developing stage with small-amplitude perturbations,
-    (b)~rapid development stage with amplifying warm and cold fronts, and
-    (c)~occlusion stage where the warm sector narrows and the system
-    begins to decay.  Solid lines: isobars; dashed lines: fronts;
-    arrows: surface wind.
-    \hisu{경압파 생애주기 모식도: (a)~발달 초기, (b)~급속 발달기 (전선 강화),
-          (c)~폐색기 (온난역 축소, 시스템 소멸).}}
+  \caption{Schematic streamline pattern of baroclinic wave life cycle at three
+    successive stages: (a)~initial small-amplitude wave with weak meridional
+    deflection of the zonal flow; (b)~amplifying stage with developing
+    cyclonic curvature; (c)~mature/occluding stage with closed cyclonic
+    circulation.  Solid lines: streamlines (warmer/dominant air mass);
+    dashed lines: streamlines of the cooler air mass.  Arrows indicate
+    direction of flow.
+    \hisu{경압파 생애주기 흐름선 모식도: (a)~초기 미소 진폭, (b)~증폭 단계
+          (사이클로닉 곡률 발달), (c)~성숙·폐색 단계 (닫힌 저기압 순환).
+          실선/점선은 서로 다른 공기괴의 streamline이며 화살표는 흐름 방향이다.}}
   \label{fig:baroclinic-lifecycle}
 \end{figure}
 
@@ -715,18 +717,23 @@ Combining:
   L\frac{\partial p}{\partial t} = -f\,\mathbf{V}_g\cdot\nabla Q.
 \end{equation}
 
-\textit{Step 3.}  Expanding $fQ = f(\zeta_g + f) + f^2\,\partial_z(\theta/(d\theta_0/dz))$
-and using the identity $\mathbf{V}_g\cdot\nabla f = \beta v_g$:
+\textit{Step 3.}  $f = f_0 + \beta y$의 $\beta y$ 부분은 stretching 항의 계수에서는
+무시되어 $f_0$로 근사되며 (QG approximation, Holton 12판 §6.2), advection 항만이
+$\nabla f = \beta\hat j$의 효과를 보존한다.  $fQ \approx f_0(\zeta_g + f)
++ f_0^2\,\partial_z(\theta/(d\theta_0/dz))$로 전개하면:
 
 \begin{equation}\label{eq:height-tendency-z}
   \boxed{
   L\frac{\partial p}{\partial t}
-  = -\mathbf{V}_g\cdot\nabla(f\zeta_g)
-    + f^2\frac{\partial}{\partial z}
+  = -f_0\,\mathbf{V}_g\cdot\nabla(\zeta_g + f)
+    + f_0^{\,2}\frac{\partial}{\partial z}
       \!\left[\frac{\mathbf{V}_g\cdot\nabla\theta}
               {\partial\theta_0/\partial z}\right].
   }
 \end{equation}
+즉 우변 첫 항은 \emph{절대 vorticity의 advection} (planetary $f$ 포함), 두 번째 항은
+\emph{thickness/온도 advection의 연직 미분}으로, 각각 vorticity과 thermal에 의한
+geopotential tendency 강제를 분리한다.
 
 % --------------------------------------------------------------------------
 \subsection{Physical Interpretation}\label{subsec:height-tendency-phys}
@@ -882,17 +889,20 @@ cooperative interaction을 통해 어떻게 발달하는지에 대한 완전한 
 \begin{figure}[htbp]
   \centering
   \includegraphics[width=0.65\textwidth]{images/ch05/p58_img01.png}
-  \caption{Schematic cross-section of midlatitude cyclogenesis showing the
-    interaction between upper-level and surface disturbances.
-    (a)~Vertical cross-section: an upper-level trough (with positive PV
-    anomaly) induces ascent and low-level convergence, spinning up a
-    surface low.  The surface warm anomaly (equivalent to a surface PV
-    anomaly) reinforces the upper trough.  Labels H and L denote high
-    and low centres; W and C denote warm and cold air.
-    (b)~Plan view: the surface cyclone with warm and cold fronts, showing
-    warm air advection ahead of the low and cold air intrusion behind.
-    \hisu{저기압 발생 모식도.  (a)~연직 단면: 상층 기압골이 하강류·수렴을 유도하여
-          지표 저기압 강화.  (b)~평면도: 온난/한랭 전선과 지표 저기압의 배치.}}
+  \caption{Schematic of midlatitude cyclogenesis from the PV perspective.
+    (a)~Vertical cross-section through a tropopause undulation: a downward
+    deflection of the dynamic tropopause (solid curve) produces a positive
+    upper-level PV anomaly (``+'') with an associated upper low (L);
+    stratospheric (W) and tropospheric (C) labels indicate warm/cold sides.
+    A surface temperature ridge (dashed line, with low H and warm-cold
+    contrast) reinforces the upper anomaly.
+    (b)~Plan view: the upper-level positive PV anomaly (``+'', interior of
+    the closed solid loop with low L) induces a poleward-eastward
+    circulation (arrows).  Isotherms $T$ and $T+\delta T$ indicate the
+    surface temperature gradient on which the induced flow acts.
+    \hisu{PV 관점의 저기압 발생 모식도.  (a)~tropopause 처짐과 상층 양의 PV
+          이상이 지표 온도 능선과 상호 강화.  (b)~평면도: 상층 PV 이상이
+          유도하는 흐름과 등온선.}}
   \label{fig:cyclogenesis-schematic}
 \end{figure}
 

@@ -693,7 +693,7 @@ heat flux와 momentum flux를 동시에 포함하는 통합적 틀을 제공한�
 The quasi-geostrophic potential vorticity is defined as
 \begin{equation}\label{eq:QGPV}
   Q = (\zeta_g + f) + \frac{\partial}{\partial p}
-    \left(\frac{f^2}{\sigma}\frac{\partial\Psi}{\partial p}\right),
+    \left(\frac{f_0^{\,2}}{\sigma}\frac{\partial\Psi}{\partial p}\right),
 \end{equation}
 where $\zeta_g$ is the geostrophic relative vorticity,
 $\Psi = \Phi/f_0$ is the geostrophic streamfunction, and
@@ -852,7 +852,7 @@ Zonally averaged meridional PV flux는 세 가지 기여로 분해할 수 있다
   (vQ)_Z = \underbrace{f\,v_Z}_{\text{planetary}}
     + \underbrace{(v\zeta)_Z}_{\text{vorticity flux}}
     + \underbrace{\left[v\frac{\partial}{\partial p}
-      \left(\frac{f^2}{\sigma}\frac{\partial\Psi}{\partial p}
+      \left(\frac{f_0^{\,2}}{\sigma}\frac{\partial\Psi}{\partial p}
       \right)\right]_Z}_{\text{thickness flux}}.
 \end{equation}
 
@@ -962,9 +962,9 @@ Vorticity 동역학과 본문의 연결:
 \begin{proposition}[Thickness Flux Identity]
 \begin{equation}\label{eq:thick_flux}
   \left[v\frac{\partial}{\partial p}
-    \left(\frac{f^2}{\sigma}\frac{\partial\Psi}{\partial p}\right)\right]_Z
+    \left(\frac{f_0^{\,2}}{\sigma}\frac{\partial\Psi}{\partial p}\right)\right]_Z
   = -\frac{\partial}{\partial p}
-    \left[\frac{Rf}{\sigma\,p}(vT)_Z\right].
+    \left[\frac{Rf_0}{\sigma\,p}(vT)_Z\right].
 \end{equation}
 \end{proposition}
 
@@ -974,11 +974,11 @@ and integrating by parts in $\lambda$ (noting boundary terms vanish by
 periodicity), one obtains
 \[
   \left[v\frac{\partial}{\partial p}
-    \left(\frac{f^2}{\sigma}\frac{\partial\Psi}{\partial p}\right)\right]_Z
+    \left(\frac{f_0^{\,2}}{\sigma}\frac{\partial\Psi}{\partial p}\right)\right]_Z
   = -\frac{\partial}{\partial p}
-    \left(\frac{f^2}{\sigma}\frac{(v\,\partial\Psi/\partial p)_Z}{1}\right)
+    \left(\frac{f_0^{\,2}}{\sigma}\frac{(v\,\partial\Psi/\partial p)_Z}{1}\right)
   = -\frac{\partial}{\partial p}
-    \left[\frac{Rf}{\sigma\,p}(vT)_Z\right].\qedhere
+    \left[\frac{Rf_0}{\sigma\,p}(vT)_Z\right].\qedhere
 \]
 \end{proof}
 
@@ -997,7 +997,7 @@ planetary 항을 무시):
   = -\frac{1}{a\cos^2\phi}\frac{\partial}{\partial\phi}
     \bigl((u_E v_E)_Z\cos^2\phi\bigr)
   - \frac{\partial}{\partial p}
-    \left[\frac{Rf}{\sigma\,p}(v_E T_E)_Z\right].
+    \left[\frac{Rf_0}{\sigma\,p}(v_E T_E)_Z\right].
   }
 \end{equation}
 
@@ -1129,8 +1129,8 @@ $\beta$-plane에서의 zonally averaged quasi-geostrophic equations의
 
 \begin{align}
   \frac{\partial u_Z}{\partial t} - fv_Z
-    &= \frac{1}{a\cos\phi}\frac{\partial}{\partial\phi}
-       \bigl((u_E v_E)_Z\cos\phi\bigr)\cdot\frac{-\cos\phi}{\cos\phi}
+    &= -\frac{1}{a\cos^2\phi}\frac{\partial}{\partial\phi}
+       \bigl((u_E v_E)_Z\cos^2\phi\bigr)
        + F_{\lambda Z}
   \label{eq:EP_umom}\\[4pt]
   \frac{\partial\theta_Z}{\partial t}

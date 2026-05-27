@@ -78,9 +78,10 @@ Hadley의 추론은 다음과 같이 진행되었다:
   \item 적도에서의 강한 solar heating이 공기를 상승시킨다.
   \item 상층에서 이 공기는 극 방향(poleward)으로 흐른다.
   \item Angular momentum 보존에 의해, 이 poleward-moving air는 westerly (west-to-east) 성분을
-    획득한다 --- 회전축으로부터 더 먼 거리에서 출발했기 때문이다.
-  \item 지표에서의 return flow는 적도 방향으로 이동하면서 \emph{westward}로 편향되어,
-    관측되는 easterly trade winds를 생성한다.
+    획득한다 --- 적도에서는 회전축까지의 거리 $a\cos\phi$가 최대이지만 극으로 갈수록
+    감소하므로, $M=(u+\Omega a\cos\phi)\,a\cos\phi$ 보존을 위해 $u$가 증가하여 서풍이 된다.
+  \item 같은 angular momentum 보존 원리에 의해, 지표에서의 적도 방향 return flow는
+    \emph{easterly} (east-to-west) 성분을 획득하여 관측되는 trade winds를 생성한다.
 \end{enumerate}
 
 \subsubsection{Angular Momentum Argument}
@@ -95,6 +96,10 @@ $M$을 보존하면서 위도 $\phi$로 이동하면,
 \begin{equation}\label{eq:ang-mom-conserve}
   u(\phi) = \Omega a \frac{\sin^2\phi}{\cos\phi}.
 \end{equation}
+$\phi=30^\circ$에서 $u\approx 134$\,m\,s$^{-1}$, $\phi=45^\circ$에서
+$u\approx 328$\,m\,s$^{-1}$로, hemisphere 규모의 Hadley cell이
+\emph{물리적으로 불가능}함을 직접 보여준다.  이것이 다음 절에서
+Ferrel/three-cell model이 필요한 이유이다.
 
 \begin{hisublock}
   Hadley는 적도에서 극까지 하나의 거대한 thermally direct cell을 상상했지만,
@@ -107,9 +112,14 @@ $M$을 보존하면서 위도 $\phi$로 이동하면,
 \begin{figure}[ht]
   \centering
   \includegraphics[width=0.65\textwidth]{images/ch01/p08_img01.jpeg}
-  \caption{Schematic of Hadley's single thermally direct cell: warm air rises at the
-    equator, flows poleward aloft, sinks at the pole, and returns equatorward at the
-    surface. \hisu{Hadley의 단일 직접순환 모식도: 적도 상승 $\to$ 상층 극향 $\to$ 극 하강 $\to$ 지표 적도향}.}
+  \caption{(a) Hadley's single thermally direct cell (equator-to-pole 직접 순환):
+    적도에서 상승 $\to$ 상층 극향 $\to$ 극에서 하강 $\to$ 지표 적도향.
+    (b) Multi-cell 변형 (Thomson/Ferrel 계열): 같은 상층 서풍/지표 동서풍 분포를
+    두 개의 직접 셀로 분해.  두 도식 모두 상층에 westerlies (W), 적도 부근 지표에
+    easterlies (E)를 둔다는 점은 같으며, 차이는 회전축까지의 거리 변화를 한 셀로
+    감당할 수 없다는 점에서 (b)가 도입된 것이다.
+    \hisu{(a) Hadley 단일 셀, (b) 다중 셀 모식.  적도에서 극으로 가면 $a\cos\phi$가
+    감소하므로 단일 셀로는 상층 서풍이 비현실적으로 커진다.}}
   \label{fig:hadley-single-cell}
 \end{figure}
 
@@ -191,7 +201,6 @@ Single-cell 모델은 한 세기 이상 도전받지 않고 존속했다.
 \end{itemize}
 \end{hisublock}
 
-\newpage
 % ==================================================================
 \section{The Nature of the Problem}\label{sec:nature}
 % ==================================================================
@@ -364,7 +373,6 @@ $W$와 같다.
 \end{itemize}
 \end{hisublock}
 
-\newpage
 % ==================================================================
 \section{Heuristic Models}\label{sec:heuristic}
 % ==================================================================
@@ -432,7 +440,7 @@ $W$와 같다.
   \begin{equation}\label{eq:no-atm-balance}
     \frac{S_0 (1 - \alpha_p)}{4} = \sigma T_s^4,
   \end{equation}
-  where $S_0 = 1360$\,W\,m$^{-2}$ is the solar constant, $\alpha_p = 0.3$ is the
+  where $S_0 \approx 1361$\,W\,m$^{-2}$ is the solar constant (TSIS/SORCE 추정치), $\alpha_p = 0.3$ is the
   planetary albedo, and $\sigma = 5.67 \times 10^{-8}$\,W\,m$^{-2}$\,K$^{-4}$ is the
   Stefan--Boltzmann constant.
   \hisu{대기가 없는 경우: 흡수 태양복사 = 지표 적외선 방출로부터 지표 온도를 결정}
@@ -463,9 +471,11 @@ $W$와 같다.
 \end{definition}
 
 \begin{hisublock}
-  \hisu{대기가 지표 적외선을 모두 흡수하고 재방출하면, 지표 온도는 방출 온도의
-  $2^{1/4} \approx 1.19$배가 된다 (온실효과).
-  에미시비티 $\varepsilon \to 0$이면 $T_s \to T_E$, $T_A \to T_E / 2^{1/4}$.}
+  \hisu{대기가 지표 적외선을 모두 흡수하고 재방출하면 ($\varepsilon=1$ 극한),
+  지표 온도는 방출 온도의 $2^{1/4} \approx 1.19$배가 된다 (온실효과).
+  반대로 $\varepsilon \to 0$이면 대기는 적외선에 투명해지므로 온실효과가 사라지고
+  $T_s \to T_E$이며, 대기층은 더 이상 복사를 의미 있게 흡수/방출하지 않으므로
+  $T_A$는 별도의 평형식으로 결정되지 않는다.}
 \end{hisublock}
 
 \begin{hisublock}
